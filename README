@@ -1,0 +1,7 @@
+A deterministic finite automaton M is a 5-tuple, (Q, Σ, δ, q0, F), consisting of
+
+a finite set of states (Q), with states_size states
+a finite set of input symbols called the alphabet (Σ), with alphabet_size symbols
+a transition function (δ : Q × Σ → Q), with states_size * alphabets_size possible inputs, simulated by transition_softmax()
+an initial or start state (q0 ∈ Q), simulated by initHidden()
+a set of accept states (F ⊆ Q)
