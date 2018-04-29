@@ -17,7 +17,7 @@ print_per_epoch = 100
 print_per_batch = 100
 total_epoch = 10000
 
-learning_rate = 0.0025 * BATCH_SIZE
+learning_rate = 0.0015 * BATCH_SIZE
 
 torch.manual_seed(1) # TODO - disable manual seed in production version
 
