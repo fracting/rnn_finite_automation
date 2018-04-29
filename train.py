@@ -15,7 +15,7 @@ BATCH_SIZE = 256
 
 print_per_epoch = 100
 print_per_batch = 100
-total_epoch = 5000
+total_epoch = 6000
 
 learning_rate = 0.0025 * BATCH_SIZE
 
@@ -26,7 +26,7 @@ model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), len(category_to_ix), NUM
 loss_function = nn.NLLLoss()
 optimizer = optim.SGD(model.parameters(), lr=learning_rate)
 
-truncate_size = 4096
+truncate_size = 8192
 all_training_data = load_training_data("dataset/10div7.txt")
 print("all_training_data size: %d" % len(all_training_data))
 training_data = all_training_data[0:truncate_size]
@@ -82,12 +82,12 @@ for epoch in range(total_epoch):
         print("epoch %d loss %f" % (epoch, average_loss))
         sys.stdout.flush()
 
-t_end = datetime.now()
-tdiff_begin_end = t_end - t_begin
-print("time spent total: %s" % str(tdiff_begin_end))
-
 with torch.no_grad():
     seqs, _ = list(zip(*training_data[0:BATCH_SIZE]))
     inputs = seqs_to_tensor(seqs, char_to_ix)
     category_scores = model(inputs)
     print("category scores after training: \n" + str(category_scores))
+
+t_end = datetime.now()
+tdiff_begin_end = t_end - t_begin
+print("time spent total: %s" % str(tdiff_begin_end))
