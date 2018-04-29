@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 from datetime import datetime
+import sys
 
 from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_training_data
@@ -25,11 +26,12 @@ model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), len(category_to_ix), NUM
 loss_function = nn.NLLLoss()
 optimizer = optim.SGD(model.parameters(), lr=learning_rate)
 
-truncate_size = 512
+truncate_size = 1024
 all_training_data = load_training_data("dataset/10div7.txt")
 print("all_training_data size: %d" % len(all_training_data))
 training_data = all_training_data[0:truncate_size]
 print("truncated training_date size: %d" % len(training_data))
+print("batch size: %d" % BATCH_SIZE)
 
 with torch.no_grad():
     seqs, _ = list(zip(*training_data[0:BATCH_SIZE]))
@@ -78,6 +80,7 @@ for epoch in range(total_epoch):
             t_diff_per_print = t_print - t_last_print
             print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
         print("epoch %d loss %f" % (epoch, average_loss))
+        sys.stdout.flush()
 
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
