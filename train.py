@@ -11,8 +11,9 @@ HIDDEN_DIM = 5
 NUM_LAYERS = 2
 BATCH_SIZE = 4
 
-print_per_epoch = 1
+print_per_epoch = 100
 print_per_batch = 100
+total_epoch = 5000
 
 torch.manual_seed(1) # TODO - disable manual seed in production version
 
@@ -29,9 +30,10 @@ with torch.no_grad():
     category_scores = model(inputs)
     print("category scores before training: \n" + str(category_scores))
 
-for epoch in range(1000):
+for epoch in range(total_epoch):
     training_size = len(training_data)
-    round_to_batch = training_size // BATCH_SIZE * BATCH_SIZE
+    batch_count = training_size // BATCH_SIZE
+    round_to_batch = batch_count * BATCH_SIZE
     permutation = np.random.permutation(training_size)[0:round_to_batch]
 
     epoch_loss = 0
@@ -51,15 +53,16 @@ for epoch in range(1000):
         category_scores = model(seqs_in)
 
         batch_loss = loss_function(category_scores, targets)
-        if i // BATCH_SIZE % print_per_batch == 0:
-            print("batch %d loss %f" % (i // BATCH_SIZE, batch_loss))
+        #if i // BATCH_SIZE % print_per_batch == 0:
+        #    print("batch %d loss %f" % (i // BATCH_SIZE, batch_loss))
 
         epoch_loss = epoch_loss + batch_loss.data
+        average_loss = epoch_loss / batch_count
         batch_loss.backward()
         optimizer.step()
 
     if epoch % print_per_epoch == 0:
-        print("epoch %d loss %f" % (epoch, epoch_loss))
+        print("epoch %d loss %f" % (epoch, average_loss))
 
 with torch.no_grad():
     seqs, _ = list(zip(*training_data[0:4]))
