@@ -1,0 +1,119 @@
+all_training_data size: 89999
+truncated training_date size: 2048
+batch size: 1024
+category scores before training: 
+tensor([[-0.9813, -0.4697],
+        [-0.9722, -0.4752],
+        [-0.9668, -0.4785],
+        ...,
+        [-0.9460, -0.4915],
+        [-0.9408, -0.4948],
+        [-0.9476, -0.4905]])
+epoch 0 loss 0.774419
+time spent in 100 epoch 0:00:03.926283
+epoch 100 loss 0.410506
+time spent in 100 epoch 0:00:03.904226
+epoch 200 loss 0.410517
+time spent in 100 epoch 0:00:03.904141
+epoch 300 loss 0.410628
+time spent in 100 epoch 0:00:03.898101
+epoch 400 loss 0.410501
+time spent in 100 epoch 0:00:03.914019
+epoch 500 loss 0.410845
+time spent in 100 epoch 0:00:03.866005
+epoch 600 loss 0.410638
+time spent in 100 epoch 0:00:03.877137
+epoch 700 loss 0.410587
+time spent in 100 epoch 0:00:03.846268
+epoch 800 loss 0.410807
+time spent in 100 epoch 0:00:03.879625
+epoch 900 loss 0.410507
+time spent in 100 epoch 0:00:03.836000
+epoch 1000 loss 0.410492
+time spent in 100 epoch 0:00:03.929477
+epoch 1100 loss 0.410505
+time spent in 100 epoch 0:00:03.938752
+epoch 1200 loss 0.410540
+time spent in 100 epoch 0:00:03.841574
+epoch 1300 loss 0.410490
+time spent in 100 epoch 0:00:03.934801
+epoch 1400 loss 0.410508
+time spent in 100 epoch 0:00:03.831995
+epoch 1500 loss 0.410496
+time spent in 100 epoch 0:00:03.892006
+epoch 1600 loss 0.410488
+time spent in 100 epoch 0:00:04.114423
+epoch 1700 loss 0.410487
+time spent in 100 epoch 0:00:04.443362
+epoch 1800 loss 0.410498
+time spent in 100 epoch 0:00:04.087827
+epoch 1900 loss 0.410522
+time spent in 100 epoch 0:00:03.907485
+epoch 2000 loss 0.410492
+time spent in 100 epoch 0:00:04.038897
+epoch 2100 loss 0.410483
+time spent in 100 epoch 0:00:03.944821
+epoch 2200 loss 0.410606
+time spent in 100 epoch 0:00:03.934839
+epoch 2300 loss 0.410923
+time spent in 100 epoch 0:00:04.045727
+epoch 2400 loss 0.410480
+time spent in 100 epoch 0:00:03.864223
+epoch 2500 loss 0.410483
+time spent in 100 epoch 0:00:03.897551
+epoch 2600 loss 0.410492
+time spent in 100 epoch 0:00:03.915613
+epoch 2700 loss 0.410567
+time spent in 100 epoch 0:00:03.876213
+epoch 2800 loss 0.410498
+time spent in 100 epoch 0:00:03.849029
+epoch 2900 loss 0.410550
+time spent in 100 epoch 0:00:03.910496
+epoch 3000 loss 0.410484
+time spent in 100 epoch 0:00:03.812578
+epoch 3100 loss 0.410488
+time spent in 100 epoch 0:00:03.809546
+epoch 3200 loss 0.410478
+time spent in 100 epoch 0:00:03.806163
+epoch 3300 loss 0.410513
+time spent in 100 epoch 0:00:03.831040
+epoch 3400 loss 0.410486
+time spent in 100 epoch 0:00:03.813553
+epoch 3500 loss 0.410500
+time spent in 100 epoch 0:00:03.833018
+epoch 3600 loss 0.410471
+time spent in 100 epoch 0:00:03.825565
+epoch 3700 loss 0.410507
+time spent in 100 epoch 0:00:03.818812
+epoch 3800 loss 0.410574
+time spent in 100 epoch 0:00:03.805539
+epoch 3900 loss 0.410529
+time spent in 100 epoch 0:00:03.780426
+epoch 4000 loss 0.410495
+time spent in 100 epoch 0:00:03.829882
+epoch 4100 loss 0.410674
+time spent in 100 epoch 0:00:03.799217
+epoch 4200 loss 0.410473
+time spent in 100 epoch 0:00:03.827874
+epoch 4300 loss 0.410465
+time spent in 100 epoch 0:00:03.803480
+epoch 4400 loss 0.410552
+time spent in 100 epoch 0:00:03.873345
+epoch 4500 loss 0.410499
+time spent in 100 epoch 0:00:03.829149
+epoch 4600 loss 0.410464
+time spent in 100 epoch 0:00:03.838844
+epoch 4700 loss 0.410498
+time spent in 100 epoch 0:00:03.805057
+epoch 4800 loss 0.410565
+time spent in 100 epoch 0:00:03.821733
+epoch 4900 loss 0.410457
+time spent total: 0:03:14.429060
+category scores after training: 
+tensor([[-0.1525, -1.9558],
+        [-0.1529, -1.9535],
+        [-0.1562, -1.9339],
+        ...,
+        [-0.1529, -1.9535],
+        [-0.1555, -1.9377],
+        [-0.1544, -1.9443]])
