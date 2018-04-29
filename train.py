@@ -31,9 +31,7 @@ with torch.no_grad():
 
 for epoch in range(1000):
     training_size = len(training_data)
-    print(training_size)
     round_to_batch = training_size // BATCH_SIZE * BATCH_SIZE
-    print(round_to_batch)
     permutation = np.random.permutation(training_size)[0:round_to_batch]
 
     epoch_loss = 0
