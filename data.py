@@ -12,17 +12,16 @@ def categories_to_tensor(categories, to_ix):
     idxs_tensor = torch.tensor(idxs, dtype=torch.long)
     return idxs_tensor
 
-training_data = [
-  (list("00000"), "1"),
-  (list("12345"), "0"),
-  (list("56789"), "0"),
-  (list("12348"), "1")
-]
+def load_training_data(path):
+   training_data = []
+   f = open(path)
+   file = f.read()
+   for line in file.split("\n"):
+       (x,y) = line.split(",")
+       xs = list(x)
+       training_data.append((xs, y))
+   f.close()
+   return training_data
 
-char_to_ix = {}
-for seq, label in training_data:
-    for char in seq:
-        if char not in char_to_ix:
-            char_to_ix[char] = len(char_to_ix)
-
+char_to_ix = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9}
 category_to_ix = {"0": 0, "1": 1}

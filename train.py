@@ -4,37 +4,43 @@ import torch.optim as optim
 import numpy as np
 
 from model import DFA
-from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, training_data
+from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_training_data
 
 EMBEDDING_DIM = 6
 HIDDEN_DIM = 5
 NUM_LAYERS = 2
 BATCH_SIZE = 4
 
-print_per_epoch = 100
+print_per_epoch = 1
+print_per_batch = 100
 
 torch.manual_seed(1) # TODO - disable manual seed in production version
 
 model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), len(category_to_ix), NUM_LAYERS, BATCH_SIZE)
 
 loss_function = nn.NLLLoss()
-optimizer = optim.SGD(model.parameters(), lr=0.1)
+optimizer = optim.SGD(model.parameters(), lr=0.01)
+
+training_data = load_training_data("dataset/10div7.txt")
 
 with torch.no_grad():
-    seqs, _ = list(zip(*training_data))
+    seqs, _ = list(zip(*training_data[0:4]))
     inputs = seqs_to_tensor(seqs, char_to_ix)
     category_scores = model(inputs)
     print("category scores before training: \n" + str(category_scores))
 
 for epoch in range(1000):
-    model.zero_grad()
-    model.hidden = model.init_hidden()
-
     training_size = len(training_data)
-    permutation = np.random.permutation(training_size)
+    print(training_size)
+    round_to_batch = training_size // BATCH_SIZE * BATCH_SIZE
+    print(round_to_batch)
+    permutation = np.random.permutation(training_size)[0:round_to_batch]
 
-    for i in range(0, training_size, BATCH_SIZE):
-    
+    epoch_loss = 0
+    for i in range(0, round_to_batch, BATCH_SIZE):
+        model.zero_grad()
+        model.hidden = model.init_hidden()
+   
         indices = list(permutation[i:i+BATCH_SIZE])
         batch_data = [training_data[index] for index in indices]
 
@@ -46,15 +52,19 @@ for epoch in range(1000):
 
         category_scores = model(seqs_in)
 
-        loss = loss_function(category_scores, targets)
-        if epoch % print_per_epoch == 0:
-            print("epoch %d loss %f" % (epoch, loss.data))
+        batch_loss = loss_function(category_scores, targets)
+        if i // BATCH_SIZE % print_per_batch == 0:
+            print("batch %d loss %f" % (i // BATCH_SIZE, batch_loss))
 
-        loss.backward()
+        epoch_loss = epoch_loss + batch_loss.data
+        batch_loss.backward()
         optimizer.step()
 
+    if epoch % print_per_epoch == 0:
+        print("epoch %d loss %f" % (epoch, epoch_loss))
+
 with torch.no_grad():
-    seqs, _ = list(zip(*training_data))
+    seqs, _ = list(zip(*training_data[0:4]))
     inputs = seqs_to_tensor(seqs, char_to_ix)
     category_scores = model(inputs)
     print("category scores after training: \n" + str(category_scores))
