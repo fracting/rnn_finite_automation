@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import numpy as np
 
 from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, training_data
@@ -28,21 +29,29 @@ with torch.no_grad():
 for epoch in range(1000):
     model.zero_grad()
     model.hidden = model.init_hidden()
+
+    training_size = len(training_data)
+    permutation = np.random.permutation(training_size)
+
+    for i in range(0, training_size, BATCH_SIZE):
     
-    seqs, categories = list(zip(*training_data))
-    seqs = list(seqs)
-    categories = list(categories)
-    seqs_in = seqs_to_tensor(seqs, char_to_ix)
-    targets = categories_to_tensor(categories, category_to_ix)
+        indices = list(permutation[i:i+BATCH_SIZE])
+        batch_data = [training_data[index] for index in indices]
 
-    category_scores = model(seqs_in)
+        seqs, categories = list(zip(*batch_data))
+        seqs = list(seqs)
+        categories = list(categories)
+        seqs_in = seqs_to_tensor(seqs, char_to_ix)
+        targets = categories_to_tensor(categories, category_to_ix)
 
-    loss = loss_function(category_scores, targets)
-    if epoch % print_per_epoch == 0:
-        print("epoch %d loss %f" % (epoch, loss.data))
+        category_scores = model(seqs_in)
 
-    loss.backward()
-    optimizer.step()
+        loss = loss_function(category_scores, targets)
+        if epoch % print_per_epoch == 0:
+            print("epoch %d loss %f" % (epoch, loss.data))
+
+        loss.backward()
+        optimizer.step()
 
 with torch.no_grad():
     seqs, _ = list(zip(*training_data))
