@@ -32,6 +32,10 @@ print("all_training_data size: %d" % len(all_training_data))
 training_data = all_training_data[0:truncate_size]
 print("truncated training_date size: %d" % len(training_data))
 print("batch size: %d" % BATCH_SIZE)
+print("embedding dim: %d" % EMBEDDING_DIM)
+print("hidden dim: %d" % HIDDEN_DIM)
+print("num layers: %d" % NUM_LAYERS)
+print("\n")
 
 with torch.no_grad():
     seqs, _ = list(zip(*training_data[0:BATCH_SIZE]))
