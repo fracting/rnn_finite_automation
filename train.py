@@ -22,7 +22,10 @@ model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), len(category_to_ix), NUM
 loss_function = nn.NLLLoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 
-training_data = load_training_data("dataset/10div7.txt")
+all_training_data = load_training_data("dataset/10div7.txt")
+print("all_training_data size: %d" % len(all_training_data))
+training_data = all_training_data[0:256]
+print("truncated training_date size: %d" % len(training_data))
 
 with torch.no_grad():
     seqs, _ = list(zip(*training_data[0:4]))
