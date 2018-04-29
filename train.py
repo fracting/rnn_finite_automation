@@ -26,7 +26,7 @@ model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), len(category_to_ix), NUM
 loss_function = nn.NLLLoss()
 optimizer = optim.SGD(model.parameters(), lr=learning_rate)
 
-truncate_size = 1024
+truncate_size = 2048
 all_training_data = load_training_data("dataset/10div7.txt")
 print("all_training_data size: %d" % len(all_training_data))
 training_data = all_training_data[0:truncate_size]
