@@ -9,13 +9,13 @@ from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
 
 EMBEDDING_DIM = 4
-HIDDEN_DIM = 3
+HIDDEN_DIM = 6
 NUM_LAYERS = 1
 BATCH_SIZE = 128
 
 print_per_epoch = 100
 print_per_batch = 100
-total_epoch1 = 4300
+total_epoch1 = 10000
 total_epoch2 = 10000
 
 learning_rate = 0.0015 * BATCH_SIZE
