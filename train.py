@@ -15,29 +15,27 @@ BATCH_SIZE = 128
 
 print_per_epoch = 100
 print_per_batch = 100
-total_epoch1 = 10000
-total_epoch2 = 10000
+total_epoch1 = 20000
+total_epoch2 = 20000
 
-learning_rate = 0.0015 * BATCH_SIZE
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
 model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), len(category_to_ix), NUM_LAYERS, BATCH_SIZE)
+model.learning_rate = 0.0015 * BATCH_SIZE
 
 loss_function = nn.NLLLoss()
-optimizer = optim.SGD(model.parameters(), lr=learning_rate)
 
-continuous_training_size = 2048
-random_training_size = 2048
+continuous_training_size = 4096
+random_training_size = 4096
 continuous_validation_size = 1024
 random_validation_size = 1024
 continuous_training_data, random_training_data, continuous_validation_data, random_validation_data = load_dataset("dataset/10div7.txt", continuous_training_size, random_training_size, continuous_validation_size, random_validation_size)
-
+# TODO: assert continuous_training_size + .. + .. +  < dataset_size
 print("batch size: %d" % BATCH_SIZE)
 print("embedding dim: %d" % EMBEDDING_DIM)
 print("hidden dim: %d" % HIDDEN_DIM)
 print("num layers: %d" % NUM_LAYERS)
-print("learning rate: %f" % learning_rate)
 print("")
 
 def calc_accuracy(score_tensors, target):
@@ -81,7 +79,15 @@ def validation(validation_set, validation_name):
 def train(training_set, training_name, total_epoch):
     print("train %s size %d for %d epoch\n" % (training_name, len(training_set), total_epoch))
 
+    print("learning rate: %f" % model.learning_rate)
+    optimizer = optim.SGD(model.parameters(), lr=model.learning_rate)
+
     for epoch in range(total_epoch):
+
+        if epoch > 0 and epoch % 5000 == 0:
+            model.learning_rate = model.learning_rate / 5 
+            print("learning rate: %f\n" % model.learning_rate)
+            optimizer = optim.SGD(model.parameters(), lr=model.learning_rate)
 
         training_size = len(training_set)
         batch_count = training_size // BATCH_SIZE
@@ -123,6 +129,7 @@ def train(training_set, training_name, total_epoch):
                 print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
             print("%s training epoch %d loss %f accuracy %f" % (training_name, epoch, average_loss, average_accuracy))
             validation(continuous_training_data, "continuous_training")
+            validation(random_training_data, "random_training")
             validation(continuous_validation_data, "continuous")
             validation(random_validation_data, "random")
             print("")
