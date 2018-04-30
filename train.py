@@ -68,7 +68,7 @@ def validation(validation_set, validation_name):
     return average_loss
 
 def train(training_set, training_name, total_epoch):
-    print("train %s for %d epoch" % (training_name, total_epoch))
+    print("train %s size %d for %d epoch\n" % (training_name, len(training_set), total_epoch))
 
     for epoch in range(total_epoch):
 
@@ -116,7 +116,7 @@ def train(training_set, training_name, total_epoch):
 t_begin = datetime.now()
 t_print = None
 train(continuous_training_data, "continuous", total_epoch)
-train(random_training_data, "random", total_epoch)
+train(continuous_training_data+random_training_data, "continuous+random", total_epoch)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
