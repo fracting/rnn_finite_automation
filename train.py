@@ -15,7 +15,7 @@ BATCH_SIZE = 128
 
 print_per_epoch = 100
 print_per_batch = 100
-total_epoch1 = 7000
+total_epoch1 = 4300
 total_epoch2 = 10000
 
 learning_rate = 0.0015 * BATCH_SIZE
