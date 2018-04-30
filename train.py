@@ -26,7 +26,7 @@ model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), len(category_to_ix), NUM
 loss_function = nn.NLLLoss()
 optimizer = optim.SGD(model.parameters(), lr=learning_rate)
 
-training_size = 4096
+training_size = 2048
 validation_size = 1024
 to_random = False
 dataset = load_dataset("dataset/10div7.txt", to_random)
