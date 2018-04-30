@@ -1,0 +1,312 @@
+continuous training size: 2048
+continuous validation size: 1024
+random training size: 2048
+random validation size: 1024
+batch size: 128
+embedding dim: 6
+hidden dim: 5
+num layers: 1
+learning rate: 0.192000
+
+
+train random for 5000 epoch
+random training epoch 0 loss 0.498480
+continuous validation loss 0.427572
+random validation loss 0.402352
+
+
+time spent in 100 epoch 0:00:04.701065
+random training epoch 100 loss 0.413446
+continuous validation loss 0.410206
+random validation loss 0.378749
+
+
+time spent in 100 epoch 0:00:04.548018
+random training epoch 200 loss 0.412396
+continuous validation loss 0.410830
+random validation loss 0.379043
+
+
+time spent in 100 epoch 0:00:04.598199
+random training epoch 300 loss 0.411278
+continuous validation loss 0.412067
+random validation loss 0.379857
+
+
+time spent in 100 epoch 0:00:04.576845
+random training epoch 400 loss 0.408969
+continuous validation loss 0.413640
+random validation loss 0.379833
+
+
+time spent in 100 epoch 0:00:04.728328
+random training epoch 500 loss 0.403613
+continuous validation loss 0.417542
+random validation loss 0.383127
+
+
+time spent in 100 epoch 0:00:04.598865
+random training epoch 600 loss 0.398442
+continuous validation loss 0.420937
+random validation loss 0.382799
+
+
+time spent in 100 epoch 0:00:04.610529
+random training epoch 700 loss 0.395066
+continuous validation loss 0.424302
+random validation loss 0.388930
+
+
+time spent in 100 epoch 0:00:04.625769
+random training epoch 800 loss 0.389737
+continuous validation loss 0.427687
+random validation loss 0.394809
+
+
+time spent in 100 epoch 0:00:04.575760
+random training epoch 900 loss 0.381358
+continuous validation loss 0.434173
+random validation loss 0.403583
+
+
+time spent in 100 epoch 0:00:04.627556
+random training epoch 1000 loss 0.371986
+continuous validation loss 0.446043
+random validation loss 0.417203
+
+
+time spent in 100 epoch 0:00:04.608768
+random training epoch 1100 loss 0.361020
+continuous validation loss 0.464555
+random validation loss 0.438504
+
+
+time spent in 100 epoch 0:00:04.548618
+random training epoch 1200 loss 0.345720
+continuous validation loss 0.499132
+random validation loss 0.465240
+
+
+time spent in 100 epoch 0:00:04.557559
+random training epoch 1300 loss 0.335279
+continuous validation loss 0.518561
+random validation loss 0.483361
+
+
+time spent in 100 epoch 0:00:04.554012
+random training epoch 1400 loss 0.327598
+continuous validation loss 0.539591
+random validation loss 0.497953
+
+
+time spent in 100 epoch 0:00:04.560432
+random training epoch 1500 loss 0.314810
+continuous validation loss 0.572814
+random validation loss 0.515643
+
+
+time spent in 100 epoch 0:00:04.783865
+random training epoch 1600 loss 0.313220
+continuous validation loss 0.590957
+random validation loss 0.533058
+
+
+time spent in 100 epoch 0:00:04.640558
+random training epoch 1700 loss 0.302882
+continuous validation loss 0.592354
+random validation loss 0.546777
+
+
+time spent in 100 epoch 0:00:04.579376
+random training epoch 1800 loss 0.303381
+continuous validation loss 0.603372
+random validation loss 0.564110
+
+
+time spent in 100 epoch 0:00:04.640225
+random training epoch 1900 loss 0.294436
+continuous validation loss 0.623178
+random validation loss 0.589978
+
+
+time spent in 100 epoch 0:00:04.569065
+random training epoch 2000 loss 0.292852
+continuous validation loss 0.626191
+random validation loss 0.579526
+
+
+time spent in 100 epoch 0:00:04.586309
+random training epoch 2100 loss 0.288622
+continuous validation loss 0.619286
+random validation loss 0.586557
+
+
+time spent in 100 epoch 0:00:04.621411
+random training epoch 2200 loss 0.282411
+continuous validation loss 0.608552
+random validation loss 0.591171
+
+
+time spent in 100 epoch 0:00:04.665147
+random training epoch 2300 loss 0.285728
+continuous validation loss 0.623528
+random validation loss 0.604023
+
+
+time spent in 100 epoch 0:00:04.792780
+random training epoch 2400 loss 0.277915
+continuous validation loss 0.612304
+random validation loss 0.611252
+
+
+time spent in 100 epoch 0:00:04.692427
+random training epoch 2500 loss 0.276801
+continuous validation loss 0.626225
+random validation loss 0.612759
+
+
+time spent in 100 epoch 0:00:04.682878
+random training epoch 2600 loss 0.279353
+continuous validation loss 0.632216
+random validation loss 0.615833
+
+
+time spent in 100 epoch 0:00:04.678241
+random training epoch 2700 loss 0.275921
+continuous validation loss 0.612875
+random validation loss 0.610935
+
+
+time spent in 100 epoch 0:00:04.646008
+random training epoch 2800 loss 0.278681
+continuous validation loss 0.631819
+random validation loss 0.603568
+
+
+time spent in 100 epoch 0:00:04.615355
+random training epoch 2900 loss 0.271145
+continuous validation loss 0.688433
+random validation loss 0.620054
+
+
+time spent in 100 epoch 0:00:04.656733
+random training epoch 3000 loss 0.283921
+continuous validation loss 0.647513
+random validation loss 0.600987
+
+
+time spent in 100 epoch 0:00:04.665587
+random training epoch 3100 loss 0.287753
+continuous validation loss 0.621153
+random validation loss 0.589250
+
+
+time spent in 100 epoch 0:00:04.584764
+random training epoch 3200 loss 0.273152
+continuous validation loss 0.662391
+random validation loss 0.585561
+
+
+time spent in 100 epoch 0:00:04.587477
+random training epoch 3300 loss 0.271625
+continuous validation loss 0.666759
+random validation loss 0.584242
+
+
+time spent in 100 epoch 0:00:04.550197
+random training epoch 3400 loss 0.270874
+continuous validation loss 0.657606
+random validation loss 0.570563
+
+
+time spent in 100 epoch 0:00:04.585704
+random training epoch 3500 loss 0.278072
+continuous validation loss 0.646655
+random validation loss 0.581354
+
+
+time spent in 100 epoch 0:00:04.546129
+random training epoch 3600 loss 0.358109
+continuous validation loss 0.610044
+random validation loss 0.592780
+
+
+time spent in 100 epoch 0:00:04.555615
+random training epoch 3700 loss 0.278727
+continuous validation loss 0.633456
+random validation loss 0.578030
+
+
+time spent in 100 epoch 0:00:04.565009
+random training epoch 3800 loss 0.265446
+continuous validation loss 0.670510
+random validation loss 0.594406
+
+
+time spent in 100 epoch 0:00:04.548782
+random training epoch 3900 loss 0.288441
+continuous validation loss 0.637286
+random validation loss 0.552661
+
+
+time spent in 100 epoch 0:00:04.535230
+random training epoch 4000 loss 0.282347
+continuous validation loss 0.612105
+random validation loss 0.544213
+
+
+time spent in 100 epoch 0:00:04.539411
+random training epoch 4100 loss 0.266292
+continuous validation loss 0.624854
+random validation loss 0.581241
+
+
+time spent in 100 epoch 0:00:04.542790
+random training epoch 4200 loss 0.281483
+continuous validation loss 0.618901
+random validation loss 0.566560
+
+
+time spent in 100 epoch 0:00:04.548845
+random training epoch 4300 loss 0.294894
+continuous validation loss 0.626471
+random validation loss 0.546027
+
+
+time spent in 100 epoch 0:00:04.535929
+random training epoch 4400 loss 0.259470
+continuous validation loss 0.621686
+random validation loss 0.564070
+
+
+time spent in 100 epoch 0:00:04.554508
+random training epoch 4500 loss 0.260559
+continuous validation loss 0.631419
+random validation loss 0.578697
+
+
+time spent in 100 epoch 0:00:04.544501
+random training epoch 4600 loss 0.263824
+continuous validation loss 0.623364
+random validation loss 0.588633
+
+
+time spent in 100 epoch 0:00:04.531859
+random training epoch 4700 loss 0.290891
+continuous validation loss 0.665695
+random validation loss 0.604644
+
+
+time spent in 100 epoch 0:00:04.561113
+random training epoch 4800 loss 0.265258
+continuous validation loss 0.663159
+random validation loss 0.607618
+
+
+time spent in 100 epoch 0:00:04.584629
+random training epoch 4900 loss 0.256622
+continuous validation loss 0.637702
+random validation loss 0.618319
+
+
+time spent total: 0:03:50.688261
