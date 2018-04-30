@@ -40,6 +40,12 @@ print("num layers: %d" % NUM_LAYERS)
 print("learning rate: %f" % learning_rate)
 print("")
 
+def calc_accuracy(score_tensors, target):
+    _, index_tensors = score_tensors.max(dim=1)
+    correct_prediction = (index_tensors == target)
+    accuracy = correct_prediction.sum().item() / len(correct_prediction)
+    return accuracy
+
 def validation(validation_set, validation_name):
     with torch.no_grad():
         validation_size = len(validation_set)
@@ -47,6 +53,7 @@ def validation(validation_set, validation_name):
         round_to_batch = batch_count * BATCH_SIZE
 
         validation_loss = 0
+        validation_accuracy = 0
         for i in range(0, round_to_batch, BATCH_SIZE):
             model.zero_grad()
             model.hidden = model.init_hidden()
@@ -60,10 +67,13 @@ def validation(validation_set, validation_name):
 
             category_scores = model(seqs_in)
             batch_loss = loss_function(category_scores, targets)
+            batch_accuracy = calc_accuracy(category_scores, targets)
             validation_loss = validation_loss + batch_loss.data
+            validation_accuracy = validation_accuracy + batch_accuracy
 
         average_loss = validation_loss / batch_count
-        print("%s validation loss %f" % (validation_name, average_loss))
+        average_accuracy = validation_accuracy / batch_count
+        print("%s validation loss %f accuracy %f" % (validation_name, average_loss, average_accuracy))
         sys.stdout.flush()
 
     return average_loss
@@ -80,6 +90,7 @@ def train(training_set, training_name, total_epoch):
         permutation = [entry.item() for entry in permutation]
 
         epoch_loss = 0
+        epoch_accuracy = 0
         for i in range(0, round_to_batch, BATCH_SIZE):
             model.zero_grad()
             model.hidden = model.init_hidden()
@@ -96,18 +107,21 @@ def train(training_set, training_name, total_epoch):
             category_scores = model(seqs_in)
 
             batch_loss = loss_function(category_scores, targets)
+            batch_accuracy = calc_accuracy(category_scores, targets)
 
             epoch_loss = epoch_loss + batch_loss.data
+            epoch_accuracy = epoch_accuracy + batch_accuracy
             batch_loss.backward()
             optimizer.step()
         average_loss = epoch_loss / batch_count
+        average_accuracy = epoch_accuracy / batch_count
 
         if epoch % print_per_epoch == 0:
             t_print = datetime.now()
             if epoch > 1:
                 t_diff_per_print = t_print - t_last_print
                 print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
-            print("%s training epoch %d loss %f" % (training_name, epoch, average_loss))
+            print("%s training epoch %d loss %f accuracy %f" % (training_name, epoch, average_loss, average_accuracy))
             validation(continuous_training_data, "continuous_training")
             validation(continuous_validation_data, "continuous")
             validation(random_validation_data, "random")
