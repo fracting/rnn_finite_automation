@@ -15,7 +15,8 @@ BATCH_SIZE = 128
 
 print_per_epoch = 100
 print_per_batch = 100
-total_epoch = 5000
+total_epoch1 = 7000
+total_epoch2 = 10000
 
 learning_rate = 0.0015 * BATCH_SIZE
 
@@ -37,7 +38,7 @@ print("embedding dim: %d" % EMBEDDING_DIM)
 print("hidden dim: %d" % HIDDEN_DIM)
 print("num layers: %d" % NUM_LAYERS)
 print("learning rate: %f" % learning_rate)
-print("\n")
+print("")
 
 def validation(validation_set, validation_name):
     with torch.no_grad():
@@ -107,16 +108,22 @@ def train(training_set, training_name, total_epoch):
                 t_diff_per_print = t_print - t_last_print
                 print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
             print("%s training epoch %d loss %f" % (training_name, epoch, average_loss))
+            validation(continuous_training_data, "continuous_training")
             validation(continuous_validation_data, "continuous")
             validation(random_validation_data, "random")
-            print("\n")
+            print("")
             sys.stdout.flush()
             t_last_print = datetime.now()
 
 t_begin = datetime.now()
 t_print = None
-train(continuous_training_data, "continuous", total_epoch)
-train(continuous_training_data+random_training_data, "continuous+random", total_epoch)
+validation(continuous_training_data, "continuous_training")
+validation(random_training_data, "random_training")
+validation(continuous_validation_data, "continuous_validation")
+validation(random_validation_data, "random_validation")
+print("")
+train(continuous_training_data, "continuous", total_epoch1)
+train(continuous_training_data+random_training_data, "continuous+random", total_epoch2)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
