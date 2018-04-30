@@ -10,12 +10,12 @@ from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tenso
 
 EMBEDDING_DIM = 6
 HIDDEN_DIM = 5
-NUM_LAYERS = 2
+NUM_LAYERS = 1
 BATCH_SIZE = 128
 
 print_per_epoch = 50
 print_per_batch = 100
-total_epoch = 10000
+total_epoch = 5000
 
 learning_rate = 0.0015 * BATCH_SIZE
 
