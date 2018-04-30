@@ -115,6 +115,7 @@ def train(training_set, training_name, total_epoch):
 
 t_begin = datetime.now()
 t_print = None
+train(continuous_training_data, "continuous", total_epoch)
 train(random_training_data, "random", total_epoch)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
