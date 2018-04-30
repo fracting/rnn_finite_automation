@@ -6,16 +6,16 @@ from datetime import datetime
 import sys
 
 from model import DFA
-from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_training_data
+from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
 
 EMBEDDING_DIM = 6
 HIDDEN_DIM = 5
 NUM_LAYERS = 2
 BATCH_SIZE = 128
 
-print_per_epoch = 10
+print_per_epoch = 50
 print_per_batch = 100
-total_epoch = 20000
+total_epoch = 5000
 
 learning_rate = 0.0015 * BATCH_SIZE
 
@@ -26,13 +26,15 @@ model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), len(category_to_ix), NUM
 loss_function = nn.NLLLoss()
 optimizer = optim.SGD(model.parameters(), lr=learning_rate)
 
-training_size = 16384
+training_size = 8192
 validation_size = 1024
-all_data = load_training_data("dataset/10div7.txt")
-print("all_data size: %d" % len(all_data))
-training_data = all_data[0:training_size]
+to_random = True
+dataset = load_dataset("dataset/10div7.txt", to_random)
+all_size = len(dataset)
+print("dataset size: %d, random shuffle: %s" % (all_size, str(to_random)))
+training_data = dataset[0:training_size]
 print("training size: %d" % len(training_data))
-validation_data = all_data[-1-validation_size:-1]
+validation_data = dataset[-1-validation_size:-1]
 print("validation size: %d" % len(validation_data))
 print("batch size: %d" % BATCH_SIZE)
 print("embedding dim: %d" % EMBEDDING_DIM)
