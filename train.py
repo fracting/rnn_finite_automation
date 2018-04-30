@@ -26,22 +26,48 @@ model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), len(category_to_ix), NUM
 loss_function = nn.NLLLoss()
 optimizer = optim.SGD(model.parameters(), lr=learning_rate)
 
-truncate_size = 16384
-all_training_data = load_training_data("dataset/10div7.txt")
-print("all_training_data size: %d" % len(all_training_data))
-training_data = all_training_data[0:truncate_size]
-print("truncated training_date size: %d" % len(training_data))
+training_size = 16384
+validation_size = 1024
+all_data = load_training_data("dataset/10div7.txt")
+print("all_data size: %d" % len(all_data))
+training_data = all_data[0:training_size]
+print("training size: %d" % len(training_data))
+validation_data = all_data[-1-validation_size:-1]
+print("validation size: %d" % len(validation_data))
 print("batch size: %d" % BATCH_SIZE)
 print("embedding dim: %d" % EMBEDDING_DIM)
 print("hidden dim: %d" % HIDDEN_DIM)
 print("num layers: %d" % NUM_LAYERS)
+print("learning rate: %f" % learning_rate)
 print("\n")
 
-with torch.no_grad():
-    seqs, _ = list(zip(*training_data[0:BATCH_SIZE]))
-    inputs = seqs_to_tensor(seqs, char_to_ix)
-    category_scores = model(inputs)
-    print("category scores before training: \n" + str(category_scores))
+def validation():
+    with torch.no_grad():
+        validation_size = len(validation_data)
+        batch_count = validation_size // BATCH_SIZE
+        round_to_batch = batch_count * BATCH_SIZE
+
+        validation_loss = 0
+        for i in range(0, round_to_batch, BATCH_SIZE):
+            model.zero_grad()
+            model.hidden = model.init_hidden()
+
+            batch_data = validation_data[i:i+BATCH_SIZE]
+            seqs, categories = list(zip(*batch_data))
+            seqs = list(seqs)
+            categories = list(categories)
+            seqs_in = seqs_to_tensor(seqs, char_to_ix)
+            targets = categories_to_tensor(categories, category_to_ix)
+
+            category_scores = model(seqs_in)
+            batch_loss = loss_function(category_scores, targets)
+            validation_loss = validation_loss + batch_loss.data
+
+        average_loss = validation_loss / batch_count
+        print("validation loss %f" % average_loss)
+        sys.stdout.flush()
+
+    return average_loss
 
 t_begin = datetime.now()
 t_print = None
@@ -73,24 +99,19 @@ for epoch in range(total_epoch):
         #    print("batch %d loss %f" % (i // BATCH_SIZE, batch_loss))
 
         epoch_loss = epoch_loss + batch_loss.data
-        average_loss = epoch_loss / batch_count
         batch_loss.backward()
         optimizer.step()
+    average_loss = epoch_loss / batch_count
 
     if epoch % print_per_epoch == 0:
-        t_last_print = t_print
         t_print = datetime.now()
         if epoch > 1:
             t_diff_per_print = t_print - t_last_print
             print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
         print("epoch %d loss %f" % (epoch, average_loss))
         sys.stdout.flush()
-
-with torch.no_grad():
-    seqs, _ = list(zip(*training_data[0:BATCH_SIZE]))
-    inputs = seqs_to_tensor(seqs, char_to_ix)
-    category_scores = model(inputs)
-    print("category scores after training: \n" + str(category_scores))
+        validation()
+        t_last_print = datetime.now()
 
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
