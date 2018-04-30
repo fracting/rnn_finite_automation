@@ -13,7 +13,7 @@ HIDDEN_DIM = 5
 NUM_LAYERS = 1
 BATCH_SIZE = 128
 
-print_per_epoch = 50
+print_per_epoch = 100
 print_per_batch = 100
 total_epoch = 5000
 
@@ -67,52 +67,55 @@ def validation(validation_set, validation_name):
 
     return average_loss
 
+def train(training_set, training_name, total_epoch):
+    print("train %s for %d epoch" % (training_name, total_epoch))
+
+    for epoch in range(total_epoch):
+
+        training_size = len(training_set)
+        batch_count = training_size // BATCH_SIZE
+        round_to_batch = batch_count * BATCH_SIZE
+        permutation = torch.randperm(training_size)[0:round_to_batch]
+        permutation = [entry.item() for entry in permutation]
+
+        epoch_loss = 0
+        for i in range(0, round_to_batch, BATCH_SIZE):
+            model.zero_grad()
+            model.hidden = model.init_hidden()
+
+            indices = list(permutation[i:i+BATCH_SIZE])
+            batch_data = [training_set[index] for index in indices]
+
+            seqs, categories = list(zip(*batch_data))
+            seqs = list(seqs)
+            categories = list(categories)
+            seqs_in = seqs_to_tensor(seqs, char_to_ix)
+            targets = categories_to_tensor(categories, category_to_ix)
+
+            category_scores = model(seqs_in)
+
+            batch_loss = loss_function(category_scores, targets)
+
+            epoch_loss = epoch_loss + batch_loss.data
+            batch_loss.backward()
+            optimizer.step()
+        average_loss = epoch_loss / batch_count
+
+        if epoch % print_per_epoch == 0:
+            t_print = datetime.now()
+            if epoch > 1:
+                t_diff_per_print = t_print - t_last_print
+                print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
+            print("%s training epoch %d loss %f" % (training_name, epoch, average_loss))
+            validation(continuous_validation_data, "continuous")
+            validation(random_validation_data, "random")
+            print("\n")
+            sys.stdout.flush()
+            t_last_print = datetime.now()
+
 t_begin = datetime.now()
 t_print = None
-for epoch in range(total_epoch):
-
-    training_size = len(continuous_training_data)
-    batch_count = training_size // BATCH_SIZE
-    round_to_batch = batch_count * BATCH_SIZE
-    permutation = torch.randperm(training_size)[0:round_to_batch]
-    permutation = [entry.item() for entry in permutation]
-
-    epoch_loss = 0
-    for i in range(0, round_to_batch, BATCH_SIZE):
-        model.zero_grad()
-        model.hidden = model.init_hidden()
-   
-        indices = list(permutation[i:i+BATCH_SIZE])
-        batch_data = [continuous_training_data[index] for index in indices]
-
-        seqs, categories = list(zip(*batch_data))
-        seqs = list(seqs)
-        categories = list(categories)
-        seqs_in = seqs_to_tensor(seqs, char_to_ix)
-        targets = categories_to_tensor(categories, category_to_ix)
-
-        category_scores = model(seqs_in)
-
-        batch_loss = loss_function(category_scores, targets)
-        #if i // BATCH_SIZE % print_per_batch == 0:
-        #    print("batch %d loss %f" % (i // BATCH_SIZE, batch_loss))
-
-        epoch_loss = epoch_loss + batch_loss.data
-        batch_loss.backward()
-        optimizer.step()
-    average_loss = epoch_loss / batch_count
-
-    if epoch % print_per_epoch == 0:
-        t_print = datetime.now()
-        if epoch > 1:
-            t_diff_per_print = t_print - t_last_print
-            print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
-        print("epoch %d loss %f" % (epoch, average_loss))
-        sys.stdout.flush()
-        validation(continuous_validation_data, "continuous")
-        validation(random_validation_data, "random")
-        t_last_print = datetime.now()
-
+train(random_training_data, "random", total_epoch)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
