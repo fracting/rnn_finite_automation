@@ -15,7 +15,7 @@ BATCH_SIZE = 128
 
 print_per_epoch = 50
 print_per_batch = 100
-total_epoch = 5000
+total_epoch = 10000
 
 learning_rate = 0.0015 * BATCH_SIZE
 
@@ -28,7 +28,7 @@ optimizer = optim.SGD(model.parameters(), lr=learning_rate)
 
 training_size = 8192
 validation_size = 1024
-to_random = True
+to_random = False
 dataset = load_dataset("dataset/10div7.txt", to_random)
 all_size = len(dataset)
 print("dataset size: %d, random shuffle: %s" % (all_size, str(to_random)))
