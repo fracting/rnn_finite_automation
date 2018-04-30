@@ -143,7 +143,7 @@ validation(random_training_data, "random_training")
 validation(continuous_validation_data, "continuous_validation")
 validation(random_validation_data, "random_validation")
 print("")
-train(continuous_training_data, "continuous", total_epoch1)
+#train(continuous_training_data, "continuous", total_epoch1)
 train(continuous_training_data+random_training_data, "continuous+random", total_epoch2)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
