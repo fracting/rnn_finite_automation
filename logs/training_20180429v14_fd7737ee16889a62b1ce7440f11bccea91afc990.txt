@@ -1,0 +1,4267 @@
+all_training_data size: 89999
+truncated training_date size: 16384
+batch size: 128
+embedding dim: 6
+hidden dim: 5
+num layers: 2
+learning rate: 0.192000
+
+
+category scores before training: 
+tensor([[-0.9813, -0.4697],
+        [-0.9722, -0.4752],
+        [-0.9668, -0.4785],
+        [-0.9703, -0.4764],
+        [-0.9845, -0.4678],
+        [-0.9789, -0.4712],
+        [-0.9749, -0.4736],
+        [-0.9715, -0.4757],
+        [-0.9751, -0.4735],
+        [-0.9783, -0.4715],
+        [-0.9738, -0.4742],
+        [-0.9633, -0.4806],
+        [-0.9579, -0.4840],
+        [-0.9612, -0.4820],
+        [-0.9772, -0.4722],
+        [-0.9705, -0.4762],
+        [-0.9659, -0.4790],
+        [-0.9620, -0.4814],
+        [-0.9660, -0.4790],
+        [-0.9692, -0.4770],
+        [-0.9614, -0.4818],
+        [-0.9507, -0.4886],
+        [-0.9453, -0.4919],
+        [-0.9520, -0.4877],
+        [-0.9652, -0.4795],
+        [-0.9614, -0.4818],
+        [-0.9547, -0.4860],
+        [-0.9502, -0.4889],
+        [-0.9563, -0.4850],
+        [-0.9517, -0.4879],
+        [-0.9658, -0.4791],
+        [-0.9555, -0.4855],
+        [-0.9497, -0.4892],
+        [-0.9569, -0.4846],
+        [-0.9697, -0.4768],
+        [-0.9666, -0.4786],
+        [-0.9595, -0.4830],
+        [-0.9558, -0.4853],
+        [-0.9609, -0.4821],
+        [-0.9560, -0.4852],
+        [-0.9812, -0.4698],
+        [-0.9709, -0.4760],
+        [-0.9643, -0.4801],
+        [-0.9714, -0.4757],
+        [-0.9862, -0.4668],
+        [-0.9789, -0.4712],
+        [-0.9761, -0.4729],
+        [-0.9680, -0.4778],
+        [-0.9791, -0.4711],
+        [-0.9742, -0.4740],
+        [-0.9761, -0.4729],
+        [-0.9666, -0.4786],
+        [-0.9604, -0.4825],
+        [-0.9651, -0.4795],
+        [-0.9792, -0.4710],
+        [-0.9755, -0.4732],
+        [-0.9688, -0.4773],
+        [-0.9671, -0.4783],
+        [-0.9694, -0.4769],
+        [-0.9693, -0.4770],
+        [-0.9733, -0.4745],
+        [-0.9633, -0.4807],
+        [-0.9571, -0.4845],
+        [-0.9631, -0.4808],
+        [-0.9772, -0.4722],
+        [-0.9726, -0.4750],
+        [-0.9667, -0.4786],
+        [-0.9631, -0.4808],
+        [-0.9678, -0.4779],
+        [-0.9659, -0.4790],
+        [-0.9689, -0.4772],
+        [-0.9582, -0.4838],
+        [-0.9525, -0.4874],
+        [-0.9566, -0.4848],
+        [-0.9718, -0.4755],
+        [-0.9672, -0.4783],
+        [-0.9605, -0.4824],
+        [-0.9575, -0.4842],
+        [-0.9608, -0.4822],
+        [-0.9618, -0.4816],
+        [-0.9766, -0.4726],
+        [-0.9670, -0.4784],
+        [-0.9611, -0.4820],
+        [-0.9665, -0.4787],
+        [-0.9817, -0.4695],
+        [-0.9755, -0.4732],
+        [-0.9706, -0.4762],
+        [-0.9675, -0.4781],
+        [-0.9709, -0.4760],
+        [-0.9710, -0.4759],
+        [-0.9749, -0.4736],
+        [-0.9647, -0.4798],
+        [-0.9585, -0.4836],
+        [-0.9638, -0.4804],
+        [-0.9768, -0.4724],
+        [-0.9726, -0.4750],
+        [-0.9676, -0.4780],
+        [-0.9632, -0.4807],
+        [-0.9687, -0.4774],
+        [-0.9682, -0.4777],
+        [-0.9761, -0.4729],
+        [-0.9664, -0.4788],
+        [-0.9607, -0.4823],
+        [-0.9645, -0.4799],
+        [-0.9791, -0.4710],
+        [-0.9731, -0.4746],
+        [-0.9691, -0.4771],
+        [-0.9652, -0.4795],
+        [-0.9694, -0.4769],
+        [-0.9722, -0.4752],
+        [-0.9675, -0.4781],
+        [-0.9564, -0.4850],
+        [-0.9509, -0.4884],
+        [-0.9542, -0.4863],
+        [-0.9709, -0.4760],
+        [-0.9636, -0.4805],
+        [-0.9590, -0.4833],
+        [-0.9546, -0.4861],
+        [-0.9590, -0.4833],
+        [-0.9622, -0.4813],
+        [-0.9550, -0.4858],
+        [-0.9439, -0.4928],
+        [-0.9389, -0.4960],
+        [-0.9452, -0.4920],
+        [-0.9593, -0.4832],
+        [-0.9547, -0.4860],
+        [-0.9480, -0.4902],
+        [-0.9434, -0.4932]])
+epoch 0 loss 0.432725
+time spent in 10 epoch 0:00:05.029881
+epoch 10 loss 0.410262
+time spent in 10 epoch 0:00:05.117353
+epoch 20 loss 0.410326
+time spent in 10 epoch 0:00:04.872184
+epoch 30 loss 0.410270
+time spent in 10 epoch 0:00:05.041680
+epoch 40 loss 0.410384
+time spent in 10 epoch 0:00:05.090148
+epoch 50 loss 0.410350
+time spent in 10 epoch 0:00:04.793032
+epoch 60 loss 0.410287
+time spent in 10 epoch 0:00:04.748180
+epoch 70 loss 0.410236
+time spent in 10 epoch 0:00:04.805884
+epoch 80 loss 0.410310
+time spent in 10 epoch 0:00:04.764151
+epoch 90 loss 0.410197
+time spent in 10 epoch 0:00:04.762461
+epoch 100 loss 0.410292
+time spent in 10 epoch 0:00:04.765857
+epoch 110 loss 0.410329
+time spent in 10 epoch 0:00:04.829514
+epoch 120 loss 0.410323
+time spent in 10 epoch 0:00:04.775011
+epoch 130 loss 0.410379
+time spent in 10 epoch 0:00:04.800725
+epoch 140 loss 0.410246
+time spent in 10 epoch 0:00:04.800751
+epoch 150 loss 0.410289
+time spent in 10 epoch 0:00:04.868011
+epoch 160 loss 0.410416
+time spent in 10 epoch 0:00:05.222656
+epoch 170 loss 0.410299
+time spent in 10 epoch 0:00:05.126272
+epoch 180 loss 0.410264
+time spent in 10 epoch 0:00:05.028380
+epoch 190 loss 0.410291
+time spent in 10 epoch 0:00:04.911153
+epoch 200 loss 0.410353
+time spent in 10 epoch 0:00:04.853555
+epoch 210 loss 0.410233
+time spent in 10 epoch 0:00:04.907388
+epoch 220 loss 0.410296
+time spent in 10 epoch 0:00:04.907483
+epoch 230 loss 0.410305
+time spent in 10 epoch 0:00:04.935038
+epoch 240 loss 0.410380
+time spent in 10 epoch 0:00:04.952043
+epoch 250 loss 0.410298
+time spent in 10 epoch 0:00:05.008106
+epoch 260 loss 0.410322
+time spent in 10 epoch 0:00:05.006651
+epoch 270 loss 0.410363
+time spent in 10 epoch 0:00:05.009099
+epoch 280 loss 0.410281
+time spent in 10 epoch 0:00:04.908142
+epoch 290 loss 0.410358
+time spent in 10 epoch 0:00:04.841711
+epoch 300 loss 0.410311
+time spent in 10 epoch 0:00:04.866609
+epoch 310 loss 0.410408
+time spent in 10 epoch 0:00:04.908908
+epoch 320 loss 0.410345
+time spent in 10 epoch 0:00:05.057080
+epoch 330 loss 0.410278
+time spent in 10 epoch 0:00:04.938623
+epoch 340 loss 0.410120
+time spent in 10 epoch 0:00:04.954402
+epoch 350 loss 0.410258
+time spent in 10 epoch 0:00:04.972415
+epoch 360 loss 0.410332
+time spent in 10 epoch 0:00:04.902239
+epoch 370 loss 0.410324
+time spent in 10 epoch 0:00:04.954559
+epoch 380 loss 0.410332
+time spent in 10 epoch 0:00:04.915296
+epoch 390 loss 0.410338
+time spent in 10 epoch 0:00:04.993503
+epoch 400 loss 0.410322
+time spent in 10 epoch 0:00:05.078826
+epoch 410 loss 0.410341
+time spent in 10 epoch 0:00:04.907236
+epoch 420 loss 0.410320
+time spent in 10 epoch 0:00:04.877748
+epoch 430 loss 0.410176
+time spent in 10 epoch 0:00:04.831301
+epoch 440 loss 0.410273
+time spent in 10 epoch 0:00:04.832516
+epoch 450 loss 0.410328
+time spent in 10 epoch 0:00:04.998710
+epoch 460 loss 0.410252
+time spent in 10 epoch 0:00:04.915411
+epoch 470 loss 0.410306
+time spent in 10 epoch 0:00:04.877265
+epoch 480 loss 0.410293
+time spent in 10 epoch 0:00:05.072542
+epoch 490 loss 0.410332
+time spent in 10 epoch 0:00:04.968059
+epoch 500 loss 0.410356
+time spent in 10 epoch 0:00:04.965558
+epoch 510 loss 0.410327
+time spent in 10 epoch 0:00:04.984755
+epoch 520 loss 0.410285
+time spent in 10 epoch 0:00:04.959822
+epoch 530 loss 0.410246
+time spent in 10 epoch 0:00:04.927469
+epoch 540 loss 0.410327
+time spent in 10 epoch 0:00:04.984845
+epoch 550 loss 0.410289
+time spent in 10 epoch 0:00:04.903657
+epoch 560 loss 0.410342
+time spent in 10 epoch 0:00:04.833448
+epoch 570 loss 0.410227
+time spent in 10 epoch 0:00:04.843632
+epoch 580 loss 0.410339
+time spent in 10 epoch 0:00:05.045830
+epoch 590 loss 0.410264
+time spent in 10 epoch 0:00:05.020168
+epoch 600 loss 0.410329
+time spent in 10 epoch 0:00:04.930785
+epoch 610 loss 0.410291
+time spent in 10 epoch 0:00:04.963858
+epoch 620 loss 0.410384
+time spent in 10 epoch 0:00:04.943173
+epoch 630 loss 0.410310
+time spent in 10 epoch 0:00:04.985572
+epoch 640 loss 0.410282
+time spent in 10 epoch 0:00:04.936864
+epoch 650 loss 0.410336
+time spent in 10 epoch 0:00:04.962465
+epoch 660 loss 0.410207
+time spent in 10 epoch 0:00:05.015519
+epoch 670 loss 0.410329
+time spent in 10 epoch 0:00:05.120196
+epoch 680 loss 0.410125
+time spent in 10 epoch 0:00:05.142522
+epoch 690 loss 0.410277
+time spent in 10 epoch 0:00:05.018853
+epoch 700 loss 0.410291
+time spent in 10 epoch 0:00:04.876624
+epoch 710 loss 0.410308
+time spent in 10 epoch 0:00:04.920566
+epoch 720 loss 0.410314
+time spent in 10 epoch 0:00:04.886143
+epoch 730 loss 0.410361
+time spent in 10 epoch 0:00:05.120634
+epoch 740 loss 0.410361
+time spent in 10 epoch 0:00:05.011509
+epoch 750 loss 0.410308
+time spent in 10 epoch 0:00:04.760003
+epoch 760 loss 0.410304
+time spent in 10 epoch 0:00:04.796671
+epoch 770 loss 0.410331
+time spent in 10 epoch 0:00:04.746977
+epoch 780 loss 0.410194
+time spent in 10 epoch 0:00:04.775884
+epoch 790 loss 0.410336
+time spent in 10 epoch 0:00:04.734686
+epoch 800 loss 0.410297
+time spent in 10 epoch 0:00:04.717572
+epoch 810 loss 0.410309
+time spent in 10 epoch 0:00:04.751323
+epoch 820 loss 0.410322
+time spent in 10 epoch 0:00:04.748638
+epoch 830 loss 0.410278
+time spent in 10 epoch 0:00:04.745629
+epoch 840 loss 0.410298
+time spent in 10 epoch 0:00:04.733080
+epoch 850 loss 0.410318
+time spent in 10 epoch 0:00:04.751067
+epoch 860 loss 0.410322
+time spent in 10 epoch 0:00:04.738240
+epoch 870 loss 0.410298
+time spent in 10 epoch 0:00:04.742467
+epoch 880 loss 0.410246
+time spent in 10 epoch 0:00:04.749688
+epoch 890 loss 0.410301
+time spent in 10 epoch 0:00:04.742578
+epoch 900 loss 0.410289
+time spent in 10 epoch 0:00:04.715681
+epoch 910 loss 0.410245
+time spent in 10 epoch 0:00:04.752687
+epoch 920 loss 0.410287
+time spent in 10 epoch 0:00:04.736957
+epoch 930 loss 0.410323
+time spent in 10 epoch 0:00:04.751676
+epoch 940 loss 0.410298
+time spent in 10 epoch 0:00:04.798632
+epoch 950 loss 0.410084
+time spent in 10 epoch 0:00:04.742906
+epoch 960 loss 0.410318
+time spent in 10 epoch 0:00:04.738137
+epoch 970 loss 0.410316
+time spent in 10 epoch 0:00:04.738865
+epoch 980 loss 0.410331
+time spent in 10 epoch 0:00:04.721162
+epoch 990 loss 0.410259
+time spent in 10 epoch 0:00:04.760958
+epoch 1000 loss 0.410285
+time spent in 10 epoch 0:00:04.714412
+epoch 1010 loss 0.410356
+time spent in 10 epoch 0:00:04.733672
+epoch 1020 loss 0.410197
+time spent in 10 epoch 0:00:04.709371
+epoch 1030 loss 0.410332
+time spent in 10 epoch 0:00:04.720070
+epoch 1040 loss 0.410246
+time spent in 10 epoch 0:00:04.837250
+epoch 1050 loss 0.410347
+time spent in 10 epoch 0:00:04.742998
+epoch 1060 loss 0.410285
+time spent in 10 epoch 0:00:04.712133
+epoch 1070 loss 0.410312
+time spent in 10 epoch 0:00:04.731825
+epoch 1080 loss 0.410341
+time spent in 10 epoch 0:00:04.797710
+epoch 1090 loss 0.410339
+time spent in 10 epoch 0:00:04.743061
+epoch 1100 loss 0.410260
+time spent in 10 epoch 0:00:04.755314
+epoch 1110 loss 0.410343
+time spent in 10 epoch 0:00:04.747911
+epoch 1120 loss 0.410252
+time spent in 10 epoch 0:00:04.768677
+epoch 1130 loss 0.410338
+time spent in 10 epoch 0:00:04.721144
+epoch 1140 loss 0.410330
+time spent in 10 epoch 0:00:04.741185
+epoch 1150 loss 0.410331
+time spent in 10 epoch 0:00:04.740156
+epoch 1160 loss 0.410260
+time spent in 10 epoch 0:00:04.743171
+epoch 1170 loss 0.410292
+time spent in 10 epoch 0:00:04.736008
+epoch 1180 loss 0.410259
+time spent in 10 epoch 0:00:04.751460
+epoch 1190 loss 0.410288
+time spent in 10 epoch 0:00:04.752358
+epoch 1200 loss 0.410370
+time spent in 10 epoch 0:00:04.821283
+epoch 1210 loss 0.410338
+time spent in 10 epoch 0:00:04.794577
+epoch 1220 loss 0.410227
+time spent in 10 epoch 0:00:04.703240
+epoch 1230 loss 0.410147
+time spent in 10 epoch 0:00:04.764591
+epoch 1240 loss 0.410308
+time spent in 10 epoch 0:00:04.744339
+epoch 1250 loss 0.410318
+time spent in 10 epoch 0:00:04.733891
+epoch 1260 loss 0.410333
+time spent in 10 epoch 0:00:04.712428
+epoch 1270 loss 0.410352
+time spent in 10 epoch 0:00:04.733405
+epoch 1280 loss 0.410302
+time spent in 10 epoch 0:00:04.720315
+epoch 1290 loss 0.410256
+time spent in 10 epoch 0:00:04.740645
+epoch 1300 loss 0.410270
+time spent in 10 epoch 0:00:04.736343
+epoch 1310 loss 0.410251
+time spent in 10 epoch 0:00:04.728468
+epoch 1320 loss 0.410234
+time spent in 10 epoch 0:00:04.730826
+epoch 1330 loss 0.410325
+time spent in 10 epoch 0:00:04.744412
+epoch 1340 loss 0.410264
+time spent in 10 epoch 0:00:04.731328
+epoch 1350 loss 0.410333
+time spent in 10 epoch 0:00:04.735441
+epoch 1360 loss 0.410320
+time spent in 10 epoch 0:00:04.743744
+epoch 1370 loss 0.410332
+time spent in 10 epoch 0:00:04.712272
+epoch 1380 loss 0.410291
+time spent in 10 epoch 0:00:04.724968
+epoch 1390 loss 0.410295
+time spent in 10 epoch 0:00:04.712010
+epoch 1400 loss 0.410315
+time spent in 10 epoch 0:00:04.748488
+epoch 1410 loss 0.410279
+time spent in 10 epoch 0:00:04.729942
+epoch 1420 loss 0.410289
+time spent in 10 epoch 0:00:04.700431
+epoch 1430 loss 0.410298
+time spent in 10 epoch 0:00:04.705240
+epoch 1440 loss 0.410301
+time spent in 10 epoch 0:00:04.747929
+epoch 1450 loss 0.410342
+time spent in 10 epoch 0:00:04.770885
+epoch 1460 loss 0.410299
+time spent in 10 epoch 0:00:04.747649
+epoch 1470 loss 0.410278
+time spent in 10 epoch 0:00:04.733236
+epoch 1480 loss 0.410305
+time spent in 10 epoch 0:00:04.742225
+epoch 1490 loss 0.410361
+time spent in 10 epoch 0:00:04.718605
+epoch 1500 loss 0.410316
+time spent in 10 epoch 0:00:04.722567
+epoch 1510 loss 0.410280
+time spent in 10 epoch 0:00:04.765021
+epoch 1520 loss 0.410285
+time spent in 10 epoch 0:00:04.757520
+epoch 1530 loss 0.410320
+time spent in 10 epoch 0:00:04.740876
+epoch 1540 loss 0.410360
+time spent in 10 epoch 0:00:04.722213
+epoch 1550 loss 0.410278
+time spent in 10 epoch 0:00:04.731252
+epoch 1560 loss 0.410325
+time spent in 10 epoch 0:00:04.732162
+epoch 1570 loss 0.410299
+time spent in 10 epoch 0:00:04.757968
+epoch 1580 loss 0.410258
+time spent in 10 epoch 0:00:04.774033
+epoch 1590 loss 0.410342
+time spent in 10 epoch 0:00:04.783281
+epoch 1600 loss 0.410297
+time spent in 10 epoch 0:00:04.768777
+epoch 1610 loss 0.410244
+time spent in 10 epoch 0:00:04.808114
+epoch 1620 loss 0.410322
+time spent in 10 epoch 0:00:04.770522
+epoch 1630 loss 0.410275
+time spent in 10 epoch 0:00:04.773416
+epoch 1640 loss 0.410332
+time spent in 10 epoch 0:00:04.754659
+epoch 1650 loss 0.410304
+time spent in 10 epoch 0:00:04.776981
+epoch 1660 loss 0.410353
+time spent in 10 epoch 0:00:04.775479
+epoch 1670 loss 0.410319
+time spent in 10 epoch 0:00:04.729036
+epoch 1680 loss 0.410287
+time spent in 10 epoch 0:00:04.790427
+epoch 1690 loss 0.410330
+time spent in 10 epoch 0:00:04.763560
+epoch 1700 loss 0.410329
+time spent in 10 epoch 0:00:04.739541
+epoch 1710 loss 0.410311
+time spent in 10 epoch 0:00:04.790977
+epoch 1720 loss 0.410253
+time spent in 10 epoch 0:00:04.715772
+epoch 1730 loss 0.410290
+time spent in 10 epoch 0:00:04.757412
+epoch 1740 loss 0.410358
+time spent in 10 epoch 0:00:04.730034
+epoch 1750 loss 0.410328
+time spent in 10 epoch 0:00:04.755681
+epoch 1760 loss 0.410330
+time spent in 10 epoch 0:00:04.722193
+epoch 1770 loss 0.410315
+time spent in 10 epoch 0:00:04.712435
+epoch 1780 loss 0.410323
+time spent in 10 epoch 0:00:04.785041
+epoch 1790 loss 0.410221
+time spent in 10 epoch 0:00:04.744206
+epoch 1800 loss 0.410220
+time spent in 10 epoch 0:00:04.722033
+epoch 1810 loss 0.410271
+time spent in 10 epoch 0:00:04.732736
+epoch 1820 loss 0.410327
+time spent in 10 epoch 0:00:04.728690
+epoch 1830 loss 0.410288
+time spent in 10 epoch 0:00:04.745764
+epoch 1840 loss 0.410315
+time spent in 10 epoch 0:00:04.758319
+epoch 1850 loss 0.410310
+time spent in 10 epoch 0:00:04.753929
+epoch 1860 loss 0.410295
+time spent in 10 epoch 0:00:04.744015
+epoch 1870 loss 0.410282
+time spent in 10 epoch 0:00:04.749901
+epoch 1880 loss 0.410353
+time spent in 10 epoch 0:00:04.741438
+epoch 1890 loss 0.410349
+time spent in 10 epoch 0:00:04.710581
+epoch 1900 loss 0.410308
+time spent in 10 epoch 0:00:04.732815
+epoch 1910 loss 0.410306
+time spent in 10 epoch 0:00:04.752413
+epoch 1920 loss 0.410330
+time spent in 10 epoch 0:00:04.703300
+epoch 1930 loss 0.410283
+time spent in 10 epoch 0:00:04.725683
+epoch 1940 loss 0.410266
+time spent in 10 epoch 0:00:04.738773
+epoch 1950 loss 0.410280
+time spent in 10 epoch 0:00:04.764579
+epoch 1960 loss 0.410293
+time spent in 10 epoch 0:00:04.722819
+epoch 1970 loss 0.410281
+time spent in 10 epoch 0:00:04.703432
+epoch 1980 loss 0.410301
+time spent in 10 epoch 0:00:04.680245
+epoch 1990 loss 0.410237
+time spent in 10 epoch 0:00:04.746470
+epoch 2000 loss 0.410283
+time spent in 10 epoch 0:00:04.724192
+epoch 2010 loss 0.410261
+time spent in 10 epoch 0:00:04.743783
+epoch 2020 loss 0.410298
+time spent in 10 epoch 0:00:04.732566
+epoch 2030 loss 0.410280
+time spent in 10 epoch 0:00:04.734620
+epoch 2040 loss 0.410268
+time spent in 10 epoch 0:00:04.732442
+epoch 2050 loss 0.410320
+time spent in 10 epoch 0:00:04.722914
+epoch 2060 loss 0.410078
+time spent in 10 epoch 0:00:04.743996
+epoch 2070 loss 0.410248
+time spent in 10 epoch 0:00:04.722783
+epoch 2080 loss 0.410342
+time spent in 10 epoch 0:00:04.746679
+epoch 2090 loss 0.410247
+time spent in 10 epoch 0:00:04.735101
+epoch 2100 loss 0.410329
+time spent in 10 epoch 0:00:04.725188
+epoch 2110 loss 0.410284
+time spent in 10 epoch 0:00:04.734713
+epoch 2120 loss 0.410331
+time spent in 10 epoch 0:00:04.765637
+epoch 2130 loss 0.410296
+time spent in 10 epoch 0:00:04.722666
+epoch 2140 loss 0.410328
+time spent in 10 epoch 0:00:04.742784
+epoch 2150 loss 0.410254
+time spent in 10 epoch 0:00:04.725081
+epoch 2160 loss 0.410327
+time spent in 10 epoch 0:00:04.785910
+epoch 2170 loss 0.410303
+time spent in 10 epoch 0:00:04.768860
+epoch 2180 loss 0.410320
+time spent in 10 epoch 0:00:04.733838
+epoch 2190 loss 0.410256
+time spent in 10 epoch 0:00:04.709104
+epoch 2200 loss 0.410288
+time spent in 10 epoch 0:00:04.682751
+epoch 2210 loss 0.410201
+time spent in 10 epoch 0:00:04.736476
+epoch 2220 loss 0.410278
+time spent in 10 epoch 0:00:04.742210
+epoch 2230 loss 0.410250
+time spent in 10 epoch 0:00:04.724781
+epoch 2240 loss 0.410313
+time spent in 10 epoch 0:00:04.761710
+epoch 2250 loss 0.410256
+time spent in 10 epoch 0:00:04.721159
+epoch 2260 loss 0.410357
+time spent in 10 epoch 0:00:04.709190
+epoch 2270 loss 0.410329
+time spent in 10 epoch 0:00:04.815581
+epoch 2280 loss 0.410258
+time spent in 10 epoch 0:00:04.787714
+epoch 2290 loss 0.410255
+time spent in 10 epoch 0:00:04.723467
+epoch 2300 loss 0.410212
+time spent in 10 epoch 0:00:04.712401
+epoch 2310 loss 0.410205
+time spent in 10 epoch 0:00:04.734430
+epoch 2320 loss 0.410285
+time spent in 10 epoch 0:00:04.751958
+epoch 2330 loss 0.410213
+time spent in 10 epoch 0:00:04.736525
+epoch 2340 loss 0.410257
+time spent in 10 epoch 0:00:04.700434
+epoch 2350 loss 0.410309
+time spent in 10 epoch 0:00:04.708281
+epoch 2360 loss 0.410281
+time spent in 10 epoch 0:00:04.735281
+epoch 2370 loss 0.410235
+time spent in 10 epoch 0:00:04.737901
+epoch 2380 loss 0.410241
+time spent in 10 epoch 0:00:04.722826
+epoch 2390 loss 0.410290
+time spent in 10 epoch 0:00:04.718831
+epoch 2400 loss 0.410367
+time spent in 10 epoch 0:00:04.715205
+epoch 2410 loss 0.410309
+time spent in 10 epoch 0:00:04.724845
+epoch 2420 loss 0.410329
+time spent in 10 epoch 0:00:04.721460
+epoch 2430 loss 0.410302
+time spent in 10 epoch 0:00:04.793324
+epoch 2440 loss 0.410283
+time spent in 10 epoch 0:00:04.715310
+epoch 2450 loss 0.410283
+time spent in 10 epoch 0:00:04.707478
+epoch 2460 loss 0.410249
+time spent in 10 epoch 0:00:04.723353
+epoch 2470 loss 0.410314
+time spent in 10 epoch 0:00:04.758769
+epoch 2480 loss 0.410162
+time spent in 10 epoch 0:00:04.710645
+epoch 2490 loss 0.410335
+time spent in 10 epoch 0:00:04.742910
+epoch 2500 loss 0.410251
+time spent in 10 epoch 0:00:04.752828
+epoch 2510 loss 0.410297
+time spent in 10 epoch 0:00:04.731280
+epoch 2520 loss 0.410274
+time spent in 10 epoch 0:00:04.721733
+epoch 2530 loss 0.410310
+time spent in 10 epoch 0:00:04.734123
+epoch 2540 loss 0.410314
+time spent in 10 epoch 0:00:04.725429
+epoch 2550 loss 0.410324
+time spent in 10 epoch 0:00:04.734322
+epoch 2560 loss 0.410364
+time spent in 10 epoch 0:00:04.707526
+epoch 2570 loss 0.410258
+time spent in 10 epoch 0:00:04.734097
+epoch 2580 loss 0.410292
+time spent in 10 epoch 0:00:04.745361
+epoch 2590 loss 0.410252
+time spent in 10 epoch 0:00:04.777218
+epoch 2600 loss 0.410334
+time spent in 10 epoch 0:00:04.744813
+epoch 2610 loss 0.410260
+time spent in 10 epoch 0:00:04.723798
+epoch 2620 loss 0.410314
+time spent in 10 epoch 0:00:04.722228
+epoch 2630 loss 0.410207
+time spent in 10 epoch 0:00:04.706281
+epoch 2640 loss 0.410316
+time spent in 10 epoch 0:00:04.751408
+epoch 2650 loss 0.410280
+time spent in 10 epoch 0:00:04.716125
+epoch 2660 loss 0.410268
+time spent in 10 epoch 0:00:04.760005
+epoch 2670 loss 0.410277
+time spent in 10 epoch 0:00:04.745128
+epoch 2680 loss 0.410241
+time spent in 10 epoch 0:00:04.712824
+epoch 2690 loss 0.410240
+time spent in 10 epoch 0:00:04.740186
+epoch 2700 loss 0.410305
+time spent in 10 epoch 0:00:04.745154
+epoch 2710 loss 0.410181
+time spent in 10 epoch 0:00:04.756065
+epoch 2720 loss 0.410324
+time spent in 10 epoch 0:00:04.727296
+epoch 2730 loss 0.410311
+time spent in 10 epoch 0:00:04.735999
+epoch 2740 loss 0.410199
+time spent in 10 epoch 0:00:04.720666
+epoch 2750 loss 0.410288
+time spent in 10 epoch 0:00:04.717655
+epoch 2760 loss 0.410306
+time spent in 10 epoch 0:00:04.740814
+epoch 2770 loss 0.410281
+time spent in 10 epoch 0:00:04.737856
+epoch 2780 loss 0.410260
+time spent in 10 epoch 0:00:04.726151
+epoch 2790 loss 0.410238
+time spent in 10 epoch 0:00:04.758945
+epoch 2800 loss 0.410202
+time spent in 10 epoch 0:00:04.737677
+epoch 2810 loss 0.410295
+time spent in 10 epoch 0:00:04.716427
+epoch 2820 loss 0.410212
+time spent in 10 epoch 0:00:04.729434
+epoch 2830 loss 0.410248
+time spent in 10 epoch 0:00:04.727670
+epoch 2840 loss 0.410318
+time spent in 10 epoch 0:00:04.731999
+epoch 2850 loss 0.410345
+time spent in 10 epoch 0:00:04.706314
+epoch 2860 loss 0.410252
+time spent in 10 epoch 0:00:04.715963
+epoch 2870 loss 0.410191
+time spent in 10 epoch 0:00:04.751665
+epoch 2880 loss 0.410306
+time spent in 10 epoch 0:00:04.745694
+epoch 2890 loss 0.410111
+time spent in 10 epoch 0:00:04.732401
+epoch 2900 loss 0.410297
+time spent in 10 epoch 0:00:04.840086
+epoch 2910 loss 0.410278
+time spent in 10 epoch 0:00:04.750692
+epoch 2920 loss 0.410295
+time spent in 10 epoch 0:00:04.760838
+epoch 2930 loss 0.410346
+time spent in 10 epoch 0:00:04.739148
+epoch 2940 loss 0.410339
+time spent in 10 epoch 0:00:04.741753
+epoch 2950 loss 0.410347
+time spent in 10 epoch 0:00:04.747924
+epoch 2960 loss 0.410308
+time spent in 10 epoch 0:00:04.781205
+epoch 2970 loss 0.410306
+time spent in 10 epoch 0:00:04.752654
+epoch 2980 loss 0.410227
+time spent in 10 epoch 0:00:04.731835
+epoch 2990 loss 0.410286
+time spent in 10 epoch 0:00:04.727838
+epoch 3000 loss 0.410193
+time spent in 10 epoch 0:00:04.733734
+epoch 3010 loss 0.410299
+time spent in 10 epoch 0:00:04.729263
+epoch 3020 loss 0.410332
+time spent in 10 epoch 0:00:04.714963
+epoch 3030 loss 0.410247
+time spent in 10 epoch 0:00:04.723013
+epoch 3040 loss 0.410347
+time spent in 10 epoch 0:00:04.750526
+epoch 3050 loss 0.410282
+time spent in 10 epoch 0:00:04.756683
+epoch 3060 loss 0.410273
+time spent in 10 epoch 0:00:04.818781
+epoch 3070 loss 0.410321
+time spent in 10 epoch 0:00:04.734711
+epoch 3080 loss 0.410249
+time spent in 10 epoch 0:00:04.782744
+epoch 3090 loss 0.410331
+time spent in 10 epoch 0:00:04.754120
+epoch 3100 loss 0.410281
+time spent in 10 epoch 0:00:04.793003
+epoch 3110 loss 0.410302
+time spent in 10 epoch 0:00:04.715940
+epoch 3120 loss 0.410325
+time spent in 10 epoch 0:00:04.736683
+epoch 3130 loss 0.410321
+time spent in 10 epoch 0:00:04.737787
+epoch 3140 loss 0.410337
+time spent in 10 epoch 0:00:04.724257
+epoch 3150 loss 0.410286
+time spent in 10 epoch 0:00:04.767812
+epoch 3160 loss 0.410206
+time spent in 10 epoch 0:00:04.719810
+epoch 3170 loss 0.410310
+time spent in 10 epoch 0:00:04.740133
+epoch 3180 loss 0.410244
+time spent in 10 epoch 0:00:04.744738
+epoch 3190 loss 0.410292
+time spent in 10 epoch 0:00:04.778142
+epoch 3200 loss 0.410284
+time spent in 10 epoch 0:00:04.702945
+epoch 3210 loss 0.410193
+time spent in 10 epoch 0:00:04.733624
+epoch 3220 loss 0.410276
+time spent in 10 epoch 0:00:04.716098
+epoch 3230 loss 0.410274
+time spent in 10 epoch 0:00:04.753179
+epoch 3240 loss 0.410269
+time spent in 10 epoch 0:00:04.703566
+epoch 3250 loss 0.410312
+time spent in 10 epoch 0:00:04.734409
+epoch 3260 loss 0.410298
+time spent in 10 epoch 0:00:04.736132
+epoch 3270 loss 0.410296
+time spent in 10 epoch 0:00:04.730398
+epoch 3280 loss 0.410301
+time spent in 10 epoch 0:00:04.723831
+epoch 3290 loss 0.410291
+time spent in 10 epoch 0:00:04.827040
+epoch 3300 loss 0.410296
+time spent in 10 epoch 0:00:04.754805
+epoch 3310 loss 0.410216
+time spent in 10 epoch 0:00:04.749775
+epoch 3320 loss 0.410263
+time spent in 10 epoch 0:00:04.709176
+epoch 3330 loss 0.410271
+time spent in 10 epoch 0:00:04.710530
+epoch 3340 loss 0.410281
+time spent in 10 epoch 0:00:04.742987
+epoch 3350 loss 0.410315
+time spent in 10 epoch 0:00:04.703636
+epoch 3360 loss 0.410306
+time spent in 10 epoch 0:00:04.731577
+epoch 3370 loss 0.410282
+time spent in 10 epoch 0:00:04.718004
+epoch 3380 loss 0.410285
+time spent in 10 epoch 0:00:04.738535
+epoch 3390 loss 0.410296
+time spent in 10 epoch 0:00:04.698717
+epoch 3400 loss 0.410326
+time spent in 10 epoch 0:00:04.730241
+epoch 3410 loss 0.410246
+time spent in 10 epoch 0:00:04.725671
+epoch 3420 loss 0.410322
+time spent in 10 epoch 0:00:04.788816
+epoch 3430 loss 0.410285
+time spent in 10 epoch 0:00:04.773209
+epoch 3440 loss 0.410309
+time spent in 10 epoch 0:00:04.724000
+epoch 3450 loss 0.410297
+time spent in 10 epoch 0:00:04.717874
+epoch 3460 loss 0.410251
+time spent in 10 epoch 0:00:04.739030
+epoch 3470 loss 0.410323
+time spent in 10 epoch 0:00:04.711197
+epoch 3480 loss 0.410193
+time spent in 10 epoch 0:00:04.711409
+epoch 3490 loss 0.410321
+time spent in 10 epoch 0:00:04.703925
+epoch 3500 loss 0.410290
+time spent in 10 epoch 0:00:04.696702
+epoch 3510 loss 0.410308
+time spent in 10 epoch 0:00:04.709058
+epoch 3520 loss 0.410201
+time spent in 10 epoch 0:00:04.716294
+epoch 3530 loss 0.410277
+time spent in 10 epoch 0:00:04.725178
+epoch 3540 loss 0.410245
+time spent in 10 epoch 0:00:04.734973
+epoch 3550 loss 0.410315
+time spent in 10 epoch 0:00:04.729395
+epoch 3560 loss 0.410304
+time spent in 10 epoch 0:00:04.718079
+epoch 3570 loss 0.410239
+time spent in 10 epoch 0:00:04.721492
+epoch 3580 loss 0.410323
+time spent in 10 epoch 0:00:04.758421
+epoch 3590 loss 0.410237
+time spent in 10 epoch 0:00:04.740430
+epoch 3600 loss 0.410234
+time spent in 10 epoch 0:00:04.724346
+epoch 3610 loss 0.410262
+time spent in 10 epoch 0:00:04.748521
+epoch 3620 loss 0.410251
+time spent in 10 epoch 0:00:04.847226
+epoch 3630 loss 0.410362
+time spent in 10 epoch 0:00:04.808905
+epoch 3640 loss 0.410360
+time spent in 10 epoch 0:00:04.732385
+epoch 3650 loss 0.410207
+time spent in 10 epoch 0:00:04.712058
+epoch 3660 loss 0.410315
+time spent in 10 epoch 0:00:04.711178
+epoch 3670 loss 0.410300
+time spent in 10 epoch 0:00:04.724917
+epoch 3680 loss 0.410203
+time spent in 10 epoch 0:00:04.708562
+epoch 3690 loss 0.410313
+time spent in 10 epoch 0:00:04.846794
+epoch 3700 loss 0.410303
+time spent in 10 epoch 0:00:04.712251
+epoch 3710 loss 0.410223
+time spent in 10 epoch 0:00:04.769019
+epoch 3720 loss 0.410343
+time spent in 10 epoch 0:00:04.715517
+epoch 3730 loss 0.410320
+time spent in 10 epoch 0:00:04.728149
+epoch 3740 loss 0.410238
+time spent in 10 epoch 0:00:04.730983
+epoch 3750 loss 0.410271
+time spent in 10 epoch 0:00:04.712003
+epoch 3760 loss 0.410304
+time spent in 10 epoch 0:00:04.703997
+epoch 3770 loss 0.410256
+time spent in 10 epoch 0:00:04.720541
+epoch 3780 loss 0.410335
+time spent in 10 epoch 0:00:04.734110
+epoch 3790 loss 0.410312
+time spent in 10 epoch 0:00:04.738735
+epoch 3800 loss 0.410303
+time spent in 10 epoch 0:00:04.740454
+epoch 3810 loss 0.410312
+time spent in 10 epoch 0:00:04.710659
+epoch 3820 loss 0.410255
+time spent in 10 epoch 0:00:04.702447
+epoch 3830 loss 0.410322
+time spent in 10 epoch 0:00:04.721220
+epoch 3840 loss 0.410211
+time spent in 10 epoch 0:00:04.733383
+epoch 3850 loss 0.410261
+time spent in 10 epoch 0:00:04.726014
+epoch 3860 loss 0.410305
+time spent in 10 epoch 0:00:04.718312
+epoch 3870 loss 0.410204
+time spent in 10 epoch 0:00:04.731138
+epoch 3880 loss 0.410316
+time spent in 10 epoch 0:00:04.717228
+epoch 3890 loss 0.410251
+time spent in 10 epoch 0:00:04.722710
+epoch 3900 loss 0.410256
+time spent in 10 epoch 0:00:04.708337
+epoch 3910 loss 0.410196
+time spent in 10 epoch 0:00:04.710057
+epoch 3920 loss 0.410224
+time spent in 10 epoch 0:00:04.752091
+epoch 3930 loss 0.410293
+time spent in 10 epoch 0:00:04.763192
+epoch 3940 loss 0.410221
+time spent in 10 epoch 0:00:04.707845
+epoch 3950 loss 0.410302
+time spent in 10 epoch 0:00:04.736486
+epoch 3960 loss 0.410246
+time spent in 10 epoch 0:00:04.725323
+epoch 3970 loss 0.410297
+time spent in 10 epoch 0:00:04.758399
+epoch 3980 loss 0.410296
+time spent in 10 epoch 0:00:04.798205
+epoch 3990 loss 0.410332
+time spent in 10 epoch 0:00:04.744991
+epoch 4000 loss 0.410272
+time spent in 10 epoch 0:00:04.771465
+epoch 4010 loss 0.410254
+time spent in 10 epoch 0:00:04.720318
+epoch 4020 loss 0.410329
+time spent in 10 epoch 0:00:04.731278
+epoch 4030 loss 0.410343
+time spent in 10 epoch 0:00:04.740716
+epoch 4040 loss 0.410321
+time spent in 10 epoch 0:00:04.729579
+epoch 4050 loss 0.410259
+time spent in 10 epoch 0:00:04.723536
+epoch 4060 loss 0.410225
+time spent in 10 epoch 0:00:04.736572
+epoch 4070 loss 0.410313
+time spent in 10 epoch 0:00:04.760333
+epoch 4080 loss 0.410213
+time spent in 10 epoch 0:00:04.719818
+epoch 4090 loss 0.410267
+time spent in 10 epoch 0:00:04.752245
+epoch 4100 loss 0.410189
+time spent in 10 epoch 0:00:04.732383
+epoch 4110 loss 0.410258
+time spent in 10 epoch 0:00:04.738357
+epoch 4120 loss 0.410250
+time spent in 10 epoch 0:00:04.728566
+epoch 4130 loss 0.410353
+time spent in 10 epoch 0:00:04.737691
+epoch 4140 loss 0.410308
+time spent in 10 epoch 0:00:04.729760
+epoch 4150 loss 0.410254
+time spent in 10 epoch 0:00:04.730992
+epoch 4160 loss 0.410280
+time spent in 10 epoch 0:00:04.776961
+epoch 4170 loss 0.410261
+time spent in 10 epoch 0:00:04.857152
+epoch 4180 loss 0.410322
+time spent in 10 epoch 0:00:04.771683
+epoch 4190 loss 0.410224
+time spent in 10 epoch 0:00:04.726307
+epoch 4200 loss 0.410249
+time spent in 10 epoch 0:00:04.712152
+epoch 4210 loss 0.410341
+time spent in 10 epoch 0:00:04.751772
+epoch 4220 loss 0.410303
+time spent in 10 epoch 0:00:04.715043
+epoch 4230 loss 0.410304
+time spent in 10 epoch 0:00:04.727121
+epoch 4240 loss 0.410236
+time spent in 10 epoch 0:00:04.733606
+epoch 4250 loss 0.410225
+time spent in 10 epoch 0:00:04.738952
+epoch 4260 loss 0.410264
+time spent in 10 epoch 0:00:04.719663
+epoch 4270 loss 0.410321
+time spent in 10 epoch 0:00:04.725484
+epoch 4280 loss 0.410336
+time spent in 10 epoch 0:00:04.691356
+epoch 4290 loss 0.410273
+time spent in 10 epoch 0:00:04.730009
+epoch 4300 loss 0.410293
+time spent in 10 epoch 0:00:04.718281
+epoch 4310 loss 0.410247
+time spent in 10 epoch 0:00:04.733603
+epoch 4320 loss 0.410241
+time spent in 10 epoch 0:00:04.755341
+epoch 4330 loss 0.410293
+time spent in 10 epoch 0:00:04.723952
+epoch 4340 loss 0.410278
+time spent in 10 epoch 0:00:04.773996
+epoch 4350 loss 0.410217
+time spent in 10 epoch 0:00:04.724532
+epoch 4360 loss 0.410347
+time spent in 10 epoch 0:00:04.709959
+epoch 4370 loss 0.410282
+time spent in 10 epoch 0:00:04.768296
+epoch 4380 loss 0.410260
+time spent in 10 epoch 0:00:04.758295
+epoch 4390 loss 0.410237
+time spent in 10 epoch 0:00:04.720012
+epoch 4400 loss 0.410313
+time spent in 10 epoch 0:00:04.736895
+epoch 4410 loss 0.410262
+time spent in 10 epoch 0:00:04.739696
+epoch 4420 loss 0.410317
+time spent in 10 epoch 0:00:04.734158
+epoch 4430 loss 0.410267
+time spent in 10 epoch 0:00:04.737564
+epoch 4440 loss 0.410139
+time spent in 10 epoch 0:00:04.734900
+epoch 4450 loss 0.410335
+time spent in 10 epoch 0:00:04.748735
+epoch 4460 loss 0.410289
+time spent in 10 epoch 0:00:04.740029
+epoch 4470 loss 0.410278
+time spent in 10 epoch 0:00:04.732802
+epoch 4480 loss 0.410276
+time spent in 10 epoch 0:00:04.740252
+epoch 4490 loss 0.410274
+time spent in 10 epoch 0:00:04.718562
+epoch 4500 loss 0.410277
+time spent in 10 epoch 0:00:04.716593
+epoch 4510 loss 0.410297
+time spent in 10 epoch 0:00:04.740863
+epoch 4520 loss 0.410300
+time spent in 10 epoch 0:00:04.753538
+epoch 4530 loss 0.410251
+time spent in 10 epoch 0:00:04.730349
+epoch 4540 loss 0.410316
+time spent in 10 epoch 0:00:04.752393
+epoch 4550 loss 0.410246
+time spent in 10 epoch 0:00:04.729847
+epoch 4560 loss 0.410258
+time spent in 10 epoch 0:00:04.709220
+epoch 4570 loss 0.410225
+time spent in 10 epoch 0:00:04.706637
+epoch 4580 loss 0.410308
+time spent in 10 epoch 0:00:04.740661
+epoch 4590 loss 0.410273
+time spent in 10 epoch 0:00:04.748318
+epoch 4600 loss 0.410293
+time spent in 10 epoch 0:00:04.727014
+epoch 4610 loss 0.410292
+time spent in 10 epoch 0:00:04.729821
+epoch 4620 loss 0.410263
+time spent in 10 epoch 0:00:04.728003
+epoch 4630 loss 0.410287
+time spent in 10 epoch 0:00:04.743711
+epoch 4640 loss 0.410325
+time spent in 10 epoch 0:00:04.705023
+epoch 4650 loss 0.410294
+time spent in 10 epoch 0:00:04.761800
+epoch 4660 loss 0.410220
+time spent in 10 epoch 0:00:04.723453
+epoch 4670 loss 0.410308
+time spent in 10 epoch 0:00:04.731836
+epoch 4680 loss 0.410313
+time spent in 10 epoch 0:00:04.720989
+epoch 4690 loss 0.410269
+time spent in 10 epoch 0:00:04.796934
+epoch 4700 loss 0.410338
+time spent in 10 epoch 0:00:04.764952
+epoch 4710 loss 0.410280
+time spent in 10 epoch 0:00:04.729185
+epoch 4720 loss 0.410268
+time spent in 10 epoch 0:00:04.745133
+epoch 4730 loss 0.410239
+time spent in 10 epoch 0:00:04.725767
+epoch 4740 loss 0.410346
+time spent in 10 epoch 0:00:04.739051
+epoch 4750 loss 0.410212
+time spent in 10 epoch 0:00:04.755295
+epoch 4760 loss 0.410288
+time spent in 10 epoch 0:00:04.742374
+epoch 4770 loss 0.410239
+time spent in 10 epoch 0:00:04.730378
+epoch 4780 loss 0.410286
+time spent in 10 epoch 0:00:04.751375
+epoch 4790 loss 0.410262
+time spent in 10 epoch 0:00:04.722658
+epoch 4800 loss 0.410265
+time spent in 10 epoch 0:00:04.749191
+epoch 4810 loss 0.410298
+time spent in 10 epoch 0:00:04.764943
+epoch 4820 loss 0.410343
+time spent in 10 epoch 0:00:04.738856
+epoch 4830 loss 0.410243
+time spent in 10 epoch 0:00:04.710988
+epoch 4840 loss 0.410276
+time spent in 10 epoch 0:00:04.728888
+epoch 4850 loss 0.410259
+time spent in 10 epoch 0:00:04.753224
+epoch 4860 loss 0.410308
+time spent in 10 epoch 0:00:04.740576
+epoch 4870 loss 0.410307
+time spent in 10 epoch 0:00:04.765590
+epoch 4880 loss 0.410241
+time spent in 10 epoch 0:00:04.736757
+epoch 4890 loss 0.410273
+time spent in 10 epoch 0:00:04.735237
+epoch 4900 loss 0.410339
+time spent in 10 epoch 0:00:04.738304
+epoch 4910 loss 0.410272
+time spent in 10 epoch 0:00:04.756013
+epoch 4920 loss 0.410273
+time spent in 10 epoch 0:00:04.759490
+epoch 4930 loss 0.410208
+time spent in 10 epoch 0:00:04.739527
+epoch 4940 loss 0.410285
+time spent in 10 epoch 0:00:04.723972
+epoch 4950 loss 0.410293
+time spent in 10 epoch 0:00:04.736176
+epoch 4960 loss 0.410253
+time spent in 10 epoch 0:00:04.721955
+epoch 4970 loss 0.410229
+time spent in 10 epoch 0:00:04.728201
+epoch 4980 loss 0.410251
+time spent in 10 epoch 0:00:04.696930
+epoch 4990 loss 0.410259
+time spent in 10 epoch 0:00:04.752721
+epoch 5000 loss 0.410267
+time spent in 10 epoch 0:00:04.728999
+epoch 5010 loss 0.410287
+time spent in 10 epoch 0:00:04.777901
+epoch 5020 loss 0.410322
+time spent in 10 epoch 0:00:04.752307
+epoch 5030 loss 0.410282
+time spent in 10 epoch 0:00:04.741223
+epoch 5040 loss 0.410245
+time spent in 10 epoch 0:00:04.740297
+epoch 5050 loss 0.410286
+time spent in 10 epoch 0:00:04.720223
+epoch 5060 loss 0.410242
+time spent in 10 epoch 0:00:04.729816
+epoch 5070 loss 0.410250
+time spent in 10 epoch 0:00:04.767762
+epoch 5080 loss 0.410289
+time spent in 10 epoch 0:00:04.757711
+epoch 5090 loss 0.410301
+time spent in 10 epoch 0:00:04.724559
+epoch 5100 loss 0.410319
+time spent in 10 epoch 0:00:04.741120
+epoch 5110 loss 0.410249
+time spent in 10 epoch 0:00:04.726070
+epoch 5120 loss 0.410317
+time spent in 10 epoch 0:00:04.719941
+epoch 5130 loss 0.410286
+time spent in 10 epoch 0:00:04.708868
+epoch 5140 loss 0.410269
+time spent in 10 epoch 0:00:04.725145
+epoch 5150 loss 0.410287
+time spent in 10 epoch 0:00:04.749449
+epoch 5160 loss 0.410157
+time spent in 10 epoch 0:00:04.740907
+epoch 5170 loss 0.410230
+time spent in 10 epoch 0:00:04.743068
+epoch 5180 loss 0.410344
+time spent in 10 epoch 0:00:04.775054
+epoch 5190 loss 0.410300
+time spent in 10 epoch 0:00:04.735654
+epoch 5200 loss 0.410260
+time spent in 10 epoch 0:00:04.724696
+epoch 5210 loss 0.410101
+time spent in 10 epoch 0:00:04.715093
+epoch 5220 loss 0.410322
+time spent in 10 epoch 0:00:04.745324
+epoch 5230 loss 0.410294
+time spent in 10 epoch 0:00:04.730548
+epoch 5240 loss 0.410266
+time spent in 10 epoch 0:00:04.741640
+epoch 5250 loss 0.410257
+time spent in 10 epoch 0:00:04.721716
+epoch 5260 loss 0.410260
+time spent in 10 epoch 0:00:04.733146
+epoch 5270 loss 0.410261
+time spent in 10 epoch 0:00:04.734856
+epoch 5280 loss 0.410288
+time spent in 10 epoch 0:00:04.728181
+epoch 5290 loss 0.410351
+time spent in 10 epoch 0:00:04.704941
+epoch 5300 loss 0.410245
+time spent in 10 epoch 0:00:04.742414
+epoch 5310 loss 0.410292
+time spent in 10 epoch 0:00:04.715054
+epoch 5320 loss 0.410284
+time spent in 10 epoch 0:00:04.766159
+epoch 5330 loss 0.410318
+time spent in 10 epoch 0:00:04.741923
+epoch 5340 loss 0.410246
+time spent in 10 epoch 0:00:04.814661
+epoch 5350 loss 0.410314
+time spent in 10 epoch 0:00:04.705097
+epoch 5360 loss 0.410279
+time spent in 10 epoch 0:00:04.709442
+epoch 5370 loss 0.410279
+time spent in 10 epoch 0:00:04.732449
+epoch 5380 loss 0.410269
+time spent in 10 epoch 0:00:04.709323
+epoch 5390 loss 0.410207
+time spent in 10 epoch 0:00:04.726357
+epoch 5400 loss 0.410255
+time spent in 10 epoch 0:00:04.746420
+epoch 5410 loss 0.410264
+time spent in 10 epoch 0:00:04.732812
+epoch 5420 loss 0.410263
+time spent in 10 epoch 0:00:04.688193
+epoch 5430 loss 0.410273
+time spent in 10 epoch 0:00:04.750511
+epoch 5440 loss 0.410243
+time spent in 10 epoch 0:00:04.723345
+epoch 5450 loss 0.410229
+time spent in 10 epoch 0:00:04.799297
+epoch 5460 loss 0.410099
+time spent in 10 epoch 0:00:04.839683
+epoch 5470 loss 0.410249
+time spent in 10 epoch 0:00:04.723626
+epoch 5480 loss 0.410150
+time spent in 10 epoch 0:00:04.726493
+epoch 5490 loss 0.410325
+time spent in 10 epoch 0:00:04.720965
+epoch 5500 loss 0.410248
+time spent in 10 epoch 0:00:04.728262
+epoch 5510 loss 0.410256
+time spent in 10 epoch 0:00:04.699501
+epoch 5520 loss 0.410271
+time spent in 10 epoch 0:00:04.757354
+epoch 5530 loss 0.410277
+time spent in 10 epoch 0:00:04.717802
+epoch 5540 loss 0.410243
+time spent in 10 epoch 0:00:04.761841
+epoch 5550 loss 0.410255
+time spent in 10 epoch 0:00:04.746826
+epoch 5560 loss 0.410270
+time spent in 10 epoch 0:00:04.731583
+epoch 5570 loss 0.410280
+time spent in 10 epoch 0:00:04.735472
+epoch 5580 loss 0.410289
+time spent in 10 epoch 0:00:04.740285
+epoch 5590 loss 0.410204
+time spent in 10 epoch 0:00:04.705113
+epoch 5600 loss 0.410216
+time spent in 10 epoch 0:00:04.730360
+epoch 5610 loss 0.410308
+time spent in 10 epoch 0:00:04.751284
+epoch 5620 loss 0.410073
+time spent in 10 epoch 0:00:04.784257
+epoch 5630 loss 0.410260
+time spent in 10 epoch 0:00:04.740009
+epoch 5640 loss 0.410276
+time spent in 10 epoch 0:00:04.708730
+epoch 5650 loss 0.410287
+time spent in 10 epoch 0:00:04.739438
+epoch 5660 loss 0.410105
+time spent in 10 epoch 0:00:04.742922
+epoch 5670 loss 0.410242
+time spent in 10 epoch 0:00:04.749766
+epoch 5680 loss 0.410300
+time spent in 10 epoch 0:00:04.735677
+epoch 5690 loss 0.410151
+time spent in 10 epoch 0:00:04.735689
+epoch 5700 loss 0.410157
+time spent in 10 epoch 0:00:04.755261
+epoch 5710 loss 0.410141
+time spent in 10 epoch 0:00:04.706012
+epoch 5720 loss 0.410181
+time spent in 10 epoch 0:00:04.736802
+epoch 5730 loss 0.410188
+time spent in 10 epoch 0:00:04.738965
+epoch 5740 loss 0.410274
+time spent in 10 epoch 0:00:04.727668
+epoch 5750 loss 0.410290
+time spent in 10 epoch 0:00:04.740436
+epoch 5760 loss 0.410158
+time spent in 10 epoch 0:00:04.731528
+epoch 5770 loss 0.410302
+time spent in 10 epoch 0:00:04.725521
+epoch 5780 loss 0.410267
+time spent in 10 epoch 0:00:04.791857
+epoch 5790 loss 0.410314
+time spent in 10 epoch 0:00:04.754730
+epoch 5800 loss 0.410283
+time spent in 10 epoch 0:00:04.725389
+epoch 5810 loss 0.410277
+time spent in 10 epoch 0:00:04.723848
+epoch 5820 loss 0.410264
+time spent in 10 epoch 0:00:04.725716
+epoch 5830 loss 0.410161
+time spent in 10 epoch 0:00:04.737050
+epoch 5840 loss 0.410231
+time spent in 10 epoch 0:00:04.730286
+epoch 5850 loss 0.410238
+time spent in 10 epoch 0:00:04.749272
+epoch 5860 loss 0.410274
+time spent in 10 epoch 0:00:04.709384
+epoch 5870 loss 0.410215
+time spent in 10 epoch 0:00:04.759342
+epoch 5880 loss 0.410249
+time spent in 10 epoch 0:00:04.751876
+epoch 5890 loss 0.410140
+time spent in 10 epoch 0:00:04.739963
+epoch 5900 loss 0.410198
+time spent in 10 epoch 0:00:04.729218
+epoch 5910 loss 0.410244
+time spent in 10 epoch 0:00:04.724025
+epoch 5920 loss 0.410260
+time spent in 10 epoch 0:00:04.699247
+epoch 5930 loss 0.410231
+time spent in 10 epoch 0:00:04.767029
+epoch 5940 loss 0.410163
+time spent in 10 epoch 0:00:04.745966
+epoch 5950 loss 0.410277
+time spent in 10 epoch 0:00:04.719707
+epoch 5960 loss 0.410238
+time spent in 10 epoch 0:00:04.766310
+epoch 5970 loss 0.410190
+time spent in 10 epoch 0:00:04.741837
+epoch 5980 loss 0.410197
+time spent in 10 epoch 0:00:04.720795
+epoch 5990 loss 0.410208
+time spent in 10 epoch 0:00:04.732930
+epoch 6000 loss 0.410229
+time spent in 10 epoch 0:00:04.719293
+epoch 6010 loss 0.410203
+time spent in 10 epoch 0:00:04.724625
+epoch 6020 loss 0.410264
+time spent in 10 epoch 0:00:04.706475
+epoch 6030 loss 0.410185
+time spent in 10 epoch 0:00:04.748982
+epoch 6040 loss 0.410167
+time spent in 10 epoch 0:00:04.709508
+epoch 6050 loss 0.410195
+time spent in 10 epoch 0:00:04.724982
+epoch 6060 loss 0.410048
+time spent in 10 epoch 0:00:04.693943
+epoch 6070 loss 0.410186
+time spent in 10 epoch 0:00:04.726512
+epoch 6080 loss 0.410242
+time spent in 10 epoch 0:00:04.731368
+epoch 6090 loss 0.410160
+time spent in 10 epoch 0:00:04.725999
+epoch 6100 loss 0.410152
+time spent in 10 epoch 0:00:04.720831
+epoch 6110 loss 0.410148
+time spent in 10 epoch 0:00:04.732036
+epoch 6120 loss 0.410226
+time spent in 10 epoch 0:00:04.716393
+epoch 6130 loss 0.410223
+time spent in 10 epoch 0:00:04.743579
+epoch 6140 loss 0.410197
+time spent in 10 epoch 0:00:04.763885
+epoch 6150 loss 0.410212
+time spent in 10 epoch 0:00:04.739596
+epoch 6160 loss 0.410234
+time spent in 10 epoch 0:00:04.716386
+epoch 6170 loss 0.410107
+time spent in 10 epoch 0:00:04.711209
+epoch 6180 loss 0.410175
+time spent in 10 epoch 0:00:04.713111
+epoch 6190 loss 0.410170
+time spent in 10 epoch 0:00:04.704561
+epoch 6200 loss 0.410250
+time spent in 10 epoch 0:00:04.732825
+epoch 6210 loss 0.410150
+time spent in 10 epoch 0:00:04.716858
+epoch 6220 loss 0.410143
+time spent in 10 epoch 0:00:04.720586
+epoch 6230 loss 0.410134
+time spent in 10 epoch 0:00:04.735154
+epoch 6240 loss 0.410104
+time spent in 10 epoch 0:00:04.710767
+epoch 6250 loss 0.410148
+time spent in 10 epoch 0:00:04.705739
+epoch 6260 loss 0.410137
+time spent in 10 epoch 0:00:04.737891
+epoch 6270 loss 0.410100
+time spent in 10 epoch 0:00:04.710438
+epoch 6280 loss 0.410047
+time spent in 10 epoch 0:00:04.715260
+epoch 6290 loss 0.410102
+time spent in 10 epoch 0:00:04.702964
+epoch 6300 loss 0.410094
+time spent in 10 epoch 0:00:04.720689
+epoch 6310 loss 0.410068
+time spent in 10 epoch 0:00:04.734274
+epoch 6320 loss 0.410101
+time spent in 10 epoch 0:00:04.738120
+epoch 6330 loss 0.410021
+time spent in 10 epoch 0:00:04.740173
+epoch 6340 loss 0.409968
+time spent in 10 epoch 0:00:04.731588
+epoch 6350 loss 0.410006
+time spent in 10 epoch 0:00:04.740548
+epoch 6360 loss 0.409906
+time spent in 10 epoch 0:00:04.721230
+epoch 6370 loss 0.409956
+time spent in 10 epoch 0:00:04.726571
+epoch 6380 loss 0.409921
+time spent in 10 epoch 0:00:04.723443
+epoch 6390 loss 0.409941
+time spent in 10 epoch 0:00:04.720076
+epoch 6400 loss 0.409905
+time spent in 10 epoch 0:00:04.762961
+epoch 6410 loss 0.409861
+time spent in 10 epoch 0:00:04.752477
+epoch 6420 loss 0.409867
+time spent in 10 epoch 0:00:04.741846
+epoch 6430 loss 0.409736
+time spent in 10 epoch 0:00:04.712647
+epoch 6440 loss 0.409859
+time spent in 10 epoch 0:00:04.737234
+epoch 6450 loss 0.409684
+time spent in 10 epoch 0:00:04.770649
+epoch 6460 loss 0.409696
+time spent in 10 epoch 0:00:04.759420
+epoch 6470 loss 0.409533
+time spent in 10 epoch 0:00:04.777213
+epoch 6480 loss 0.409493
+time spent in 10 epoch 0:00:04.749188
+epoch 6490 loss 0.409509
+time spent in 10 epoch 0:00:04.739202
+epoch 6500 loss 0.409550
+time spent in 10 epoch 0:00:04.711131
+epoch 6510 loss 0.409459
+time spent in 10 epoch 0:00:04.722673
+epoch 6520 loss 0.409382
+time spent in 10 epoch 0:00:04.711186
+epoch 6530 loss 0.409328
+time spent in 10 epoch 0:00:04.728802
+epoch 6540 loss 0.409237
+time spent in 10 epoch 0:00:04.727699
+epoch 6550 loss 0.409057
+time spent in 10 epoch 0:00:04.759667
+epoch 6560 loss 0.409059
+time spent in 10 epoch 0:00:04.732153
+epoch 6570 loss 0.408733
+time spent in 10 epoch 0:00:04.731346
+epoch 6580 loss 0.408415
+time spent in 10 epoch 0:00:04.747020
+epoch 6590 loss 0.408157
+time spent in 10 epoch 0:00:04.756250
+epoch 6600 loss 0.407800
+time spent in 10 epoch 0:00:04.697113
+epoch 6610 loss 0.407421
+time spent in 10 epoch 0:00:04.716454
+epoch 6620 loss 0.406852
+time spent in 10 epoch 0:00:04.716594
+epoch 6630 loss 0.406312
+time spent in 10 epoch 0:00:04.751537
+epoch 6640 loss 0.405717
+time spent in 10 epoch 0:00:04.710001
+epoch 6650 loss 0.405020
+time spent in 10 epoch 0:00:04.723056
+epoch 6660 loss 0.404068
+time spent in 10 epoch 0:00:04.727832
+epoch 6670 loss 0.402775
+time spent in 10 epoch 0:00:04.698605
+epoch 6680 loss 0.401080
+time spent in 10 epoch 0:00:04.718388
+epoch 6690 loss 0.399929
+time spent in 10 epoch 0:00:04.726194
+epoch 6700 loss 0.397990
+time spent in 10 epoch 0:00:04.757973
+epoch 6710 loss 0.395842
+time spent in 10 epoch 0:00:04.740624
+epoch 6720 loss 0.394716
+time spent in 10 epoch 0:00:04.722141
+epoch 6730 loss 0.390889
+time spent in 10 epoch 0:00:04.783290
+epoch 6740 loss 0.388534
+time spent in 10 epoch 0:00:04.817914
+epoch 6750 loss 0.387232
+time spent in 10 epoch 0:00:04.798553
+epoch 6760 loss 0.380780
+time spent in 10 epoch 0:00:04.737593
+epoch 6770 loss 0.377443
+time spent in 10 epoch 0:00:04.732616
+epoch 6780 loss 0.375474
+time spent in 10 epoch 0:00:04.745845
+epoch 6790 loss 0.371692
+time spent in 10 epoch 0:00:04.742008
+epoch 6800 loss 0.367709
+time spent in 10 epoch 0:00:04.736139
+epoch 6810 loss 0.365286
+time spent in 10 epoch 0:00:04.727748
+epoch 6820 loss 0.364781
+time spent in 10 epoch 0:00:04.713924
+epoch 6830 loss 0.361029
+time spent in 10 epoch 0:00:04.692465
+epoch 6840 loss 0.373988
+time spent in 10 epoch 0:00:04.717005
+epoch 6850 loss 0.357556
+time spent in 10 epoch 0:00:04.735225
+epoch 6860 loss 0.350390
+time spent in 10 epoch 0:00:04.721878
+epoch 6870 loss 0.351014
+time spent in 10 epoch 0:00:04.744591
+epoch 6880 loss 0.351995
+time spent in 10 epoch 0:00:04.703552
+epoch 6890 loss 0.342417
+time spent in 10 epoch 0:00:04.730627
+epoch 6900 loss 0.340537
+time spent in 10 epoch 0:00:04.714466
+epoch 6910 loss 0.341325
+time spent in 10 epoch 0:00:04.815970
+epoch 6920 loss 0.339224
+time spent in 10 epoch 0:00:04.728095
+epoch 6930 loss 0.357620
+time spent in 10 epoch 0:00:04.718669
+epoch 6940 loss 0.336600
+time spent in 10 epoch 0:00:04.713645
+epoch 6950 loss 0.334932
+time spent in 10 epoch 0:00:04.711040
+epoch 6960 loss 0.330186
+time spent in 10 epoch 0:00:04.756269
+epoch 6970 loss 0.328625
+time spent in 10 epoch 0:00:04.709056
+epoch 6980 loss 0.327352
+time spent in 10 epoch 0:00:04.716436
+epoch 6990 loss 0.322153
+time spent in 10 epoch 0:00:04.731878
+epoch 7000 loss 0.346121
+time spent in 10 epoch 0:00:04.711776
+epoch 7010 loss 0.318802
+time spent in 10 epoch 0:00:04.715804
+epoch 7020 loss 0.323095
+time spent in 10 epoch 0:00:04.729588
+epoch 7030 loss 0.316254
+time spent in 10 epoch 0:00:04.687504
+epoch 7040 loss 0.317396
+time spent in 10 epoch 0:00:04.719748
+epoch 7050 loss 0.310438
+time spent in 10 epoch 0:00:04.778491
+epoch 7060 loss 0.316042
+time spent in 10 epoch 0:00:04.761032
+epoch 7070 loss 0.312061
+time spent in 10 epoch 0:00:04.730206
+epoch 7080 loss 0.314867
+time spent in 10 epoch 0:00:04.714736
+epoch 7090 loss 0.309119
+time spent in 10 epoch 0:00:04.732605
+epoch 7100 loss 0.310496
+time spent in 10 epoch 0:00:04.733482
+epoch 7110 loss 0.304876
+time spent in 10 epoch 0:00:04.720509
+epoch 7120 loss 0.305506
+time spent in 10 epoch 0:00:04.727384
+epoch 7130 loss 0.306513
+time spent in 10 epoch 0:00:04.730256
+epoch 7140 loss 0.304439
+time spent in 10 epoch 0:00:04.726138
+epoch 7150 loss 0.315480
+time spent in 10 epoch 0:00:04.748469
+epoch 7160 loss 0.311008
+time spent in 10 epoch 0:00:04.743055
+epoch 7170 loss 0.300421
+time spent in 10 epoch 0:00:04.730176
+epoch 7180 loss 0.307153
+time spent in 10 epoch 0:00:04.722366
+epoch 7190 loss 0.313439
+time spent in 10 epoch 0:00:04.726243
+epoch 7200 loss 0.294542
+time spent in 10 epoch 0:00:04.708932
+epoch 7210 loss 0.294099
+time spent in 10 epoch 0:00:04.722636
+epoch 7220 loss 0.300274
+time spent in 10 epoch 0:00:04.756128
+epoch 7230 loss 0.296767
+time spent in 10 epoch 0:00:04.793079
+epoch 7240 loss 0.306351
+time spent in 10 epoch 0:00:04.730761
+epoch 7250 loss 0.289838
+time spent in 10 epoch 0:00:04.721436
+epoch 7260 loss 0.296889
+time spent in 10 epoch 0:00:04.735753
+epoch 7270 loss 0.294652
+time spent in 10 epoch 0:00:04.749682
+epoch 7280 loss 0.299765
+time spent in 10 epoch 0:00:04.750424
+epoch 7290 loss 0.380593
+time spent in 10 epoch 0:00:04.719918
+epoch 7300 loss 0.331156
+time spent in 10 epoch 0:00:04.715298
+epoch 7310 loss 0.311606
+time spent in 10 epoch 0:00:04.713513
+epoch 7320 loss 0.295334
+time spent in 10 epoch 0:00:04.731689
+epoch 7330 loss 0.311758
+time spent in 10 epoch 0:00:04.714801
+epoch 7340 loss 0.318199
+time spent in 10 epoch 0:00:04.713643
+epoch 7350 loss 0.288375
+time spent in 10 epoch 0:00:04.740622
+epoch 7360 loss 0.290173
+time spent in 10 epoch 0:00:04.712246
+epoch 7370 loss 0.318744
+time spent in 10 epoch 0:00:04.748655
+epoch 7380 loss 0.402312
+time spent in 10 epoch 0:00:04.714737
+epoch 7390 loss 0.303215
+time spent in 10 epoch 0:00:04.743905
+epoch 7400 loss 0.282406
+time spent in 10 epoch 0:00:04.756987
+epoch 7410 loss 0.283580
+time spent in 10 epoch 0:00:04.735920
+epoch 7420 loss 0.292498
+time spent in 10 epoch 0:00:04.774593
+epoch 7430 loss 0.367406
+time spent in 10 epoch 0:00:04.738886
+epoch 7440 loss 0.298500
+time spent in 10 epoch 0:00:04.750776
+epoch 7450 loss 0.299661
+time spent in 10 epoch 0:00:04.724681
+epoch 7460 loss 0.295071
+time spent in 10 epoch 0:00:04.707735
+epoch 7470 loss 0.289885
+time spent in 10 epoch 0:00:04.724850
+epoch 7480 loss 0.301989
+time spent in 10 epoch 0:00:04.747582
+epoch 7490 loss 0.288958
+time spent in 10 epoch 0:00:04.748755
+epoch 7500 loss 0.291464
+time spent in 10 epoch 0:00:04.740873
+epoch 7510 loss 0.286127
+time spent in 10 epoch 0:00:04.705650
+epoch 7520 loss 0.284730
+time spent in 10 epoch 0:00:04.745390
+epoch 7530 loss 0.281720
+time spent in 10 epoch 0:00:04.728240
+epoch 7540 loss 0.301099
+time spent in 10 epoch 0:00:04.711496
+epoch 7550 loss 0.294239
+time spent in 10 epoch 0:00:04.758206
+epoch 7560 loss 0.285218
+time spent in 10 epoch 0:00:04.726589
+epoch 7570 loss 0.356506
+time spent in 10 epoch 0:00:04.754896
+epoch 7580 loss 0.286705
+time spent in 10 epoch 0:00:04.726824
+epoch 7590 loss 0.283876
+time spent in 10 epoch 0:00:04.743479
+epoch 7600 loss 0.285487
+time spent in 10 epoch 0:00:04.759676
+epoch 7610 loss 0.385688
+time spent in 10 epoch 0:00:04.757330
+epoch 7620 loss 0.303482
+time spent in 10 epoch 0:00:04.723522
+epoch 7630 loss 0.287148
+time spent in 10 epoch 0:00:04.716682
+epoch 7640 loss 0.299368
+time spent in 10 epoch 0:00:04.740555
+epoch 7650 loss 0.283640
+time spent in 10 epoch 0:00:04.745494
+epoch 7660 loss 0.275286
+time spent in 10 epoch 0:00:04.751953
+epoch 7670 loss 0.275523
+time spent in 10 epoch 0:00:04.765324
+epoch 7680 loss 0.276126
+time spent in 10 epoch 0:00:04.725847
+epoch 7690 loss 0.368763
+time spent in 10 epoch 0:00:04.742182
+epoch 7700 loss 0.270513
+time spent in 10 epoch 0:00:04.740757
+epoch 7710 loss 0.267863
+time spent in 10 epoch 0:00:04.740414
+epoch 7720 loss 0.268349
+time spent in 10 epoch 0:00:04.704483
+epoch 7730 loss 0.299915
+time spent in 10 epoch 0:00:04.777063
+epoch 7740 loss 0.274638
+time spent in 10 epoch 0:00:04.763916
+epoch 7750 loss 0.274387
+time spent in 10 epoch 0:00:04.763802
+epoch 7760 loss 0.394138
+time spent in 10 epoch 0:00:04.767275
+epoch 7770 loss 0.283311
+time spent in 10 epoch 0:00:04.755268
+epoch 7780 loss 0.272535
+time spent in 10 epoch 0:00:04.757951
+epoch 7790 loss 0.279948
+time spent in 10 epoch 0:00:04.766050
+epoch 7800 loss 0.274733
+time spent in 10 epoch 0:00:04.758576
+epoch 7810 loss 0.282869
+time spent in 10 epoch 0:00:04.709902
+epoch 7820 loss 0.283649
+time spent in 10 epoch 0:00:04.733053
+epoch 7830 loss 0.271149
+time spent in 10 epoch 0:00:04.741900
+epoch 7840 loss 0.273888
+time spent in 10 epoch 0:00:04.742306
+epoch 7850 loss 0.412785
+time spent in 10 epoch 0:00:04.752004
+epoch 7860 loss 0.338493
+time spent in 10 epoch 0:00:04.737663
+epoch 7870 loss 0.312515
+time spent in 10 epoch 0:00:04.712716
+epoch 7880 loss 0.372629
+time spent in 10 epoch 0:00:04.732326
+epoch 7890 loss 0.302817
+time spent in 10 epoch 0:00:04.738008
+epoch 7900 loss 0.330414
+time spent in 10 epoch 0:00:04.731106
+epoch 7910 loss 0.308945
+time spent in 10 epoch 0:00:04.705296
+epoch 7920 loss 0.313075
+time spent in 10 epoch 0:00:04.713800
+epoch 7930 loss 0.335383
+time spent in 10 epoch 0:00:04.722925
+epoch 7940 loss 0.322421
+time spent in 10 epoch 0:00:04.861695
+epoch 7950 loss 0.304961
+time spent in 10 epoch 0:00:04.834813
+epoch 7960 loss 0.302752
+time spent in 10 epoch 0:00:04.716149
+epoch 7970 loss 0.293225
+time spent in 10 epoch 0:00:04.749779
+epoch 7980 loss 0.315030
+time spent in 10 epoch 0:00:04.716845
+epoch 7990 loss 0.302900
+time spent in 10 epoch 0:00:04.737484
+epoch 8000 loss 0.297939
+time spent in 10 epoch 0:00:04.765185
+epoch 8010 loss 0.321091
+time spent in 10 epoch 0:00:04.740956
+epoch 8020 loss 0.289971
+time spent in 10 epoch 0:00:04.722044
+epoch 8030 loss 0.288933
+time spent in 10 epoch 0:00:04.738639
+epoch 8040 loss 0.293369
+time spent in 10 epoch 0:00:04.818794
+epoch 8050 loss 0.287706
+time spent in 10 epoch 0:00:04.790896
+epoch 8060 loss 0.293951
+time spent in 10 epoch 0:00:04.726997
+epoch 8070 loss 0.286401
+time spent in 10 epoch 0:00:04.742831
+epoch 8080 loss 0.286534
+time spent in 10 epoch 0:00:04.743378
+epoch 8090 loss 0.282350
+time spent in 10 epoch 0:00:04.724005
+epoch 8100 loss 0.294687
+time spent in 10 epoch 0:00:04.720007
+epoch 8110 loss 0.303508
+time spent in 10 epoch 0:00:04.775467
+epoch 8120 loss 0.287080
+time spent in 10 epoch 0:00:04.711239
+epoch 8130 loss 0.288823
+time spent in 10 epoch 0:00:04.738250
+epoch 8140 loss 0.296303
+time spent in 10 epoch 0:00:04.719261
+epoch 8150 loss 0.280668
+time spent in 10 epoch 0:00:04.719006
+epoch 8160 loss 0.286909
+time spent in 10 epoch 0:00:04.713488
+epoch 8170 loss 0.289851
+time spent in 10 epoch 0:00:04.742642
+epoch 8180 loss 0.283514
+time spent in 10 epoch 0:00:04.743089
+epoch 8190 loss 0.279042
+time spent in 10 epoch 0:00:04.743425
+epoch 8200 loss 0.280713
+time spent in 10 epoch 0:00:04.754662
+epoch 8210 loss 0.295498
+time spent in 10 epoch 0:00:04.814211
+epoch 8220 loss 0.294729
+time spent in 10 epoch 0:00:04.762570
+epoch 8230 loss 0.288191
+time spent in 10 epoch 0:00:04.752792
+epoch 8240 loss 0.281668
+time spent in 10 epoch 0:00:04.758600
+epoch 8250 loss 0.275900
+time spent in 10 epoch 0:00:04.705995
+epoch 8260 loss 0.365852
+time spent in 10 epoch 0:00:04.715180
+epoch 8270 loss 0.328341
+time spent in 10 epoch 0:00:04.712214
+epoch 8280 loss 0.319947
+time spent in 10 epoch 0:00:04.757234
+epoch 8290 loss 0.315590
+time spent in 10 epoch 0:00:04.738894
+epoch 8300 loss 0.306548
+time spent in 10 epoch 0:00:04.735401
+epoch 8310 loss 0.294274
+time spent in 10 epoch 0:00:04.743728
+epoch 8320 loss 0.290980
+time spent in 10 epoch 0:00:04.737764
+epoch 8330 loss 0.284730
+time spent in 10 epoch 0:00:04.746375
+epoch 8340 loss 0.272988
+time spent in 10 epoch 0:00:04.717177
+epoch 8350 loss 0.275609
+time spent in 10 epoch 0:00:04.709465
+epoch 8360 loss 0.272315
+time spent in 10 epoch 0:00:04.729117
+epoch 8370 loss 0.269653
+time spent in 10 epoch 0:00:04.738131
+epoch 8380 loss 0.288593
+time spent in 10 epoch 0:00:04.698592
+epoch 8390 loss 0.354615
+time spent in 10 epoch 0:00:04.740057
+epoch 8400 loss 0.276024
+time spent in 10 epoch 0:00:04.730241
+epoch 8410 loss 0.406066
+time spent in 10 epoch 0:00:04.753548
+epoch 8420 loss 0.376221
+time spent in 10 epoch 0:00:04.699433
+epoch 8430 loss 0.369683
+time spent in 10 epoch 0:00:04.733491
+epoch 8440 loss 0.365293
+time spent in 10 epoch 0:00:04.699705
+epoch 8450 loss 0.364374
+time spent in 10 epoch 0:00:04.753641
+epoch 8460 loss 0.360882
+time spent in 10 epoch 0:00:04.708082
+epoch 8470 loss 0.358776
+time spent in 10 epoch 0:00:04.738091
+epoch 8480 loss 0.356703
+time spent in 10 epoch 0:00:04.724018
+epoch 8490 loss 0.359456
+time spent in 10 epoch 0:00:04.781271
+epoch 8500 loss 0.351032
+time spent in 10 epoch 0:00:04.742109
+epoch 8510 loss 0.352511
+time spent in 10 epoch 0:00:04.716019
+epoch 8520 loss 0.355911
+time spent in 10 epoch 0:00:04.756839
+epoch 8530 loss 0.354778
+time spent in 10 epoch 0:00:04.739333
+epoch 8540 loss 0.351581
+time spent in 10 epoch 0:00:04.715548
+epoch 8550 loss 0.347724
+time spent in 10 epoch 0:00:04.751301
+epoch 8560 loss 0.347727
+time spent in 10 epoch 0:00:04.758710
+epoch 8570 loss 0.347873
+time spent in 10 epoch 0:00:04.785624
+epoch 8580 loss 0.347937
+time spent in 10 epoch 0:00:04.738615
+epoch 8590 loss 0.350015
+time spent in 10 epoch 0:00:04.739425
+epoch 8600 loss 0.348814
+time spent in 10 epoch 0:00:04.735127
+epoch 8610 loss 0.342981
+time spent in 10 epoch 0:00:04.735080
+epoch 8620 loss 0.345097
+time spent in 10 epoch 0:00:04.732233
+epoch 8630 loss 0.349825
+time spent in 10 epoch 0:00:04.747766
+epoch 8640 loss 0.336984
+time spent in 10 epoch 0:00:04.714406
+epoch 8650 loss 0.342564
+time spent in 10 epoch 0:00:04.763232
+epoch 8660 loss 0.338939
+time spent in 10 epoch 0:00:04.757102
+epoch 8670 loss 0.336489
+time spent in 10 epoch 0:00:04.730539
+epoch 8680 loss 0.342076
+time spent in 10 epoch 0:00:04.739399
+epoch 8690 loss 0.354667
+time spent in 10 epoch 0:00:04.759504
+epoch 8700 loss 0.337889
+time spent in 10 epoch 0:00:04.723154
+epoch 8710 loss 0.336546
+time spent in 10 epoch 0:00:04.734996
+epoch 8720 loss 0.332266
+time spent in 10 epoch 0:00:04.724504
+epoch 8730 loss 0.334124
+time spent in 10 epoch 0:00:04.736847
+epoch 8740 loss 0.331834
+time spent in 10 epoch 0:00:04.756946
+epoch 8750 loss 0.340835
+time spent in 10 epoch 0:00:04.744312
+epoch 8760 loss 0.331157
+time spent in 10 epoch 0:00:04.740168
+epoch 8770 loss 0.336051
+time spent in 10 epoch 0:00:04.699568
+epoch 8780 loss 0.331353
+time spent in 10 epoch 0:00:04.742545
+epoch 8790 loss 0.329159
+time spent in 10 epoch 0:00:04.763826
+epoch 8800 loss 0.326992
+time spent in 10 epoch 0:00:04.723839
+epoch 8810 loss 0.327287
+time spent in 10 epoch 0:00:04.759974
+epoch 8820 loss 0.329217
+time spent in 10 epoch 0:00:04.733998
+epoch 8830 loss 0.338417
+time spent in 10 epoch 0:00:04.776806
+epoch 8840 loss 0.322635
+time spent in 10 epoch 0:00:04.737951
+epoch 8850 loss 0.323071
+time spent in 10 epoch 0:00:04.714503
+epoch 8860 loss 0.324131
+time spent in 10 epoch 0:00:04.692853
+epoch 8870 loss 0.400733
+time spent in 10 epoch 0:00:04.795793
+epoch 8880 loss 0.402806
+time spent in 10 epoch 0:00:04.762141
+epoch 8890 loss 0.396221
+time spent in 10 epoch 0:00:04.707405
+epoch 8900 loss 0.390535
+time spent in 10 epoch 0:00:04.708458
+epoch 8910 loss 0.388307
+time spent in 10 epoch 0:00:04.715078
+epoch 8920 loss 0.385742
+time spent in 10 epoch 0:00:04.719528
+epoch 8930 loss 0.383272
+time spent in 10 epoch 0:00:04.737556
+epoch 8940 loss 0.378941
+time spent in 10 epoch 0:00:04.728856
+epoch 8950 loss 0.375252
+time spent in 10 epoch 0:00:04.738909
+epoch 8960 loss 0.379618
+time spent in 10 epoch 0:00:04.741972
+epoch 8970 loss 0.378407
+time spent in 10 epoch 0:00:04.748008
+epoch 8980 loss 0.378984
+time spent in 10 epoch 0:00:04.714879
+epoch 8990 loss 0.375105
+time spent in 10 epoch 0:00:04.738435
+epoch 9000 loss 0.370934
+time spent in 10 epoch 0:00:04.736726
+epoch 9010 loss 0.368351
+time spent in 10 epoch 0:00:04.737575
+epoch 9020 loss 0.367569
+time spent in 10 epoch 0:00:04.745366
+epoch 9030 loss 0.366829
+time spent in 10 epoch 0:00:04.730148
+epoch 9040 loss 0.368220
+time spent in 10 epoch 0:00:04.749324
+epoch 9050 loss 0.362099
+time spent in 10 epoch 0:00:04.738452
+epoch 9060 loss 0.396275
+time spent in 10 epoch 0:00:04.749560
+epoch 9070 loss 0.359653
+time spent in 10 epoch 0:00:04.723695
+epoch 9080 loss 0.352880
+time spent in 10 epoch 0:00:04.723933
+epoch 9090 loss 0.351624
+time spent in 10 epoch 0:00:04.770777
+epoch 9100 loss 0.346304
+time spent in 10 epoch 0:00:04.734569
+epoch 9110 loss 0.345718
+time spent in 10 epoch 0:00:04.709441
+epoch 9120 loss 0.342074
+time spent in 10 epoch 0:00:04.771281
+epoch 9130 loss 0.347708
+time spent in 10 epoch 0:00:04.752044
+epoch 9140 loss 0.338119
+time spent in 10 epoch 0:00:04.735807
+epoch 9150 loss 0.335303
+time spent in 10 epoch 0:00:04.727715
+epoch 9160 loss 0.337583
+time spent in 10 epoch 0:00:04.826334
+epoch 9170 loss 0.332881
+time spent in 10 epoch 0:00:04.798083
+epoch 9180 loss 0.336370
+time spent in 10 epoch 0:00:04.769077
+epoch 9190 loss 0.331875
+time spent in 10 epoch 0:00:04.745049
+epoch 9200 loss 0.331440
+time spent in 10 epoch 0:00:04.776968
+epoch 9210 loss 0.344349
+time spent in 10 epoch 0:00:04.739173
+epoch 9220 loss 0.335507
+time spent in 10 epoch 0:00:04.730353
+epoch 9230 loss 0.330555
+time spent in 10 epoch 0:00:04.730191
+epoch 9240 loss 0.330301
+time spent in 10 epoch 0:00:04.755578
+epoch 9250 loss 0.333935
+time spent in 10 epoch 0:00:04.742559
+epoch 9260 loss 0.327492
+time spent in 10 epoch 0:00:04.721439
+epoch 9270 loss 0.335004
+time spent in 10 epoch 0:00:04.758256
+epoch 9280 loss 0.327579
+time spent in 10 epoch 0:00:04.750810
+epoch 9290 loss 0.322234
+time spent in 10 epoch 0:00:04.725583
+epoch 9300 loss 0.325107
+time spent in 10 epoch 0:00:04.722932
+epoch 9310 loss 0.342359
+time spent in 10 epoch 0:00:04.718301
+epoch 9320 loss 0.325579
+time spent in 10 epoch 0:00:04.735390
+epoch 9330 loss 0.324025
+time spent in 10 epoch 0:00:04.858648
+epoch 9340 loss 0.319963
+time spent in 10 epoch 0:00:04.719069
+epoch 9350 loss 0.363069
+time spent in 10 epoch 0:00:04.731987
+epoch 9360 loss 0.345156
+time spent in 10 epoch 0:00:04.713004
+epoch 9370 loss 0.333406
+time spent in 10 epoch 0:00:04.758352
+epoch 9380 loss 0.330159
+time spent in 10 epoch 0:00:04.755877
+epoch 9390 loss 0.363655
+time spent in 10 epoch 0:00:04.737756
+epoch 9400 loss 0.327009
+time spent in 10 epoch 0:00:04.723095
+epoch 9410 loss 0.319766
+time spent in 10 epoch 0:00:04.732291
+epoch 9420 loss 0.322759
+time spent in 10 epoch 0:00:04.756501
+epoch 9430 loss 0.409145
+time spent in 10 epoch 0:00:04.739483
+epoch 9440 loss 0.335089
+time spent in 10 epoch 0:00:04.738348
+epoch 9450 loss 0.336035
+time spent in 10 epoch 0:00:04.746800
+epoch 9460 loss 0.324762
+time spent in 10 epoch 0:00:04.724702
+epoch 9470 loss 0.319182
+time spent in 10 epoch 0:00:04.734212
+epoch 9480 loss 0.317404
+time spent in 10 epoch 0:00:04.732157
+epoch 9490 loss 0.314887
+time spent in 10 epoch 0:00:04.802374
+epoch 9500 loss 0.322962
+time spent in 10 epoch 0:00:04.762454
+epoch 9510 loss 0.310172
+time spent in 10 epoch 0:00:04.756336
+epoch 9520 loss 0.311595
+time spent in 10 epoch 0:00:04.745741
+epoch 9530 loss 0.309038
+time spent in 10 epoch 0:00:04.730072
+epoch 9540 loss 0.310513
+time spent in 10 epoch 0:00:04.733227
+epoch 9550 loss 0.310917
+time spent in 10 epoch 0:00:04.730653
+epoch 9560 loss 0.305869
+time spent in 10 epoch 0:00:04.752331
+epoch 9570 loss 0.304187
+time spent in 10 epoch 0:00:04.760560
+epoch 9580 loss 0.306774
+time spent in 10 epoch 0:00:04.757747
+epoch 9590 loss 0.314556
+time spent in 10 epoch 0:00:04.759183
+epoch 9600 loss 0.338822
+time spent in 10 epoch 0:00:04.755185
+epoch 9610 loss 0.308286
+time spent in 10 epoch 0:00:04.735920
+epoch 9620 loss 0.317163
+time spent in 10 epoch 0:00:04.743745
+epoch 9630 loss 0.309786
+time spent in 10 epoch 0:00:04.761726
+epoch 9640 loss 0.304592
+time spent in 10 epoch 0:00:04.727943
+epoch 9650 loss 0.349030
+time spent in 10 epoch 0:00:04.731953
+epoch 9660 loss 0.302966
+time spent in 10 epoch 0:00:04.754881
+epoch 9670 loss 0.311108
+time spent in 10 epoch 0:00:04.728844
+epoch 9680 loss 0.302590
+time spent in 10 epoch 0:00:04.763150
+epoch 9690 loss 0.299498
+time spent in 10 epoch 0:00:04.796217
+epoch 9700 loss 0.297360
+time spent in 10 epoch 0:00:04.759689
+epoch 9710 loss 0.313447
+time spent in 10 epoch 0:00:04.764842
+epoch 9720 loss 0.312519
+time spent in 10 epoch 0:00:04.747041
+epoch 9730 loss 0.314658
+time spent in 10 epoch 0:00:04.734855
+epoch 9740 loss 0.309371
+time spent in 10 epoch 0:00:04.750392
+epoch 9750 loss 0.309263
+time spent in 10 epoch 0:00:04.771012
+epoch 9760 loss 0.304761
+time spent in 10 epoch 0:00:04.812142
+epoch 9770 loss 0.310517
+time spent in 10 epoch 0:00:04.753743
+epoch 9780 loss 0.303292
+time spent in 10 epoch 0:00:04.711630
+epoch 9790 loss 0.339413
+time spent in 10 epoch 0:00:04.772483
+epoch 9800 loss 0.325849
+time spent in 10 epoch 0:00:04.726305
+epoch 9810 loss 0.301925
+time spent in 10 epoch 0:00:04.750488
+epoch 9820 loss 0.306155
+time spent in 10 epoch 0:00:04.760753
+epoch 9830 loss 0.316056
+time spent in 10 epoch 0:00:04.712006
+epoch 9840 loss 0.301612
+time spent in 10 epoch 0:00:04.765396
+epoch 9850 loss 0.304183
+time spent in 10 epoch 0:00:04.721149
+epoch 9860 loss 0.306193
+time spent in 10 epoch 0:00:04.760198
+epoch 9870 loss 0.301929
+time spent in 10 epoch 0:00:04.796914
+epoch 9880 loss 0.303528
+time spent in 10 epoch 0:00:04.707616
+epoch 9890 loss 0.305792
+time spent in 10 epoch 0:00:04.738415
+epoch 9900 loss 0.300467
+time spent in 10 epoch 0:00:04.727165
+epoch 9910 loss 0.300183
+time spent in 10 epoch 0:00:04.733562
+epoch 9920 loss 0.302440
+time spent in 10 epoch 0:00:04.797106
+epoch 9930 loss 0.302058
+time spent in 10 epoch 0:00:04.761759
+epoch 9940 loss 0.305087
+time spent in 10 epoch 0:00:04.777278
+epoch 9950 loss 0.297755
+time spent in 10 epoch 0:00:04.731946
+epoch 9960 loss 0.294627
+time spent in 10 epoch 0:00:04.733665
+epoch 9970 loss 0.294965
+time spent in 10 epoch 0:00:04.742164
+epoch 9980 loss 0.297311
+time spent in 10 epoch 0:00:04.775419
+epoch 9990 loss 0.293036
+time spent in 10 epoch 0:00:04.735201
+epoch 10000 loss 0.292324
+time spent in 10 epoch 0:00:04.735263
+epoch 10010 loss 0.294141
+time spent in 10 epoch 0:00:04.748097
+epoch 10020 loss 0.304584
+time spent in 10 epoch 0:00:04.742306
+epoch 10030 loss 0.291729
+time spent in 10 epoch 0:00:04.753761
+epoch 10040 loss 0.291595
+time spent in 10 epoch 0:00:04.716107
+epoch 10050 loss 0.291423
+time spent in 10 epoch 0:00:04.738574
+epoch 10060 loss 0.297671
+time spent in 10 epoch 0:00:04.805424
+epoch 10070 loss 0.302001
+time spent in 10 epoch 0:00:04.766267
+epoch 10080 loss 0.293451
+time spent in 10 epoch 0:00:04.742721
+epoch 10090 loss 0.304102
+time spent in 10 epoch 0:00:04.778436
+epoch 10100 loss 0.294293
+time spent in 10 epoch 0:00:04.747755
+epoch 10110 loss 0.293331
+time spent in 10 epoch 0:00:04.760658
+epoch 10120 loss 0.291573
+time spent in 10 epoch 0:00:04.743033
+epoch 10130 loss 0.295453
+time spent in 10 epoch 0:00:04.739073
+epoch 10140 loss 0.300279
+time spent in 10 epoch 0:00:04.748631
+epoch 10150 loss 0.295112
+time spent in 10 epoch 0:00:04.754721
+epoch 10160 loss 0.289108
+time spent in 10 epoch 0:00:04.847534
+epoch 10170 loss 0.292226
+time spent in 10 epoch 0:00:04.755575
+epoch 10180 loss 0.288979
+time spent in 10 epoch 0:00:04.705517
+epoch 10190 loss 0.297294
+time spent in 10 epoch 0:00:04.740121
+epoch 10200 loss 0.292315
+time spent in 10 epoch 0:00:04.761320
+epoch 10210 loss 0.286751
+time spent in 10 epoch 0:00:04.754577
+epoch 10220 loss 0.291762
+time spent in 10 epoch 0:00:04.749368
+epoch 10230 loss 0.288248
+time spent in 10 epoch 0:00:04.730411
+epoch 10240 loss 0.290858
+time spent in 10 epoch 0:00:04.730678
+epoch 10250 loss 0.286809
+time spent in 10 epoch 0:00:04.737784
+epoch 10260 loss 0.304724
+time spent in 10 epoch 0:00:04.788345
+epoch 10270 loss 0.284074
+time spent in 10 epoch 0:00:04.729432
+epoch 10280 loss 0.287077
+time spent in 10 epoch 0:00:04.712693
+epoch 10290 loss 0.284567
+time spent in 10 epoch 0:00:04.777914
+epoch 10300 loss 0.375523
+time spent in 10 epoch 0:00:04.744390
+epoch 10310 loss 0.290128
+time spent in 10 epoch 0:00:04.742973
+epoch 10320 loss 0.285795
+time spent in 10 epoch 0:00:04.727574
+epoch 10330 loss 0.302535
+time spent in 10 epoch 0:00:04.755412
+epoch 10340 loss 0.284196
+time spent in 10 epoch 0:00:04.764542
+epoch 10350 loss 0.290799
+time spent in 10 epoch 0:00:04.723458
+epoch 10360 loss 0.283466
+time spent in 10 epoch 0:00:04.724338
+epoch 10370 loss 0.283612
+time spent in 10 epoch 0:00:04.753953
+epoch 10380 loss 0.282921
+time spent in 10 epoch 0:00:04.732507
+epoch 10390 loss 0.297056
+time spent in 10 epoch 0:00:04.787850
+epoch 10400 loss 0.296624
+time spent in 10 epoch 0:00:04.719760
+epoch 10410 loss 0.286747
+time spent in 10 epoch 0:00:04.794997
+epoch 10420 loss 0.378399
+time spent in 10 epoch 0:00:04.715866
+epoch 10430 loss 0.315719
+time spent in 10 epoch 0:00:04.729401
+epoch 10440 loss 0.316658
+time spent in 10 epoch 0:00:04.750163
+epoch 10450 loss 0.291697
+time spent in 10 epoch 0:00:04.755646
+epoch 10460 loss 0.293410
+time spent in 10 epoch 0:00:04.723031
+epoch 10470 loss 0.295272
+time spent in 10 epoch 0:00:04.717125
+epoch 10480 loss 0.285375
+time spent in 10 epoch 0:00:04.712828
+epoch 10490 loss 0.292746
+time spent in 10 epoch 0:00:04.732946
+epoch 10500 loss 0.304914
+time spent in 10 epoch 0:00:04.747736
+epoch 10510 loss 0.284936
+time spent in 10 epoch 0:00:04.731520
+epoch 10520 loss 0.291739
+time spent in 10 epoch 0:00:04.758876
+epoch 10530 loss 0.282346
+time spent in 10 epoch 0:00:04.760839
+epoch 10540 loss 0.285452
+time spent in 10 epoch 0:00:04.746887
+epoch 10550 loss 0.293332
+time spent in 10 epoch 0:00:04.720980
+epoch 10560 loss 0.282684
+time spent in 10 epoch 0:00:04.739529
+epoch 10570 loss 0.286047
+time spent in 10 epoch 0:00:04.783787
+epoch 10580 loss 0.280657
+time spent in 10 epoch 0:00:04.720704
+epoch 10590 loss 0.291225
+time spent in 10 epoch 0:00:04.739764
+epoch 10600 loss 0.280136
+time spent in 10 epoch 0:00:04.731865
+epoch 10610 loss 0.279058
+time spent in 10 epoch 0:00:04.734816
+epoch 10620 loss 0.280803
+time spent in 10 epoch 0:00:04.808450
+epoch 10630 loss 0.285164
+time spent in 10 epoch 0:00:04.829939
+epoch 10640 loss 0.277602
+time spent in 10 epoch 0:00:04.758488
+epoch 10650 loss 0.318795
+time spent in 10 epoch 0:00:04.706731
+epoch 10660 loss 0.290310
+time spent in 10 epoch 0:00:04.714175
+epoch 10670 loss 0.290951
+time spent in 10 epoch 0:00:04.732613
+epoch 10680 loss 0.285460
+time spent in 10 epoch 0:00:04.736813
+epoch 10690 loss 0.284166
+time spent in 10 epoch 0:00:04.734583
+epoch 10700 loss 0.285220
+time spent in 10 epoch 0:00:04.730105
+epoch 10710 loss 0.283383
+time spent in 10 epoch 0:00:04.750338
+epoch 10720 loss 0.288721
+time spent in 10 epoch 0:00:04.728651
+epoch 10730 loss 0.285526
+time spent in 10 epoch 0:00:04.755654
+epoch 10740 loss 0.281359
+time spent in 10 epoch 0:00:04.757618
+epoch 10750 loss 0.287865
+time spent in 10 epoch 0:00:04.751194
+epoch 10760 loss 0.294365
+time spent in 10 epoch 0:00:04.713103
+epoch 10770 loss 0.279002
+time spent in 10 epoch 0:00:04.735701
+epoch 10780 loss 0.281257
+time spent in 10 epoch 0:00:04.772210
+epoch 10790 loss 0.281285
+time spent in 10 epoch 0:00:04.714599
+epoch 10800 loss 0.323625
+time spent in 10 epoch 0:00:04.883849
+epoch 10810 loss 0.420895
+time spent in 10 epoch 0:00:04.734364
+epoch 10820 loss 0.380688
+time spent in 10 epoch 0:00:04.742885
+epoch 10830 loss 0.378349
+time spent in 10 epoch 0:00:04.761631
+epoch 10840 loss 0.370305
+time spent in 10 epoch 0:00:04.755626
+epoch 10850 loss 0.388483
+time spent in 10 epoch 0:00:04.725161
+epoch 10860 loss 0.365959
+time spent in 10 epoch 0:00:04.739837
+epoch 10870 loss 0.351638
+time spent in 10 epoch 0:00:04.785548
+epoch 10880 loss 0.364877
+time spent in 10 epoch 0:00:04.755394
+epoch 10890 loss 0.350843
+time spent in 10 epoch 0:00:04.737575
+epoch 10900 loss 0.407288
+time spent in 10 epoch 0:00:04.751056
+epoch 10910 loss 0.354892
+time spent in 10 epoch 0:00:04.736595
+epoch 10920 loss 0.349150
+time spent in 10 epoch 0:00:04.751204
+epoch 10930 loss 0.346999
+time spent in 10 epoch 0:00:04.762350
+epoch 10940 loss 0.414354
+time spent in 10 epoch 0:00:04.735501
+epoch 10950 loss 0.406599
+time spent in 10 epoch 0:00:04.774587
+epoch 10960 loss 0.404115
+time spent in 10 epoch 0:00:04.707069
+epoch 10970 loss 0.402614
+time spent in 10 epoch 0:00:04.764377
+epoch 10980 loss 0.402056
+time spent in 10 epoch 0:00:04.716951
+epoch 10990 loss 0.401415
+time spent in 10 epoch 0:00:04.761698
+epoch 11000 loss 0.400576
+time spent in 10 epoch 0:00:04.730627
+epoch 11010 loss 0.399409
+time spent in 10 epoch 0:00:04.704088
+epoch 11020 loss 0.397492
+time spent in 10 epoch 0:00:04.780050
+epoch 11030 loss 0.395909
+time spent in 10 epoch 0:00:04.728652
+epoch 11040 loss 0.393861
+time spent in 10 epoch 0:00:04.725611
+epoch 11050 loss 0.393475
+time spent in 10 epoch 0:00:04.736813
+epoch 11060 loss 0.392817
+time spent in 10 epoch 0:00:04.727256
+epoch 11070 loss 0.391899
+time spent in 10 epoch 0:00:04.722346
+epoch 11080 loss 0.392401
+time spent in 10 epoch 0:00:04.739533
+epoch 11090 loss 0.391179
+time spent in 10 epoch 0:00:04.738039
+epoch 11100 loss 0.390097
+time spent in 10 epoch 0:00:04.743848
+epoch 11110 loss 0.390356
+time spent in 10 epoch 0:00:04.747610
+epoch 11120 loss 0.386356
+time spent in 10 epoch 0:00:04.728553
+epoch 11130 loss 0.384492
+time spent in 10 epoch 0:00:04.748246
+epoch 11140 loss 0.383550
+time spent in 10 epoch 0:00:04.748088
+epoch 11150 loss 0.381708
+time spent in 10 epoch 0:00:04.724778
+epoch 11160 loss 0.381119
+time spent in 10 epoch 0:00:04.734578
+epoch 11170 loss 0.390126
+time spent in 10 epoch 0:00:04.735531
+epoch 11180 loss 0.383286
+time spent in 10 epoch 0:00:04.761512
+epoch 11190 loss 0.377186
+time spent in 10 epoch 0:00:04.739764
+epoch 11200 loss 0.374860
+time spent in 10 epoch 0:00:04.752260
+epoch 11210 loss 0.391523
+time spent in 10 epoch 0:00:04.740686
+epoch 11220 loss 0.382652
+time spent in 10 epoch 0:00:04.774357
+epoch 11230 loss 0.401255
+time spent in 10 epoch 0:00:04.756221
+epoch 11240 loss 0.388012
+time spent in 10 epoch 0:00:04.724960
+epoch 11250 loss 0.384800
+time spent in 10 epoch 0:00:04.720328
+epoch 11260 loss 0.382852
+time spent in 10 epoch 0:00:04.717939
+epoch 11270 loss 0.381214
+time spent in 10 epoch 0:00:04.727533
+epoch 11280 loss 0.378341
+time spent in 10 epoch 0:00:04.715390
+epoch 11290 loss 0.375610
+time spent in 10 epoch 0:00:04.759460
+epoch 11300 loss 0.373297
+time spent in 10 epoch 0:00:04.739817
+epoch 11310 loss 0.370446
+time spent in 10 epoch 0:00:04.728923
+epoch 11320 loss 0.369646
+time spent in 10 epoch 0:00:04.763108
+epoch 11330 loss 0.367330
+time spent in 10 epoch 0:00:04.726553
+epoch 11340 loss 0.366621
+time spent in 10 epoch 0:00:04.719712
+epoch 11350 loss 0.365066
+time spent in 10 epoch 0:00:04.726686
+epoch 11360 loss 0.364378
+time spent in 10 epoch 0:00:04.762186
+epoch 11370 loss 0.363118
+time spent in 10 epoch 0:00:04.746195
+epoch 11380 loss 0.363665
+time spent in 10 epoch 0:00:04.705399
+epoch 11390 loss 0.359704
+time spent in 10 epoch 0:00:04.735462
+epoch 11400 loss 0.358620
+time spent in 10 epoch 0:00:04.740538
+epoch 11410 loss 0.358681
+time spent in 10 epoch 0:00:04.740233
+epoch 11420 loss 0.356742
+time spent in 10 epoch 0:00:04.738915
+epoch 11430 loss 0.356078
+time spent in 10 epoch 0:00:04.743814
+epoch 11440 loss 0.354171
+time spent in 10 epoch 0:00:04.745971
+epoch 11450 loss 0.354839
+time spent in 10 epoch 0:00:04.758048
+epoch 11460 loss 0.353509
+time spent in 10 epoch 0:00:04.817932
+epoch 11470 loss 0.355237
+time spent in 10 epoch 0:00:04.754134
+epoch 11480 loss 0.352345
+time spent in 10 epoch 0:00:04.729079
+epoch 11490 loss 0.353503
+time spent in 10 epoch 0:00:04.736130
+epoch 11500 loss 0.350889
+time spent in 10 epoch 0:00:04.749817
+epoch 11510 loss 0.350547
+time spent in 10 epoch 0:00:04.733417
+epoch 11520 loss 0.349568
+time spent in 10 epoch 0:00:04.729287
+epoch 11530 loss 0.348752
+time spent in 10 epoch 0:00:04.714788
+epoch 11540 loss 0.348384
+time spent in 10 epoch 0:00:04.746767
+epoch 11550 loss 0.350177
+time spent in 10 epoch 0:00:04.716542
+epoch 11560 loss 0.348742
+time spent in 10 epoch 0:00:04.730696
+epoch 11570 loss 0.350699
+time spent in 10 epoch 0:00:04.756914
+epoch 11580 loss 0.353135
+time spent in 10 epoch 0:00:04.780874
+epoch 11590 loss 0.349078
+time spent in 10 epoch 0:00:04.798132
+epoch 11600 loss 0.348603
+time spent in 10 epoch 0:00:04.732840
+epoch 11610 loss 0.349052
+time spent in 10 epoch 0:00:04.733207
+epoch 11620 loss 0.348084
+time spent in 10 epoch 0:00:04.732672
+epoch 11630 loss 0.347061
+time spent in 10 epoch 0:00:04.711665
+epoch 11640 loss 0.346278
+time spent in 10 epoch 0:00:04.772216
+epoch 11650 loss 0.347410
+time spent in 10 epoch 0:00:04.813650
+epoch 11660 loss 0.367267
+time spent in 10 epoch 0:00:04.722354
+epoch 11670 loss 0.349358
+time spent in 10 epoch 0:00:04.758868
+epoch 11680 loss 0.418323
+time spent in 10 epoch 0:00:04.740806
+epoch 11690 loss 0.409023
+time spent in 10 epoch 0:00:04.752485
+epoch 11700 loss 0.404070
+time spent in 10 epoch 0:00:04.760178
+epoch 11710 loss 0.400690
+time spent in 10 epoch 0:00:04.739413
+epoch 11720 loss 0.399792
+time spent in 10 epoch 0:00:04.750005
+epoch 11730 loss 0.398411
+time spent in 10 epoch 0:00:04.749285
+epoch 11740 loss 0.397348
+time spent in 10 epoch 0:00:04.717830
+epoch 11750 loss 0.396799
+time spent in 10 epoch 0:00:04.747564
+epoch 11760 loss 0.395417
+time spent in 10 epoch 0:00:04.738944
+epoch 11770 loss 0.395317
+time spent in 10 epoch 0:00:04.752842
+epoch 11780 loss 0.394788
+time spent in 10 epoch 0:00:04.771615
+epoch 11790 loss 0.394902
+time spent in 10 epoch 0:00:04.760540
+epoch 11800 loss 0.393210
+time spent in 10 epoch 0:00:04.732755
+epoch 11810 loss 0.394803
+time spent in 10 epoch 0:00:04.731323
+epoch 11820 loss 0.393217
+time spent in 10 epoch 0:00:04.747935
+epoch 11830 loss 0.393894
+time spent in 10 epoch 0:00:04.768041
+epoch 11840 loss 0.391663
+time spent in 10 epoch 0:00:04.751429
+epoch 11850 loss 0.394323
+time spent in 10 epoch 0:00:04.746825
+epoch 11860 loss 0.392453
+time spent in 10 epoch 0:00:04.736168
+epoch 11870 loss 0.391690
+time spent in 10 epoch 0:00:04.764779
+epoch 11880 loss 0.390129
+time spent in 10 epoch 0:00:04.768739
+epoch 11890 loss 0.390327
+time spent in 10 epoch 0:00:04.823952
+epoch 11900 loss 0.390509
+time spent in 10 epoch 0:00:04.790380
+epoch 11910 loss 0.388771
+time spent in 10 epoch 0:00:04.721651
+epoch 11920 loss 0.388667
+time spent in 10 epoch 0:00:04.726437
+epoch 11930 loss 0.388047
+time spent in 10 epoch 0:00:04.720803
+epoch 11940 loss 0.387704
+time spent in 10 epoch 0:00:04.729595
+epoch 11950 loss 0.386719
+time spent in 10 epoch 0:00:04.768007
+epoch 11960 loss 0.387028
+time spent in 10 epoch 0:00:04.744547
+epoch 11970 loss 0.386997
+time spent in 10 epoch 0:00:04.761764
+epoch 11980 loss 0.385675
+time spent in 10 epoch 0:00:04.755390
+epoch 11990 loss 0.386799
+time spent in 10 epoch 0:00:04.724821
+epoch 12000 loss 0.388619
+time spent in 10 epoch 0:00:04.704245
+epoch 12010 loss 0.386820
+time spent in 10 epoch 0:00:04.749118
+epoch 12020 loss 0.386280
+time spent in 10 epoch 0:00:04.729308
+epoch 12030 loss 0.385844
+time spent in 10 epoch 0:00:04.778254
+epoch 12040 loss 0.386173
+time spent in 10 epoch 0:00:04.745304
+epoch 12050 loss 0.384390
+time spent in 10 epoch 0:00:04.733762
+epoch 12060 loss 0.386955
+time spent in 10 epoch 0:00:04.773676
+epoch 12070 loss 0.383870
+time spent in 10 epoch 0:00:04.744205
+epoch 12080 loss 0.384601
+time spent in 10 epoch 0:00:04.736806
+epoch 12090 loss 0.384724
+time spent in 10 epoch 0:00:04.744498
+epoch 12100 loss 0.383755
+time spent in 10 epoch 0:00:04.726597
+epoch 12110 loss 0.383990
+time spent in 10 epoch 0:00:04.737206
+epoch 12120 loss 0.382893
+time spent in 10 epoch 0:00:04.706648
+epoch 12130 loss 0.385324
+time spent in 10 epoch 0:00:04.705339
+epoch 12140 loss 0.381792
+time spent in 10 epoch 0:00:04.721123
+epoch 12150 loss 0.382187
+time spent in 10 epoch 0:00:04.732438
+epoch 12160 loss 0.381979
+time spent in 10 epoch 0:00:04.719496
+epoch 12170 loss 0.381849
+time spent in 10 epoch 0:00:04.727859
+epoch 12180 loss 0.381712
+time spent in 10 epoch 0:00:04.748352
+epoch 12190 loss 0.382582
+time spent in 10 epoch 0:00:04.727756
+epoch 12200 loss 0.380715
+time spent in 10 epoch 0:00:04.752754
+epoch 12210 loss 0.381418
+time spent in 10 epoch 0:00:04.723988
+epoch 12220 loss 0.380369
+time spent in 10 epoch 0:00:04.774855
+epoch 12230 loss 0.381337
+time spent in 10 epoch 0:00:04.714548
+epoch 12240 loss 0.379412
+time spent in 10 epoch 0:00:04.720158
+epoch 12250 loss 0.380974
+time spent in 10 epoch 0:00:04.702877
+epoch 12260 loss 0.379749
+time spent in 10 epoch 0:00:04.751056
+epoch 12270 loss 0.380593
+time spent in 10 epoch 0:00:04.740717
+epoch 12280 loss 0.378890
+time spent in 10 epoch 0:00:04.832520
+epoch 12290 loss 0.379305
+time spent in 10 epoch 0:00:04.792436
+epoch 12300 loss 0.382772
+time spent in 10 epoch 0:00:04.761644
+epoch 12310 loss 0.381634
+time spent in 10 epoch 0:00:04.779303
+epoch 12320 loss 0.379038
+time spent in 10 epoch 0:00:04.753959
+epoch 12330 loss 0.379191
+time spent in 10 epoch 0:00:04.778823
+epoch 12340 loss 0.379879
+time spent in 10 epoch 0:00:04.748065
+epoch 12350 loss 0.379151
+time spent in 10 epoch 0:00:04.745713
+epoch 12360 loss 0.376949
+time spent in 10 epoch 0:00:04.734321
+epoch 12370 loss 0.377776
+time spent in 10 epoch 0:00:04.720044
+epoch 12380 loss 0.378680
+time spent in 10 epoch 0:00:04.710772
+epoch 12390 loss 0.377109
+time spent in 10 epoch 0:00:04.719299
+epoch 12400 loss 0.380157
+time spent in 10 epoch 0:00:04.713085
+epoch 12410 loss 0.377832
+time spent in 10 epoch 0:00:04.708728
+epoch 12420 loss 0.375705
+time spent in 10 epoch 0:00:04.723349
+epoch 12430 loss 0.378598
+time spent in 10 epoch 0:00:04.703528
+epoch 12440 loss 0.378309
+time spent in 10 epoch 0:00:04.737102
+epoch 12450 loss 0.376467
+time spent in 10 epoch 0:00:04.721589
+epoch 12460 loss 0.376547
+time spent in 10 epoch 0:00:04.771272
+epoch 12470 loss 0.377790
+time spent in 10 epoch 0:00:04.834705
+epoch 12480 loss 0.375882
+time spent in 10 epoch 0:00:04.737982
+epoch 12490 loss 0.380382
+time spent in 10 epoch 0:00:04.933170
+epoch 12500 loss 0.378474
+time spent in 10 epoch 0:00:04.770216
+epoch 12510 loss 0.377492
+time spent in 10 epoch 0:00:04.751363
+epoch 12520 loss 0.376450
+time spent in 10 epoch 0:00:04.721910
+epoch 12530 loss 0.377476
+time spent in 10 epoch 0:00:04.789589
+epoch 12540 loss 0.375531
+time spent in 10 epoch 0:00:04.752473
+epoch 12550 loss 0.375790
+time spent in 10 epoch 0:00:04.738364
+epoch 12560 loss 0.375298
+time spent in 10 epoch 0:00:04.746602
+epoch 12570 loss 0.374199
+time spent in 10 epoch 0:00:04.735273
+epoch 12580 loss 0.373001
+time spent in 10 epoch 0:00:04.732489
+epoch 12590 loss 0.372924
+time spent in 10 epoch 0:00:04.755739
+epoch 12600 loss 0.374192
+time spent in 10 epoch 0:00:04.795876
+epoch 12610 loss 0.372585
+time spent in 10 epoch 0:00:04.717168
+epoch 12620 loss 0.371708
+time spent in 10 epoch 0:00:04.744451
+epoch 12630 loss 0.371108
+time spent in 10 epoch 0:00:04.721877
+epoch 12640 loss 0.369100
+time spent in 10 epoch 0:00:04.727570
+epoch 12650 loss 0.370431
+time spent in 10 epoch 0:00:04.738279
+epoch 12660 loss 0.371285
+time spent in 10 epoch 0:00:04.731566
+epoch 12670 loss 0.370187
+time spent in 10 epoch 0:00:04.719673
+epoch 12680 loss 0.369495
+time spent in 10 epoch 0:00:04.751026
+epoch 12690 loss 0.371064
+time spent in 10 epoch 0:00:04.745243
+epoch 12700 loss 0.368991
+time spent in 10 epoch 0:00:04.723353
+epoch 12710 loss 0.368207
+time spent in 10 epoch 0:00:04.793819
+epoch 12720 loss 0.369253
+time spent in 10 epoch 0:00:04.720849
+epoch 12730 loss 0.368880
+time spent in 10 epoch 0:00:04.751701
+epoch 12740 loss 0.368473
+time spent in 10 epoch 0:00:04.744626
+epoch 12750 loss 0.368356
+time spent in 10 epoch 0:00:04.710210
+epoch 12760 loss 0.369954
+time spent in 10 epoch 0:00:04.720591
+epoch 12770 loss 0.366658
+time spent in 10 epoch 0:00:04.755948
+epoch 12780 loss 0.371499
+time spent in 10 epoch 0:00:04.734178
+epoch 12790 loss 0.370082
+time spent in 10 epoch 0:00:04.775487
+epoch 12800 loss 0.367341
+time spent in 10 epoch 0:00:04.746798
+epoch 12810 loss 0.367562
+time spent in 10 epoch 0:00:04.757797
+epoch 12820 loss 0.365951
+time spent in 10 epoch 0:00:04.756815
+epoch 12830 loss 0.367367
+time spent in 10 epoch 0:00:04.743062
+epoch 12840 loss 0.367414
+time spent in 10 epoch 0:00:04.741128
+epoch 12850 loss 0.366595
+time spent in 10 epoch 0:00:04.752720
+epoch 12860 loss 0.365616
+time spent in 10 epoch 0:00:04.744852
+epoch 12870 loss 0.365708
+time spent in 10 epoch 0:00:04.749597
+epoch 12880 loss 0.366550
+time spent in 10 epoch 0:00:04.731565
+epoch 12890 loss 0.369429
+time spent in 10 epoch 0:00:04.715688
+epoch 12900 loss 0.367207
+time spent in 10 epoch 0:00:04.740497
+epoch 12910 loss 0.366250
+time spent in 10 epoch 0:00:04.740220
+epoch 12920 loss 0.367233
+time spent in 10 epoch 0:00:04.745520
+epoch 12930 loss 0.369457
+time spent in 10 epoch 0:00:04.745574
+epoch 12940 loss 0.365620
+time spent in 10 epoch 0:00:04.751631
+epoch 12950 loss 0.367448
+time spent in 10 epoch 0:00:04.710193
+epoch 12960 loss 0.366137
+time spent in 10 epoch 0:00:04.750375
+epoch 12970 loss 0.365633
+time spent in 10 epoch 0:00:04.741863
+epoch 12980 loss 0.367098
+time spent in 10 epoch 0:00:04.714916
+epoch 12990 loss 0.365372
+time spent in 10 epoch 0:00:04.754275
+epoch 13000 loss 0.364225
+time spent in 10 epoch 0:00:04.726861
+epoch 13010 loss 0.365885
+time spent in 10 epoch 0:00:04.730182
+epoch 13020 loss 0.365555
+time spent in 10 epoch 0:00:04.731670
+epoch 13030 loss 0.365624
+time spent in 10 epoch 0:00:04.724751
+epoch 13040 loss 0.367790
+time spent in 10 epoch 0:00:04.745086
+epoch 13050 loss 0.364697
+time spent in 10 epoch 0:00:04.741778
+epoch 13060 loss 0.368956
+time spent in 10 epoch 0:00:04.737517
+epoch 13070 loss 0.369386
+time spent in 10 epoch 0:00:04.749577
+epoch 13080 loss 0.366793
+time spent in 10 epoch 0:00:04.730972
+epoch 13090 loss 0.365986
+time spent in 10 epoch 0:00:04.734796
+epoch 13100 loss 0.366702
+time spent in 10 epoch 0:00:04.752816
+epoch 13110 loss 0.365119
+time spent in 10 epoch 0:00:04.764693
+epoch 13120 loss 0.364245
+time spent in 10 epoch 0:00:04.749961
+epoch 13130 loss 0.364271
+time spent in 10 epoch 0:00:04.743319
+epoch 13140 loss 0.363142
+time spent in 10 epoch 0:00:04.734382
+epoch 13150 loss 0.365989
+time spent in 10 epoch 0:00:04.708219
+epoch 13160 loss 0.362549
+time spent in 10 epoch 0:00:04.822932
+epoch 13170 loss 0.398720
+time spent in 10 epoch 0:00:04.777075
+epoch 13180 loss 0.390354
+time spent in 10 epoch 0:00:04.728476
+epoch 13190 loss 0.390625
+time spent in 10 epoch 0:00:04.806255
+epoch 13200 loss 0.382164
+time spent in 10 epoch 0:00:04.743768
+epoch 13210 loss 0.377739
+time spent in 10 epoch 0:00:04.742096
+epoch 13220 loss 0.372824
+time spent in 10 epoch 0:00:04.748359
+epoch 13230 loss 0.369452
+time spent in 10 epoch 0:00:04.755943
+epoch 13240 loss 0.366387
+time spent in 10 epoch 0:00:04.749260
+epoch 13250 loss 0.366858
+time spent in 10 epoch 0:00:04.727646
+epoch 13260 loss 0.361063
+time spent in 10 epoch 0:00:04.753367
+epoch 13270 loss 0.359975
+time spent in 10 epoch 0:00:04.761765
+epoch 13280 loss 0.359019
+time spent in 10 epoch 0:00:04.736171
+epoch 13290 loss 0.355865
+time spent in 10 epoch 0:00:04.722454
+epoch 13300 loss 0.355391
+time spent in 10 epoch 0:00:04.722776
+epoch 13310 loss 0.355539
+time spent in 10 epoch 0:00:04.761338
+epoch 13320 loss 0.354952
+time spent in 10 epoch 0:00:04.714996
+epoch 13330 loss 0.352610
+time spent in 10 epoch 0:00:04.800072
+epoch 13340 loss 0.352485
+time spent in 10 epoch 0:00:04.770970
+epoch 13350 loss 0.351439
+time spent in 10 epoch 0:00:04.731068
+epoch 13360 loss 0.351072
+time spent in 10 epoch 0:00:04.732341
+epoch 13370 loss 0.349741
+time spent in 10 epoch 0:00:04.743167
+epoch 13380 loss 0.347570
+time spent in 10 epoch 0:00:04.730654
+epoch 13390 loss 0.347371
+time spent in 10 epoch 0:00:04.742191
+epoch 13400 loss 0.346860
+time spent in 10 epoch 0:00:04.733659
+epoch 13410 loss 0.347817
+time spent in 10 epoch 0:00:04.735376
+epoch 13420 loss 0.345560
+time spent in 10 epoch 0:00:04.750099
+epoch 13430 loss 0.349685
+time spent in 10 epoch 0:00:04.741934
+epoch 13440 loss 0.344996
+time spent in 10 epoch 0:00:04.743104
+epoch 13450 loss 0.344604
+time spent in 10 epoch 0:00:04.736814
+epoch 13460 loss 0.343817
+time spent in 10 epoch 0:00:04.734773
+epoch 13470 loss 0.344290
+time spent in 10 epoch 0:00:04.698188
+epoch 13480 loss 0.341628
+time spent in 10 epoch 0:00:04.768175
+epoch 13490 loss 0.340300
+time spent in 10 epoch 0:00:04.737112
+epoch 13500 loss 0.340421
+time spent in 10 epoch 0:00:04.758990
+epoch 13510 loss 0.342124
+time spent in 10 epoch 0:00:04.738459
+epoch 13520 loss 0.339980
+time spent in 10 epoch 0:00:04.738212
+epoch 13530 loss 0.338378
+time spent in 10 epoch 0:00:04.739901
+epoch 13540 loss 0.339562
+time spent in 10 epoch 0:00:04.719187
+epoch 13550 loss 0.340492
+time spent in 10 epoch 0:00:04.768538
+epoch 13560 loss 0.342450
+time spent in 10 epoch 0:00:04.716119
+epoch 13570 loss 0.337805
+time spent in 10 epoch 0:00:04.710018
+epoch 13580 loss 0.336409
+time spent in 10 epoch 0:00:04.723646
+epoch 13590 loss 0.335080
+time spent in 10 epoch 0:00:04.735162
+epoch 13600 loss 0.336407
+time spent in 10 epoch 0:00:04.761539
+epoch 13610 loss 0.336510
+time spent in 10 epoch 0:00:04.751861
+epoch 13620 loss 0.338160
+time spent in 10 epoch 0:00:04.774051
+epoch 13630 loss 0.337315
+time spent in 10 epoch 0:00:04.708198
+epoch 13640 loss 0.335388
+time spent in 10 epoch 0:00:04.722017
+epoch 13650 loss 0.335162
+time spent in 10 epoch 0:00:04.714941
+epoch 13660 loss 0.335227
+time spent in 10 epoch 0:00:04.736292
+epoch 13670 loss 0.353823
+time spent in 10 epoch 0:00:04.720246
+epoch 13680 loss 0.335818
+time spent in 10 epoch 0:00:04.754318
+epoch 13690 loss 0.336874
+time spent in 10 epoch 0:00:04.759097
+epoch 13700 loss 0.339182
+time spent in 10 epoch 0:00:04.723303
+epoch 13710 loss 0.334706
+time spent in 10 epoch 0:00:04.755280
+epoch 13720 loss 0.402564
+time spent in 10 epoch 0:00:04.738300
+epoch 13730 loss 0.454194
+time spent in 10 epoch 0:00:04.763855
+epoch 13740 loss 0.410437
+time spent in 10 epoch 0:00:04.764926
+epoch 13750 loss 0.402532
+time spent in 10 epoch 0:00:04.766749
+epoch 13760 loss 0.399207
+time spent in 10 epoch 0:00:04.716498
+epoch 13770 loss 0.397092
+time spent in 10 epoch 0:00:04.748188
+epoch 13780 loss 0.394013
+time spent in 10 epoch 0:00:04.723228
+epoch 13790 loss 0.393614
+time spent in 10 epoch 0:00:04.725248
+epoch 13800 loss 0.396106
+time spent in 10 epoch 0:00:04.707421
+epoch 13810 loss 0.393574
+time spent in 10 epoch 0:00:04.752711
+epoch 13820 loss 0.391181
+time spent in 10 epoch 0:00:04.759555
+epoch 13830 loss 0.389698
+time spent in 10 epoch 0:00:04.745272
+epoch 13840 loss 0.389528
+time spent in 10 epoch 0:00:04.729877
+epoch 13850 loss 0.390878
+time spent in 10 epoch 0:00:04.752359
+epoch 13860 loss 0.389260
+time spent in 10 epoch 0:00:04.760173
+epoch 13870 loss 0.387707
+time spent in 10 epoch 0:00:04.738713
+epoch 13880 loss 0.386578
+time spent in 10 epoch 0:00:04.724417
+epoch 13890 loss 0.386335
+time spent in 10 epoch 0:00:04.738969
+epoch 13900 loss 0.385280
+time spent in 10 epoch 0:00:04.786180
+epoch 13910 loss 0.384693
+time spent in 10 epoch 0:00:04.725734
+epoch 13920 loss 0.384428
+time spent in 10 epoch 0:00:04.760886
+epoch 13930 loss 0.383121
+time spent in 10 epoch 0:00:04.773841
+epoch 13940 loss 0.386507
+time spent in 10 epoch 0:00:04.729260
+epoch 13950 loss 0.382239
+time spent in 10 epoch 0:00:04.751344
+epoch 13960 loss 0.383007
+time spent in 10 epoch 0:00:04.737300
+epoch 13970 loss 0.383364
+time spent in 10 epoch 0:00:04.729691
+epoch 13980 loss 0.380505
+time spent in 10 epoch 0:00:04.767658
+epoch 13990 loss 0.381012
+time spent in 10 epoch 0:00:04.738186
+epoch 14000 loss 0.381120
+time spent in 10 epoch 0:00:04.761724
+epoch 14010 loss 0.379931
+time spent in 10 epoch 0:00:04.711083
+epoch 14020 loss 0.379843
+time spent in 10 epoch 0:00:04.702221
+epoch 14030 loss 0.379780
+time spent in 10 epoch 0:00:04.704604
+epoch 14040 loss 0.379297
+time spent in 10 epoch 0:00:04.761210
+epoch 14050 loss 0.379125
+time spent in 10 epoch 0:00:04.757179
+epoch 14060 loss 0.377808
+time spent in 10 epoch 0:00:04.747944
+epoch 14070 loss 0.385059
+time spent in 10 epoch 0:00:04.727317
+epoch 14080 loss 0.379388
+time spent in 10 epoch 0:00:04.739804
+epoch 14090 loss 0.377431
+time spent in 10 epoch 0:00:04.725605
+epoch 14100 loss 0.376766
+time spent in 10 epoch 0:00:04.713352
+epoch 14110 loss 0.383667
+time spent in 10 epoch 0:00:04.719724
+epoch 14120 loss 0.382318
+time spent in 10 epoch 0:00:04.767142
+epoch 14130 loss 0.381500
+time spent in 10 epoch 0:00:04.724801
+epoch 14140 loss 0.384621
+time spent in 10 epoch 0:00:04.789774
+epoch 14150 loss 0.379141
+time spent in 10 epoch 0:00:04.834691
+epoch 14160 loss 0.379093
+time spent in 10 epoch 0:00:04.752212
+epoch 14170 loss 0.378349
+time spent in 10 epoch 0:00:04.727328
+epoch 14180 loss 0.378635
+time spent in 10 epoch 0:00:04.762720
+epoch 14190 loss 0.378861
+time spent in 10 epoch 0:00:04.758513
+epoch 14200 loss 0.377837
+time spent in 10 epoch 0:00:04.799216
+epoch 14210 loss 0.375439
+time spent in 10 epoch 0:00:04.785781
+epoch 14220 loss 0.375777
+time spent in 10 epoch 0:00:04.717467
+epoch 14230 loss 0.374602
+time spent in 10 epoch 0:00:04.754741
+epoch 14240 loss 0.372921
+time spent in 10 epoch 0:00:04.753570
+epoch 14250 loss 0.373494
+time spent in 10 epoch 0:00:04.732946
+epoch 14260 loss 0.373782
+time spent in 10 epoch 0:00:04.720709
+epoch 14270 loss 0.372620
+time spent in 10 epoch 0:00:04.720963
+epoch 14280 loss 0.372466
+time spent in 10 epoch 0:00:04.708441
+epoch 14290 loss 0.374728
+time spent in 10 epoch 0:00:04.741759
+epoch 14300 loss 0.373965
+time spent in 10 epoch 0:00:04.723612
+epoch 14310 loss 0.393838
+time spent in 10 epoch 0:00:04.727456
+epoch 14320 loss 0.371061
+time spent in 10 epoch 0:00:04.709561
+epoch 14330 loss 0.372407
+time spent in 10 epoch 0:00:04.755816
+epoch 14340 loss 0.370240
+time spent in 10 epoch 0:00:04.736858
+epoch 14350 loss 0.370935
+time spent in 10 epoch 0:00:04.729058
+epoch 14360 loss 0.369253
+time spent in 10 epoch 0:00:04.732723
+epoch 14370 loss 0.376202
+time spent in 10 epoch 0:00:04.718476
+epoch 14380 loss 0.371733
+time spent in 10 epoch 0:00:04.718063
+epoch 14390 loss 0.372664
+time spent in 10 epoch 0:00:04.740629
+epoch 14400 loss 0.374170
+time spent in 10 epoch 0:00:04.749315
+epoch 14410 loss 0.375648
+time spent in 10 epoch 0:00:04.754171
+epoch 14420 loss 0.385681
+time spent in 10 epoch 0:00:04.697587
+epoch 14430 loss 0.375054
+time spent in 10 epoch 0:00:04.745551
+epoch 14440 loss 0.372245
+time spent in 10 epoch 0:00:04.737223
+epoch 14450 loss 0.372301
+time spent in 10 epoch 0:00:04.732582
+epoch 14460 loss 0.371617
+time spent in 10 epoch 0:00:04.718014
+epoch 14470 loss 0.369353
+time spent in 10 epoch 0:00:04.813735
+epoch 14480 loss 0.369596
+time spent in 10 epoch 0:00:04.829333
+epoch 14490 loss 0.366768
+time spent in 10 epoch 0:00:04.729007
+epoch 14500 loss 0.368615
+time spent in 10 epoch 0:00:04.740875
+epoch 14510 loss 0.365711
+time spent in 10 epoch 0:00:04.719370
+epoch 14520 loss 0.370735
+time spent in 10 epoch 0:00:04.727569
+epoch 14530 loss 0.384797
+time spent in 10 epoch 0:00:04.757821
+epoch 14540 loss 0.370918
+time spent in 10 epoch 0:00:04.729642
+epoch 14550 loss 0.369244
+time spent in 10 epoch 0:00:04.732792
+epoch 14560 loss 0.369278
+time spent in 10 epoch 0:00:04.737846
+epoch 14570 loss 0.372734
+time spent in 10 epoch 0:00:04.744484
+epoch 14580 loss 0.366949
+time spent in 10 epoch 0:00:04.735235
+epoch 14590 loss 0.366141
+time spent in 10 epoch 0:00:04.750114
+epoch 14600 loss 0.386209
+time spent in 10 epoch 0:00:04.722114
+epoch 14610 loss 0.393059
+time spent in 10 epoch 0:00:04.728279
+epoch 14620 loss 0.383570
+time spent in 10 epoch 0:00:04.738623
+epoch 14630 loss 0.390805
+time spent in 10 epoch 0:00:04.752026
+epoch 14640 loss 0.381976
+time spent in 10 epoch 0:00:04.792111
+epoch 14650 loss 0.379777
+time spent in 10 epoch 0:00:04.759562
+epoch 14660 loss 0.372539
+time spent in 10 epoch 0:00:04.745539
+epoch 14670 loss 0.368721
+time spent in 10 epoch 0:00:04.734882
+epoch 14680 loss 0.380254
+time spent in 10 epoch 0:00:04.737625
+epoch 14690 loss 0.369396
+time spent in 10 epoch 0:00:04.744920
+epoch 14700 loss 0.364618
+time spent in 10 epoch 0:00:04.729198
+epoch 14710 loss 0.363477
+time spent in 10 epoch 0:00:04.737115
+epoch 14720 loss 0.362689
+time spent in 10 epoch 0:00:04.745032
+epoch 14730 loss 0.364175
+time spent in 10 epoch 0:00:04.706331
+epoch 14740 loss 0.363060
+time spent in 10 epoch 0:00:04.739934
+epoch 14750 loss 0.401882
+time spent in 10 epoch 0:00:04.747848
+epoch 14760 loss 0.373759
+time spent in 10 epoch 0:00:04.744191
+epoch 14770 loss 0.368181
+time spent in 10 epoch 0:00:04.764554
+epoch 14780 loss 0.364545
+time spent in 10 epoch 0:00:04.719414
+epoch 14790 loss 0.364314
+time spent in 10 epoch 0:00:04.734513
+epoch 14800 loss 0.359414
+time spent in 10 epoch 0:00:04.732387
+epoch 14810 loss 0.358890
+time spent in 10 epoch 0:00:04.799860
+epoch 14820 loss 0.358414
+time spent in 10 epoch 0:00:04.804986
+epoch 14830 loss 0.356454
+time spent in 10 epoch 0:00:04.732310
+epoch 14840 loss 0.357053
+time spent in 10 epoch 0:00:04.799887
+epoch 14850 loss 0.356248
+time spent in 10 epoch 0:00:04.749494
+epoch 14860 loss 0.357761
+time spent in 10 epoch 0:00:04.740692
+epoch 14870 loss 0.413160
+time spent in 10 epoch 0:00:04.753897
+epoch 14880 loss 0.365171
+time spent in 10 epoch 0:00:04.715314
+epoch 14890 loss 0.359435
+time spent in 10 epoch 0:00:04.733444
+epoch 14900 loss 0.359416
+time spent in 10 epoch 0:00:04.721996
+epoch 14910 loss 0.358110
+time spent in 10 epoch 0:00:04.748431
+epoch 14920 loss 0.357076
+time spent in 10 epoch 0:00:04.744915
+epoch 14930 loss 0.355610
+time spent in 10 epoch 0:00:04.732841
+epoch 14940 loss 0.354248
+time spent in 10 epoch 0:00:04.728414
+epoch 14950 loss 0.353432
+time spent in 10 epoch 0:00:04.721814
+epoch 14960 loss 0.353398
+time spent in 10 epoch 0:00:04.748630
+epoch 14970 loss 0.359429
+time spent in 10 epoch 0:00:04.720444
+epoch 14980 loss 0.351881
+time spent in 10 epoch 0:00:04.740229
+epoch 14990 loss 0.351718
+time spent in 10 epoch 0:00:04.725908
+epoch 15000 loss 0.352560
+time spent in 10 epoch 0:00:04.717788
+epoch 15010 loss 0.352460
+time spent in 10 epoch 0:00:04.799644
+epoch 15020 loss 0.351165
+time spent in 10 epoch 0:00:04.721425
+epoch 15030 loss 0.350521
+time spent in 10 epoch 0:00:04.720613
+epoch 15040 loss 0.349375
+time spent in 10 epoch 0:00:04.731403
+epoch 15050 loss 0.349148
+time spent in 10 epoch 0:00:04.759121
+epoch 15060 loss 0.349348
+time spent in 10 epoch 0:00:04.714847
+epoch 15070 loss 0.348333
+time spent in 10 epoch 0:00:04.713597
+epoch 15080 loss 0.350378
+time spent in 10 epoch 0:00:04.785701
+epoch 15090 loss 0.347906
+time spent in 10 epoch 0:00:04.760438
+epoch 15100 loss 0.348782
+time spent in 10 epoch 0:00:04.750491
+epoch 15110 loss 0.346590
+time spent in 10 epoch 0:00:04.730919
+epoch 15120 loss 0.345802
+time spent in 10 epoch 0:00:04.720896
+epoch 15130 loss 0.345998
+time spent in 10 epoch 0:00:04.725816
+epoch 15140 loss 0.349378
+time spent in 10 epoch 0:00:04.735023
+epoch 15150 loss 0.353695
+time spent in 10 epoch 0:00:04.773966
+epoch 15160 loss 0.410568
+time spent in 10 epoch 0:00:04.770708
+epoch 15170 loss 0.393332
+time spent in 10 epoch 0:00:04.717392
+epoch 15180 loss 0.385365
+time spent in 10 epoch 0:00:04.736340
+epoch 15190 loss 0.381162
+time spent in 10 epoch 0:00:04.738832
+epoch 15200 loss 0.388265
+time spent in 10 epoch 0:00:04.771816
+epoch 15210 loss 0.376026
+time spent in 10 epoch 0:00:04.751007
+epoch 15220 loss 0.412598
+time spent in 10 epoch 0:00:04.704820
+epoch 15230 loss 0.400988
+time spent in 10 epoch 0:00:04.713507
+epoch 15240 loss 0.399763
+time spent in 10 epoch 0:00:04.740970
+epoch 15250 loss 0.387841
+time spent in 10 epoch 0:00:04.739901
+epoch 15260 loss 0.381956
+time spent in 10 epoch 0:00:04.739261
+epoch 15270 loss 0.381568
+time spent in 10 epoch 0:00:04.755591
+epoch 15280 loss 0.394943
+time spent in 10 epoch 0:00:04.722367
+epoch 15290 loss 0.385312
+time spent in 10 epoch 0:00:04.710718
+epoch 15300 loss 0.379662
+time spent in 10 epoch 0:00:04.727796
+epoch 15310 loss 0.378619
+time spent in 10 epoch 0:00:04.724859
+epoch 15320 loss 0.402327
+time spent in 10 epoch 0:00:04.741641
+epoch 15330 loss 0.387991
+time spent in 10 epoch 0:00:04.739991
+epoch 15340 loss 0.384518
+time spent in 10 epoch 0:00:04.762762
+epoch 15350 loss 0.384683
+time spent in 10 epoch 0:00:04.746237
+epoch 15360 loss 0.379787
+time spent in 10 epoch 0:00:04.737011
+epoch 15370 loss 0.381425
+time spent in 10 epoch 0:00:04.759263
+epoch 15380 loss 0.377345
+time spent in 10 epoch 0:00:04.756559
+epoch 15390 loss 0.375393
+time spent in 10 epoch 0:00:04.695823
+epoch 15400 loss 0.375506
+time spent in 10 epoch 0:00:04.751748
+epoch 15410 loss 0.375403
+time spent in 10 epoch 0:00:04.722866
+epoch 15420 loss 0.372143
+time spent in 10 epoch 0:00:04.737639
+epoch 15430 loss 0.371003
+time spent in 10 epoch 0:00:04.739372
+epoch 15440 loss 0.370157
+time spent in 10 epoch 0:00:04.730822
+epoch 15450 loss 0.368978
+time spent in 10 epoch 0:00:04.717133
+epoch 15460 loss 0.368335
+time spent in 10 epoch 0:00:04.723545
+epoch 15470 loss 0.368243
+time spent in 10 epoch 0:00:04.718507
+epoch 15480 loss 0.366227
+time spent in 10 epoch 0:00:04.748409
+epoch 15490 loss 0.367940
+time spent in 10 epoch 0:00:04.753695
+epoch 15500 loss 0.366099
+time spent in 10 epoch 0:00:04.733290
+epoch 15510 loss 0.367499
+time spent in 10 epoch 0:00:04.759361
+epoch 15520 loss 0.363563
+time spent in 10 epoch 0:00:04.743064
+epoch 15530 loss 0.363898
+time spent in 10 epoch 0:00:04.768316
+epoch 15540 loss 0.363720
+time spent in 10 epoch 0:00:04.823238
+epoch 15550 loss 0.361605
+time spent in 10 epoch 0:00:04.730279
+epoch 15560 loss 0.361862
+time spent in 10 epoch 0:00:04.700384
+epoch 15570 loss 0.361187
+time spent in 10 epoch 0:00:04.767849
+epoch 15580 loss 0.361351
+time spent in 10 epoch 0:00:04.719951
+epoch 15590 loss 0.362481
+time spent in 10 epoch 0:00:04.737422
+epoch 15600 loss 0.360958
+time spent in 10 epoch 0:00:04.744165
+epoch 15610 loss 0.362509
+time spent in 10 epoch 0:00:04.722730
+epoch 15620 loss 0.363287
+time spent in 10 epoch 0:00:04.737196
+epoch 15630 loss 0.360785
+time spent in 10 epoch 0:00:04.750767
+epoch 15640 loss 0.359744
+time spent in 10 epoch 0:00:04.766792
+epoch 15650 loss 0.362125
+time spent in 10 epoch 0:00:04.724341
+epoch 15660 loss 0.359717
+time spent in 10 epoch 0:00:04.757159
+epoch 15670 loss 0.359778
+time spent in 10 epoch 0:00:04.713386
+epoch 15680 loss 0.368629
+time spent in 10 epoch 0:00:04.690167
+epoch 15690 loss 0.359609
+time spent in 10 epoch 0:00:04.731333
+epoch 15700 loss 0.375903
+time spent in 10 epoch 0:00:04.746660
+epoch 15710 loss 0.371044
+time spent in 10 epoch 0:00:04.733822
+epoch 15720 loss 0.372394
+time spent in 10 epoch 0:00:04.811872
+epoch 15730 loss 0.371838
+time spent in 10 epoch 0:00:04.782205
+epoch 15740 loss 0.369605
+time spent in 10 epoch 0:00:04.753653
+epoch 15750 loss 0.372161
+time spent in 10 epoch 0:00:04.751005
+epoch 15760 loss 0.372597
+time spent in 10 epoch 0:00:04.913595
+epoch 15770 loss 0.371214
+time spent in 10 epoch 0:00:04.721546
+epoch 15780 loss 0.369544
+time spent in 10 epoch 0:00:04.748086
+epoch 15790 loss 0.367518
+time spent in 10 epoch 0:00:04.752999
+epoch 15800 loss 0.366085
+time spent in 10 epoch 0:00:04.734382
+epoch 15810 loss 0.366591
+time spent in 10 epoch 0:00:04.682871
+epoch 15820 loss 0.364175
+time spent in 10 epoch 0:00:04.737845
+epoch 15830 loss 0.364392
+time spent in 10 epoch 0:00:04.709012
+epoch 15840 loss 0.363031
+time spent in 10 epoch 0:00:04.716492
+epoch 15850 loss 0.366087
+time spent in 10 epoch 0:00:04.763118
+epoch 15860 loss 0.363595
+time spent in 10 epoch 0:00:04.724855
+epoch 15870 loss 0.361551
+time spent in 10 epoch 0:00:04.752690
+epoch 15880 loss 0.361068
+time spent in 10 epoch 0:00:04.708774
+epoch 15890 loss 0.363202
+time spent in 10 epoch 0:00:04.755162
+epoch 15900 loss 0.360896
+time spent in 10 epoch 0:00:04.708723
+epoch 15910 loss 0.359689
+time spent in 10 epoch 0:00:04.731217
+epoch 15920 loss 0.361026
+time spent in 10 epoch 0:00:04.730107
+epoch 15930 loss 0.363390
+time spent in 10 epoch 0:00:04.757965
+epoch 15940 loss 0.357787
+time spent in 10 epoch 0:00:04.729982
+epoch 15950 loss 0.363468
+time spent in 10 epoch 0:00:04.731123
+epoch 15960 loss 0.359831
+time spent in 10 epoch 0:00:04.739669
+epoch 15970 loss 0.361345
+time spent in 10 epoch 0:00:04.733732
+epoch 15980 loss 0.358361
+time spent in 10 epoch 0:00:04.702883
+epoch 15990 loss 0.363641
+time spent in 10 epoch 0:00:04.731496
+epoch 16000 loss 0.368032
+time spent in 10 epoch 0:00:04.742639
+epoch 16010 loss 0.357697
+time spent in 10 epoch 0:00:04.752292
+epoch 16020 loss 0.356593
+time spent in 10 epoch 0:00:04.719138
+epoch 16030 loss 0.356595
+time spent in 10 epoch 0:00:04.744643
+epoch 16040 loss 0.355534
+time spent in 10 epoch 0:00:04.737820
+epoch 16050 loss 0.358336
+time spent in 10 epoch 0:00:04.729055
+epoch 16060 loss 0.360025
+time spent in 10 epoch 0:00:04.740072
+epoch 16070 loss 0.355211
+time spent in 10 epoch 0:00:04.710501
+epoch 16080 loss 0.367819
+time spent in 10 epoch 0:00:04.783388
+epoch 16090 loss 0.353791
+time spent in 10 epoch 0:00:04.751831
+epoch 16100 loss 0.353746
+time spent in 10 epoch 0:00:04.745302
+epoch 16110 loss 0.356801
+time spent in 10 epoch 0:00:04.739382
+epoch 16120 loss 0.353040
+time spent in 10 epoch 0:00:04.716383
+epoch 16130 loss 0.354742
+time spent in 10 epoch 0:00:04.705140
+epoch 16140 loss 0.353832
+time spent in 10 epoch 0:00:04.764167
+epoch 16150 loss 0.352902
+time spent in 10 epoch 0:00:04.813927
+epoch 16160 loss 0.358696
+time spent in 10 epoch 0:00:04.739555
+epoch 16170 loss 0.352842
+time spent in 10 epoch 0:00:04.703102
+epoch 16180 loss 0.352803
+time spent in 10 epoch 0:00:04.727490
+epoch 16190 loss 0.352098
+time spent in 10 epoch 0:00:04.761878
+epoch 16200 loss 0.353056
+time spent in 10 epoch 0:00:04.753946
+epoch 16210 loss 0.363594
+time spent in 10 epoch 0:00:04.702279
+epoch 16220 loss 0.350220
+time spent in 10 epoch 0:00:04.730922
+epoch 16230 loss 0.349890
+time spent in 10 epoch 0:00:04.728205
+epoch 16240 loss 0.348280
+time spent in 10 epoch 0:00:04.735042
+epoch 16250 loss 0.350531
+time spent in 10 epoch 0:00:04.731238
+epoch 16260 loss 0.360538
+time spent in 10 epoch 0:00:04.737408
+epoch 16270 loss 0.369865
+time spent in 10 epoch 0:00:04.750785
+epoch 16280 loss 0.375133
+time spent in 10 epoch 0:00:04.769718
+epoch 16290 loss 0.359197
+time spent in 10 epoch 0:00:04.908237
+epoch 16300 loss 0.362923
+time spent in 10 epoch 0:00:04.771035
+epoch 16310 loss 0.355761
+time spent in 10 epoch 0:00:04.760731
+epoch 16320 loss 0.354789
+time spent in 10 epoch 0:00:04.749791
+epoch 16330 loss 0.355486
+time spent in 10 epoch 0:00:04.722129
+epoch 16340 loss 0.354349
+time spent in 10 epoch 0:00:04.726049
+epoch 16350 loss 0.353280
+time spent in 10 epoch 0:00:04.733403
+epoch 16360 loss 0.355455
+time spent in 10 epoch 0:00:04.745350
+epoch 16370 loss 0.352872
+time spent in 10 epoch 0:00:04.733251
+epoch 16380 loss 0.353139
+time spent in 10 epoch 0:00:04.718776
+epoch 16390 loss 0.355086
+time spent in 10 epoch 0:00:04.765169
+epoch 16400 loss 0.354107
+time spent in 10 epoch 0:00:04.779979
+epoch 16410 loss 0.353201
+time spent in 10 epoch 0:00:04.759550
+epoch 16420 loss 0.353758
+time spent in 10 epoch 0:00:04.782944
+epoch 16430 loss 0.351320
+time spent in 10 epoch 0:00:04.750253
+epoch 16440 loss 0.357954
+time spent in 10 epoch 0:00:04.753717
+epoch 16450 loss 0.351323
+time spent in 10 epoch 0:00:04.713016
+epoch 16460 loss 0.351111
+time spent in 10 epoch 0:00:04.745519
+epoch 16470 loss 0.350838
+time spent in 10 epoch 0:00:04.741746
+epoch 16480 loss 0.349501
+time spent in 10 epoch 0:00:04.770257
+epoch 16490 loss 0.363413
+time spent in 10 epoch 0:00:04.723926
+epoch 16500 loss 0.349491
+time spent in 10 epoch 0:00:04.755565
+epoch 16510 loss 0.352513
+time spent in 10 epoch 0:00:04.746677
+epoch 16520 loss 0.347147
+time spent in 10 epoch 0:00:04.738143
+epoch 16530 loss 0.408093
+time spent in 10 epoch 0:00:04.730318
+epoch 16540 loss 0.376563
+time spent in 10 epoch 0:00:04.715543
+epoch 16550 loss 0.361354
+time spent in 10 epoch 0:00:04.724323
+epoch 16560 loss 0.354872
+time spent in 10 epoch 0:00:04.749535
+epoch 16570 loss 0.355619
+time spent in 10 epoch 0:00:04.756512
+epoch 16580 loss 0.389352
+time spent in 10 epoch 0:00:04.722480
+epoch 16590 loss 0.389868
+time spent in 10 epoch 0:00:04.734948
+epoch 16600 loss 0.381426
+time spent in 10 epoch 0:00:04.688131
+epoch 16610 loss 0.378820
+time spent in 10 epoch 0:00:04.757584
+epoch 16620 loss 0.378251
+time spent in 10 epoch 0:00:04.716809
+epoch 16630 loss 0.374771
+time spent in 10 epoch 0:00:04.766449
+epoch 16640 loss 0.372874
+time spent in 10 epoch 0:00:04.724633
+epoch 16650 loss 0.372304
+time spent in 10 epoch 0:00:04.754127
+epoch 16660 loss 0.372411
+time spent in 10 epoch 0:00:04.732376
+epoch 16670 loss 0.371523
+time spent in 10 epoch 0:00:04.731846
+epoch 16680 loss 0.370863
+time spent in 10 epoch 0:00:04.726466
+epoch 16690 loss 0.370006
+time spent in 10 epoch 0:00:04.746977
+epoch 16700 loss 0.369372
+time spent in 10 epoch 0:00:04.748740
+epoch 16710 loss 0.369224
+time spent in 10 epoch 0:00:04.748371
+epoch 16720 loss 0.367807
+time spent in 10 epoch 0:00:04.741668
+epoch 16730 loss 0.367721
+time spent in 10 epoch 0:00:04.747697
+epoch 16740 loss 0.367389
+time spent in 10 epoch 0:00:04.722265
+epoch 16750 loss 0.366406
+time spent in 10 epoch 0:00:04.799878
+epoch 16760 loss 0.366530
+time spent in 10 epoch 0:00:04.725044
+epoch 16770 loss 0.365330
+time spent in 10 epoch 0:00:04.743805
+epoch 16780 loss 0.364770
+time spent in 10 epoch 0:00:04.739873
+epoch 16790 loss 0.364592
+time spent in 10 epoch 0:00:04.736932
+epoch 16800 loss 0.365114
+time spent in 10 epoch 0:00:04.705029
+epoch 16810 loss 0.364141
+time spent in 10 epoch 0:00:04.716065
+epoch 16820 loss 0.366294
+time spent in 10 epoch 0:00:04.749919
+epoch 16830 loss 0.364327
+time spent in 10 epoch 0:00:04.728758
+epoch 16840 loss 0.363100
+time spent in 10 epoch 0:00:04.720941
+epoch 16850 loss 0.364972
+time spent in 10 epoch 0:00:04.749776
+epoch 16860 loss 0.362977
+time spent in 10 epoch 0:00:04.739179
+epoch 16870 loss 0.362512
+time spent in 10 epoch 0:00:04.753216
+epoch 16880 loss 0.361846
+time spent in 10 epoch 0:00:04.738010
+epoch 16890 loss 0.360777
+time spent in 10 epoch 0:00:04.776658
+epoch 16900 loss 0.360779
+time spent in 10 epoch 0:00:04.732336
+epoch 16910 loss 0.358995
+time spent in 10 epoch 0:00:04.738571
+epoch 16920 loss 0.358214
+time spent in 10 epoch 0:00:04.731348
+epoch 16930 loss 0.358177
+time spent in 10 epoch 0:00:04.743986
+epoch 16940 loss 0.357642
+time spent in 10 epoch 0:00:04.717181
+epoch 16950 loss 0.355059
+time spent in 10 epoch 0:00:04.702010
+epoch 16960 loss 0.356498
+time spent in 10 epoch 0:00:04.766458
+epoch 16970 loss 0.354957
+time spent in 10 epoch 0:00:04.762017
+epoch 16980 loss 0.354235
+time spent in 10 epoch 0:00:04.738188
+epoch 16990 loss 0.354105
+time spent in 10 epoch 0:00:04.841075
+epoch 17000 loss 0.429913
+time spent in 10 epoch 0:00:04.756023
+epoch 17010 loss 0.413241
+time spent in 10 epoch 0:00:04.722461
+epoch 17020 loss 0.408688
+time spent in 10 epoch 0:00:04.746504
+epoch 17030 loss 0.404448
+time spent in 10 epoch 0:00:04.727774
+epoch 17040 loss 0.401727
+time spent in 10 epoch 0:00:04.840795
+epoch 17050 loss 0.400303
+time spent in 10 epoch 0:00:04.764387
+epoch 17060 loss 0.399017
+time spent in 10 epoch 0:00:04.741566
+epoch 17070 loss 0.398572
+time spent in 10 epoch 0:00:04.737580
+epoch 17080 loss 0.398007
+time spent in 10 epoch 0:00:04.786561
+epoch 17090 loss 0.397292
+time spent in 10 epoch 0:00:04.740147
+epoch 17100 loss 0.397013
+time spent in 10 epoch 0:00:04.695092
+epoch 17110 loss 0.396996
+time spent in 10 epoch 0:00:04.733055
+epoch 17120 loss 0.395488
+time spent in 10 epoch 0:00:04.745256
+epoch 17130 loss 0.394923
+time spent in 10 epoch 0:00:04.730315
+epoch 17140 loss 0.394015
+time spent in 10 epoch 0:00:04.735404
+epoch 17150 loss 0.394118
+time spent in 10 epoch 0:00:04.750051
+epoch 17160 loss 0.393403
+time spent in 10 epoch 0:00:04.724070
+epoch 17170 loss 0.392323
+time spent in 10 epoch 0:00:04.720749
+epoch 17180 loss 0.392232
+time spent in 10 epoch 0:00:04.737420
+epoch 17190 loss 0.394141
+time spent in 10 epoch 0:00:04.740398
+epoch 17200 loss 0.391932
+time spent in 10 epoch 0:00:04.719278
+epoch 17210 loss 0.393001
+time spent in 10 epoch 0:00:04.803256
+epoch 17220 loss 0.390642
+time spent in 10 epoch 0:00:04.747961
+epoch 17230 loss 0.390605
+time spent in 10 epoch 0:00:04.741869
+epoch 17240 loss 0.391538
+time spent in 10 epoch 0:00:04.744395
+epoch 17250 loss 0.389795
+time spent in 10 epoch 0:00:04.766896
+epoch 17260 loss 0.389656
+time spent in 10 epoch 0:00:04.716657
+epoch 17270 loss 0.391900
+time spent in 10 epoch 0:00:04.736865
+epoch 17280 loss 0.388777
+time spent in 10 epoch 0:00:04.737389
+epoch 17290 loss 0.387999
+time spent in 10 epoch 0:00:04.726569
+epoch 17300 loss 0.388315
+time spent in 10 epoch 0:00:04.774416
+epoch 17310 loss 0.387612
+time spent in 10 epoch 0:00:04.697756
+epoch 17320 loss 0.386705
+time spent in 10 epoch 0:00:04.725028
+epoch 17330 loss 0.386814
+time spent in 10 epoch 0:00:04.737731
+epoch 17340 loss 0.391360
+time spent in 10 epoch 0:00:04.757476
+epoch 17350 loss 0.386382
+time spent in 10 epoch 0:00:04.789032
+epoch 17360 loss 0.386174
+time spent in 10 epoch 0:00:04.727586
+epoch 17370 loss 0.387745
+time spent in 10 epoch 0:00:04.730237
+epoch 17380 loss 0.386818
+time spent in 10 epoch 0:00:04.711076
+epoch 17390 loss 0.385513
+time spent in 10 epoch 0:00:04.762731
+epoch 17400 loss 0.385341
+time spent in 10 epoch 0:00:04.719632
+epoch 17410 loss 0.384008
+time spent in 10 epoch 0:00:04.728528
+epoch 17420 loss 0.384368
+time spent in 10 epoch 0:00:04.729696
+epoch 17430 loss 0.385853
+time spent in 10 epoch 0:00:04.727223
+epoch 17440 loss 0.383997
+time spent in 10 epoch 0:00:04.736997
+epoch 17450 loss 0.383107
+time spent in 10 epoch 0:00:04.717172
+epoch 17460 loss 0.383862
+time spent in 10 epoch 0:00:04.661796
+epoch 17470 loss 0.383208
+time spent in 10 epoch 0:00:04.760274
+epoch 17480 loss 0.382279
+time spent in 10 epoch 0:00:04.742039
+epoch 17490 loss 0.383129
+time spent in 10 epoch 0:00:04.743560
+epoch 17500 loss 0.382124
+time spent in 10 epoch 0:00:04.729334
+epoch 17510 loss 0.381593
+time spent in 10 epoch 0:00:04.734736
+epoch 17520 loss 0.381399
+time spent in 10 epoch 0:00:04.737170
+epoch 17530 loss 0.381558
+time spent in 10 epoch 0:00:04.737230
+epoch 17540 loss 0.381901
+time spent in 10 epoch 0:00:04.768735
+epoch 17550 loss 0.381067
+time spent in 10 epoch 0:00:04.740541
+epoch 17560 loss 0.380831
+time spent in 10 epoch 0:00:04.760596
+epoch 17570 loss 0.380820
+time spent in 10 epoch 0:00:04.715280
+epoch 17580 loss 0.381035
+time spent in 10 epoch 0:00:04.742859
+epoch 17590 loss 0.380715
+time spent in 10 epoch 0:00:04.752825
+epoch 17600 loss 0.380656
+time spent in 10 epoch 0:00:04.703510
+epoch 17610 loss 0.379271
+time spent in 10 epoch 0:00:04.724439
+epoch 17620 loss 0.380592
+time spent in 10 epoch 0:00:04.728835
+epoch 17630 loss 0.381059
+time spent in 10 epoch 0:00:04.736813
+epoch 17640 loss 0.381012
+time spent in 10 epoch 0:00:04.737559
+epoch 17650 loss 0.379545
+time spent in 10 epoch 0:00:04.770195
+epoch 17660 loss 0.379127
+time spent in 10 epoch 0:00:04.727958
+epoch 17670 loss 0.378760
+time spent in 10 epoch 0:00:04.720832
+epoch 17680 loss 0.379546
+time spent in 10 epoch 0:00:04.739415
+epoch 17690 loss 0.380564
+time spent in 10 epoch 0:00:04.682431
+epoch 17700 loss 0.378680
+time spent in 10 epoch 0:00:04.712732
+epoch 17710 loss 0.378199
+time spent in 10 epoch 0:00:04.757015
+epoch 17720 loss 0.378356
+time spent in 10 epoch 0:00:04.730241
+epoch 17730 loss 0.378233
+time spent in 10 epoch 0:00:04.730078
+epoch 17740 loss 0.377716
+time spent in 10 epoch 0:00:04.734320
+epoch 17750 loss 0.377283
+time spent in 10 epoch 0:00:04.732234
+epoch 17760 loss 0.378399
+time spent in 10 epoch 0:00:04.718791
+epoch 17770 loss 0.377320
+time spent in 10 epoch 0:00:04.720066
+epoch 17780 loss 0.375849
+time spent in 10 epoch 0:00:04.695403
+epoch 17790 loss 0.376584
+time spent in 10 epoch 0:00:04.735975
+epoch 17800 loss 0.375022
+time spent in 10 epoch 0:00:04.747128
+epoch 17810 loss 0.376182
+time spent in 10 epoch 0:00:04.748831
+epoch 17820 loss 0.375381
+time spent in 10 epoch 0:00:04.762608
+epoch 17830 loss 0.377775
+time spent in 10 epoch 0:00:04.722778
+epoch 17840 loss 0.374668
+time spent in 10 epoch 0:00:04.726407
+epoch 17850 loss 0.374527
+time spent in 10 epoch 0:00:04.735480
+epoch 17860 loss 0.373542
+time spent in 10 epoch 0:00:04.752582
+epoch 17870 loss 0.373259
+time spent in 10 epoch 0:00:04.734099
+epoch 17880 loss 0.373371
+time spent in 10 epoch 0:00:04.724288
+epoch 17890 loss 0.372310
+time spent in 10 epoch 0:00:04.740769
+epoch 17900 loss 0.372339
+time spent in 10 epoch 0:00:04.757913
+epoch 17910 loss 0.371530
+time spent in 10 epoch 0:00:04.760990
+epoch 17920 loss 0.371925
+time spent in 10 epoch 0:00:04.723561
+epoch 17930 loss 0.371245
+time spent in 10 epoch 0:00:04.719442
+epoch 17940 loss 0.371981
+time spent in 10 epoch 0:00:04.743877
+epoch 17950 loss 0.370772
+time spent in 10 epoch 0:00:04.734906
+epoch 17960 loss 0.371771
+time spent in 10 epoch 0:00:04.732751
+epoch 17970 loss 0.370674
+time spent in 10 epoch 0:00:04.797259
+epoch 17980 loss 0.370961
+time spent in 10 epoch 0:00:04.748210
+epoch 17990 loss 0.370145
+time spent in 10 epoch 0:00:04.708702
+epoch 18000 loss 0.370285
+time spent in 10 epoch 0:00:04.738886
+epoch 18010 loss 0.369959
+time spent in 10 epoch 0:00:04.747676
+epoch 18020 loss 0.370159
+time spent in 10 epoch 0:00:04.717350
+epoch 18030 loss 0.369351
+time spent in 10 epoch 0:00:04.703466
+epoch 18040 loss 0.368998
+time spent in 10 epoch 0:00:04.722050
+epoch 18050 loss 0.369578
+time spent in 10 epoch 0:00:04.718956
+epoch 18060 loss 0.369311
+time spent in 10 epoch 0:00:04.719862
+epoch 18070 loss 0.369117
+time spent in 10 epoch 0:00:04.740057
+epoch 18080 loss 0.368945
+time spent in 10 epoch 0:00:04.735307
+epoch 18090 loss 0.369365
+time spent in 10 epoch 0:00:04.723868
+epoch 18100 loss 0.367882
+time spent in 10 epoch 0:00:04.735106
+epoch 18110 loss 0.367221
+time spent in 10 epoch 0:00:04.729837
+epoch 18120 loss 0.368139
+time spent in 10 epoch 0:00:04.725570
+epoch 18130 loss 0.368171
+time spent in 10 epoch 0:00:04.730963
+epoch 18140 loss 0.368287
+time spent in 10 epoch 0:00:04.754665
+epoch 18150 loss 0.368697
+time spent in 10 epoch 0:00:04.754334
+epoch 18160 loss 0.366976
+time spent in 10 epoch 0:00:04.750847
+epoch 18170 loss 0.366581
+time spent in 10 epoch 0:00:04.799103
+epoch 18180 loss 0.367656
+time spent in 10 epoch 0:00:04.812518
+epoch 18190 loss 0.367657
+time spent in 10 epoch 0:00:04.767423
+epoch 18200 loss 0.367781
+time spent in 10 epoch 0:00:04.741148
+epoch 18210 loss 0.367327
+time spent in 10 epoch 0:00:04.742391
+epoch 18220 loss 0.366465
+time spent in 10 epoch 0:00:04.731900
+epoch 18230 loss 0.366476
+time spent in 10 epoch 0:00:04.733637
+epoch 18240 loss 0.365959
+time spent in 10 epoch 0:00:04.732222
+epoch 18250 loss 0.366464
+time spent in 10 epoch 0:00:04.739790
+epoch 18260 loss 0.366444
+time spent in 10 epoch 0:00:04.750981
+epoch 18270 loss 0.366398
+time spent in 10 epoch 0:00:04.740659
+epoch 18280 loss 0.366342
+time spent in 10 epoch 0:00:04.702353
+epoch 18290 loss 0.365845
+time spent in 10 epoch 0:00:04.724139
+epoch 18300 loss 0.366409
+time spent in 10 epoch 0:00:04.746456
+epoch 18310 loss 0.366063
+time spent in 10 epoch 0:00:04.743782
+epoch 18320 loss 0.365320
+time spent in 10 epoch 0:00:04.704191
+epoch 18330 loss 0.365740
+time spent in 10 epoch 0:00:04.750504
+epoch 18340 loss 0.366964
+time spent in 10 epoch 0:00:04.743042
+epoch 18350 loss 0.365164
+time spent in 10 epoch 0:00:04.862489
+epoch 18360 loss 0.364696
+time spent in 10 epoch 0:00:04.777483
+epoch 18370 loss 0.365224
+time spent in 10 epoch 0:00:04.755900
+epoch 18380 loss 0.364340
+time spent in 10 epoch 0:00:04.745191
+epoch 18390 loss 0.365162
+time spent in 10 epoch 0:00:04.730378
+epoch 18400 loss 0.365381
+time spent in 10 epoch 0:00:04.713070
+epoch 18410 loss 0.363969
+time spent in 10 epoch 0:00:04.704522
+epoch 18420 loss 0.364485
+time spent in 10 epoch 0:00:04.713309
+epoch 18430 loss 0.364644
+time spent in 10 epoch 0:00:04.728220
+epoch 18440 loss 0.365274
+time spent in 10 epoch 0:00:04.707574
+epoch 18450 loss 0.365556
+time spent in 10 epoch 0:00:04.715358
+epoch 18460 loss 0.364477
+time spent in 10 epoch 0:00:04.742555
+epoch 18470 loss 0.365380
+time spent in 10 epoch 0:00:04.711698
+epoch 18480 loss 0.363924
+time spent in 10 epoch 0:00:04.728386
+epoch 18490 loss 0.364871
+time spent in 10 epoch 0:00:04.715852
+epoch 18500 loss 0.364198
+time spent in 10 epoch 0:00:04.738412
+epoch 18510 loss 0.364758
+time spent in 10 epoch 0:00:04.726387
+epoch 18520 loss 0.364169
+time spent in 10 epoch 0:00:04.800857
+epoch 18530 loss 0.364333
+time spent in 10 epoch 0:00:04.727709
+epoch 18540 loss 0.363775
+time spent in 10 epoch 0:00:04.759259
+epoch 18550 loss 0.363931
+time spent in 10 epoch 0:00:04.747114
+epoch 18560 loss 0.363883
+time spent in 10 epoch 0:00:04.726308
+epoch 18570 loss 0.364033
+time spent in 10 epoch 0:00:04.767062
+epoch 18580 loss 0.362819
+time spent in 10 epoch 0:00:04.780907
+epoch 18590 loss 0.363851
+time spent in 10 epoch 0:00:04.728450
+epoch 18600 loss 0.362847
+time spent in 10 epoch 0:00:04.765660
+epoch 18610 loss 0.363118
+time spent in 10 epoch 0:00:04.807294
+epoch 18620 loss 0.365007
+time spent in 10 epoch 0:00:04.756360
+epoch 18630 loss 0.362138
+time spent in 10 epoch 0:00:04.776221
+epoch 18640 loss 0.363269
+time spent in 10 epoch 0:00:04.755975
+epoch 18650 loss 0.362485
+time spent in 10 epoch 0:00:04.735501
+epoch 18660 loss 0.362116
+time spent in 10 epoch 0:00:04.794672
+epoch 18670 loss 0.362617
+time spent in 10 epoch 0:00:04.768396
+epoch 18680 loss 0.363910
+time spent in 10 epoch 0:00:04.744856
+epoch 18690 loss 0.362024
+time spent in 10 epoch 0:00:04.752333
+epoch 18700 loss 0.361577
+time spent in 10 epoch 0:00:04.760015
+epoch 18710 loss 0.362058
+time spent in 10 epoch 0:00:04.745189
+epoch 18720 loss 0.362476
+time spent in 10 epoch 0:00:04.733548
+epoch 18730 loss 0.362446
+time spent in 10 epoch 0:00:04.746516
+epoch 18740 loss 0.362636
+time spent in 10 epoch 0:00:04.733449
+epoch 18750 loss 0.362046
+time spent in 10 epoch 0:00:04.736719
+epoch 18760 loss 0.362827
+time spent in 10 epoch 0:00:04.759920
+epoch 18770 loss 0.362388
+time spent in 10 epoch 0:00:04.740056
+epoch 18780 loss 0.363464
+time spent in 10 epoch 0:00:04.720859
+epoch 18790 loss 0.361770
+time spent in 10 epoch 0:00:04.723667
+epoch 18800 loss 0.360760
+time spent in 10 epoch 0:00:04.762184
+epoch 18810 loss 0.363473
+time spent in 10 epoch 0:00:04.779408
+epoch 18820 loss 0.370971
+time spent in 10 epoch 0:00:04.739516
+epoch 18830 loss 0.361568
+time spent in 10 epoch 0:00:04.735036
+epoch 18840 loss 0.363128
+time spent in 10 epoch 0:00:04.736160
+epoch 18850 loss 0.362066
+time spent in 10 epoch 0:00:04.743803
+epoch 18860 loss 0.364828
+time spent in 10 epoch 0:00:04.720454
+epoch 18870 loss 0.365019
+time spent in 10 epoch 0:00:04.778621
+epoch 18880 loss 0.364152
+time spent in 10 epoch 0:00:04.726403
+epoch 18890 loss 0.363503
+time spent in 10 epoch 0:00:04.773148
+epoch 18900 loss 0.362648
+time spent in 10 epoch 0:00:04.729208
+epoch 18910 loss 0.363144
+time spent in 10 epoch 0:00:04.762048
+epoch 18920 loss 0.363560
+time spent in 10 epoch 0:00:04.745283
+epoch 18930 loss 0.362351
+time spent in 10 epoch 0:00:04.747694
+epoch 18940 loss 0.363952
+time spent in 10 epoch 0:00:04.715360
+epoch 18950 loss 0.362640
+time spent in 10 epoch 0:00:04.747999
+epoch 18960 loss 0.362502
+time spent in 10 epoch 0:00:04.741817
+epoch 18970 loss 0.363101
+time spent in 10 epoch 0:00:04.727317
+epoch 18980 loss 0.364683
+time spent in 10 epoch 0:00:04.728761
+epoch 18990 loss 0.362627
+time spent in 10 epoch 0:00:04.734769
+epoch 19000 loss 0.362449
+time spent in 10 epoch 0:00:04.717440
+epoch 19010 loss 0.361968
+time spent in 10 epoch 0:00:04.742132
+epoch 19020 loss 0.361081
+time spent in 10 epoch 0:00:04.747607
+epoch 19030 loss 0.361242
+time spent in 10 epoch 0:00:04.745894
+epoch 19040 loss 0.361753
+time spent in 10 epoch 0:00:04.732089
+epoch 19050 loss 0.364507
+time spent in 10 epoch 0:00:04.734918
+epoch 19060 loss 0.363981
+time spent in 10 epoch 0:00:04.737448
+epoch 19070 loss 0.365464
+time spent in 10 epoch 0:00:04.746109
+epoch 19080 loss 0.365328
+time spent in 10 epoch 0:00:04.725961
+epoch 19090 loss 0.362758
+time spent in 10 epoch 0:00:04.757276
+epoch 19100 loss 0.362830
+time spent in 10 epoch 0:00:04.728979
+epoch 19110 loss 0.363331
+time spent in 10 epoch 0:00:04.763095
+epoch 19120 loss 0.364011
+time spent in 10 epoch 0:00:04.736724
+epoch 19130 loss 0.369064
+time spent in 10 epoch 0:00:04.753912
+epoch 19140 loss 0.361832
+time spent in 10 epoch 0:00:04.704929
+epoch 19150 loss 0.362721
+time spent in 10 epoch 0:00:04.737823
+epoch 19160 loss 0.362899
+time spent in 10 epoch 0:00:04.714706
+epoch 19170 loss 0.362589
+time spent in 10 epoch 0:00:04.749402
+epoch 19180 loss 0.361126
+time spent in 10 epoch 0:00:04.777624
+epoch 19190 loss 0.361000
+time spent in 10 epoch 0:00:04.728565
+epoch 19200 loss 0.360917
+time spent in 10 epoch 0:00:04.716316
+epoch 19210 loss 0.360329
+time spent in 10 epoch 0:00:04.719204
+epoch 19220 loss 0.362119
+time spent in 10 epoch 0:00:04.753597
+epoch 19230 loss 0.361156
+time spent in 10 epoch 0:00:04.751782
+epoch 19240 loss 0.361506
+time spent in 10 epoch 0:00:04.822942
+epoch 19250 loss 0.359588
+time spent in 10 epoch 0:00:04.778756
+epoch 19260 loss 0.362991
+time spent in 10 epoch 0:00:04.742526
+epoch 19270 loss 0.362303
+time spent in 10 epoch 0:00:04.729306
+epoch 19280 loss 0.360766
+time spent in 10 epoch 0:00:04.744903
+epoch 19290 loss 0.360099
+time spent in 10 epoch 0:00:04.748437
+epoch 19300 loss 0.360210
+time spent in 10 epoch 0:00:04.772005
+epoch 19310 loss 0.360102
+time spent in 10 epoch 0:00:04.747002
+epoch 19320 loss 0.360484
+time spent in 10 epoch 0:00:04.725192
+epoch 19330 loss 0.359088
+time spent in 10 epoch 0:00:04.747723
+epoch 19340 loss 0.361306
+time spent in 10 epoch 0:00:04.749403
+epoch 19350 loss 0.358917
+time spent in 10 epoch 0:00:04.742690
+epoch 19360 loss 0.360292
+time spent in 10 epoch 0:00:04.723599
+epoch 19370 loss 0.361506
+time spent in 10 epoch 0:00:04.730907
+epoch 19380 loss 0.361203
+time spent in 10 epoch 0:00:04.754145
+epoch 19390 loss 0.359741
+time spent in 10 epoch 0:00:04.712909
+epoch 19400 loss 0.358590
+time spent in 10 epoch 0:00:04.733070
+epoch 19410 loss 0.361891
+time spent in 10 epoch 0:00:04.721856
+epoch 19420 loss 0.358874
+time spent in 10 epoch 0:00:04.698371
+epoch 19430 loss 0.365503
+time spent in 10 epoch 0:00:04.701681
+epoch 19440 loss 0.365336
+time spent in 10 epoch 0:00:04.758908
+epoch 19450 loss 0.364896
+time spent in 10 epoch 0:00:04.739633
+epoch 19460 loss 0.362907
+time spent in 10 epoch 0:00:04.725247
+epoch 19470 loss 0.364366
+time spent in 10 epoch 0:00:04.743330
+epoch 19480 loss 0.363747
+time spent in 10 epoch 0:00:04.756348
+epoch 19490 loss 0.362436
+time spent in 10 epoch 0:00:04.770202
+epoch 19500 loss 0.365849
+time spent in 10 epoch 0:00:04.722198
+epoch 19510 loss 0.363913
+time spent in 10 epoch 0:00:04.730697
+epoch 19520 loss 0.360012
+time spent in 10 epoch 0:00:04.726266
+epoch 19530 loss 0.359779
+time spent in 10 epoch 0:00:04.746785
+epoch 19540 loss 0.359668
+time spent in 10 epoch 0:00:04.754307
+epoch 19550 loss 0.358443
+time spent in 10 epoch 0:00:04.744901
+epoch 19560 loss 0.363403
+time spent in 10 epoch 0:00:04.730109
+epoch 19570 loss 0.358565
+time spent in 10 epoch 0:00:04.735241
+epoch 19580 loss 0.360465
+time spent in 10 epoch 0:00:04.717544
+epoch 19590 loss 0.360919
+time spent in 10 epoch 0:00:04.746433
+epoch 19600 loss 0.359166
+time spent in 10 epoch 0:00:04.751926
+epoch 19610 loss 0.358317
+time spent in 10 epoch 0:00:04.704118
+epoch 19620 loss 0.359293
+time spent in 10 epoch 0:00:04.758077
+epoch 19630 loss 0.358936
+time spent in 10 epoch 0:00:04.707869
+epoch 19640 loss 0.358704
+time spent in 10 epoch 0:00:04.729373
+epoch 19650 loss 0.358798
+time spent in 10 epoch 0:00:04.740281
+epoch 19660 loss 0.363153
+time spent in 10 epoch 0:00:04.837123
+epoch 19670 loss 0.358288
+time spent in 10 epoch 0:00:04.808168
+epoch 19680 loss 0.360085
+time spent in 10 epoch 0:00:04.765084
+epoch 19690 loss 0.358842
+time spent in 10 epoch 0:00:04.713865
+epoch 19700 loss 0.358329
+time spent in 10 epoch 0:00:04.732937
+epoch 19710 loss 0.358533
+time spent in 10 epoch 0:00:04.719964
+epoch 19720 loss 0.357646
+time spent in 10 epoch 0:00:04.734504
+epoch 19730 loss 0.357943
+time spent in 10 epoch 0:00:04.720494
+epoch 19740 loss 0.358083
+time spent in 10 epoch 0:00:04.741365
+epoch 19750 loss 0.358444
+time spent in 10 epoch 0:00:04.727872
+epoch 19760 loss 0.357616
+time spent in 10 epoch 0:00:04.740272
+epoch 19770 loss 0.356998
+time spent in 10 epoch 0:00:04.761775
+epoch 19780 loss 0.357451
+time spent in 10 epoch 0:00:04.758523
+epoch 19790 loss 0.359420
+time spent in 10 epoch 0:00:04.719194
+epoch 19800 loss 0.358121
+time spent in 10 epoch 0:00:04.752442
+epoch 19810 loss 0.356749
+time spent in 10 epoch 0:00:04.745406
+epoch 19820 loss 0.357988
+time spent in 10 epoch 0:00:04.775604
+epoch 19830 loss 0.358449
+time spent in 10 epoch 0:00:04.793918
+epoch 19840 loss 0.359297
+time spent in 10 epoch 0:00:04.744478
+epoch 19850 loss 0.362757
+time spent in 10 epoch 0:00:04.730177
+epoch 19860 loss 0.358138
+time spent in 10 epoch 0:00:04.733118
+epoch 19870 loss 0.360526
+time spent in 10 epoch 0:00:04.770644
+epoch 19880 loss 0.360081
+time spent in 10 epoch 0:00:04.811199
+epoch 19890 loss 0.358572
+time spent in 10 epoch 0:00:04.730226
+epoch 19900 loss 0.358476
+time spent in 10 epoch 0:00:04.777438
+epoch 19910 loss 0.359371
+time spent in 10 epoch 0:00:04.762864
+epoch 19920 loss 0.359432
+time spent in 10 epoch 0:00:04.753076
+epoch 19930 loss 0.357911
+time spent in 10 epoch 0:00:04.716461
+epoch 19940 loss 0.357896
+time spent in 10 epoch 0:00:04.765260
+epoch 19950 loss 0.357415
+time spent in 10 epoch 0:00:04.750819
+epoch 19960 loss 0.357737
+time spent in 10 epoch 0:00:04.728146
+epoch 19970 loss 0.357685
+time spent in 10 epoch 0:00:04.734594
+epoch 19980 loss 0.359175
+time spent in 10 epoch 0:00:04.725386
+epoch 19990 loss 0.363473
+category scores after training: 
+tensor([[-1.5814e-01, -1.9223e+00],
+        [-3.2933e-02, -3.4297e+00],
+        [-1.6222e-01, -1.8988e+00],
+        [-3.7946e-01, -1.1527e+00],
+        [-1.4544e-01, -1.9998e+00],
+        [-1.8374e-01, -1.7847e+00],
+        [-1.2166e-01, -2.1667e+00],
+        [-1.5909e-01, -1.9168e+00],
+        [-1.6156e-01, -1.9026e+00],
+        [-1.6213e-01, -1.8993e+00],
+        [-1.8570e-01, -1.7750e+00],
+        [-1.5094e-01, -1.9654e+00],
+        [-2.1034e-01, -1.6624e+00],
+        [-2.1893e-01, -1.6265e+00],
+        [-1.6979e-01, -1.8569e+00],
+        [-1.7534e-01, -1.8274e+00],
+        [-1.2082e-01, -2.1733e+00],
+        [-1.4525e-01, -2.0010e+00],
+        [-2.9879e-01, -1.3537e+00],
+        [-6.5263e-01, -7.3537e-01],
+        [-1.4424e-01, -2.0075e+00],
+        [-1.1571e-01, -2.2140e+00],
+        [-1.4111e-01, -2.0279e+00],
+        [-1.1363e-01, -2.2311e+00],
+        [-1.4202e-01, -2.0220e+00],
+        [-1.8018e-01, -1.8026e+00],
+        [-1.0742e-01, -2.2842e+00],
+        [-1.1562e-01, -2.2147e+00],
+        [-1.1861e-01, -2.1906e+00],
+        [-1.7436e-01, -1.8326e+00],
+        [-1.1458e-01, -2.2232e+00],
+        [-1.1941e-01, -2.1843e+00],
+        [-2.1206e-02, -3.8641e+00],
+        [-1.1440e-01, -2.2247e+00],
+        [-1.4006e-01, -2.0349e+00],
+        [-1.8801e-01, -1.7638e+00],
+        [-2.0056e-01, -1.7052e+00],
+        [-1.0346e-01, -2.3198e+00],
+        [-3.4957e-02, -3.3711e+00],
+        [-4.2151e-03, -5.4712e+00],
+        [-1.5039e-01, -1.9688e+00],
+        [-1.5059e-01, -1.9675e+00],
+        [-1.7967e-01, -1.8051e+00],
+        [-1.2027e-01, -2.1775e+00],
+        [-1.7283e-01, -1.8406e+00],
+        [-1.8383e-01, -1.7842e+00],
+        [-2.3778e-02, -3.7509e+00],
+        [-1.5959e-01, -1.9139e+00],
+        [-1.4636e-01, -1.9940e+00],
+        [-1.7380e-01, -1.8355e+00],
+        [-1.6301e-01, -1.8943e+00],
+        [-1.7765e-01, -1.8154e+00],
+        [-1.1544e-01, -2.2162e+00],
+        [-1.0799e-01, -2.2792e+00],
+        [-1.7301e-01, -1.8397e+00],
+        [-1.8593e-01, -1.7739e+00],
+        [-1.6841e-01, -1.8644e+00],
+        [-2.5086e-01, -1.5057e+00],
+        [-1.4168e-01, -2.0242e+00],
+        [-1.2498e-01, -2.1414e+00],
+        [-1.5662e-01, -1.9312e+00],
+        [-1.3600e-01, -2.0624e+00],
+        [-1.3377e-01, -2.0778e+00],
+        [-1.2938e-01, -2.1090e+00],
+        [-1.4976e-01, -1.9727e+00],
+        [-1.7654e-01, -1.8212e+00],
+        [-1.7259e-01, -1.8419e+00],
+        [-1.3375e-01, -2.0779e+00],
+        [-1.5468e-01, -1.9427e+00],
+        [-1.4946e-01, -1.9745e+00],
+        [-1.1931e-01, -2.1851e+00],
+        [-8.4139e-04, -7.0809e+00],
+        [-1.6110e-01, -1.9052e+00],
+        [-8.4705e-02, -2.5106e+00],
+        [-9.5442e-02, -2.3966e+00],
+        [-2.5845e-01, -1.4795e+00],
+        [-1.3671e-01, -2.0575e+00],
+        [-1.9640e-01, -1.7242e+00],
+        [-1.0128e-02, -4.5975e+00],
+        [-1.5832e-01, -1.9213e+00],
+        [-1.8566e-01, -1.7753e+00],
+        [-2.1874e-01, -1.6273e+00],
+        [-3.5320e-05, -1.0251e+01],
+        [-1.5986e-01, -1.9123e+00],
+        [-1.0487e-01, -2.3070e+00],
+        [-1.7782e-01, -1.8146e+00],
+        [-1.0058e-01, -2.3467e+00],
+        [-1.5600e-01, -1.9349e+00],
+        [-1.5195e-01, -1.9592e+00],
+        [-2.1513e-01, -1.6422e+00],
+        [-1.1659e-01, -2.2068e+00],
+        [-9.4823e-02, -2.4028e+00],
+        [-4.4190e-03, -5.4241e+00],
+        [-1.3257e-02, -4.3298e+00],
+        [-1.9460e-01, -1.7325e+00],
+        [-1.7402e-01, -1.8343e+00],
+        [-8.0912e-05, -9.4222e+00],
+        [-2.0754e-02, -3.8854e+00],
+        [-1.2752e-01, -2.1226e+00],
+        [-6.6659e-02, -2.7413e+00],
+        [-1.7259e-01, -1.8419e+00],
+        [-1.5001e-01, -1.9711e+00],
+        [-2.1303e-01, -1.6509e+00],
+        [-3.7261e-01, -1.1677e+00],
+        [-1.7117e-01, -1.8495e+00],
+        [-1.7423e-01, -1.8332e+00],
+        [-4.9517e-04, -7.6109e+00],
+        [-1.6565e-01, -1.8796e+00],
+        [-1.9881e-01, -1.7132e+00],
+        [-1.1238e-01, -2.2416e+00],
+        [-1.8714e-01, -1.7680e+00],
+        [-4.5059e-01, -1.0140e+00],
+        [-3.7115e-02, -3.3122e+00],
+        [-2.2080e-01, -1.6189e+00],
+        [-1.7698e-01, -1.8189e+00],
+        [-1.8891e-01, -1.7595e+00],
+        [-1.6831e-01, -1.8649e+00],
+        [-1.1615e-03, -6.7586e+00],
+        [-8.1291e-03, -4.8164e+00],
+        [-2.2096e-02, -3.8234e+00],
+        [-9.9573e-02, -2.3562e+00],
+        [-6.1400e-03, -5.0960e+00],
+        [-1.5802e-01, -1.9230e+00],
+        [-1.9353e-01, -1.7375e+00],
+        [-7.8486e-05, -9.4526e+00],
+        [-1.8859e-01, -1.7610e+00],
+        [-2.4649e-01, -1.5211e+00],
+        [-5.7461e-04, -7.4621e+00]])
+time spent total: 2:38:16.889135
