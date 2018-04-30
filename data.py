@@ -46,4 +46,4 @@ def load_dataset(path, continuous_training_size, random_training_size, continuou
     return continuous_training_data, random_training_data, continuous_validation_data, random_validation_data
 
 char_to_ix = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9}
-category_to_ix = {"0": 0, "1": 1}
+category_to_ix = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6}
