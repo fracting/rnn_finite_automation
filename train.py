@@ -8,8 +8,8 @@ import sys
 from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
 
-EMBEDDING_DIM = 6
-HIDDEN_DIM = 5
+EMBEDDING_DIM = 4
+HIDDEN_DIM = 3
 NUM_LAYERS = 1
 BATCH_SIZE = 128
 
@@ -20,7 +20,7 @@ total_epoch2 = 10000
 
 learning_rate = 0.0015 * BATCH_SIZE
 
-torch.manual_seed(1) # TODO - disable manual seed in production version
+torch.manual_seed(4) # TODO - disable manual seed in production version
 
 model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), len(category_to_ix), NUM_LAYERS, BATCH_SIZE)
 
