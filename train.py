@@ -78,7 +78,8 @@ for epoch in range(total_epoch):
     training_size = len(training_data)
     batch_count = training_size // BATCH_SIZE
     round_to_batch = batch_count * BATCH_SIZE
-    permutation = np.random.permutation(training_size)[0:round_to_batch]
+    permutation = torch.randperm(training_size)[0:round_to_batch]
+    permutation = [entry.item() for entry in permutation]
 
     epoch_loss = 0
     for i in range(0, round_to_batch, BATCH_SIZE):
