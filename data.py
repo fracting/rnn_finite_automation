@@ -23,7 +23,7 @@ def load_raw_data(path):
     f.close()
     return dataset
 
-def load_dataset(path, continuous_training_size, random_training_size, continuous_validation_size, random_validation_size):
+def load_dataset(path, cont_train_size, rand_train_size, continuous_validation_size, random_validation_size):
     print("dataset: %s" % path)
     dataset = load_raw_data(path)
     size = len(dataset)
@@ -31,23 +31,23 @@ def load_dataset(path, continuous_training_size, random_training_size, continuou
     for i in range(10):
         print(dataset[i])
     print("")
-    print("continuous training size: %d" % continuous_training_size)
+    print("continuous training size: %d" % cont_train_size)
     print("continuous validation size: %d" % continuous_validation_size)
-    print("random training size: %d" % random_training_size)
+    print("random training size: %d" % rand_train_size)
     print("random validation size: %d" % random_validation_size)
 
-    continuous_training_data = dataset[0:continuous_training_size]
-    continuous_validation_data = dataset[continuous_training_size:continuous_training_size+continuous_validation_size]
+    cont_train = dataset[0:cont_train_size]
+    cont_valid = dataset[cont_train_size:cont_train_size+continuous_validation_size]
 
-    random_part = dataset[continuous_training_size+continuous_validation_size:]
+    random_part = dataset[cont_train_size+continuous_validation_size:]
     random_indices = torch.randperm(len(random_part))
     random_indices = [entry.item() for entry in random_indices]
     random_part = [random_part[index] for index in random_indices]
 
-    random_training_data = random_part[0:random_training_size]
-    random_validation_data = random_part[random_training_size:random_training_size+random_validation_size]
+    rand_train = random_part[0:rand_train_size]
+    random_valid = random_part[rand_train_size:rand_train_size+random_validation_size]
 
-    return continuous_training_data, random_training_data, continuous_validation_data, random_validation_data
+    return cont_train, rand_train, cont_valid, random_valid
 
 char_to_ix = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9}
 category_to_ix = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6}
