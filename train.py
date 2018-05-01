@@ -12,7 +12,7 @@ EMBEDDING_DIM = 15
 HIDDEN_DIM = 20
 NUM_LAYERS = 3
 BATCH_SIZE = 128
-DROPOUT = 0.4
+DROPOUT = 0.5
 
 print_per_epoch = 20
 print_per_batch = 100
@@ -24,8 +24,8 @@ torch.manual_seed(4) # TODO - disable manual seed in production version
 
 continuous_training_size = 8192
 random_training_size = 16384
-continuous_validation_size = 32768
-random_validation_size = 1024
+continuous_validation_size = 16384
+random_validation_size = 16384
 continuous_training_data, random_training_data, continuous_validation_data, random_validation_data = load_dataset("dataset/10div7.v2.txt", continuous_training_size, random_training_size, continuous_validation_size, random_validation_size)
 # TODO: assert continuous_training_size + .. + .. +  < dataset_size
 
@@ -34,7 +34,7 @@ categories = set(categories)
 category_size = len(categories)
 model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
 #model.learning_rate = 0.0015 * BATCH_SIZE
-model.learning_rate = 4
+model.learning_rate = 2
 
 loss_function = nn.NLLLoss()
 
