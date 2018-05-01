@@ -12,7 +12,7 @@ EMBEDDING_DIM = 15
 HIDDEN_DIM = 20
 NUM_LAYERS = 3
 BATCH_SIZE = 128
-DROPOUT = 0.6
+DROPOUT = 0.7
 
 print_per_epoch = 20
 print_per_batch = 100
