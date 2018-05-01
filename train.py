@@ -22,7 +22,7 @@ total_epoch2 = 3000
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-cont_train_size = 8192
+cont_train_size = 8192 + 16384
 rand_train_size = 16384
 cont_valid_size = 16384
 rand_valid_size = 16384
