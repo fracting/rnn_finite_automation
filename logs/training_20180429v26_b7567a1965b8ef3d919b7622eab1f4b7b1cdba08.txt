@@ -1,0 +1,1423 @@
+continuous training size: 4096
+continuous validation size: 1024
+random training size: 4096
+random validation size: 1024
+batch size: 128
+embedding dim: 4
+hidden dim: 6
+num layers: 1
+
+continuous_training validation loss 1.958907 accuracy 0.144287
+random_training validation loss 1.960484 accuracy 0.139648
+continuous_validation validation loss 1.959379 accuracy 0.143555
+random_validation validation loss 1.952190 accuracy 0.161133
+
+train continuous+random size 8192 for 20000 epoch
+
+learning rate: 0.192000
+continuous+random training epoch 0 loss 1.950934 accuracy 0.139526
+continuous_training validation loss 1.947590 accuracy 0.144287
+random_training validation loss 1.947864 accuracy 0.144043
+continuous validation loss 1.947533 accuracy 0.141602
+random validation loss 1.948761 accuracy 0.132812
+
+time spent in 100 epoch 0:00:23.900242
+continuous+random training epoch 100 loss 1.945429 accuracy 0.147461
+continuous_training validation loss 1.946497 accuracy 0.144775
+random_training validation loss 1.942876 accuracy 0.159424
+continuous validation loss 1.947005 accuracy 0.141602
+random validation loss 1.949400 accuracy 0.120117
+
+time spent in 100 epoch 0:00:23.825481
+continuous+random training epoch 200 loss 1.944177 accuracy 0.152954
+continuous_training validation loss 1.947382 accuracy 0.148682
+random_training validation loss 1.939339 accuracy 0.168701
+continuous validation loss 1.948337 accuracy 0.139648
+random validation loss 1.952777 accuracy 0.125000
+
+time spent in 100 epoch 0:00:23.577578
+continuous+random training epoch 300 loss 1.943254 accuracy 0.156982
+continuous_training validation loss 1.948294 accuracy 0.145508
+random_training validation loss 1.936610 accuracy 0.171387
+continuous validation loss 1.949805 accuracy 0.135742
+random validation loss 1.957620 accuracy 0.123047
+
+time spent in 100 epoch 0:00:23.382007
+continuous+random training epoch 400 loss 1.942486 accuracy 0.159546
+continuous_training validation loss 1.949059 accuracy 0.147949
+random_training validation loss 1.934418 accuracy 0.178467
+continuous validation loss 1.950184 accuracy 0.136719
+random validation loss 1.956988 accuracy 0.129883
+
+time spent in 100 epoch 0:00:23.390038
+continuous+random training epoch 500 loss 1.941442 accuracy 0.160522
+continuous_training validation loss 1.949173 accuracy 0.146240
+random_training validation loss 1.932084 accuracy 0.180176
+continuous validation loss 1.952391 accuracy 0.142578
+random validation loss 1.962435 accuracy 0.114258
+
+time spent in 100 epoch 0:00:23.439048
+continuous+random training epoch 600 loss 1.940552 accuracy 0.162720
+continuous_training validation loss 1.949410 accuracy 0.144043
+random_training validation loss 1.929261 accuracy 0.179443
+continuous validation loss 1.953378 accuracy 0.142578
+random validation loss 1.961186 accuracy 0.125000
+
+time spent in 100 epoch 0:00:24.089172
+continuous+random training epoch 700 loss 1.939379 accuracy 0.165039
+continuous_training validation loss 1.949436 accuracy 0.149170
+random_training validation loss 1.926562 accuracy 0.189941
+continuous validation loss 1.955161 accuracy 0.127930
+random validation loss 1.962448 accuracy 0.133789
+
+time spent in 100 epoch 0:00:23.737082
+continuous+random training epoch 800 loss 1.938238 accuracy 0.165649
+continuous_training validation loss 1.949345 accuracy 0.150391
+random_training validation loss 1.924388 accuracy 0.188232
+continuous validation loss 1.957710 accuracy 0.124023
+random validation loss 1.963425 accuracy 0.135742
+
+time spent in 100 epoch 0:00:23.526254
+continuous+random training epoch 900 loss 1.937182 accuracy 0.166870
+continuous_training validation loss 1.949484 accuracy 0.148193
+random_training validation loss 1.921371 accuracy 0.189209
+continuous validation loss 1.960042 accuracy 0.144531
+random validation loss 1.964837 accuracy 0.143555
+
+time spent in 100 epoch 0:00:23.319554
+continuous+random training epoch 1000 loss 1.935598 accuracy 0.170898
+continuous_training validation loss 1.950089 accuracy 0.146973
+random_training validation loss 1.918004 accuracy 0.192383
+continuous validation loss 1.962557 accuracy 0.151367
+random validation loss 1.965470 accuracy 0.137695
+
+time spent in 100 epoch 0:00:23.387109
+continuous+random training epoch 1100 loss 1.934244 accuracy 0.172363
+continuous_training validation loss 1.949721 accuracy 0.141113
+random_training validation loss 1.914782 accuracy 0.202637
+continuous validation loss 1.965482 accuracy 0.148438
+random validation loss 1.968597 accuracy 0.135742
+
+time spent in 100 epoch 0:00:23.263546
+continuous+random training epoch 1200 loss 1.932344 accuracy 0.169312
+continuous_training validation loss 1.949639 accuracy 0.144531
+random_training validation loss 1.912142 accuracy 0.201416
+continuous validation loss 1.968882 accuracy 0.154297
+random validation loss 1.968334 accuracy 0.147461
+
+time spent in 100 epoch 0:00:23.139151
+continuous+random training epoch 1300 loss 1.931501 accuracy 0.172241
+continuous_training validation loss 1.949788 accuracy 0.140625
+random_training validation loss 1.909109 accuracy 0.203613
+continuous validation loss 1.972211 accuracy 0.145508
+random validation loss 1.971046 accuracy 0.140625
+
+time spent in 100 epoch 0:00:23.201633
+continuous+random training epoch 1400 loss 1.929598 accuracy 0.176514
+continuous_training validation loss 1.950144 accuracy 0.145752
+random_training validation loss 1.906567 accuracy 0.205078
+continuous validation loss 1.978096 accuracy 0.142578
+random validation loss 1.970984 accuracy 0.153320
+
+time spent in 100 epoch 0:00:23.009045
+continuous+random training epoch 1500 loss 1.928332 accuracy 0.177856
+continuous_training validation loss 1.949400 accuracy 0.151611
+random_training validation loss 1.904016 accuracy 0.215332
+continuous validation loss 1.979352 accuracy 0.134766
+random validation loss 1.978192 accuracy 0.148438
+
+time spent in 100 epoch 0:00:23.049214
+continuous+random training epoch 1600 loss 1.927189 accuracy 0.181763
+continuous_training validation loss 1.948689 accuracy 0.153320
+random_training validation loss 1.901315 accuracy 0.213379
+continuous validation loss 1.981783 accuracy 0.136719
+random validation loss 1.982150 accuracy 0.152344
+
+time spent in 100 epoch 0:00:23.080976
+continuous+random training epoch 1700 loss 1.925870 accuracy 0.182129
+continuous_training validation loss 1.947838 accuracy 0.154785
+random_training validation loss 1.898804 accuracy 0.215820
+continuous validation loss 1.985272 accuracy 0.145508
+random validation loss 1.984999 accuracy 0.144531
+
+time spent in 100 epoch 0:00:23.182248
+continuous+random training epoch 1800 loss 1.924238 accuracy 0.184937
+continuous_training validation loss 1.946635 accuracy 0.154053
+random_training validation loss 1.897381 accuracy 0.222900
+continuous validation loss 1.987070 accuracy 0.148438
+random validation loss 1.989626 accuracy 0.143555
+
+time spent in 100 epoch 0:00:23.143382
+continuous+random training epoch 1900 loss 1.922726 accuracy 0.187500
+continuous_training validation loss 1.945141 accuracy 0.156250
+random_training validation loss 1.895218 accuracy 0.223633
+continuous validation loss 1.988805 accuracy 0.147461
+random validation loss 1.992708 accuracy 0.146484
+
+time spent in 100 epoch 0:00:23.279622
+continuous+random training epoch 2000 loss 1.921387 accuracy 0.189331
+continuous_training validation loss 1.944963 accuracy 0.160645
+random_training validation loss 1.893144 accuracy 0.218506
+continuous validation loss 1.988508 accuracy 0.148438
+random validation loss 1.993780 accuracy 0.149414
+
+time spent in 100 epoch 0:00:23.207264
+continuous+random training epoch 2100 loss 1.920201 accuracy 0.190186
+continuous_training validation loss 1.943115 accuracy 0.162842
+random_training validation loss 1.890777 accuracy 0.218994
+continuous validation loss 1.987946 accuracy 0.154297
+random validation loss 2.001239 accuracy 0.151367
+
+time spent in 100 epoch 0:00:23.153258
+continuous+random training epoch 2200 loss 1.918185 accuracy 0.192749
+continuous_training validation loss 1.942114 accuracy 0.163330
+random_training validation loss 1.888630 accuracy 0.225586
+continuous validation loss 1.989422 accuracy 0.154297
+random validation loss 2.007358 accuracy 0.146484
+
+time spent in 100 epoch 0:00:23.382915
+continuous+random training epoch 2300 loss 1.916835 accuracy 0.190796
+continuous_training validation loss 1.941707 accuracy 0.160889
+random_training validation loss 1.887427 accuracy 0.219971
+continuous validation loss 1.991637 accuracy 0.157227
+random validation loss 2.012490 accuracy 0.153320
+
+time spent in 100 epoch 0:00:23.167620
+continuous+random training epoch 2400 loss 1.915744 accuracy 0.191406
+continuous_training validation loss 1.940383 accuracy 0.159668
+random_training validation loss 1.885605 accuracy 0.227295
+continuous validation loss 1.993442 accuracy 0.151367
+random validation loss 2.016738 accuracy 0.151367
+
+time spent in 100 epoch 0:00:23.164367
+continuous+random training epoch 2500 loss 1.915050 accuracy 0.191528
+continuous_training validation loss 1.939270 accuracy 0.168945
+random_training validation loss 1.884694 accuracy 0.221191
+continuous validation loss 1.996517 accuracy 0.148438
+random validation loss 2.013296 accuracy 0.148438
+
+time spent in 100 epoch 0:00:23.040179
+continuous+random training epoch 2600 loss 1.913546 accuracy 0.195923
+continuous_training validation loss 1.938125 accuracy 0.171387
+random_training validation loss 1.884181 accuracy 0.225830
+continuous validation loss 1.998580 accuracy 0.144531
+random validation loss 2.016065 accuracy 0.145508
+
+time spent in 100 epoch 0:00:23.157518
+continuous+random training epoch 2700 loss 1.913006 accuracy 0.195923
+continuous_training validation loss 1.937020 accuracy 0.167969
+random_training validation loss 1.883738 accuracy 0.224121
+continuous validation loss 1.996575 accuracy 0.153320
+random validation loss 2.021822 accuracy 0.139648
+
+time spent in 100 epoch 0:00:23.194263
+continuous+random training epoch 2800 loss 1.912048 accuracy 0.192261
+continuous_training validation loss 1.935358 accuracy 0.171387
+random_training validation loss 1.882939 accuracy 0.222168
+continuous validation loss 1.999828 accuracy 0.139648
+random validation loss 2.021213 accuracy 0.142578
+
+time spent in 100 epoch 0:00:23.332239
+continuous+random training epoch 2900 loss 1.910808 accuracy 0.193604
+continuous_training validation loss 1.934376 accuracy 0.170410
+random_training validation loss 1.882102 accuracy 0.220947
+continuous validation loss 2.003963 accuracy 0.135742
+random validation loss 2.022355 accuracy 0.143555
+
+time spent in 100 epoch 0:00:23.592941
+continuous+random training epoch 3000 loss 1.910498 accuracy 0.195679
+continuous_training validation loss 1.932902 accuracy 0.173096
+random_training validation loss 1.881517 accuracy 0.227539
+continuous validation loss 2.005055 accuracy 0.132812
+random validation loss 2.022417 accuracy 0.140625
+
+time spent in 100 epoch 0:00:23.265263
+continuous+random training epoch 3100 loss 1.909447 accuracy 0.194092
+continuous_training validation loss 1.931858 accuracy 0.172852
+random_training validation loss 1.878799 accuracy 0.223633
+continuous validation loss 2.006696 accuracy 0.131836
+random validation loss 2.026723 accuracy 0.145508
+
+time spent in 100 epoch 0:00:23.181585
+continuous+random training epoch 3200 loss 1.907937 accuracy 0.197021
+continuous_training validation loss 1.930695 accuracy 0.172363
+random_training validation loss 1.878360 accuracy 0.225342
+continuous validation loss 2.007429 accuracy 0.134766
+random validation loss 2.026281 accuracy 0.150391
+
+time spent in 100 epoch 0:00:23.388599
+continuous+random training epoch 3300 loss 1.906823 accuracy 0.198730
+continuous_training validation loss 1.929192 accuracy 0.175537
+random_training validation loss 1.877688 accuracy 0.226807
+continuous validation loss 2.010633 accuracy 0.135742
+random validation loss 2.029255 accuracy 0.144531
+
+time spent in 100 epoch 0:00:23.141742
+continuous+random training epoch 3400 loss 1.905861 accuracy 0.202026
+continuous_training validation loss 1.927033 accuracy 0.169189
+random_training validation loss 1.876893 accuracy 0.228760
+continuous validation loss 2.015990 accuracy 0.125977
+random validation loss 2.023769 accuracy 0.150391
+
+time spent in 100 epoch 0:00:23.086979
+continuous+random training epoch 3500 loss 1.905089 accuracy 0.200928
+continuous_training validation loss 1.926875 accuracy 0.181152
+random_training validation loss 1.879026 accuracy 0.225830
+continuous validation loss 2.016677 accuracy 0.125000
+random validation loss 2.030630 accuracy 0.149414
+
+time spent in 100 epoch 0:00:23.192887
+continuous+random training epoch 3600 loss 1.904587 accuracy 0.201538
+continuous_training validation loss 1.925990 accuracy 0.175049
+random_training validation loss 1.877450 accuracy 0.229980
+continuous validation loss 2.019663 accuracy 0.134766
+random validation loss 2.032884 accuracy 0.145508
+
+time spent in 100 epoch 0:00:23.240296
+continuous+random training epoch 3700 loss 1.903139 accuracy 0.200562
+continuous_training validation loss 1.923642 accuracy 0.177490
+random_training validation loss 1.876250 accuracy 0.231934
+continuous validation loss 2.021225 accuracy 0.125977
+random validation loss 2.031490 accuracy 0.150391
+
+time spent in 100 epoch 0:00:23.112762
+continuous+random training epoch 3800 loss 1.902333 accuracy 0.198242
+continuous_training validation loss 1.921992 accuracy 0.178955
+random_training validation loss 1.875644 accuracy 0.229736
+continuous validation loss 2.023760 accuracy 0.133789
+random validation loss 2.029466 accuracy 0.144531
+
+time spent in 100 epoch 0:00:23.075328
+continuous+random training epoch 3900 loss 1.901519 accuracy 0.200684
+continuous_training validation loss 1.919849 accuracy 0.183105
+random_training validation loss 1.875752 accuracy 0.229980
+continuous validation loss 2.025728 accuracy 0.129883
+random validation loss 2.029197 accuracy 0.142578
+
+time spent in 100 epoch 0:00:23.804708
+continuous+random training epoch 4000 loss 1.901548 accuracy 0.203979
+continuous_training validation loss 1.917452 accuracy 0.187256
+random_training validation loss 1.875358 accuracy 0.231201
+continuous validation loss 2.029538 accuracy 0.126953
+random validation loss 2.039568 accuracy 0.128906
+
+time spent in 100 epoch 0:00:23.304786
+continuous+random training epoch 4100 loss 1.899315 accuracy 0.203857
+continuous_training validation loss 1.916597 accuracy 0.178223
+random_training validation loss 1.874649 accuracy 0.231445
+continuous validation loss 2.033181 accuracy 0.129883
+random validation loss 2.034014 accuracy 0.130859
+
+time spent in 100 epoch 0:00:23.299063
+continuous+random training epoch 4200 loss 1.900967 accuracy 0.200928
+continuous_training validation loss 1.914986 accuracy 0.189941
+random_training validation loss 1.875857 accuracy 0.229492
+continuous validation loss 2.034789 accuracy 0.131836
+random validation loss 2.031219 accuracy 0.134766
+
+time spent in 100 epoch 0:00:23.047452
+continuous+random training epoch 4300 loss 1.897907 accuracy 0.204346
+continuous_training validation loss 1.912717 accuracy 0.187256
+random_training validation loss 1.876795 accuracy 0.225586
+continuous validation loss 2.038672 accuracy 0.125977
+random validation loss 2.032320 accuracy 0.130859
+
+time spent in 100 epoch 0:00:23.048304
+continuous+random training epoch 4400 loss 1.899318 accuracy 0.202515
+continuous_training validation loss 1.911026 accuracy 0.194092
+random_training validation loss 1.875675 accuracy 0.227783
+continuous validation loss 2.038963 accuracy 0.124023
+random validation loss 2.032982 accuracy 0.136719
+
+time spent in 100 epoch 0:00:23.104346
+continuous+random training epoch 4500 loss 1.896558 accuracy 0.205322
+continuous_training validation loss 1.909752 accuracy 0.197998
+random_training validation loss 1.877694 accuracy 0.219727
+continuous validation loss 2.039927 accuracy 0.129883
+random validation loss 2.028375 accuracy 0.139648
+
+time spent in 100 epoch 0:00:23.224780
+continuous+random training epoch 4600 loss 1.895494 accuracy 0.204956
+continuous_training validation loss 1.909223 accuracy 0.189697
+random_training validation loss 1.877308 accuracy 0.229736
+continuous validation loss 2.043912 accuracy 0.125000
+random validation loss 2.034301 accuracy 0.140625
+
+time spent in 100 epoch 0:00:23.147157
+continuous+random training epoch 4700 loss 1.895085 accuracy 0.204956
+continuous_training validation loss 1.904403 accuracy 0.188477
+random_training validation loss 1.874647 accuracy 0.225098
+continuous validation loss 2.044823 accuracy 0.125000
+random validation loss 2.042121 accuracy 0.139648
+
+time spent in 100 epoch 0:00:23.089930
+continuous+random training epoch 4800 loss 1.906361 accuracy 0.195190
+continuous_training validation loss 1.905649 accuracy 0.184570
+random_training validation loss 1.883233 accuracy 0.217285
+continuous validation loss 2.033523 accuracy 0.125977
+random validation loss 2.014310 accuracy 0.132812
+
+time spent in 100 epoch 0:00:23.219107
+continuous+random training epoch 4900 loss 1.893350 accuracy 0.202759
+continuous_training validation loss 1.900740 accuracy 0.189697
+random_training validation loss 1.875108 accuracy 0.226318
+continuous validation loss 2.049966 accuracy 0.124023
+random validation loss 2.033406 accuracy 0.130859
+
+learning rate: 0.038400
+
+time spent in 100 epoch 0:00:23.106882
+continuous+random training epoch 5000 loss 1.886506 accuracy 0.209229
+continuous_training validation loss 1.897501 accuracy 0.191895
+random_training validation loss 1.871270 accuracy 0.228027
+continuous validation loss 2.048850 accuracy 0.128906
+random validation loss 2.031426 accuracy 0.129883
+
+time spent in 100 epoch 0:00:23.083929
+continuous+random training epoch 5100 loss 1.884140 accuracy 0.209839
+continuous_training validation loss 1.896397 accuracy 0.193359
+random_training validation loss 1.869063 accuracy 0.232422
+continuous validation loss 2.057474 accuracy 0.129883
+random validation loss 2.038836 accuracy 0.135742
+
+time spent in 100 epoch 0:00:23.006780
+continuous+random training epoch 5200 loss 1.883342 accuracy 0.211304
+continuous_training validation loss 1.895969 accuracy 0.193115
+random_training validation loss 1.868693 accuracy 0.234131
+continuous validation loss 2.060698 accuracy 0.132812
+random validation loss 2.040978 accuracy 0.131836
+
+time spent in 100 epoch 0:00:23.012907
+continuous+random training epoch 5300 loss 1.882874 accuracy 0.211670
+continuous_training validation loss 1.895898 accuracy 0.194824
+random_training validation loss 1.868967 accuracy 0.229980
+continuous validation loss 2.063427 accuracy 0.131836
+random validation loss 2.042510 accuracy 0.136719
+
+time spent in 100 epoch 0:00:22.973497
+continuous+random training epoch 5400 loss 1.882858 accuracy 0.212158
+continuous_training validation loss 1.895541 accuracy 0.192627
+random_training validation loss 1.869035 accuracy 0.231445
+continuous validation loss 2.062492 accuracy 0.129883
+random validation loss 2.043273 accuracy 0.128906
+
+time spent in 100 epoch 0:00:23.032702
+continuous+random training epoch 5500 loss 1.882646 accuracy 0.213135
+continuous_training validation loss 1.894915 accuracy 0.196289
+random_training validation loss 1.867007 accuracy 0.233154
+continuous validation loss 2.063758 accuracy 0.126953
+random validation loss 2.044486 accuracy 0.126953
+
+time spent in 100 epoch 0:00:23.156925
+continuous+random training epoch 5600 loss 1.882278 accuracy 0.213501
+continuous_training validation loss 1.894925 accuracy 0.197754
+random_training validation loss 1.868489 accuracy 0.230713
+continuous validation loss 2.064445 accuracy 0.129883
+random validation loss 2.045713 accuracy 0.127930
+
+time spent in 100 epoch 0:00:23.097202
+continuous+random training epoch 5700 loss 1.882990 accuracy 0.211670
+continuous_training validation loss 1.894508 accuracy 0.199951
+random_training validation loss 1.866944 accuracy 0.229492
+continuous validation loss 2.065724 accuracy 0.125977
+random validation loss 2.043610 accuracy 0.128906
+
+time spent in 100 epoch 0:00:23.124560
+continuous+random training epoch 5800 loss 1.882738 accuracy 0.213135
+continuous_training validation loss 1.894230 accuracy 0.195312
+random_training validation loss 1.866429 accuracy 0.232422
+continuous validation loss 2.064966 accuracy 0.125977
+random validation loss 2.045606 accuracy 0.127930
+
+time spent in 100 epoch 0:00:23.417589
+continuous+random training epoch 5900 loss 1.882979 accuracy 0.213623
+continuous_training validation loss 1.894256 accuracy 0.196289
+random_training validation loss 1.866290 accuracy 0.233154
+continuous validation loss 2.064602 accuracy 0.125000
+random validation loss 2.043653 accuracy 0.126953
+
+time spent in 100 epoch 0:00:23.098621
+continuous+random training epoch 6000 loss 1.881488 accuracy 0.213135
+continuous_training validation loss 1.894067 accuracy 0.196045
+random_training validation loss 1.866280 accuracy 0.230225
+continuous validation loss 2.064561 accuracy 0.126953
+random validation loss 2.044106 accuracy 0.124023
+
+time spent in 100 epoch 0:00:23.289606
+continuous+random training epoch 6100 loss 1.881623 accuracy 0.213135
+continuous_training validation loss 1.894046 accuracy 0.196533
+random_training validation loss 1.866296 accuracy 0.234863
+continuous validation loss 2.065094 accuracy 0.125000
+random validation loss 2.045391 accuracy 0.130859
+
+time spent in 100 epoch 0:00:23.083702
+continuous+random training epoch 6200 loss 1.881614 accuracy 0.214233
+continuous_training validation loss 1.894117 accuracy 0.196777
+random_training validation loss 1.866557 accuracy 0.232910
+continuous validation loss 2.065122 accuracy 0.126953
+random validation loss 2.045356 accuracy 0.130859
+
+time spent in 100 epoch 0:00:23.095587
+continuous+random training epoch 6300 loss 1.881043 accuracy 0.212280
+continuous_training validation loss 1.893229 accuracy 0.195312
+random_training validation loss 1.866263 accuracy 0.231934
+continuous validation loss 2.065356 accuracy 0.125977
+random validation loss 2.048196 accuracy 0.122070
+
+time spent in 100 epoch 0:00:23.001969
+continuous+random training epoch 6400 loss 1.880882 accuracy 0.215210
+continuous_training validation loss 1.893428 accuracy 0.197021
+random_training validation loss 1.865425 accuracy 0.230713
+continuous validation loss 2.064383 accuracy 0.125977
+random validation loss 2.045099 accuracy 0.125000
+
+time spent in 100 epoch 0:00:23.065222
+continuous+random training epoch 6500 loss 1.880888 accuracy 0.213379
+continuous_training validation loss 1.893048 accuracy 0.196533
+random_training validation loss 1.865187 accuracy 0.234863
+continuous validation loss 2.064909 accuracy 0.125000
+random validation loss 2.047034 accuracy 0.124023
+
+time spent in 100 epoch 0:00:23.043349
+continuous+random training epoch 6600 loss 1.880837 accuracy 0.211182
+continuous_training validation loss 1.893028 accuracy 0.196533
+random_training validation loss 1.864763 accuracy 0.233643
+continuous validation loss 2.065273 accuracy 0.125977
+random validation loss 2.045087 accuracy 0.126953
+
+time spent in 100 epoch 0:00:23.144701
+continuous+random training epoch 6700 loss 1.881626 accuracy 0.215698
+continuous_training validation loss 1.893040 accuracy 0.195557
+random_training validation loss 1.865231 accuracy 0.235352
+continuous validation loss 2.065425 accuracy 0.126953
+random validation loss 2.048104 accuracy 0.128906
+
+time spent in 100 epoch 0:00:23.109342
+continuous+random training epoch 6800 loss 1.880436 accuracy 0.214722
+continuous_training validation loss 1.892845 accuracy 0.194092
+random_training validation loss 1.865914 accuracy 0.235107
+continuous validation loss 2.064282 accuracy 0.125000
+random validation loss 2.049172 accuracy 0.125977
+
+time spent in 100 epoch 0:00:23.006708
+continuous+random training epoch 6900 loss 1.880944 accuracy 0.212158
+continuous_training validation loss 1.893269 accuracy 0.195068
+random_training validation loss 1.864742 accuracy 0.234131
+continuous validation loss 2.065234 accuracy 0.125977
+random validation loss 2.046617 accuracy 0.127930
+
+time spent in 100 epoch 0:00:22.991371
+continuous+random training epoch 7000 loss 1.880362 accuracy 0.212646
+continuous_training validation loss 1.892902 accuracy 0.195801
+random_training validation loss 1.864915 accuracy 0.233643
+continuous validation loss 2.065314 accuracy 0.126953
+random validation loss 2.046988 accuracy 0.125977
+
+time spent in 100 epoch 0:00:23.048835
+continuous+random training epoch 7100 loss 1.881011 accuracy 0.212524
+continuous_training validation loss 1.892849 accuracy 0.197510
+random_training validation loss 1.865095 accuracy 0.233154
+continuous validation loss 2.065755 accuracy 0.128906
+random validation loss 2.044073 accuracy 0.128906
+
+time spent in 100 epoch 0:00:23.114234
+continuous+random training epoch 7200 loss 1.880710 accuracy 0.212036
+continuous_training validation loss 1.892660 accuracy 0.194580
+random_training validation loss 1.865825 accuracy 0.234131
+continuous validation loss 2.065034 accuracy 0.125977
+random validation loss 2.044608 accuracy 0.124023
+
+time spent in 100 epoch 0:00:23.101328
+continuous+random training epoch 7300 loss 1.880522 accuracy 0.210449
+continuous_training validation loss 1.892572 accuracy 0.193359
+random_training validation loss 1.865133 accuracy 0.233887
+continuous validation loss 2.064871 accuracy 0.126953
+random validation loss 2.049280 accuracy 0.124023
+
+time spent in 100 epoch 0:00:23.043025
+continuous+random training epoch 7400 loss 1.880120 accuracy 0.213623
+continuous_training validation loss 1.892455 accuracy 0.194824
+random_training validation loss 1.864633 accuracy 0.235107
+continuous validation loss 2.065143 accuracy 0.125977
+random validation loss 2.047452 accuracy 0.126953
+
+time spent in 100 epoch 0:00:22.969612
+continuous+random training epoch 7500 loss 1.880217 accuracy 0.213501
+continuous_training validation loss 1.892368 accuracy 0.196045
+random_training validation loss 1.865108 accuracy 0.232666
+continuous validation loss 2.064554 accuracy 0.127930
+random validation loss 2.045575 accuracy 0.130859
+
+time spent in 100 epoch 0:00:23.065747
+continuous+random training epoch 7600 loss 1.880708 accuracy 0.212280
+continuous_training validation loss 1.891874 accuracy 0.194092
+random_training validation loss 1.866395 accuracy 0.231934
+continuous validation loss 2.063412 accuracy 0.121094
+random validation loss 2.051702 accuracy 0.125977
+
+time spent in 100 epoch 0:00:23.026081
+continuous+random training epoch 7700 loss 1.880822 accuracy 0.211060
+continuous_training validation loss 1.892876 accuracy 0.194824
+random_training validation loss 1.865491 accuracy 0.234619
+continuous validation loss 2.065431 accuracy 0.128906
+random validation loss 2.046251 accuracy 0.130859
+
+time spent in 100 epoch 0:00:22.923948
+continuous+random training epoch 7800 loss 1.879739 accuracy 0.214355
+continuous_training validation loss 1.892060 accuracy 0.193604
+random_training validation loss 1.864979 accuracy 0.235352
+continuous validation loss 2.064871 accuracy 0.122070
+random validation loss 2.050624 accuracy 0.126953
+
+time spent in 100 epoch 0:00:22.957730
+continuous+random training epoch 7900 loss 1.879972 accuracy 0.214233
+continuous_training validation loss 1.892255 accuracy 0.192139
+random_training validation loss 1.864132 accuracy 0.233154
+continuous validation loss 2.064624 accuracy 0.123047
+random validation loss 2.048385 accuracy 0.126953
+
+time spent in 100 epoch 0:00:22.966806
+continuous+random training epoch 8000 loss 1.879741 accuracy 0.213501
+continuous_training validation loss 1.892204 accuracy 0.194824
+random_training validation loss 1.864657 accuracy 0.234131
+continuous validation loss 2.065611 accuracy 0.125000
+random validation loss 2.047701 accuracy 0.132812
+
+time spent in 100 epoch 0:00:22.976935
+continuous+random training epoch 8100 loss 1.879733 accuracy 0.211670
+continuous_training validation loss 1.891615 accuracy 0.193359
+random_training validation loss 1.866160 accuracy 0.230713
+continuous validation loss 2.064553 accuracy 0.126953
+random validation loss 2.049426 accuracy 0.130859
+
+time spent in 100 epoch 0:00:22.918892
+continuous+random training epoch 8200 loss 1.880247 accuracy 0.214478
+continuous_training validation loss 1.892156 accuracy 0.196045
+random_training validation loss 1.864227 accuracy 0.233398
+continuous validation loss 2.065072 accuracy 0.124023
+random validation loss 2.046633 accuracy 0.131836
+
+time spent in 100 epoch 0:00:22.994528
+continuous+random training epoch 8300 loss 1.879807 accuracy 0.212402
+continuous_training validation loss 1.892021 accuracy 0.195557
+random_training validation loss 1.864193 accuracy 0.233887
+continuous validation loss 2.064727 accuracy 0.125000
+random validation loss 2.045699 accuracy 0.129883
+
+time spent in 100 epoch 0:00:22.912154
+continuous+random training epoch 8400 loss 1.880451 accuracy 0.211182
+continuous_training validation loss 1.891814 accuracy 0.190918
+random_training validation loss 1.865975 accuracy 0.231445
+continuous validation loss 2.064543 accuracy 0.126953
+random validation loss 2.049556 accuracy 0.133789
+
+time spent in 100 epoch 0:00:23.337620
+continuous+random training epoch 8500 loss 1.879598 accuracy 0.212036
+continuous_training validation loss 1.892152 accuracy 0.192627
+random_training validation loss 1.865168 accuracy 0.234131
+continuous validation loss 2.064471 accuracy 0.121094
+random validation loss 2.047787 accuracy 0.132812
+
+time spent in 100 epoch 0:00:23.426401
+continuous+random training epoch 8600 loss 1.879851 accuracy 0.211548
+continuous_training validation loss 1.891487 accuracy 0.194336
+random_training validation loss 1.864455 accuracy 0.233398
+continuous validation loss 2.063835 accuracy 0.125000
+random validation loss 2.049399 accuracy 0.131836
+
+time spent in 100 epoch 0:00:23.057796
+continuous+random training epoch 8700 loss 1.879996 accuracy 0.212158
+continuous_training validation loss 1.891690 accuracy 0.194092
+random_training validation loss 1.863633 accuracy 0.230469
+continuous validation loss 2.064576 accuracy 0.125000
+random validation loss 2.046732 accuracy 0.132812
+
+time spent in 100 epoch 0:00:22.927258
+continuous+random training epoch 8800 loss 1.879715 accuracy 0.211792
+continuous_training validation loss 1.891179 accuracy 0.194824
+random_training validation loss 1.864946 accuracy 0.231201
+continuous validation loss 2.064261 accuracy 0.124023
+random validation loss 2.050285 accuracy 0.133789
+
+time spent in 100 epoch 0:00:23.094983
+continuous+random training epoch 8900 loss 1.879253 accuracy 0.211548
+continuous_training validation loss 1.891781 accuracy 0.193359
+random_training validation loss 1.865546 accuracy 0.232422
+continuous validation loss 2.064867 accuracy 0.127930
+random validation loss 2.045797 accuracy 0.129883
+
+time spent in 100 epoch 0:00:22.937311
+continuous+random training epoch 9000 loss 1.879480 accuracy 0.210693
+continuous_training validation loss 1.891523 accuracy 0.195557
+random_training validation loss 1.863795 accuracy 0.232422
+continuous validation loss 2.064817 accuracy 0.125977
+random validation loss 2.049291 accuracy 0.129883
+
+time spent in 100 epoch 0:00:22.982171
+continuous+random training epoch 9100 loss 1.880558 accuracy 0.209961
+continuous_training validation loss 1.891198 accuracy 0.193848
+random_training validation loss 1.864720 accuracy 0.229248
+continuous validation loss 2.065505 accuracy 0.125977
+random validation loss 2.046358 accuracy 0.131836
+
+time spent in 100 epoch 0:00:23.015676
+continuous+random training epoch 9200 loss 1.879066 accuracy 0.212402
+continuous_training validation loss 1.891501 accuracy 0.195557
+random_training validation loss 1.863666 accuracy 0.232422
+continuous validation loss 2.065145 accuracy 0.125977
+random validation loss 2.044315 accuracy 0.128906
+
+time spent in 100 epoch 0:00:23.005196
+continuous+random training epoch 9300 loss 1.879683 accuracy 0.212158
+continuous_training validation loss 1.891061 accuracy 0.196045
+random_training validation loss 1.864076 accuracy 0.231201
+continuous validation loss 2.065374 accuracy 0.125000
+random validation loss 2.046371 accuracy 0.130859
+
+time spent in 100 epoch 0:00:23.016810
+continuous+random training epoch 9400 loss 1.879728 accuracy 0.213501
+continuous_training validation loss 1.891352 accuracy 0.193848
+random_training validation loss 1.863694 accuracy 0.230957
+continuous validation loss 2.065222 accuracy 0.125977
+random validation loss 2.044035 accuracy 0.129883
+
+time spent in 100 epoch 0:00:23.001412
+continuous+random training epoch 9500 loss 1.879264 accuracy 0.211426
+continuous_training validation loss 1.891333 accuracy 0.194824
+random_training validation loss 1.862783 accuracy 0.232910
+continuous validation loss 2.064886 accuracy 0.125977
+random validation loss 2.042826 accuracy 0.128906
+
+time spent in 100 epoch 0:00:23.032925
+continuous+random training epoch 9600 loss 1.879659 accuracy 0.213623
+continuous_training validation loss 1.891343 accuracy 0.193848
+random_training validation loss 1.865686 accuracy 0.227051
+continuous validation loss 2.065131 accuracy 0.128906
+random validation loss 2.049333 accuracy 0.130859
+
+time spent in 100 epoch 0:00:23.007300
+continuous+random training epoch 9700 loss 1.878609 accuracy 0.212280
+continuous_training validation loss 1.890870 accuracy 0.195312
+random_training validation loss 1.862724 accuracy 0.231934
+continuous validation loss 2.066936 accuracy 0.127930
+random validation loss 2.045599 accuracy 0.127930
+
+time spent in 100 epoch 0:00:23.080988
+continuous+random training epoch 9800 loss 1.878536 accuracy 0.213135
+continuous_training validation loss 1.890727 accuracy 0.195312
+random_training validation loss 1.862727 accuracy 0.229248
+continuous validation loss 2.066191 accuracy 0.127930
+random validation loss 2.046586 accuracy 0.130859
+
+time spent in 100 epoch 0:00:23.202762
+continuous+random training epoch 9900 loss 1.879074 accuracy 0.209717
+continuous_training validation loss 1.890734 accuracy 0.195068
+random_training validation loss 1.863847 accuracy 0.230225
+continuous validation loss 2.065946 accuracy 0.126953
+random validation loss 2.042046 accuracy 0.137695
+
+learning rate: 0.007680
+
+time spent in 100 epoch 0:00:22.980925
+continuous+random training epoch 10000 loss 1.876947 accuracy 0.212769
+continuous_training validation loss 1.890190 accuracy 0.193848
+random_training validation loss 1.862454 accuracy 0.232666
+continuous validation loss 2.065042 accuracy 0.126953
+random validation loss 2.045206 accuracy 0.139648
+
+time spent in 100 epoch 0:00:23.006164
+continuous+random training epoch 10100 loss 1.876473 accuracy 0.211304
+continuous_training validation loss 1.890034 accuracy 0.193848
+random_training validation loss 1.862029 accuracy 0.230225
+continuous validation loss 2.066582 accuracy 0.127930
+random validation loss 2.046101 accuracy 0.138672
+
+time spent in 100 epoch 0:00:22.949633
+continuous+random training epoch 10200 loss 1.876416 accuracy 0.212036
+continuous_training validation loss 1.889977 accuracy 0.195557
+random_training validation loss 1.862073 accuracy 0.230957
+continuous validation loss 2.067195 accuracy 0.129883
+random validation loss 2.047955 accuracy 0.138672
+
+time spent in 100 epoch 0:00:22.940748
+continuous+random training epoch 10300 loss 1.876328 accuracy 0.211304
+continuous_training validation loss 1.889958 accuracy 0.195557
+random_training validation loss 1.861933 accuracy 0.229736
+continuous validation loss 2.067894 accuracy 0.129883
+random validation loss 2.047601 accuracy 0.139648
+
+time spent in 100 epoch 0:00:23.297604
+continuous+random training epoch 10400 loss 1.876346 accuracy 0.212891
+continuous_training validation loss 1.889895 accuracy 0.195557
+random_training validation loss 1.862010 accuracy 0.230957
+continuous validation loss 2.068174 accuracy 0.128906
+random validation loss 2.049084 accuracy 0.136719
+
+time spent in 100 epoch 0:00:23.045546
+continuous+random training epoch 10500 loss 1.876293 accuracy 0.213379
+continuous_training validation loss 1.889914 accuracy 0.194336
+random_training validation loss 1.861814 accuracy 0.230225
+continuous validation loss 2.068447 accuracy 0.128906
+random validation loss 2.048813 accuracy 0.137695
+
+time spent in 100 epoch 0:00:20.363910
+continuous+random training epoch 10600 loss 1.876311 accuracy 0.212402
+continuous_training validation loss 1.889759 accuracy 0.194824
+random_training validation loss 1.861913 accuracy 0.231201
+continuous validation loss 2.068679 accuracy 0.127930
+random validation loss 2.049444 accuracy 0.137695
+
+time spent in 100 epoch 0:00:19.707971
+continuous+random training epoch 10700 loss 1.876252 accuracy 0.212402
+continuous_training validation loss 1.889774 accuracy 0.195557
+random_training validation loss 1.861815 accuracy 0.231934
+continuous validation loss 2.068978 accuracy 0.127930
+random validation loss 2.049860 accuracy 0.137695
+
+time spent in 100 epoch 0:00:19.622516
+continuous+random training epoch 10800 loss 1.876269 accuracy 0.213013
+continuous_training validation loss 1.889744 accuracy 0.194092
+random_training validation loss 1.861803 accuracy 0.230225
+continuous validation loss 2.069045 accuracy 0.127930
+random validation loss 2.049413 accuracy 0.136719
+
+time spent in 100 epoch 0:00:19.632901
+continuous+random training epoch 10900 loss 1.876216 accuracy 0.212646
+continuous_training validation loss 1.889691 accuracy 0.194580
+random_training validation loss 1.861830 accuracy 0.229492
+continuous validation loss 2.069247 accuracy 0.127930
+random validation loss 2.049576 accuracy 0.136719
+
+time spent in 100 epoch 0:00:19.688627
+continuous+random training epoch 11000 loss 1.876112 accuracy 0.211670
+continuous_training validation loss 1.889670 accuracy 0.195801
+random_training validation loss 1.862224 accuracy 0.230225
+continuous validation loss 2.069322 accuracy 0.128906
+random validation loss 2.050773 accuracy 0.138672
+
+time spent in 100 epoch 0:00:19.682833
+continuous+random training epoch 11100 loss 1.876158 accuracy 0.212402
+continuous_training validation loss 1.889674 accuracy 0.194824
+random_training validation loss 1.861918 accuracy 0.231445
+continuous validation loss 2.069457 accuracy 0.127930
+random validation loss 2.049858 accuracy 0.135742
+
+time spent in 100 epoch 0:00:20.158375
+continuous+random training epoch 11200 loss 1.876164 accuracy 0.213501
+continuous_training validation loss 1.889579 accuracy 0.194824
+random_training validation loss 1.861855 accuracy 0.230225
+continuous validation loss 2.069562 accuracy 0.127930
+random validation loss 2.050052 accuracy 0.136719
+
+time spent in 100 epoch 0:00:19.768250
+continuous+random training epoch 11300 loss 1.876138 accuracy 0.212524
+continuous_training validation loss 1.889579 accuracy 0.195312
+random_training validation loss 1.861914 accuracy 0.230469
+continuous validation loss 2.069649 accuracy 0.127930
+random validation loss 2.049892 accuracy 0.136719
+
+time spent in 100 epoch 0:00:19.606722
+continuous+random training epoch 11400 loss 1.876397 accuracy 0.212769
+continuous_training validation loss 1.889639 accuracy 0.194580
+random_training validation loss 1.861933 accuracy 0.229736
+continuous validation loss 2.069800 accuracy 0.128906
+random validation loss 2.049586 accuracy 0.136719
+
+time spent in 100 epoch 0:00:19.689384
+continuous+random training epoch 11500 loss 1.876075 accuracy 0.212524
+continuous_training validation loss 1.889504 accuracy 0.196289
+random_training validation loss 1.861787 accuracy 0.230225
+continuous validation loss 2.069883 accuracy 0.127930
+random validation loss 2.050924 accuracy 0.134766
+
+time spent in 100 epoch 0:00:19.683908
+continuous+random training epoch 11600 loss 1.876062 accuracy 0.210693
+continuous_training validation loss 1.889491 accuracy 0.195068
+random_training validation loss 1.861640 accuracy 0.230225
+continuous validation loss 2.069858 accuracy 0.126953
+random validation loss 2.050006 accuracy 0.136719
+
+time spent in 100 epoch 0:00:19.632769
+continuous+random training epoch 11700 loss 1.876080 accuracy 0.212158
+continuous_training validation loss 1.889399 accuracy 0.194580
+random_training validation loss 1.861713 accuracy 0.231934
+continuous validation loss 2.069944 accuracy 0.127930
+random validation loss 2.050143 accuracy 0.135742
+
+time spent in 100 epoch 0:00:19.643323
+continuous+random training epoch 11800 loss 1.876074 accuracy 0.212402
+continuous_training validation loss 1.889415 accuracy 0.195801
+random_training validation loss 1.861717 accuracy 0.230469
+continuous validation loss 2.069941 accuracy 0.129883
+random validation loss 2.049781 accuracy 0.136719
+
+time spent in 100 epoch 0:00:19.708828
+continuous+random training epoch 11900 loss 1.875901 accuracy 0.213623
+continuous_training validation loss 1.889324 accuracy 0.195557
+random_training validation loss 1.861769 accuracy 0.231445
+continuous validation loss 2.069948 accuracy 0.127930
+random validation loss 2.050033 accuracy 0.137695
+
+time spent in 100 epoch 0:00:20.146532
+continuous+random training epoch 12000 loss 1.875914 accuracy 0.213135
+continuous_training validation loss 1.889360 accuracy 0.194824
+random_training validation loss 1.861666 accuracy 0.230469
+continuous validation loss 2.070209 accuracy 0.129883
+random validation loss 2.050533 accuracy 0.135742
+
+time spent in 100 epoch 0:00:19.717679
+continuous+random training epoch 12100 loss 1.875967 accuracy 0.212769
+continuous_training validation loss 1.889304 accuracy 0.194824
+random_training validation loss 1.861634 accuracy 0.229980
+continuous validation loss 2.070191 accuracy 0.129883
+random validation loss 2.050235 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.684644
+continuous+random training epoch 12200 loss 1.875875 accuracy 0.212158
+continuous_training validation loss 1.889276 accuracy 0.194580
+random_training validation loss 1.861676 accuracy 0.230225
+continuous validation loss 2.070098 accuracy 0.126953
+random validation loss 2.049844 accuracy 0.135742
+
+time spent in 100 epoch 0:00:19.692601
+continuous+random training epoch 12300 loss 1.876130 accuracy 0.212036
+continuous_training validation loss 1.889229 accuracy 0.195801
+random_training validation loss 1.861716 accuracy 0.231201
+continuous validation loss 2.070256 accuracy 0.128906
+random validation loss 2.049113 accuracy 0.134766
+
+time spent in 100 epoch 0:00:19.703547
+continuous+random training epoch 12400 loss 1.875795 accuracy 0.212402
+continuous_training validation loss 1.889098 accuracy 0.195557
+random_training validation loss 1.861687 accuracy 0.230469
+continuous validation loss 2.070214 accuracy 0.127930
+random validation loss 2.050255 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.635091
+continuous+random training epoch 12500 loss 1.875906 accuracy 0.212158
+continuous_training validation loss 1.889102 accuracy 0.194092
+random_training validation loss 1.861741 accuracy 0.230713
+continuous validation loss 2.070307 accuracy 0.126953
+random validation loss 2.049031 accuracy 0.134766
+
+time spent in 100 epoch 0:00:19.711914
+continuous+random training epoch 12600 loss 1.875821 accuracy 0.212524
+continuous_training validation loss 1.889047 accuracy 0.194824
+random_training validation loss 1.861578 accuracy 0.229736
+continuous validation loss 2.070377 accuracy 0.127930
+random validation loss 2.049769 accuracy 0.136719
+
+time spent in 100 epoch 0:00:19.715880
+continuous+random training epoch 12700 loss 1.875786 accuracy 0.212769
+continuous_training validation loss 1.889017 accuracy 0.195801
+random_training validation loss 1.861610 accuracy 0.230469
+continuous validation loss 2.070331 accuracy 0.127930
+random validation loss 2.050122 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.657792
+continuous+random training epoch 12800 loss 1.875754 accuracy 0.212891
+continuous_training validation loss 1.889049 accuracy 0.195801
+random_training validation loss 1.861548 accuracy 0.230713
+continuous validation loss 2.070573 accuracy 0.128906
+random validation loss 2.049797 accuracy 0.134766
+
+time spent in 100 epoch 0:00:19.932432
+continuous+random training epoch 12900 loss 1.875721 accuracy 0.212646
+continuous_training validation loss 1.888961 accuracy 0.196045
+random_training validation loss 1.861661 accuracy 0.229980
+continuous validation loss 2.070670 accuracy 0.127930
+random validation loss 2.049306 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.651601
+continuous+random training epoch 13000 loss 1.875770 accuracy 0.212891
+continuous_training validation loss 1.889024 accuracy 0.195312
+random_training validation loss 1.861970 accuracy 0.230713
+continuous validation loss 2.070788 accuracy 0.128906
+random validation loss 2.048774 accuracy 0.134766
+
+time spent in 100 epoch 0:00:19.651831
+continuous+random training epoch 13100 loss 1.875715 accuracy 0.212280
+continuous_training validation loss 1.888850 accuracy 0.197021
+random_training validation loss 1.861633 accuracy 0.229492
+continuous validation loss 2.070624 accuracy 0.127930
+random validation loss 2.050024 accuracy 0.134766
+
+time spent in 100 epoch 0:00:19.744489
+continuous+random training epoch 13200 loss 1.875687 accuracy 0.212036
+continuous_training validation loss 1.888883 accuracy 0.196777
+random_training validation loss 1.861485 accuracy 0.229492
+continuous validation loss 2.070844 accuracy 0.127930
+random validation loss 2.050122 accuracy 0.134766
+
+time spent in 100 epoch 0:00:19.853732
+continuous+random training epoch 13300 loss 1.875647 accuracy 0.211670
+continuous_training validation loss 1.888954 accuracy 0.195557
+random_training validation loss 1.861737 accuracy 0.230957
+continuous validation loss 2.070964 accuracy 0.128906
+random validation loss 2.049225 accuracy 0.134766
+
+time spent in 100 epoch 0:00:19.635096
+continuous+random training epoch 13400 loss 1.875666 accuracy 0.211670
+continuous_training validation loss 1.888812 accuracy 0.197754
+random_training validation loss 1.861445 accuracy 0.229492
+continuous validation loss 2.070945 accuracy 0.127930
+random validation loss 2.049716 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.711412
+continuous+random training epoch 13500 loss 1.875657 accuracy 0.212524
+continuous_training validation loss 1.888802 accuracy 0.196289
+random_training validation loss 1.861527 accuracy 0.229492
+continuous validation loss 2.070903 accuracy 0.128906
+random validation loss 2.050490 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.720576
+continuous+random training epoch 13600 loss 1.875666 accuracy 0.211914
+continuous_training validation loss 1.888801 accuracy 0.195557
+random_training validation loss 1.861463 accuracy 0.229248
+continuous validation loss 2.070951 accuracy 0.126953
+random validation loss 2.049034 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.644559
+continuous+random training epoch 13700 loss 1.875625 accuracy 0.212646
+continuous_training validation loss 1.888756 accuracy 0.195801
+random_training validation loss 1.861537 accuracy 0.229736
+continuous validation loss 2.070963 accuracy 0.127930
+random validation loss 2.049020 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.685900
+continuous+random training epoch 13800 loss 1.875751 accuracy 0.212646
+continuous_training validation loss 1.888780 accuracy 0.195557
+random_training validation loss 1.861549 accuracy 0.231201
+continuous validation loss 2.071036 accuracy 0.128906
+random validation loss 2.048691 accuracy 0.134766
+
+time spent in 100 epoch 0:00:19.664106
+continuous+random training epoch 13900 loss 1.875609 accuracy 0.212769
+continuous_training validation loss 1.888677 accuracy 0.196045
+random_training validation loss 1.861508 accuracy 0.230225
+continuous validation loss 2.070884 accuracy 0.127930
+random validation loss 2.048916 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.676836
+continuous+random training epoch 14000 loss 1.875920 accuracy 0.212280
+continuous_training validation loss 1.888788 accuracy 0.196045
+random_training validation loss 1.861505 accuracy 0.230957
+continuous validation loss 2.071067 accuracy 0.127930
+random validation loss 2.048805 accuracy 0.135742
+
+time spent in 100 epoch 0:00:19.657874
+continuous+random training epoch 14100 loss 1.875464 accuracy 0.213135
+continuous_training validation loss 1.888646 accuracy 0.196045
+random_training validation loss 1.861569 accuracy 0.229248
+continuous validation loss 2.071125 accuracy 0.127930
+random validation loss 2.049721 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.856673
+continuous+random training epoch 14200 loss 1.875477 accuracy 0.212036
+continuous_training validation loss 1.888602 accuracy 0.195801
+random_training validation loss 1.861347 accuracy 0.229492
+continuous validation loss 2.071170 accuracy 0.128906
+random validation loss 2.049543 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.700282
+continuous+random training epoch 14300 loss 1.875515 accuracy 0.212646
+continuous_training validation loss 1.888598 accuracy 0.197754
+random_training validation loss 1.861570 accuracy 0.229492
+continuous validation loss 2.071472 accuracy 0.126953
+random validation loss 2.049143 accuracy 0.130859
+
+time spent in 100 epoch 0:00:19.670026
+continuous+random training epoch 14400 loss 1.875506 accuracy 0.213013
+continuous_training validation loss 1.888524 accuracy 0.196777
+random_training validation loss 1.861473 accuracy 0.229004
+continuous validation loss 2.071108 accuracy 0.128906
+random validation loss 2.048295 accuracy 0.134766
+
+time spent in 100 epoch 0:00:19.678564
+continuous+random training epoch 14500 loss 1.875548 accuracy 0.212402
+continuous_training validation loss 1.888515 accuracy 0.196045
+random_training validation loss 1.861418 accuracy 0.231201
+continuous validation loss 2.071545 accuracy 0.127930
+random validation loss 2.048959 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.660767
+continuous+random training epoch 14600 loss 1.875554 accuracy 0.212524
+continuous_training validation loss 1.888643 accuracy 0.197021
+random_training validation loss 1.862406 accuracy 0.228271
+continuous validation loss 2.071648 accuracy 0.127930
+random validation loss 2.048157 accuracy 0.129883
+
+time spent in 100 epoch 0:00:19.698238
+continuous+random training epoch 14700 loss 1.875412 accuracy 0.211914
+continuous_training validation loss 1.888432 accuracy 0.196533
+random_training validation loss 1.861534 accuracy 0.228760
+continuous validation loss 2.071544 accuracy 0.126953
+random validation loss 2.049794 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.734803
+continuous+random training epoch 14800 loss 1.875373 accuracy 0.212524
+continuous_training validation loss 1.888422 accuracy 0.196289
+random_training validation loss 1.861345 accuracy 0.229736
+continuous validation loss 2.071382 accuracy 0.127930
+random validation loss 2.049319 accuracy 0.135742
+
+time spent in 100 epoch 0:00:19.848709
+continuous+random training epoch 14900 loss 1.875434 accuracy 0.213135
+continuous_training validation loss 1.888383 accuracy 0.196045
+random_training validation loss 1.861325 accuracy 0.230225
+continuous validation loss 2.071477 accuracy 0.126953
+random validation loss 2.048758 accuracy 0.134766
+
+learning rate: 0.001536
+
+time spent in 100 epoch 0:00:19.698428
+continuous+random training epoch 15000 loss 1.874963 accuracy 0.213013
+continuous_training validation loss 1.888388 accuracy 0.197021
+random_training validation loss 1.861254 accuracy 0.229736
+continuous validation loss 2.071672 accuracy 0.126953
+random validation loss 2.048626 accuracy 0.134766
+
+time spent in 100 epoch 0:00:19.695283
+continuous+random training epoch 15100 loss 1.874884 accuracy 0.213013
+continuous_training validation loss 1.888320 accuracy 0.197021
+random_training validation loss 1.861222 accuracy 0.229980
+continuous validation loss 2.071651 accuracy 0.126953
+random validation loss 2.048908 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.696724
+continuous+random training epoch 15200 loss 1.874888 accuracy 0.213013
+continuous_training validation loss 1.888325 accuracy 0.196777
+random_training validation loss 1.861223 accuracy 0.229980
+continuous validation loss 2.071704 accuracy 0.127930
+random validation loss 2.048702 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.719618
+continuous+random training epoch 15300 loss 1.874872 accuracy 0.213379
+continuous_training validation loss 1.888302 accuracy 0.197021
+random_training validation loss 1.861220 accuracy 0.229248
+continuous validation loss 2.071722 accuracy 0.126953
+random validation loss 2.048895 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.685376
+continuous+random training epoch 15400 loss 1.874890 accuracy 0.213135
+continuous_training validation loss 1.888312 accuracy 0.196533
+random_training validation loss 1.861239 accuracy 0.230225
+continuous validation loss 2.071782 accuracy 0.128906
+random validation loss 2.048516 accuracy 0.134766
+
+time spent in 100 epoch 0:00:19.680716
+continuous+random training epoch 15500 loss 1.874870 accuracy 0.214355
+continuous_training validation loss 1.888294 accuracy 0.196533
+random_training validation loss 1.861231 accuracy 0.230225
+continuous validation loss 2.071799 accuracy 0.127930
+random validation loss 2.048889 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.715333
+continuous+random training epoch 15600 loss 1.874846 accuracy 0.213501
+continuous_training validation loss 1.888286 accuracy 0.196289
+random_training validation loss 1.861214 accuracy 0.230713
+continuous validation loss 2.071815 accuracy 0.127930
+random validation loss 2.048813 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.841857
+continuous+random training epoch 15700 loss 1.874890 accuracy 0.213501
+continuous_training validation loss 1.888286 accuracy 0.196777
+random_training validation loss 1.861241 accuracy 0.230713
+continuous validation loss 2.071872 accuracy 0.127930
+random validation loss 2.048711 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.851154
+continuous+random training epoch 15800 loss 1.874858 accuracy 0.213501
+continuous_training validation loss 1.888271 accuracy 0.196289
+random_training validation loss 1.861212 accuracy 0.231445
+continuous validation loss 2.071882 accuracy 0.127930
+random validation loss 2.048831 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.773147
+continuous+random training epoch 15900 loss 1.874870 accuracy 0.213745
+continuous_training validation loss 1.888280 accuracy 0.196777
+random_training validation loss 1.861276 accuracy 0.229736
+continuous validation loss 2.071936 accuracy 0.127930
+random validation loss 2.048672 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.681674
+continuous+random training epoch 16000 loss 1.874846 accuracy 0.213501
+continuous_training validation loss 1.888250 accuracy 0.196533
+random_training validation loss 1.861214 accuracy 0.230225
+continuous validation loss 2.071925 accuracy 0.127930
+random validation loss 2.049084 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.697579
+continuous+random training epoch 16100 loss 1.874849 accuracy 0.213135
+continuous_training validation loss 1.888253 accuracy 0.196533
+random_training validation loss 1.861207 accuracy 0.231201
+continuous validation loss 2.071965 accuracy 0.127930
+random validation loss 2.048930 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.713782
+continuous+random training epoch 16200 loss 1.874854 accuracy 0.213989
+continuous_training validation loss 1.888263 accuracy 0.196777
+random_training validation loss 1.861292 accuracy 0.230225
+continuous validation loss 2.072037 accuracy 0.127930
+random validation loss 2.048536 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.612303
+continuous+random training epoch 16300 loss 1.874836 accuracy 0.213867
+continuous_training validation loss 1.888237 accuracy 0.196777
+random_training validation loss 1.861201 accuracy 0.230713
+continuous validation loss 2.072010 accuracy 0.127930
+random validation loss 2.048947 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.676256
+continuous+random training epoch 16400 loss 1.874843 accuracy 0.213501
+continuous_training validation loss 1.888232 accuracy 0.196777
+random_training validation loss 1.861229 accuracy 0.230957
+continuous validation loss 2.072054 accuracy 0.127930
+random validation loss 2.048906 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.726573
+continuous+random training epoch 16500 loss 1.874836 accuracy 0.213257
+continuous_training validation loss 1.888229 accuracy 0.196777
+random_training validation loss 1.861207 accuracy 0.230957
+continuous validation loss 2.072061 accuracy 0.127930
+random validation loss 2.048940 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.658386
+continuous+random training epoch 16600 loss 1.874846 accuracy 0.213135
+continuous_training validation loss 1.888225 accuracy 0.196533
+random_training validation loss 1.861215 accuracy 0.230957
+continuous validation loss 2.072071 accuracy 0.127930
+random validation loss 2.048889 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.661484
+continuous+random training epoch 16700 loss 1.874842 accuracy 0.213501
+continuous_training validation loss 1.888216 accuracy 0.196289
+random_training validation loss 1.861220 accuracy 0.231201
+continuous validation loss 2.072104 accuracy 0.127930
+random validation loss 2.048867 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.758337
+continuous+random training epoch 16800 loss 1.874799 accuracy 0.213745
+continuous_training validation loss 1.888195 accuracy 0.196777
+random_training validation loss 1.861200 accuracy 0.230713
+continuous validation loss 2.072121 accuracy 0.127930
+random validation loss 2.049077 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.714559
+continuous+random training epoch 16900 loss 1.874817 accuracy 0.214111
+continuous_training validation loss 1.888191 accuracy 0.196533
+random_training validation loss 1.861192 accuracy 0.231201
+continuous validation loss 2.072116 accuracy 0.127930
+random validation loss 2.049068 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.657349
+continuous+random training epoch 17000 loss 1.874804 accuracy 0.214233
+continuous_training validation loss 1.888201 accuracy 0.196533
+random_training validation loss 1.861292 accuracy 0.230469
+continuous validation loss 2.072225 accuracy 0.127930
+random validation loss 2.048818 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.669475
+continuous+random training epoch 17100 loss 1.874791 accuracy 0.214355
+continuous_training validation loss 1.888180 accuracy 0.197021
+random_training validation loss 1.861188 accuracy 0.231689
+continuous validation loss 2.072190 accuracy 0.127930
+random validation loss 2.049041 accuracy 0.133789
+
+time spent in 100 epoch 0:00:19.828056
+continuous+random training epoch 17200 loss 1.874781 accuracy 0.213501
+continuous_training validation loss 1.888176 accuracy 0.197021
+random_training validation loss 1.861260 accuracy 0.231934
+continuous validation loss 2.072189 accuracy 0.126953
+random validation loss 2.049229 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.694845
+continuous+random training epoch 17300 loss 1.874802 accuracy 0.214111
+continuous_training validation loss 1.888169 accuracy 0.196533
+random_training validation loss 1.861187 accuracy 0.231201
+continuous validation loss 2.072212 accuracy 0.126953
+random validation loss 2.049252 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.755553
+continuous+random training epoch 17400 loss 1.874786 accuracy 0.214111
+continuous_training validation loss 1.888155 accuracy 0.196777
+random_training validation loss 1.861196 accuracy 0.231201
+continuous validation loss 2.072234 accuracy 0.126953
+random validation loss 2.049229 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.718035
+continuous+random training epoch 17500 loss 1.874781 accuracy 0.213989
+continuous_training validation loss 1.888165 accuracy 0.196533
+random_training validation loss 1.861174 accuracy 0.231445
+continuous validation loss 2.072271 accuracy 0.127930
+random validation loss 2.049050 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.632059
+continuous+random training epoch 17600 loss 1.874798 accuracy 0.213745
+continuous_training validation loss 1.888158 accuracy 0.196777
+random_training validation loss 1.861203 accuracy 0.230957
+continuous validation loss 2.072289 accuracy 0.127930
+random validation loss 2.048983 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.682821
+continuous+random training epoch 17700 loss 1.874789 accuracy 0.213989
+continuous_training validation loss 1.888146 accuracy 0.196777
+random_training validation loss 1.861176 accuracy 0.231201
+continuous validation loss 2.072307 accuracy 0.127930
+random validation loss 2.049181 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.876505
+continuous+random training epoch 17800 loss 1.874776 accuracy 0.213867
+continuous_training validation loss 1.888144 accuracy 0.196533
+random_training validation loss 1.861182 accuracy 0.231201
+continuous validation loss 2.072340 accuracy 0.127930
+random validation loss 2.049028 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.670045
+continuous+random training epoch 17900 loss 1.874771 accuracy 0.213745
+continuous_training validation loss 1.888149 accuracy 0.197021
+random_training validation loss 1.861243 accuracy 0.230713
+continuous validation loss 2.072370 accuracy 0.127930
+random validation loss 2.048904 accuracy 0.132812
+
+time spent in 100 epoch 0:00:19.768984
+continuous+random training epoch 18000 loss 1.874776 accuracy 0.214355
+continuous_training validation loss 1.888135 accuracy 0.196777
+random_training validation loss 1.861176 accuracy 0.230713
+continuous validation loss 2.072366 accuracy 0.127930
+random validation loss 2.049035 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.683337
+continuous+random training epoch 18100 loss 1.874778 accuracy 0.213989
+continuous_training validation loss 1.888143 accuracy 0.196289
+random_training validation loss 1.861186 accuracy 0.231201
+continuous validation loss 2.072400 accuracy 0.127930
+random validation loss 2.048875 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.670414
+continuous+random training epoch 18200 loss 1.874772 accuracy 0.214233
+continuous_training validation loss 1.888124 accuracy 0.196777
+random_training validation loss 1.861172 accuracy 0.231445
+continuous validation loss 2.072392 accuracy 0.127930
+random validation loss 2.049041 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.704154
+continuous+random training epoch 18300 loss 1.874775 accuracy 0.214111
+continuous_training validation loss 1.888121 accuracy 0.196777
+random_training validation loss 1.861186 accuracy 0.231201
+continuous validation loss 2.072412 accuracy 0.127930
+random validation loss 2.048999 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.710651
+continuous+random training epoch 18400 loss 1.874751 accuracy 0.213989
+continuous_training validation loss 1.888111 accuracy 0.197021
+random_training validation loss 1.861177 accuracy 0.231445
+continuous validation loss 2.072438 accuracy 0.127930
+random validation loss 2.049069 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.660416
+continuous+random training epoch 18500 loss 1.874791 accuracy 0.213379
+continuous_training validation loss 1.888116 accuracy 0.197021
+random_training validation loss 1.861192 accuracy 0.230957
+continuous validation loss 2.072455 accuracy 0.127930
+random validation loss 2.048873 accuracy 0.130859
+
+time spent in 100 epoch 0:00:19.757866
+continuous+random training epoch 18600 loss 1.874740 accuracy 0.213745
+continuous_training validation loss 1.888090 accuracy 0.196533
+random_training validation loss 1.861164 accuracy 0.231445
+continuous validation loss 2.072443 accuracy 0.126953
+random validation loss 2.049153 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.736706
+continuous+random training epoch 18700 loss 1.874744 accuracy 0.213867
+continuous_training validation loss 1.888126 accuracy 0.197510
+random_training validation loss 1.861288 accuracy 0.231201
+continuous validation loss 2.072553 accuracy 0.127930
+random validation loss 2.048644 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.647221
+continuous+random training epoch 18800 loss 1.874729 accuracy 0.213989
+continuous_training validation loss 1.888081 accuracy 0.197021
+random_training validation loss 1.861165 accuracy 0.231201
+continuous validation loss 2.072492 accuracy 0.126953
+random validation loss 2.049214 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.762556
+continuous+random training epoch 18900 loss 1.874749 accuracy 0.213989
+continuous_training validation loss 1.888092 accuracy 0.197266
+random_training validation loss 1.861159 accuracy 0.230957
+continuous validation loss 2.072515 accuracy 0.126953
+random validation loss 2.048902 accuracy 0.130859
+
+time spent in 100 epoch 0:00:19.699447
+continuous+random training epoch 19000 loss 1.874729 accuracy 0.213379
+continuous_training validation loss 1.888075 accuracy 0.197021
+random_training validation loss 1.861151 accuracy 0.230957
+continuous validation loss 2.072523 accuracy 0.126953
+random validation loss 2.049200 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.671228
+continuous+random training epoch 19100 loss 1.874735 accuracy 0.213623
+continuous_training validation loss 1.888074 accuracy 0.197266
+random_training validation loss 1.861147 accuracy 0.230713
+continuous validation loss 2.072532 accuracy 0.126953
+random validation loss 2.049101 accuracy 0.131836
+
+time spent in 100 epoch 0:00:19.698843
+continuous+random training epoch 19200 loss 1.874724 accuracy 0.213257
+continuous_training validation loss 1.888063 accuracy 0.197266
+random_training validation loss 1.861159 accuracy 0.231201
+continuous validation loss 2.072545 accuracy 0.126953
+random validation loss 2.049145 accuracy 0.129883
+
+time spent in 100 epoch 0:00:19.679767
+continuous+random training epoch 19300 loss 1.874735 accuracy 0.213623
+continuous_training validation loss 1.888065 accuracy 0.197021
+random_training validation loss 1.861158 accuracy 0.230713
+continuous validation loss 2.072571 accuracy 0.127930
+random validation loss 2.048930 accuracy 0.129883
+
+time spent in 100 epoch 0:00:19.688215
+continuous+random training epoch 19400 loss 1.874738 accuracy 0.213501
+continuous_training validation loss 1.888058 accuracy 0.197021
+random_training validation loss 1.861167 accuracy 0.230469
+continuous validation loss 2.072596 accuracy 0.127930
+random validation loss 2.048875 accuracy 0.129883
+
+time spent in 100 epoch 0:00:19.676306
+continuous+random training epoch 19500 loss 1.874716 accuracy 0.213623
+continuous_training validation loss 1.888051 accuracy 0.197021
+random_training validation loss 1.861144 accuracy 0.230957
+continuous validation loss 2.072590 accuracy 0.126953
+random validation loss 2.049023 accuracy 0.129883
+
+time spent in 100 epoch 0:00:19.644950
+continuous+random training epoch 19600 loss 1.874713 accuracy 0.213623
+continuous_training validation loss 1.888050 accuracy 0.197266
+random_training validation loss 1.861144 accuracy 0.230225
+continuous validation loss 2.072634 accuracy 0.127930
+random validation loss 2.048897 accuracy 0.129883
+
+time spent in 100 epoch 0:00:19.778415
+continuous+random training epoch 19700 loss 1.874736 accuracy 0.213379
+continuous_training validation loss 1.888042 accuracy 0.197510
+random_training validation loss 1.861148 accuracy 0.229980
+continuous validation loss 2.072649 accuracy 0.126953
+random validation loss 2.049027 accuracy 0.129883
+
+time spent in 100 epoch 0:00:19.685996
+continuous+random training epoch 19800 loss 1.874703 accuracy 0.213745
+continuous_training validation loss 1.888049 accuracy 0.197266
+random_training validation loss 1.861201 accuracy 0.229980
+continuous validation loss 2.072679 accuracy 0.127930
+random validation loss 2.048793 accuracy 0.129883
+
+time spent in 100 epoch 0:00:19.644667
+continuous+random training epoch 19900 loss 1.874700 accuracy 0.213257
+continuous_training validation loss 1.888029 accuracy 0.197021
+random_training validation loss 1.861133 accuracy 0.230469
+continuous validation loss 2.072660 accuracy 0.126953
+random validation loss 2.048954 accuracy 0.129883
+
+time spent total: 1:12:00.771374
