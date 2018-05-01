@@ -17,8 +17,9 @@ DROPOUT = 0.5
 print_per_epoch = 20
 print_per_batch = 100
 total_epoch1 = 3000
-total_epoch2 = 3000
-
+lr_decay_per_epoch = 500
+print("total_epoch1 %d" % total_epoch1)
+print("lr_decay_per_epoch %d" % lr_decay_per_epoch)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
@@ -34,7 +35,6 @@ _, categories = list(zip(*cont_valid))
 categories = set(categories)
 category_size = len(categories)
 model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
-#model.learning_rate = 0.0015 * BATCH_SIZE
 model.learning_rate = 2
 
 loss_function = nn.NLLLoss()
@@ -90,7 +90,7 @@ def train(data_name_list, total_epoch):
 
     for epoch in range(total_epoch):
 
-        if epoch > 0 and epoch % 500 == 0:
+        if epoch > 0 and epoch % lr_decay_per_epoch == 0:
             model.learning_rate = model.learning_rate / 5 
             print("learning rate: %f\n" % model.learning_rate)
             optimizer = optim.SGD(model.parameters(), lr=model.learning_rate)
@@ -149,7 +149,7 @@ validation("rand_train")
 validation("cont_valid")
 validation("rand_valid")
 print("")
-train(["cont_train","rand_train"], total_epoch2)
+train(["cont_train","rand_train"], total_epoch1)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
