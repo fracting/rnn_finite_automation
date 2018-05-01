@@ -9,10 +9,10 @@ from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
 
 EMBEDDING_DIM = 15
-HIDDEN_DIM = 12
+HIDDEN_DIM = 20
 NUM_LAYERS = 3
-BATCH_SIZE = 128
-DROPOUT = 0.2
+BATCH_SIZE = 2
+DROPOUT = 0.3
 
 print_per_epoch = 10
 print_per_batch = 100
@@ -142,9 +142,7 @@ validation(random_training_data, "random_training")
 validation(continuous_validation_data, "continuous_validation")
 validation(random_validation_data, "random_validation")
 print("")
-#train(continuous_training_data, "continuous", total_epoch1)
-#train(continuous_training_data+random_training_data, "continuous+random", total_epoch2)
-train(random_training_data, "random", total_epoch1)
+train(continuous_training_data+random_training_data, "continuous+random", total_epoch2)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
