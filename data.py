@@ -24,13 +24,17 @@ def load_raw_data(path):
     return dataset
 
 def load_dataset(path, continuous_training_size, random_training_size, continuous_validation_size, random_validation_size):
+    print("dataset: %s" % path)
+    dataset = load_raw_data(path)
+    size = len(dataset)
+    print("first 10 rows of dataset:")
+    for i in range(10):
+        print(dataset[i])
+    print("")
     print("continuous training size: %d" % continuous_training_size)
     print("continuous validation size: %d" % continuous_validation_size)
     print("random training size: %d" % random_training_size)
     print("random validation size: %d" % random_validation_size)
-
-    dataset = load_raw_data(path)
-    size = len(dataset)
 
     continuous_training_data = dataset[0:continuous_training_size]
     continuous_validation_data = dataset[continuous_training_size:continuous_training_size+continuous_validation_size]
