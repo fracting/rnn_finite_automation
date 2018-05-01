@@ -10,7 +10,7 @@ from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tenso
 
 EMBEDDING_DIM = 4
 HIDDEN_DIM = 6
-NUM_LAYERS = 2
+NUM_LAYERS = 3
 BATCH_SIZE = 128
 
 print_per_epoch = 100
