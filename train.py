@@ -26,8 +26,8 @@ model.learning_rate = 0.0015 * BATCH_SIZE
 
 loss_function = nn.NLLLoss()
 
-continuous_training_size = 4096
-random_training_size = 4096
+continuous_training_size = 8192
+random_training_size = 1024
 continuous_validation_size = 1024
 random_validation_size = 1024
 continuous_training_data, random_training_data, continuous_validation_data, random_validation_data = load_dataset("dataset/10div7.v3.txt", continuous_training_size, random_training_size, continuous_validation_size, random_validation_size)
