@@ -26,10 +26,11 @@ cont_train_size = 8192
 rand_train_size = 16384 + 8192
 cont_valid_size = 16384
 rand_valid_size = 16384
-cont_train_data, rand_train_data, cont_valid_data, rand_valid_data = load_dataset("dataset/10div7.v2.txt", cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
+dataset = load_dataset("dataset/10div7.v2.txt", cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
 # TODO: assert cont_train_size + .. + .. +  < dataset_size
 
-_, categories = list(zip(*cont_valid_data))
+cont_valid = dataset['cont_valid']
+_, categories = list(zip(*cont_valid))
 categories = set(categories)
 category_size = len(categories)
 model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
@@ -44,8 +45,9 @@ def calc_accuracy(score_tensors, target):
     accuracy = correct_prediction.sum().item() / len(correct_prediction)
     return accuracy
 
-def validation(validation_set, validation_name):
+def validation(data_name):
     with torch.no_grad():
+        validation_set = dataset[data_name]
         validation_size = len(validation_set)
         batch_count = validation_size // BATCH_SIZE
         round_to_batch = batch_count * BATCH_SIZE
@@ -71,13 +73,14 @@ def validation(validation_set, validation_name):
 
         average_loss = validation_loss / batch_count
         average_accuracy = validation_accuracy / batch_count
-        print("%s validation loss %f accuracy %f" % (validation_name, average_loss, average_accuracy))
+        print("Evaluating %s: loss %f accuracy %f" % (data_name, average_loss, average_accuracy))
         sys.stdout.flush()
 
     return average_loss
 
-def train(training_set, training_name, total_epoch):
-    print("train %s size %d for %d epoch\n" % (training_name, len(training_set), total_epoch))
+def train(data_name, total_epoch):
+    training_set = dataset[data_name]
+    print("train %s size %d for %d epoch\n" % (data_name, len(training_set), total_epoch))
 
     print("learning rate: %f" % model.learning_rate)
     optimizer = optim.SGD(model.parameters(), lr=model.learning_rate)
@@ -127,24 +130,23 @@ def train(training_set, training_name, total_epoch):
             if epoch > 1:
                 t_diff_per_print = t_print - t_last_print
                 print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
-            print("%s training epoch %d loss %f accuracy %f\n" % (training_name, epoch, average_loss, average_accuracy))
-            validation(cont_train_data, "cont_train")
-            validation(rand_train_data, "rand_train")
-            validation(cont_valid_data, "continuous")
-            validation(rand_valid_data, "random")
+            print("%s training epoch %d loss %f accuracy %f\n" % (data_name, epoch, average_loss, average_accuracy))
+            validation("cont_train")
+            validation("rand_train")
+            validation("cont_valid")
+            validation("rand_valid")
             print("")
             sys.stdout.flush()
             t_last_print = datetime.now()
 
 t_begin = datetime.now()
 t_print = None
-validation(cont_train_data, "cont_train")
-validation(rand_train_data, "rand_train")
-validation(cont_valid_data, "cont_valid")
-validation(rand_valid_data, "rand_valid")
+validation("cont_train")
+validation("rand_train")
+validation("cont_valid")
+validation("rand_valid")
 print("")
-#train(cont_train_data+rand_train_data, "continuous+random", total_epoch2)
-train(cont_train_data, "continuous", total_epoch2)
+train("cont_train", total_epoch2)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
