@@ -4,7 +4,7 @@ import torch.nn.functional as F
 
 class DFA(nn.Module):
 
-    def __init__(self, embedding_dim, hidden_dim, vocab_size, category_size, num_layers, batch_size):
+    def __init__(self, embedding_dim, hidden_dim, vocab_size, category_size, num_layers, batch_size, dropout):
 
         print("embedding dim: %d" % embedding_dim)
         print("hidden dim: %d" % hidden_dim)
@@ -12,6 +12,7 @@ class DFA(nn.Module):
         print("category size: %d" % category_size)
         print("num layers: %d" % num_layers)
         print("batch size: %d" % batch_size)
+        print("dropout: %f" % dropout)
         print("")
 
         super(DFA, self).__init__()
@@ -21,7 +22,7 @@ class DFA(nn.Module):
         self.hidden_dim = hidden_dim
 
         self.embeddings = nn.Embedding(vocab_size, embedding_dim)
-        self.rnn = nn.LSTM(embedding_dim, hidden_dim, num_layers)
+        self.rnn = nn.LSTM(embedding_dim, hidden_dim, num_layers, dropout=dropout)
         self.hidden2category = nn.Linear(hidden_dim, category_size)
 
         self.hidden = self.init_hidden()

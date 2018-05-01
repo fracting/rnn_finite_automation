@@ -12,8 +12,9 @@ EMBEDDING_DIM = 15
 HIDDEN_DIM = 12
 NUM_LAYERS = 3
 BATCH_SIZE = 128
+DROPOUT = 0.0
 
-print_per_epoch = 100
+print_per_epoch = 10
 print_per_batch = 100
 total_epoch1 = 20000
 total_epoch2 = 20000
@@ -31,7 +32,7 @@ continuous_training_data, random_training_data, continuous_validation_data, rand
 _, categories = list(zip(*continuous_validation_data))
 categories = set(categories)
 category_size = len(categories)
-model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE)
+model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
 model.learning_rate = 0.0015 * BATCH_SIZE
 
 loss_function = nn.NLLLoss()
@@ -82,7 +83,7 @@ def train(training_set, training_name, total_epoch):
 
     for epoch in range(total_epoch):
 
-        if epoch > 0 and epoch % 5000 == 0:
+        if epoch > 0 and epoch % 2000 == 0:
             model.learning_rate = model.learning_rate / 5 
             print("learning rate: %f\n" % model.learning_rate)
             optimizer = optim.SGD(model.parameters(), lr=model.learning_rate)
