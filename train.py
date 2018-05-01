@@ -78,9 +78,12 @@ def validation(data_name):
 
     return average_loss
 
-def train(data_name, total_epoch):
-    training_set = dataset[data_name]
-    print("train %s size %d for %d epoch\n" % (data_name, len(training_set), total_epoch))
+def train(data_name_list, total_epoch):
+
+    training_set = []
+    for data_name in data_name_list:
+        training_set = training_set + dataset[data_name]
+    print("train %s size %d for %d epoch\n" % (str(data_name_list), len(training_set), total_epoch))
 
     print("learning rate: %f" % model.learning_rate)
     optimizer = optim.SGD(model.parameters(), lr=model.learning_rate)
@@ -130,7 +133,7 @@ def train(data_name, total_epoch):
             if epoch > 1:
                 t_diff_per_print = t_print - t_last_print
                 print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
-            print("%s training epoch %d loss %f accuracy %f\n" % (data_name, epoch, average_loss, average_accuracy))
+            print("%s training epoch %d loss %f accuracy %f\n" % (str(data_name_list), epoch, average_loss, average_accuracy))
             validation("cont_train")
             validation("rand_train")
             validation("cont_valid")
@@ -146,7 +149,7 @@ validation("rand_train")
 validation("cont_valid")
 validation("rand_valid")
 print("")
-train("cont_train", total_epoch2)
+train(["cont_train"], total_epoch2)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
