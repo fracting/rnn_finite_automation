@@ -34,7 +34,7 @@ categories = set(categories)
 category_size = len(categories)
 model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
 #model.learning_rate = 0.0015 * BATCH_SIZE
-model.learning_rate = 0.192 * 10
+model.learning_rate = 0.192 * 10 * 10
 
 loss_function = nn.NLLLoss()
 
