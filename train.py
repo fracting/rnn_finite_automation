@@ -22,14 +22,14 @@ total_epoch2 = 3000
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-continuous_training_size = 8192
-random_training_size = 16384 + 8192
-continuous_validation_size = 16384
-random_validation_size = 16384
-continuous_training_data, random_training_data, continuous_validation_data, random_validation_data = load_dataset("dataset/10div7.v2.txt", continuous_training_size, random_training_size, continuous_validation_size, random_validation_size)
-# TODO: assert continuous_training_size + .. + .. +  < dataset_size
+cont_train_size = 8192
+rand_train_size = 16384 + 8192
+cont_valid_size = 16384
+rand_valid_size = 16384
+cont_train_data, rand_train_data, cont_valid_data, rand_valid_data = load_dataset("dataset/10div7.v2.txt", cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
+# TODO: assert cont_train_size + .. + .. +  < dataset_size
 
-_, categories = list(zip(*continuous_validation_data))
+_, categories = list(zip(*cont_valid_data))
 categories = set(categories)
 category_size = len(categories)
 model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
@@ -128,23 +128,23 @@ def train(training_set, training_name, total_epoch):
                 t_diff_per_print = t_print - t_last_print
                 print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
             print("%s training epoch %d loss %f accuracy %f\n" % (training_name, epoch, average_loss, average_accuracy))
-            validation(continuous_training_data, "continuous_training")
-            validation(random_training_data, "random_training")
-            validation(continuous_validation_data, "continuous")
-            validation(random_validation_data, "random")
+            validation(cont_train_data, "cont_train")
+            validation(rand_train_data, "rand_train")
+            validation(cont_valid_data, "continuous")
+            validation(rand_valid_data, "random")
             print("")
             sys.stdout.flush()
             t_last_print = datetime.now()
 
 t_begin = datetime.now()
 t_print = None
-validation(continuous_training_data, "continuous_training")
-validation(random_training_data, "random_training")
-validation(continuous_validation_data, "continuous_validation")
-validation(random_validation_data, "random_validation")
+validation(cont_train_data, "cont_train")
+validation(rand_train_data, "rand_train")
+validation(cont_valid_data, "cont_valid")
+validation(rand_valid_data, "rand_valid")
 print("")
-#train(continuous_training_data+random_training_data, "continuous+random", total_epoch2)
-train(continuous_training_data, "continuous", total_epoch2)
+#train(cont_train_data+rand_train_data, "continuous+random", total_epoch2)
+train(cont_train_data, "continuous", total_epoch2)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
