@@ -30,7 +30,7 @@ continuous_training_size = 8192
 random_training_size = 1024
 continuous_validation_size = 1024
 random_validation_size = 1024
-continuous_training_data, random_training_data, continuous_validation_data, random_validation_data = load_dataset("dataset/10div7.v3.txt", continuous_training_size, random_training_size, continuous_validation_size, random_validation_size)
+continuous_training_data, random_training_data, continuous_validation_data, random_validation_data = load_dataset("dataset/10div7.v2.txt", continuous_training_size, random_training_size, continuous_validation_size, random_validation_size)
 # TODO: assert continuous_training_size + .. + .. +  < dataset_size
 print("batch size: %d" % BATCH_SIZE)
 print("embedding dim: %d" % EMBEDDING_DIM)
