@@ -12,7 +12,7 @@ EMBEDDING_DIM = 15
 HIDDEN_DIM = 20
 NUM_LAYERS = 3
 BATCH_SIZE = 128
-DROPOUT = 0.4
+DROPOUT = 0.5
 
 print_per_epoch = 20
 print_per_batch = 100
@@ -143,7 +143,8 @@ validation(random_training_data, "random_training")
 validation(continuous_validation_data, "continuous_validation")
 validation(random_validation_data, "random_validation")
 print("")
-train(continuous_training_data+random_training_data, "continuous+random", total_epoch2)
+#train(continuous_training_data+random_training_data, "continuous+random", total_epoch2)
+train(random_training_data, "continuous+random", total_epoch2)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
