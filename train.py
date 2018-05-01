@@ -9,10 +9,10 @@ from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
 
 EMBEDDING_DIM = 15
-HIDDEN_DIM = 72
+HIDDEN_DIM = 12
 NUM_LAYERS = 3
 BATCH_SIZE = 128
-DROPOUT = 0.0
+DROPOUT = 0.2
 
 print_per_epoch = 10
 print_per_batch = 100
@@ -126,7 +126,7 @@ def train(training_set, training_name, total_epoch):
             if epoch > 1:
                 t_diff_per_print = t_print - t_last_print
                 print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
-            print("%s training epoch %d loss %f accuracy %f" % (training_name, epoch, average_loss, average_accuracy))
+            print("%s training epoch %d loss %f accuracy %f\n" % (training_name, epoch, average_loss, average_accuracy))
             validation(continuous_training_data, "continuous_training")
             validation(random_training_data, "random_training")
             validation(continuous_validation_data, "continuous")
@@ -142,8 +142,8 @@ validation(random_training_data, "random_training")
 validation(continuous_validation_data, "continuous_validation")
 validation(random_validation_data, "random_validation")
 print("")
-#train(continuous_training_data, "continuous", total_epoch1)
-train(continuous_training_data+random_training_data, "continuous+random", total_epoch2)
+train(continuous_training_data, "continuous", total_epoch1)
+#train(continuous_training_data+random_training_data, "continuous+random", total_epoch2)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
