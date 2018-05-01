@@ -12,9 +12,9 @@ EMBEDDING_DIM = 15
 HIDDEN_DIM = 20
 NUM_LAYERS = 3
 BATCH_SIZE = 128
-DROPOUT = 0.3
+DROPOUT = 0.5
 
-print_per_epoch = 10
+print_per_epoch = 20
 print_per_batch = 100
 total_epoch1 = 3000
 total_epoch2 = 3000
@@ -24,7 +24,7 @@ torch.manual_seed(4) # TODO - disable manual seed in production version
 
 continuous_training_size = 8192
 random_training_size = 16384
-continuous_validation_size = 1024
+continuous_validation_size = 32768
 random_validation_size = 1024
 continuous_training_data, random_training_data, continuous_validation_data, random_validation_data = load_dataset("dataset/10div7.v2.txt", continuous_training_size, random_training_size, continuous_validation_size, random_validation_size)
 # TODO: assert continuous_training_size + .. + .. +  < dataset_size
@@ -84,7 +84,7 @@ def train(training_set, training_name, total_epoch):
 
     for epoch in range(total_epoch):
 
-        if epoch > 0 and epoch % 2000 == 0:
+        if epoch > 0 and epoch % 500 == 0:
             model.learning_rate = model.learning_rate / 5 
             print("learning rate: %f\n" % model.learning_rate)
             optimizer = optim.SGD(model.parameters(), lr=model.learning_rate)
