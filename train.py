@@ -16,8 +16,8 @@ DROPOUT = 0.2
 
 print_per_epoch = 10
 print_per_batch = 100
-total_epoch1 = 20000
-total_epoch2 = 20000
+total_epoch1 = 3000
+total_epoch2 = 3000
 
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
@@ -142,8 +142,9 @@ validation(random_training_data, "random_training")
 validation(continuous_validation_data, "continuous_validation")
 validation(random_validation_data, "random_validation")
 print("")
-train(continuous_training_data, "continuous", total_epoch1)
+#train(continuous_training_data, "continuous", total_epoch1)
 #train(continuous_training_data+random_training_data, "continuous+random", total_epoch2)
+train(random_training_data, "random", total_epoch1)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
