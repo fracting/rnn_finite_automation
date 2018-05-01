@@ -23,7 +23,7 @@ total_epoch2 = 3000
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
 continuous_training_size = 8192
-random_training_size = 8192
+random_training_size = 16384
 continuous_validation_size = 1024
 random_validation_size = 1024
 continuous_training_data, random_training_data, continuous_validation_data, random_validation_data = load_dataset("dataset/10div7.v2.txt", continuous_training_size, random_training_size, continuous_validation_size, random_validation_size)
