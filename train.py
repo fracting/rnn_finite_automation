@@ -11,7 +11,7 @@ from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tenso
 EMBEDDING_DIM = 15
 HIDDEN_DIM = 20
 NUM_LAYERS = 3
-BATCH_SIZE = 128
+BATCH_SIZE = 2
 DROPOUT = 0.3
 
 print_per_epoch = 10
@@ -33,7 +33,8 @@ _, categories = list(zip(*continuous_validation_data))
 categories = set(categories)
 category_size = len(categories)
 model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
-model.learning_rate = 0.0015 * BATCH_SIZE
+#model.learning_rate = 0.0015 * BATCH_SIZE
+model.learning_rate = 0.192
 
 loss_function = nn.NLLLoss()
 
