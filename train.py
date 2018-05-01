@@ -21,22 +21,20 @@ total_epoch2 = 20000
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), len(category_to_ix), NUM_LAYERS, BATCH_SIZE)
-model.learning_rate = 0.0015 * BATCH_SIZE
-
-loss_function = nn.NLLLoss()
-
 continuous_training_size = 8192
 random_training_size = 8192
 continuous_validation_size = 1024
 random_validation_size = 1024
 continuous_training_data, random_training_data, continuous_validation_data, random_validation_data = load_dataset("dataset/10div7.v2.txt", continuous_training_size, random_training_size, continuous_validation_size, random_validation_size)
 # TODO: assert continuous_training_size + .. + .. +  < dataset_size
-print("batch size: %d" % BATCH_SIZE)
-print("embedding dim: %d" % EMBEDDING_DIM)
-print("hidden dim: %d" % HIDDEN_DIM)
-print("num layers: %d" % NUM_LAYERS)
-print("")
+
+_, categories = list(zip(*continuous_validation_data))
+categories = set(categories)
+category_size = len(categories)
+model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE)
+model.learning_rate = 0.0015 * BATCH_SIZE
+
+loss_function = nn.NLLLoss()
 
 def calc_accuracy(score_tensors, target):
     _, index_tensors = score_tensors.max(dim=1)

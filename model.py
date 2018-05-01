@@ -5,6 +5,15 @@ import torch.nn.functional as F
 class DFA(nn.Module):
 
     def __init__(self, embedding_dim, hidden_dim, vocab_size, category_size, num_layers, batch_size):
+
+        print("embedding dim: %d" % embedding_dim)
+        print("hidden dim: %d" % hidden_dim)
+        print("vocab size: %d" % vocab_size)
+        print("category size: %d" % category_size)
+        print("num layers: %d" % num_layers)
+        print("batch size: %d" % batch_size)
+        print("")
+
         super(DFA, self).__init__()
 
         self.num_layers = num_layers
