@@ -8,7 +8,6 @@ import sys
 from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
 
-EMBEDDING_DIM = 20
 HIDDEN_DIM = 20
 NUM_LAYERS = 1
 BATCH_SIZE = 128
@@ -28,12 +27,9 @@ rand_train_size = 16384
 cont_valid_size = 8571
 rand_valid_size = 16384
 dataset_path = "10div7.balance.txt"
-dataset, category_size = load_dataset("dataset/"+dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
+dataset, vocab_size, category_size = load_dataset("dataset/"+dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
+EMBEDDING_DIM = vocab_size
 
-cont_valid = dataset['cont_valid']
-_, categories = list(zip(*cont_valid))
-categories = set(categories)
-category_size = len(categories)
 model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
 model.learning_rate = 2
 
