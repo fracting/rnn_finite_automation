@@ -23,19 +23,22 @@ def load_raw_data(path):
     f.close()
     return raw_dataset
 
+def show_dataset(dataset, rows):
+    if rows > 0:
+        print("\n".join([str(row) for row in dataset[:rows]]))
+    else:
+        print("\n".join([str(row) for row in dataset[rows:]]))
+    print("\n")
+
 def load_dataset(path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size):
     print("raw dataset: %s" % path)
     raw_dataset = load_raw_data(path)
     size = len(raw_dataset)
     print("size of raw dataset: %d" % size)
     print("first 10 rows of raw dataset:")
-    for i in range(10):
-        print(raw_dataset[i])
-    print("")
+    show_dataset(raw_dataset, 10)
     print("last 10 rows of raw dataset:")
-    for i in range(10,0,-1):
-        print(raw_dataset[-i])
-    print("")
+    show_dataset(raw_dataset, -10)
 
     print("continuous training size: %d" % cont_train_size)
     print("continuous validation size: %d" % cont_valid_size)
@@ -46,7 +49,6 @@ def load_dataset(path, cont_train_size, rand_train_size, cont_valid_size, rand_v
     dataset = {}
     dataset['cont_train'] = raw_dataset[0:cont_train_size]
     dataset['cont_valid'] = raw_dataset[-cont_valid_size:]
-    print(len(dataset['cont_valid']))
 
     random_part = raw_dataset[cont_train_size:-cont_valid_size]
     random_indices = torch.randperm(len(random_part))
@@ -58,9 +60,7 @@ def load_dataset(path, cont_train_size, rand_train_size, cont_valid_size, rand_v
 
     for data_name in dataset:
         print("first 10 rows of %s" % data_name)
-        for i in range(10):
-            print(dataset[data_name][i])
-        print("")
+        show_dataset(dataset[data_name], 10)
 
     return dataset
 
