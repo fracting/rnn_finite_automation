@@ -23,8 +23,8 @@ print("lr_decay_per_epoch %d" % lr_decay_per_epoch)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-cont_train_size = 8192 + 16384
-rand_train_size = 16384
+cont_train_size = 8192
+rand_train_size = 16384 + 8192
 cont_valid_size = 16384
 rand_valid_size = 16384
 dataset = load_dataset("dataset/10div7.v2.txt", cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
@@ -149,7 +149,7 @@ validation("rand_train")
 validation("cont_valid")
 validation("rand_valid")
 print("")
-train(["cont_train"], total_epoch1)
+train(["rand_train"], total_epoch1)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
