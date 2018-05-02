@@ -8,7 +8,7 @@ import sys
 from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
 
-EMBEDDING_DIM = 5
+EMBEDDING_DIM = 3
 HIDDEN_DIM = 20
 NUM_LAYERS = 1
 BATCH_SIZE = 128
