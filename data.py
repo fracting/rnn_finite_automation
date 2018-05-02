@@ -48,6 +48,12 @@ def load_dataset(path, cont_train_size, rand_train_size, continuous_validation_s
     dataset['rand_train'] = random_part[0:rand_train_size]
     dataset['rand_valid'] = random_part[rand_train_size:rand_train_size+random_validation_size]
 
+    for data_name in dataset:
+        print("first 10 rows of %s" % data_name)
+        for i in range(10):
+            print(dataset[data_name][i])
+        print("")
+
     return dataset
 
 char_to_ix = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9}
