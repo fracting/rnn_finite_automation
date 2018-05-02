@@ -30,7 +30,7 @@ dataset, vocab_size, category_size = load_dataset("dataset/"+dataset_path, cont_
 EMBEDDING_DIM = vocab_size * 2
 
 model = DFA(RNN_TYPE, EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
-model.learning_rate = 0.004
+model.learning_rate = 0.008
 
 loss_function = nn.NLLLoss()
 
