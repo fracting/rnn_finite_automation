@@ -30,7 +30,7 @@ dataset, vocab_size, category_size = load_dataset("dataset/"+dataset_path, cont_
 EMBEDDING_DIM = vocab_size * 2
 
 model = DFA(RNN_TYPE, EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
-model.learning_rate = 0.002
+learning_rate = 0.0005
 
 loss_function = nn.NLLLoss()
 
@@ -80,7 +80,7 @@ def train(data_name_list, total_epoch):
         training_set = training_set + dataset[data_name]
     print("train %s size %d for %d epoch\n" % (str(data_name_list), len(training_set), total_epoch))
 
-    optimizer = optim.Adam(model.parameters(), lr=model.learning_rate)
+    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     print(optimizer)
 
     for epoch in range(total_epoch):
