@@ -17,9 +17,7 @@ DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single l
 print_per_epoch = 20
 print_per_batch = 100
 total_epoch1 = 3000
-lr_decay_per_epoch = 500
 print("total_epoch1 %d" % total_epoch1)
-print("lr_decay_per_epoch %d" % lr_decay_per_epoch)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
@@ -32,7 +30,7 @@ dataset, vocab_size, category_size = load_dataset("dataset/"+dataset_path, cont_
 EMBEDDING_DIM = vocab_size * 2
 
 model = DFA(RNN_TYPE, EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
-model.learning_rate = 2
+model.learning_rate = 0.001
 
 loss_function = nn.NLLLoss()
 
@@ -82,16 +80,10 @@ def train(data_name_list, total_epoch):
         training_set = training_set + dataset[data_name]
     print("train %s size %d for %d epoch\n" % (str(data_name_list), len(training_set), total_epoch))
 
-    print("learning rate: %f" % model.learning_rate)
-    optimizer = optim.SGD(model.parameters(), lr=model.learning_rate)
+    optimizer = optim.Adam(model.parameters(), lr=model.learning_rate)
+    print(optimizer)
 
     for epoch in range(total_epoch):
-
-        if epoch > 0 and epoch % lr_decay_per_epoch == 0:
-            model.learning_rate = model.learning_rate / 5 
-            print("learning rate: %f\n" % model.learning_rate)
-            optimizer = optim.SGD(model.parameters(), lr=model.learning_rate)
-
         training_size = len(training_set)
         batch_count = training_size // BATCH_SIZE
         round_to_batch = batch_count * BATCH_SIZE
