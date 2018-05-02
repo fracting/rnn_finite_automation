@@ -29,7 +29,7 @@ cont_valid_size = 8571
 rand_valid_size = 16384
 dataset_path = "10div7.balance.txt"
 dataset, vocab_size, category_size = load_dataset("dataset/"+dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
-EMBEDDING_DIM = vocab_size
+EMBEDDING_DIM = vocab_size * 2
 
 model = DFA(RNN_TYPE, EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
 model.learning_rate = 2
