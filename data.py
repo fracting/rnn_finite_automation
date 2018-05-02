@@ -35,6 +35,7 @@ def load_dataset(path, cont_train_size, rand_train_size, cont_valid_size, rand_v
     raw_dataset = load_raw_data(path)
     size = len(raw_dataset)
     print("size of raw dataset: %d" % size)
+    assert cont_train_size + rand_train_size + cont_valid_size + rand_valid_size < size
     print("first 10 rows of raw dataset:")
     show_dataset(raw_dataset, 10)
     print("last 10 rows of raw dataset:")
