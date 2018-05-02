@@ -1,13 +1,35 @@
-file = open("dataset/10div7.v3.txt", "w+")
+def classify(num, divider, class_type):
+    if class_type == "imbalance":
+        res = int(num % divider == 0)
+    elif class_type == "balance":
+        assert divider % 2 == 1
+        mod = num % divider
+        if mod == 0:
+            res = "Other"
+        else:
+            res = num % divider % 2
+    elif class_type == "multiclass":
+        res = num % divider
+    else:
+        raise NotImplementedError("unknown class_type")
 
-lines = []
-for i in range(10000,99999):
-    res = i % 7
-    y = res
-    line = str(i) + "," + str(y)
-    lines.append(line)
+    return res
 
-output = "\n".join(lines)
-file.write(output)
+def create_data(start, end, base, divider, class_type):
+    if base != 10:
+        raise NotImplementedError("base other than 10 not implemented yet")
 
-file.close
+    lines = []
+    for i in range(start, end):
+        res = classify(i, divider, class_type)
+        if res != "Other":
+            lines.append(str(i) + "," + str(res))
+
+    path = "dataset/" + str(base) + "div" + str(divider) + "." + class_type + ".txt"
+    file = open(path, "w+")
+    output = "\n".join(lines)
+    file.write(output)
+    file.close
+
+create_data(10000, 100000, 10, 7, "balance")
+
