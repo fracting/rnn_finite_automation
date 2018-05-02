@@ -28,7 +28,7 @@ rand_train_size = 16384
 cont_valid_size = 8571
 rand_valid_size = 16384
 dataset_path = "10div7.balance.txt"
-dataset = load_dataset("dataset/"+dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
+dataset, category_size = load_dataset("dataset/"+dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
 
 cont_valid = dataset['cont_valid']
 _, categories = list(zip(*cont_valid))

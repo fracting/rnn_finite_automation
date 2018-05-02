@@ -63,7 +63,11 @@ def load_dataset(path, cont_train_size, rand_train_size, cont_valid_size, rand_v
         print("first 10 rows of %s" % data_name)
         show_dataset(dataset[data_name], 10)
 
-    return dataset
+    _, categories = list(zip(*raw_dataset))
+    categories = set(categories)
+    category_size = len(categories)
+
+    return dataset, category_size
 
 char_to_ix = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9}
 category_to_ix = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6}
