@@ -8,6 +8,7 @@ import sys
 from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
 
+RNN_TYPE = "GRU"
 HIDDEN_DIM = 20
 NUM_LAYERS = 1
 BATCH_SIZE = 128
@@ -30,7 +31,7 @@ dataset_path = "10div7.balance.txt"
 dataset, vocab_size, category_size = load_dataset("dataset/"+dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
 EMBEDDING_DIM = vocab_size
 
-model = DFA(EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
+model = DFA(RNN_TYPE, EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
 model.learning_rate = 2
 
 loss_function = nn.NLLLoss()
