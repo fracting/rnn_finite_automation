@@ -31,5 +31,10 @@ def create_data(start, end, base, divider, class_type):
     file.write(output)
     file.close
 
+create_data(10000, 100000, 10, 7, "imbalance")
 create_data(10000, 100000, 10, 7, "balance")
+create_data(10000, 100000, 10, 7, "multiclass")
 
+create_data(10000, 100000, 10, 11, "imbalance")
+create_data(10000, 100000, 10, 11, "balance")
+create_data(10000, 100000, 10, 11, "multiclass")
