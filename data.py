@@ -23,7 +23,7 @@ def load_raw_data(path):
     f.close()
     return raw_dataset
 
-def load_dataset(path, cont_train_size, rand_train_size, continuous_validation_size, random_validation_size):
+def load_dataset(path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size):
     print("raw dataset: %s" % path)
     raw_dataset = load_raw_data(path)
     size = len(raw_dataset)
@@ -32,21 +32,21 @@ def load_dataset(path, cont_train_size, rand_train_size, continuous_validation_s
         print(raw_dataset[i])
     print("")
     print("continuous training size: %d" % cont_train_size)
-    print("continuous validation size: %d" % continuous_validation_size)
+    print("continuous validation size: %d" % cont_valid_size)
     print("random training size: %d" % rand_train_size)
-    print("random validation size: %d" % random_validation_size)
+    print("random validation size: %d" % rand_valid_size)
 
     dataset = {}
     dataset['cont_train'] = raw_dataset[0:cont_train_size]
-    dataset['cont_valid'] = raw_dataset[cont_train_size:cont_train_size+continuous_validation_size]
+    dataset['cont_valid'] = raw_dataset[cont_train_size:cont_train_size+cont_valid_size]
 
-    random_part = raw_dataset[cont_train_size+continuous_validation_size:]
+    random_part = raw_dataset[cont_train_size+cont_valid_size:]
     random_indices = torch.randperm(len(random_part))
     random_indices = [entry.item() for entry in random_indices]
     random_part = [random_part[index] for index in random_indices]
 
     dataset['rand_train'] = random_part[0:rand_train_size]
-    dataset['rand_valid'] = random_part[rand_train_size:rand_train_size+random_validation_size]
+    dataset['rand_valid'] = random_part[rand_train_size:rand_train_size+rand_valid_size]
 
     for data_name in dataset:
         print("first 10 rows of %s" % data_name)
