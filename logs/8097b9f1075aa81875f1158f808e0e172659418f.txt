@@ -1,0 +1,1144 @@
+total_epoch1 3000
+lr_decay_per_epoch 500
+raw dataset: dataset/10div7.balance.txt
+size of raw dataset: 77142
+first 10 rows of raw dataset:
+(['1', '0', '0', '0', '0'], '0')
+(['1', '0', '0', '0', '1'], '1')
+(['1', '0', '0', '0', '2'], '0')
+(['1', '0', '0', '0', '4'], '1')
+(['1', '0', '0', '0', '5'], '0')
+(['1', '0', '0', '0', '6'], '1')
+(['1', '0', '0', '0', '7'], '0')
+(['1', '0', '0', '0', '8'], '1')
+(['1', '0', '0', '0', '9'], '0')
+(['1', '0', '0', '1', '1'], '1')
+
+
+last 10 rows of raw dataset:
+(['9', '9', '9', '8', '7'], '0')
+(['9', '9', '9', '8', '9'], '1')
+(['9', '9', '9', '9', '0'], '0')
+(['9', '9', '9', '9', '1'], '1')
+(['9', '9', '9', '9', '2'], '0')
+(['9', '9', '9', '9', '3'], '1')
+(['9', '9', '9', '9', '4'], '0')
+(['9', '9', '9', '9', '6'], '1')
+(['9', '9', '9', '9', '7'], '0')
+(['9', '9', '9', '9', '8'], '1')
+
+
+continuous training size: 8571
+continuous validation size: 8571
+random training size: 16384
+random validation size: 16384
+
+first 10 rows of cont_train
+(['1', '0', '0', '0', '0'], '0')
+(['1', '0', '0', '0', '1'], '1')
+(['1', '0', '0', '0', '2'], '0')
+(['1', '0', '0', '0', '4'], '1')
+(['1', '0', '0', '0', '5'], '0')
+(['1', '0', '0', '0', '6'], '1')
+(['1', '0', '0', '0', '7'], '0')
+(['1', '0', '0', '0', '8'], '1')
+(['1', '0', '0', '0', '9'], '0')
+(['1', '0', '0', '1', '1'], '1')
+
+
+first 10 rows of cont_valid
+(['9', '0', '0', '0', '0'], '1')
+(['9', '0', '0', '0', '1'], '0')
+(['9', '0', '0', '0', '2'], '1')
+(['9', '0', '0', '0', '3'], '0')
+(['9', '0', '0', '0', '4'], '1')
+(['9', '0', '0', '0', '5'], '0')
+(['9', '0', '0', '0', '7'], '1')
+(['9', '0', '0', '0', '8'], '0')
+(['9', '0', '0', '0', '9'], '1')
+(['9', '0', '0', '1', '0'], '0')
+
+
+first 10 rows of rand_train
+(['6', '8', '4', '5', '1'], '1')
+(['2', '4', '8', '5', '9'], '0')
+(['7', '0', '1', '4', '2'], '0')
+(['6', '4', '1', '7', '2'], '1')
+(['2', '7', '0', '2', '4'], '0')
+(['7', '8', '6', '1', '4'], '0')
+(['6', '4', '7', '5', '6'], '0')
+(['5', '8', '7', '2', '1'], '1')
+(['2', '2', '4', '5', '7'], '1')
+(['3', '0', '9', '6', '5'], '0')
+
+
+first 10 rows of rand_valid
+(['8', '0', '0', '0', '8'], '1')
+(['4', '6', '3', '5', '9'], '1')
+(['4', '4', '2', '3', '7'], '0')
+(['2', '0', '2', '2', '4'], '1')
+(['8', '3', '8', '0', '9'], '1')
+(['7', '2', '8', '9', '0'], '0')
+(['7', '6', '3', '8', '0'], '1')
+(['4', '7', '5', '6', '7'], '0')
+(['5', '6', '2', '9', '1'], '0')
+(['3', '9', '0', '6', '2'], '0')
+
+
+embedding dim: 5
+hidden dim: 20
+vocab size: 10
+category size: 2
+num layers: 1
+batch size: 128
+dropout: 0.000000
+
+Evaluating cont_train: loss 0.693329 accuracy 0.499763
+Evaluating rand_train: loss 0.693135 accuracy 0.506897
+Evaluating cont_valid: loss 0.693325 accuracy 0.500237
+Evaluating rand_valid: loss 0.693280 accuracy 0.500977
+
+train ['cont_train', 'rand_train'] size 24955 for 3000 epoch
+
+learning rate: 2.000000
+['cont_train', 'rand_train'] training epoch 0 loss 0.698184 accuracy 0.498309
+
+Evaluating cont_train: loss 0.696386 accuracy 0.500000
+Evaluating rand_train: loss 0.695859 accuracy 0.502930
+Evaluating cont_valid: loss 0.696329 accuracy 0.500000
+Evaluating rand_valid: loss 0.696539 accuracy 0.499146
+
+time spent in 20 epoch 0:00:39.697038
+['cont_train', 'rand_train'] training epoch 20 loss 0.698058 accuracy 0.501168
+
+Evaluating cont_train: loss 0.695071 accuracy 0.500000
+Evaluating rand_train: loss 0.695392 accuracy 0.497070
+Evaluating cont_valid: loss 0.695065 accuracy 0.500000
+Evaluating rand_valid: loss 0.694975 accuracy 0.500854
+
+time spent in 20 epoch 0:00:46.383943
+['cont_train', 'rand_train'] training epoch 40 loss 0.697854 accuracy 0.495248
+
+Evaluating cont_train: loss 0.696258 accuracy 0.500000
+Evaluating rand_train: loss 0.696607 accuracy 0.497070
+Evaluating cont_valid: loss 0.696252 accuracy 0.500000
+Evaluating rand_valid: loss 0.696153 accuracy 0.500854
+
+time spent in 20 epoch 0:00:48.811007
+['cont_train', 'rand_train'] training epoch 60 loss 0.696556 accuracy 0.504953
+
+Evaluating cont_train: loss 0.693331 accuracy 0.500118
+Evaluating rand_train: loss 0.693218 accuracy 0.498474
+Evaluating cont_valid: loss 0.693327 accuracy 0.500000
+Evaluating rand_valid: loss 0.693346 accuracy 0.501099
+
+time spent in 20 epoch 0:00:42.042426
+['cont_train', 'rand_train'] training epoch 80 loss 0.697360 accuracy 0.497463
+
+Evaluating cont_train: loss 0.693308 accuracy 0.500000
+Evaluating rand_train: loss 0.693257 accuracy 0.497070
+Evaluating cont_valid: loss 0.693306 accuracy 0.500000
+Evaluating rand_valid: loss 0.693316 accuracy 0.500854
+
+time spent in 20 epoch 0:00:41.751968
+['cont_train', 'rand_train'] training epoch 100 loss 0.696881 accuracy 0.499074
+
+Evaluating cont_train: loss 0.697524 accuracy 0.500000
+Evaluating rand_train: loss 0.697926 accuracy 0.497070
+Evaluating cont_valid: loss 0.697521 accuracy 0.500000
+Evaluating rand_valid: loss 0.697403 accuracy 0.500854
+
+time spent in 20 epoch 0:00:41.965883
+['cont_train', 'rand_train'] training epoch 120 loss 0.696624 accuracy 0.501047
+
+Evaluating cont_train: loss 0.693682 accuracy 0.500000
+Evaluating rand_train: loss 0.693674 accuracy 0.497070
+Evaluating cont_valid: loss 0.693679 accuracy 0.500000
+Evaluating rand_valid: loss 0.693669 accuracy 0.500854
+
+time spent in 20 epoch 0:00:40.128630
+['cont_train', 'rand_train'] training epoch 140 loss 0.696934 accuracy 0.501490
+
+Evaluating cont_train: loss 0.693709 accuracy 0.500000
+Evaluating rand_train: loss 0.693704 accuracy 0.497070
+Evaluating cont_valid: loss 0.693706 accuracy 0.500000
+Evaluating rand_valid: loss 0.693694 accuracy 0.500854
+
+time spent in 20 epoch 0:00:37.907649
+['cont_train', 'rand_train'] training epoch 160 loss 0.696200 accuracy 0.506806
+
+Evaluating cont_train: loss 0.695177 accuracy 0.500000
+Evaluating rand_train: loss 0.694570 accuracy 0.502930
+Evaluating cont_valid: loss 0.695174 accuracy 0.500000
+Evaluating rand_valid: loss 0.695327 accuracy 0.499146
+
+time spent in 20 epoch 0:00:37.872845
+['cont_train', 'rand_train'] training epoch 180 loss 0.695712 accuracy 0.504832
+
+Evaluating cont_train: loss 0.696216 accuracy 0.500000
+Evaluating rand_train: loss 0.696457 accuracy 0.497070
+Evaluating cont_valid: loss 0.696214 accuracy 0.500000
+Evaluating rand_valid: loss 0.696132 accuracy 0.500854
+
+time spent in 20 epoch 0:00:37.482959
+['cont_train', 'rand_train'] training epoch 200 loss 0.697821 accuracy 0.507893
+
+Evaluating cont_train: loss 0.699119 accuracy 0.500000
+Evaluating rand_train: loss 0.699552 accuracy 0.497070
+Evaluating cont_valid: loss 0.699119 accuracy 0.500000
+Evaluating rand_valid: loss 0.698990 accuracy 0.500854
+
+time spent in 20 epoch 0:00:37.688151
+['cont_train', 'rand_train'] training epoch 220 loss 0.696661 accuracy 0.499718
+
+Evaluating cont_train: loss 0.693752 accuracy 0.500000
+Evaluating rand_train: loss 0.693352 accuracy 0.502930
+Evaluating cont_valid: loss 0.693749 accuracy 0.500000
+Evaluating rand_valid: loss 0.693849 accuracy 0.499146
+
+time spent in 20 epoch 0:00:38.679882
+['cont_train', 'rand_train'] training epoch 240 loss 0.697556 accuracy 0.498913
+
+Evaluating cont_train: loss 0.708012 accuracy 0.500000
+Evaluating rand_train: loss 0.708730 accuracy 0.497070
+Evaluating cont_valid: loss 0.708005 accuracy 0.500000
+Evaluating rand_valid: loss 0.707784 accuracy 0.500854
+
+time spent in 20 epoch 0:00:38.935848
+['cont_train', 'rand_train'] training epoch 260 loss 0.697519 accuracy 0.498429
+
+Evaluating cont_train: loss 0.693346 accuracy 0.498343
+Evaluating rand_train: loss 0.692987 accuracy 0.508240
+Evaluating cont_valid: loss 0.693343 accuracy 0.499290
+Evaluating rand_valid: loss 0.693428 accuracy 0.496033
+
+time spent in 20 epoch 0:00:38.528196
+['cont_train', 'rand_train'] training epoch 280 loss 0.696765 accuracy 0.499517
+
+Evaluating cont_train: loss 0.693687 accuracy 0.500000
+Evaluating rand_train: loss 0.693252 accuracy 0.502930
+Evaluating cont_valid: loss 0.693683 accuracy 0.500000
+Evaluating rand_valid: loss 0.693781 accuracy 0.499146
+
+time spent in 20 epoch 0:00:38.345691
+['cont_train', 'rand_train'] training epoch 300 loss 0.697446 accuracy 0.502940
+
+Evaluating cont_train: loss 0.696366 accuracy 0.500000
+Evaluating rand_train: loss 0.696527 accuracy 0.497070
+Evaluating cont_valid: loss 0.696361 accuracy 0.500000
+Evaluating rand_valid: loss 0.696299 accuracy 0.500854
+
+time spent in 20 epoch 0:00:38.107784
+['cont_train', 'rand_train'] training epoch 320 loss 0.698222 accuracy 0.494886
+
+Evaluating cont_train: loss 0.693239 accuracy 0.501302
+Evaluating rand_train: loss 0.692916 accuracy 0.510376
+Evaluating cont_valid: loss 0.693235 accuracy 0.499645
+Evaluating rand_valid: loss 0.693300 accuracy 0.497131
+
+time spent in 20 epoch 0:00:38.710396
+['cont_train', 'rand_train'] training epoch 340 loss 0.696659 accuracy 0.502376
+
+Evaluating cont_train: loss 0.695195 accuracy 0.500000
+Evaluating rand_train: loss 0.694527 accuracy 0.502930
+Evaluating cont_valid: loss 0.695190 accuracy 0.500000
+Evaluating rand_valid: loss 0.695353 accuracy 0.499146
+
+time spent in 20 epoch 0:00:38.773737
+['cont_train', 'rand_train'] training epoch 360 loss 0.697120 accuracy 0.499235
+
+Evaluating cont_train: loss 0.700951 accuracy 0.500000
+Evaluating rand_train: loss 0.701332 accuracy 0.497070
+Evaluating cont_valid: loss 0.700945 accuracy 0.500000
+Evaluating rand_valid: loss 0.700855 accuracy 0.500854
+
+time spent in 20 epoch 0:00:38.881356
+['cont_train', 'rand_train'] training epoch 380 loss 0.696696 accuracy 0.503181
+
+Evaluating cont_train: loss 0.694442 accuracy 0.500118
+Evaluating rand_train: loss 0.694232 accuracy 0.497864
+Evaluating cont_valid: loss 0.694444 accuracy 0.499763
+Evaluating rand_valid: loss 0.694494 accuracy 0.500122
+
+time spent in 20 epoch 0:00:38.435968
+['cont_train', 'rand_train'] training epoch 400 loss 0.697504 accuracy 0.497101
+
+Evaluating cont_train: loss 0.711137 accuracy 0.500000
+Evaluating rand_train: loss 0.709242 accuracy 0.502930
+Evaluating cont_valid: loss 0.711180 accuracy 0.500000
+Evaluating rand_valid: loss 0.711576 accuracy 0.499146
+
+time spent in 20 epoch 0:00:38.721655
+['cont_train', 'rand_train'] training epoch 420 loss 0.697390 accuracy 0.499799
+
+Evaluating cont_train: loss 0.696362 accuracy 0.500592
+Evaluating rand_train: loss 0.696201 accuracy 0.497192
+Evaluating cont_valid: loss 0.696406 accuracy 0.499645
+Evaluating rand_valid: loss 0.696563 accuracy 0.500610
+
+time spent in 20 epoch 0:00:44.150252
+['cont_train', 'rand_train'] training epoch 440 loss 0.697994 accuracy 0.496255
+
+Evaluating cont_train: loss 0.693759 accuracy 0.500829
+Evaluating rand_train: loss 0.693226 accuracy 0.502014
+Evaluating cont_valid: loss 0.693918 accuracy 0.500118
+Evaluating rand_valid: loss 0.694142 accuracy 0.498047
+
+time spent in 20 epoch 0:00:51.303854
+['cont_train', 'rand_train'] training epoch 460 loss 0.695887 accuracy 0.505195
+
+Evaluating cont_train: loss 0.694436 accuracy 0.500710
+Evaluating rand_train: loss 0.692803 accuracy 0.509521
+Evaluating cont_valid: loss 0.694964 accuracy 0.500118
+Evaluating rand_valid: loss 0.695589 accuracy 0.498413
+
+time spent in 20 epoch 0:00:59.294414
+['cont_train', 'rand_train'] training epoch 480 loss 0.695289 accuracy 0.513692
+
+Evaluating cont_train: loss 0.691253 accuracy 0.512902
+Evaluating rand_train: loss 0.691438 accuracy 0.519043
+Evaluating cont_valid: loss 0.694860 accuracy 0.503196
+Evaluating rand_valid: loss 0.695922 accuracy 0.503845
+
+learning rate: 0.400000
+
+time spent in 20 epoch 0:01:03.025116
+['cont_train', 'rand_train'] training epoch 500 loss 0.685284 accuracy 0.546875
+
+Evaluating cont_train: loss 0.674418 accuracy 0.569484
+Evaluating rand_train: loss 0.688177 accuracy 0.539673
+Evaluating cont_valid: loss 0.696176 accuracy 0.532434
+Evaluating rand_valid: loss 0.695446 accuracy 0.514221
+
+time spent in 20 epoch 0:01:03.058337
+['cont_train', 'rand_train'] training epoch 520 loss 0.670106 accuracy 0.582474
+
+Evaluating cont_train: loss 0.648466 accuracy 0.617543
+Evaluating rand_train: loss 0.682934 accuracy 0.558716
+Evaluating cont_valid: loss 0.703352 accuracy 0.539536
+Evaluating rand_valid: loss 0.694080 accuracy 0.536743
+
+time spent in 20 epoch 0:01:02.692354
+['cont_train', 'rand_train'] training epoch 540 loss 0.597354 accuracy 0.656008
+
+Evaluating cont_train: loss 0.497860 accuracy 0.759351
+Evaluating rand_train: loss 0.632273 accuracy 0.618958
+Evaluating cont_valid: loss 0.692966 accuracy 0.543797
+Evaluating rand_valid: loss 0.651738 accuracy 0.593567
+
+time spent in 20 epoch 0:01:02.691109
+['cont_train', 'rand_train'] training epoch 560 loss 0.429446 accuracy 0.789143
+
+Evaluating cont_train: loss 0.236495 accuracy 0.919271
+Evaluating rand_train: loss 0.500699 accuracy 0.736328
+Evaluating cont_valid: loss 0.631916 accuracy 0.633996
+Evaluating rand_valid: loss 0.539315 accuracy 0.709961
+
+time spent in 20 epoch 0:01:02.224384
+['cont_train', 'rand_train'] training epoch 580 loss 0.316471 accuracy 0.857724
+
+Evaluating cont_train: loss 0.156053 accuracy 0.942353
+Evaluating rand_train: loss 0.405322 accuracy 0.807556
+Evaluating cont_valid: loss 0.507908 accuracy 0.745265
+Evaluating rand_valid: loss 0.455771 accuracy 0.780334
+
+time spent in 20 epoch 0:01:01.917000
+['cont_train', 'rand_train'] training epoch 600 loss 0.267837 accuracy 0.884544
+
+Evaluating cont_train: loss 0.099762 accuracy 0.967448
+Evaluating rand_train: loss 0.319810 accuracy 0.858765
+Evaluating cont_valid: loss 0.430279 accuracy 0.805161
+Evaluating rand_valid: loss 0.384795 accuracy 0.824951
+
+time spent in 20 epoch 0:01:01.907578
+['cont_train', 'rand_train'] training epoch 620 loss 0.219387 accuracy 0.909915
+
+Evaluating cont_train: loss 0.068028 accuracy 0.981061
+Evaluating rand_train: loss 0.262688 accuracy 0.889282
+Evaluating cont_valid: loss 0.394022 accuracy 0.828125
+Evaluating rand_valid: loss 0.348439 accuracy 0.851013
+
+time spent in 20 epoch 0:01:01.181509
+['cont_train', 'rand_train'] training epoch 640 loss 0.450994 accuracy 0.763974
+
+Evaluating cont_train: loss 0.307180 accuracy 0.854403
+Evaluating rand_train: loss 0.509879 accuracy 0.733398
+Evaluating cont_valid: loss 0.523605 accuracy 0.720170
+Evaluating rand_valid: loss 0.568393 accuracy 0.694031
+
+time spent in 20 epoch 0:01:00.796282
+['cont_train', 'rand_train'] training epoch 660 loss 0.406163 accuracy 0.796432
+
+Evaluating cont_train: loss 0.249232 accuracy 0.888731
+Evaluating rand_train: loss 0.454762 accuracy 0.762939
+Evaluating cont_valid: loss 0.491358 accuracy 0.751894
+Evaluating rand_valid: loss 0.528572 accuracy 0.723022
+
+time spent in 20 epoch 0:01:01.447111
+['cont_train', 'rand_train'] training epoch 680 loss 0.373611 accuracy 0.819064
+
+Evaluating cont_train: loss 0.220815 accuracy 0.907670
+Evaluating rand_train: loss 0.423282 accuracy 0.791016
+Evaluating cont_valid: loss 0.474397 accuracy 0.765152
+Evaluating rand_valid: loss 0.517554 accuracy 0.744568
+
+time spent in 20 epoch 0:01:01.222716
+['cont_train', 'rand_train'] training epoch 700 loss 0.352212 accuracy 0.832233
+
+Evaluating cont_train: loss 0.221738 accuracy 0.909446
+Evaluating rand_train: loss 0.412149 accuracy 0.797180
+Evaluating cont_valid: loss 0.467707 accuracy 0.771544
+Evaluating rand_valid: loss 0.518779 accuracy 0.746826
+
+time spent in 20 epoch 0:01:01.173711
+['cont_train', 'rand_train'] training epoch 720 loss 0.342617 accuracy 0.838193
+
+Evaluating cont_train: loss 0.193209 accuracy 0.920218
+Evaluating rand_train: loss 0.387444 accuracy 0.809265
+Evaluating cont_valid: loss 0.474694 accuracy 0.771544
+Evaluating rand_valid: loss 0.502043 accuracy 0.761963
+
+time spent in 20 epoch 0:01:01.396773
+['cont_train', 'rand_train'] training epoch 740 loss 0.335886 accuracy 0.844797
+
+Evaluating cont_train: loss 0.218928 accuracy 0.911813
+Evaluating rand_train: loss 0.400061 accuracy 0.809387
+Evaluating cont_valid: loss 0.477053 accuracy 0.773082
+Evaluating rand_valid: loss 0.510443 accuracy 0.758545
+
+time spent in 20 epoch 0:01:01.510218
+['cont_train', 'rand_train'] training epoch 760 loss 0.369153 accuracy 0.830863
+
+Evaluating cont_train: loss 0.184818 accuracy 0.930279
+Evaluating rand_train: loss 0.365544 accuracy 0.827087
+Evaluating cont_valid: loss 0.457178 accuracy 0.777344
+Evaluating rand_valid: loss 0.478575 accuracy 0.773621
+
+time spent in 20 epoch 0:01:01.223229
+['cont_train', 'rand_train'] training epoch 780 loss 0.308863 accuracy 0.858650
+
+Evaluating cont_train: loss 0.175035 accuracy 0.931937
+Evaluating rand_train: loss 0.356313 accuracy 0.834351
+Evaluating cont_valid: loss 0.441746 accuracy 0.791667
+Evaluating rand_valid: loss 0.478667 accuracy 0.780640
+
+time spent in 20 epoch 0:01:00.678363
+['cont_train', 'rand_train'] training epoch 800 loss 0.298149 accuracy 0.865295
+
+Evaluating cont_train: loss 0.167020 accuracy 0.941998
+Evaluating rand_train: loss 0.347046 accuracy 0.837646
+Evaluating cont_valid: loss 0.447834 accuracy 0.783854
+Evaluating rand_valid: loss 0.456423 accuracy 0.783386
+
+time spent in 20 epoch 0:01:00.639968
+['cont_train', 'rand_train'] training epoch 820 loss 0.310543 accuracy 0.862395
+
+Evaluating cont_train: loss 0.169317 accuracy 0.933830
+Evaluating rand_train: loss 0.343568 accuracy 0.839966
+Evaluating cont_valid: loss 0.431410 accuracy 0.805161
+Evaluating rand_valid: loss 0.464342 accuracy 0.795471
+
+time spent in 20 epoch 0:01:00.739618
+['cont_train', 'rand_train'] training epoch 840 loss 0.348465 accuracy 0.847294
+
+Evaluating cont_train: loss 0.160987 accuracy 0.944484
+Evaluating rand_train: loss 0.332772 accuracy 0.843750
+Evaluating cont_valid: loss 0.427048 accuracy 0.804924
+Evaluating rand_valid: loss 0.453541 accuracy 0.791382
+
+time spent in 20 epoch 0:01:01.667616
+['cont_train', 'rand_train'] training epoch 860 loss 0.286778 accuracy 0.873711
+
+Evaluating cont_train: loss 0.149967 accuracy 0.949219
+Evaluating rand_train: loss 0.329885 accuracy 0.849365
+Evaluating cont_valid: loss 0.431848 accuracy 0.806581
+Evaluating rand_valid: loss 0.461324 accuracy 0.796509
+
+time spent in 20 epoch 0:01:01.250054
+['cont_train', 'rand_train'] training epoch 880 loss 0.295437 accuracy 0.871778
+
+Evaluating cont_train: loss 0.164932 accuracy 0.937382
+Evaluating rand_train: loss 0.355885 accuracy 0.837463
+Evaluating cont_valid: loss 0.450028 accuracy 0.803149
+Evaluating rand_valid: loss 0.488450 accuracy 0.785522
+
+time spent in 20 epoch 0:01:01.329523
+['cont_train', 'rand_train'] training epoch 900 loss 0.691973 accuracy 0.525451
+
+Evaluating cont_train: loss 0.681715 accuracy 0.536458
+Evaluating rand_train: loss 0.690621 accuracy 0.531677
+Evaluating cont_valid: loss 0.700643 accuracy 0.509115
+Evaluating rand_valid: loss 0.701270 accuracy 0.509888
+
+time spent in 20 epoch 0:01:01.097742
+['cont_train', 'rand_train'] training epoch 920 loss 0.655074 accuracy 0.590448
+
+Evaluating cont_train: loss 0.618050 accuracy 0.632221
+Evaluating rand_train: loss 0.668011 accuracy 0.575684
+Evaluating cont_valid: loss 0.676261 accuracy 0.554806
+Evaluating rand_valid: loss 0.688993 accuracy 0.539612
+
+time spent in 20 epoch 0:01:01.950831
+['cont_train', 'rand_train'] training epoch 940 loss 0.616540 accuracy 0.636517
+
+Evaluating cont_train: loss 0.552916 accuracy 0.709872
+Evaluating rand_train: loss 0.640308 accuracy 0.610779
+Evaluating cont_valid: loss 0.648774 accuracy 0.592921
+Evaluating rand_valid: loss 0.676940 accuracy 0.573242
+
+time spent in 20 epoch 0:01:01.282267
+['cont_train', 'rand_train'] training epoch 960 loss 0.578693 accuracy 0.672036
+
+Evaluating cont_train: loss 0.497047 accuracy 0.734730
+Evaluating rand_train: loss 0.620024 accuracy 0.639160
+Evaluating cont_valid: loss 0.638046 accuracy 0.630327
+Evaluating rand_valid: loss 0.667964 accuracy 0.604736
+
+time spent in 20 epoch 0:01:01.694734
+['cont_train', 'rand_train'] training epoch 980 loss 0.569481 accuracy 0.682426
+
+Evaluating cont_train: loss 0.486485 accuracy 0.754972
+Evaluating rand_train: loss 0.603679 accuracy 0.650635
+Evaluating cont_valid: loss 0.612714 accuracy 0.641809
+Evaluating rand_valid: loss 0.658972 accuracy 0.609192
+
+learning rate: 0.080000
+
+time spent in 20 epoch 0:01:01.185665
+['cont_train', 'rand_train'] training epoch 1000 loss 0.519074 accuracy 0.724227
+
+Evaluating cont_train: loss 0.414681 accuracy 0.804924
+Evaluating rand_train: loss 0.564739 accuracy 0.689209
+Evaluating cont_valid: loss 0.592343 accuracy 0.678622
+Evaluating rand_valid: loss 0.646987 accuracy 0.636292
+
+time spent in 20 epoch 0:01:01.309780
+['cont_train', 'rand_train'] training epoch 1020 loss 0.503064 accuracy 0.735865
+
+Evaluating cont_train: loss 0.400343 accuracy 0.817472
+Evaluating rand_train: loss 0.553605 accuracy 0.698608
+Evaluating cont_valid: loss 0.589833 accuracy 0.672230
+Evaluating rand_valid: loss 0.644197 accuracy 0.640015
+
+time spent in 20 epoch 0:01:00.781401
+['cont_train', 'rand_train'] training epoch 1040 loss 0.495267 accuracy 0.742389
+
+Evaluating cont_train: loss 0.393522 accuracy 0.816406
+Evaluating rand_train: loss 0.546822 accuracy 0.702576
+Evaluating cont_valid: loss 0.585126 accuracy 0.680990
+Evaluating rand_valid: loss 0.642964 accuracy 0.645325
+
+time spent in 20 epoch 0:01:01.749931
+['cont_train', 'rand_train'] training epoch 1060 loss 0.489333 accuracy 0.745248
+
+Evaluating cont_train: loss 0.380951 accuracy 0.824337
+Evaluating rand_train: loss 0.539856 accuracy 0.707275
+Evaluating cont_valid: loss 0.581373 accuracy 0.686080
+Evaluating rand_valid: loss 0.641499 accuracy 0.649170
+
+time spent in 20 epoch 0:01:00.974806
+['cont_train', 'rand_train'] training epoch 1080 loss 0.482653 accuracy 0.750282
+
+Evaluating cont_train: loss 0.373872 accuracy 0.828954
+Evaluating rand_train: loss 0.533085 accuracy 0.713013
+Evaluating cont_valid: loss 0.580075 accuracy 0.690578
+Evaluating rand_valid: loss 0.641557 accuracy 0.652832
+
+time spent in 20 epoch 0:01:01.567934
+['cont_train', 'rand_train'] training epoch 1100 loss 0.476118 accuracy 0.752779
+
+Evaluating cont_train: loss 0.367527 accuracy 0.831913
+Evaluating rand_train: loss 0.527610 accuracy 0.717773
+Evaluating cont_valid: loss 0.576305 accuracy 0.696851
+Evaluating rand_valid: loss 0.640551 accuracy 0.657715
+
+time spent in 20 epoch 0:01:01.115869
+['cont_train', 'rand_train'] training epoch 1120 loss 0.470513 accuracy 0.757611
+
+Evaluating cont_train: loss 0.360849 accuracy 0.837476
+Evaluating rand_train: loss 0.523285 accuracy 0.721252
+Evaluating cont_valid: loss 0.573351 accuracy 0.701231
+Evaluating rand_valid: loss 0.640943 accuracy 0.658691
+
+time spent in 20 epoch 0:01:01.307326
+['cont_train', 'rand_train'] training epoch 1140 loss 0.464118 accuracy 0.763370
+
+Evaluating cont_train: loss 0.352908 accuracy 0.843750
+Evaluating rand_train: loss 0.518400 accuracy 0.724670
+Evaluating cont_valid: loss 0.569807 accuracy 0.700402
+Evaluating rand_valid: loss 0.640635 accuracy 0.664429
+
+time spent in 20 epoch 0:01:00.988659
+['cont_train', 'rand_train'] training epoch 1160 loss 0.459556 accuracy 0.765746
+
+Evaluating cont_train: loss 0.346543 accuracy 0.845289
+Evaluating rand_train: loss 0.511907 accuracy 0.729248
+Evaluating cont_valid: loss 0.565017 accuracy 0.707860
+Evaluating rand_valid: loss 0.637429 accuracy 0.664185
+
+time spent in 20 epoch 0:01:01.677494
+['cont_train', 'rand_train'] training epoch 1180 loss 0.456918 accuracy 0.768565
+
+Evaluating cont_train: loss 0.342020 accuracy 0.850142
+Evaluating rand_train: loss 0.508558 accuracy 0.731506
+Evaluating cont_valid: loss 0.559350 accuracy 0.709162
+Evaluating rand_valid: loss 0.637108 accuracy 0.669922
+
+time spent in 20 epoch 0:01:01.298931
+['cont_train', 'rand_train'] training epoch 1200 loss 0.448644 accuracy 0.774122
+
+Evaluating cont_train: loss 0.334303 accuracy 0.852983
+Evaluating rand_train: loss 0.501441 accuracy 0.737183
+Evaluating cont_valid: loss 0.557426 accuracy 0.717211
+Evaluating rand_valid: loss 0.634032 accuracy 0.673279
+
+time spent in 20 epoch 0:01:01.699615
+['cont_train', 'rand_train'] training epoch 1220 loss 0.444533 accuracy 0.777062
+
+Evaluating cont_train: loss 0.329274 accuracy 0.858310
+Evaluating rand_train: loss 0.497096 accuracy 0.741150
+Evaluating cont_valid: loss 0.553415 accuracy 0.716974
+Evaluating rand_valid: loss 0.631459 accuracy 0.676880
+
+time spent in 20 epoch 0:01:00.903145
+['cont_train', 'rand_train'] training epoch 1240 loss 0.441301 accuracy 0.778834
+
+Evaluating cont_train: loss 0.327098 accuracy 0.856652
+Evaluating rand_train: loss 0.495833 accuracy 0.742432
+Evaluating cont_valid: loss 0.552483 accuracy 0.717211
+Evaluating rand_valid: loss 0.633848 accuracy 0.677185
+
+time spent in 20 epoch 0:01:00.948391
+['cont_train', 'rand_train'] training epoch 1260 loss 0.435466 accuracy 0.782498
+
+Evaluating cont_train: loss 0.327399 accuracy 0.860677
+Evaluating rand_train: loss 0.491141 accuracy 0.745117
+Evaluating cont_valid: loss 0.546736 accuracy 0.720052
+Evaluating rand_valid: loss 0.626786 accuracy 0.679443
+
+time spent in 20 epoch 0:01:00.783629
+['cont_train', 'rand_train'] training epoch 1280 loss 0.432142 accuracy 0.786364
+
+Evaluating cont_train: loss 0.313749 accuracy 0.862571
+Evaluating rand_train: loss 0.489913 accuracy 0.746277
+Evaluating cont_valid: loss 0.549306 accuracy 0.718395
+Evaluating rand_valid: loss 0.632115 accuracy 0.680664
+
+time spent in 20 epoch 0:01:01.683063
+['cont_train', 'rand_train'] training epoch 1300 loss 0.427806 accuracy 0.787572
+
+Evaluating cont_train: loss 0.309807 accuracy 0.866596
+Evaluating rand_train: loss 0.485210 accuracy 0.747986
+Evaluating cont_valid: loss 0.547047 accuracy 0.721709
+Evaluating rand_valid: loss 0.624625 accuracy 0.685547
+
+time spent in 20 epoch 0:01:01.350236
+['cont_train', 'rand_train'] training epoch 1320 loss 0.428222 accuracy 0.790230
+
+Evaluating cont_train: loss 0.307227 accuracy 0.864583
+Evaluating rand_train: loss 0.485520 accuracy 0.750671
+Evaluating cont_valid: loss 0.542852 accuracy 0.724550
+Evaluating rand_valid: loss 0.625634 accuracy 0.685120
+
+time spent in 20 epoch 0:01:00.815188
+['cont_train', 'rand_train'] training epoch 1340 loss 0.418727 accuracy 0.793492
+
+Evaluating cont_train: loss 0.303096 accuracy 0.867661
+Evaluating rand_train: loss 0.477441 accuracy 0.757385
+Evaluating cont_valid: loss 0.540158 accuracy 0.729403
+Evaluating rand_valid: loss 0.624729 accuracy 0.690918
+
+time spent in 20 epoch 0:01:01.673148
+['cont_train', 'rand_train'] training epoch 1360 loss 0.417328 accuracy 0.795949
+
+Evaluating cont_train: loss 0.295339 accuracy 0.875118
+Evaluating rand_train: loss 0.472776 accuracy 0.760925
+Evaluating cont_valid: loss 0.534290 accuracy 0.731061
+Evaluating rand_valid: loss 0.619849 accuracy 0.693726
+
+time spent in 20 epoch 0:01:01.212208
+['cont_train', 'rand_train'] training epoch 1380 loss 0.412437 accuracy 0.797399
+
+Evaluating cont_train: loss 0.298940 accuracy 0.869555
+Evaluating rand_train: loss 0.475853 accuracy 0.761536
+Evaluating cont_valid: loss 0.537483 accuracy 0.733191
+Evaluating rand_valid: loss 0.620277 accuracy 0.695312
+
+time spent in 20 epoch 0:01:00.854628
+['cont_train', 'rand_train'] training epoch 1400 loss 0.409012 accuracy 0.801184
+
+Evaluating cont_train: loss 0.286210 accuracy 0.876657
+Evaluating rand_train: loss 0.467607 accuracy 0.763000
+Evaluating cont_valid: loss 0.527887 accuracy 0.733665
+Evaluating rand_valid: loss 0.617866 accuracy 0.696716
+
+time spent in 20 epoch 0:01:01.463617
+['cont_train', 'rand_train'] training epoch 1420 loss 0.420224 accuracy 0.795627
+
+Evaluating cont_train: loss 0.286631 accuracy 0.872159
+Evaluating rand_train: loss 0.481073 accuracy 0.757996
+Evaluating cont_valid: loss 0.556125 accuracy 0.722656
+Evaluating rand_valid: loss 0.626675 accuracy 0.695007
+
+time spent in 20 epoch 0:01:00.941815
+['cont_train', 'rand_train'] training epoch 1440 loss 0.404346 accuracy 0.804808
+
+Evaluating cont_train: loss 0.277953 accuracy 0.881037
+Evaluating rand_train: loss 0.460031 accuracy 0.771179
+Evaluating cont_valid: loss 0.537244 accuracy 0.735204
+Evaluating rand_valid: loss 0.615422 accuracy 0.700928
+
+time spent in 20 epoch 0:01:01.139477
+['cont_train', 'rand_train'] training epoch 1460 loss 0.401898 accuracy 0.805654
+
+Evaluating cont_train: loss 0.283544 accuracy 0.879972
+Evaluating rand_train: loss 0.478008 accuracy 0.764587
+Evaluating cont_valid: loss 0.535342 accuracy 0.736269
+Evaluating rand_valid: loss 0.628436 accuracy 0.696289
+
+time spent in 20 epoch 0:01:01.077253
+['cont_train', 'rand_train'] training epoch 1480 loss 0.397062 accuracy 0.810527
+
+Evaluating cont_train: loss 0.270519 accuracy 0.883641
+Evaluating rand_train: loss 0.453809 accuracy 0.776550
+Evaluating cont_valid: loss 0.520567 accuracy 0.746094
+Evaluating rand_valid: loss 0.608454 accuracy 0.707031
+
+learning rate: 0.016000
+
+time spent in 20 epoch 0:01:01.024870
+['cont_train', 'rand_train'] training epoch 1500 loss 0.386453 accuracy 0.814675
+
+Evaluating cont_train: loss 0.265180 accuracy 0.886009
+Evaluating rand_train: loss 0.444111 accuracy 0.783691
+Evaluating cont_valid: loss 0.511696 accuracy 0.752249
+Evaluating rand_valid: loss 0.603568 accuracy 0.712646
+
+time spent in 20 epoch 0:01:01.232787
+['cont_train', 'rand_train'] training epoch 1520 loss 0.381486 accuracy 0.820312
+
+Evaluating cont_train: loss 0.263494 accuracy 0.886245
+Evaluating rand_train: loss 0.441545 accuracy 0.785583
+Evaluating cont_valid: loss 0.511641 accuracy 0.752723
+Evaluating rand_valid: loss 0.603413 accuracy 0.713684
+
+time spent in 20 epoch 0:01:01.141294
+['cont_train', 'rand_train'] training epoch 1540 loss 0.380474 accuracy 0.819950
+
+Evaluating cont_train: loss 0.262206 accuracy 0.887902
+Evaluating rand_train: loss 0.440313 accuracy 0.787903
+Evaluating cont_valid: loss 0.511364 accuracy 0.753906
+Evaluating rand_valid: loss 0.604152 accuracy 0.714722
+
+time spent in 20 epoch 0:01:00.758579
+['cont_train', 'rand_train'] training epoch 1560 loss 0.379953 accuracy 0.820675
+
+Evaluating cont_train: loss 0.260969 accuracy 0.890033
+Evaluating rand_train: loss 0.439567 accuracy 0.786865
+Evaluating cont_valid: loss 0.511413 accuracy 0.752841
+Evaluating rand_valid: loss 0.604467 accuracy 0.713989
+
+time spent in 20 epoch 0:01:00.738207
+['cont_train', 'rand_train'] training epoch 1580 loss 0.379256 accuracy 0.821923
+
+Evaluating cont_train: loss 0.260942 accuracy 0.889678
+Evaluating rand_train: loss 0.439552 accuracy 0.785767
+Evaluating cont_valid: loss 0.511108 accuracy 0.754380
+Evaluating rand_valid: loss 0.605276 accuracy 0.713684
+
+time spent in 20 epoch 0:01:01.249885
+['cont_train', 'rand_train'] training epoch 1600 loss 0.378063 accuracy 0.820635
+
+Evaluating cont_train: loss 0.260261 accuracy 0.888613
+Evaluating rand_train: loss 0.438129 accuracy 0.787903
+Evaluating cont_valid: loss 0.510298 accuracy 0.754498
+Evaluating rand_valid: loss 0.604484 accuracy 0.714417
+
+time spent in 20 epoch 0:01:01.634699
+['cont_train', 'rand_train'] training epoch 1620 loss 0.377956 accuracy 0.821682
+
+Evaluating cont_train: loss 0.259082 accuracy 0.888613
+Evaluating rand_train: loss 0.437330 accuracy 0.788025
+Evaluating cont_valid: loss 0.509926 accuracy 0.752959
+Evaluating rand_valid: loss 0.604461 accuracy 0.715698
+
+time spent in 20 epoch 0:01:00.793725
+['cont_train', 'rand_train'] training epoch 1640 loss 0.376847 accuracy 0.821641
+
+Evaluating cont_train: loss 0.258315 accuracy 0.889560
+Evaluating rand_train: loss 0.437364 accuracy 0.786682
+Evaluating cont_valid: loss 0.511363 accuracy 0.753788
+Evaluating rand_valid: loss 0.605563 accuracy 0.716614
+
+time spent in 20 epoch 0:01:01.065514
+['cont_train', 'rand_train'] training epoch 1660 loss 0.376620 accuracy 0.822165
+
+Evaluating cont_train: loss 0.257737 accuracy 0.888494
+Evaluating rand_train: loss 0.436261 accuracy 0.787720
+Evaluating cont_valid: loss 0.509183 accuracy 0.752723
+Evaluating rand_valid: loss 0.605595 accuracy 0.715637
+
+time spent in 20 epoch 0:01:00.975298
+['cont_train', 'rand_train'] training epoch 1680 loss 0.375589 accuracy 0.822688
+
+Evaluating cont_train: loss 0.257560 accuracy 0.891098
+Evaluating rand_train: loss 0.435471 accuracy 0.789856
+Evaluating cont_valid: loss 0.508842 accuracy 0.755800
+Evaluating rand_valid: loss 0.605103 accuracy 0.716614
+
+time spent in 20 epoch 0:01:01.240299
+['cont_train', 'rand_train'] training epoch 1700 loss 0.375002 accuracy 0.824823
+
+Evaluating cont_train: loss 0.256798 accuracy 0.890743
+Evaluating rand_train: loss 0.435242 accuracy 0.786926
+Evaluating cont_valid: loss 0.507283 accuracy 0.753551
+Evaluating rand_valid: loss 0.606829 accuracy 0.715393
+
+time spent in 20 epoch 0:01:00.723919
+['cont_train', 'rand_train'] training epoch 1720 loss 0.373964 accuracy 0.823937
+
+Evaluating cont_train: loss 0.256128 accuracy 0.891454
+Evaluating rand_train: loss 0.434678 accuracy 0.789124
+Evaluating cont_valid: loss 0.507293 accuracy 0.758996
+Evaluating rand_valid: loss 0.605728 accuracy 0.717590
+
+time spent in 20 epoch 0:01:00.964255
+['cont_train', 'rand_train'] training epoch 1740 loss 0.373259 accuracy 0.824581
+
+Evaluating cont_train: loss 0.256275 accuracy 0.890152
+Evaluating rand_train: loss 0.433813 accuracy 0.788513
+Evaluating cont_valid: loss 0.506380 accuracy 0.757102
+Evaluating rand_valid: loss 0.606687 accuracy 0.717285
+
+time spent in 20 epoch 0:01:00.829588
+['cont_train', 'rand_train'] training epoch 1760 loss 0.372895 accuracy 0.825870
+
+Evaluating cont_train: loss 0.254804 accuracy 0.891454
+Evaluating rand_train: loss 0.432729 accuracy 0.789978
+Evaluating cont_valid: loss 0.507097 accuracy 0.755563
+Evaluating rand_valid: loss 0.605277 accuracy 0.717773
+
+time spent in 20 epoch 0:01:01.160317
+['cont_train', 'rand_train'] training epoch 1780 loss 0.372235 accuracy 0.823776
+
+Evaluating cont_train: loss 0.254577 accuracy 0.890980
+Evaluating rand_train: loss 0.432335 accuracy 0.791138
+Evaluating cont_valid: loss 0.505914 accuracy 0.757339
+Evaluating rand_valid: loss 0.605681 accuracy 0.718506
+
+time spent in 20 epoch 0:01:00.718244
+['cont_train', 'rand_train'] training epoch 1800 loss 0.371657 accuracy 0.824783
+
+Evaluating cont_train: loss 0.253421 accuracy 0.891098
+Evaluating rand_train: loss 0.431514 accuracy 0.791382
+Evaluating cont_valid: loss 0.505219 accuracy 0.760772
+Evaluating rand_valid: loss 0.606753 accuracy 0.718018
+
+time spent in 20 epoch 0:01:00.452489
+['cont_train', 'rand_train'] training epoch 1820 loss 0.371587 accuracy 0.825668
+
+Evaluating cont_train: loss 0.254301 accuracy 0.892637
+Evaluating rand_train: loss 0.431267 accuracy 0.791687
+Evaluating cont_valid: loss 0.507524 accuracy 0.758523
+Evaluating rand_valid: loss 0.606143 accuracy 0.717896
+
+time spent in 20 epoch 0:01:00.868554
+['cont_train', 'rand_train'] training epoch 1840 loss 0.370723 accuracy 0.825991
+
+Evaluating cont_train: loss 0.252732 accuracy 0.893466
+Evaluating rand_train: loss 0.430235 accuracy 0.791565
+Evaluating cont_valid: loss 0.504683 accuracy 0.759588
+Evaluating rand_valid: loss 0.606069 accuracy 0.716919
+
+time spent in 20 epoch 0:01:01.334486
+['cont_train', 'rand_train'] training epoch 1860 loss 0.369798 accuracy 0.826393
+
+Evaluating cont_train: loss 0.251545 accuracy 0.894413
+Evaluating rand_train: loss 0.429530 accuracy 0.793762
+Evaluating cont_valid: loss 0.503722 accuracy 0.761245
+Evaluating rand_valid: loss 0.606002 accuracy 0.719482
+
+time spent in 20 epoch 0:01:01.251275
+['cont_train', 'rand_train'] training epoch 1880 loss 0.369316 accuracy 0.826917
+
+Evaluating cont_train: loss 0.251033 accuracy 0.893584
+Evaluating rand_train: loss 0.430606 accuracy 0.792542
+Evaluating cont_valid: loss 0.503430 accuracy 0.763258
+Evaluating rand_valid: loss 0.607192 accuracy 0.718323
+
+time spent in 20 epoch 0:01:03.698035
+['cont_train', 'rand_train'] training epoch 1900 loss 0.369418 accuracy 0.826595
+
+Evaluating cont_train: loss 0.250241 accuracy 0.894886
+Evaluating rand_train: loss 0.428529 accuracy 0.793457
+Evaluating cont_valid: loss 0.504245 accuracy 0.761364
+Evaluating rand_valid: loss 0.606705 accuracy 0.719299
+
+time spent in 20 epoch 0:01:03.587758
+['cont_train', 'rand_train'] training epoch 1920 loss 0.368186 accuracy 0.827561
+
+Evaluating cont_train: loss 0.249412 accuracy 0.894650
+Evaluating rand_train: loss 0.428274 accuracy 0.793518
+Evaluating cont_valid: loss 0.503649 accuracy 0.761127
+Evaluating rand_valid: loss 0.607168 accuracy 0.719666
+
+time spent in 20 epoch 0:01:04.136571
+['cont_train', 'rand_train'] training epoch 1940 loss 0.367740 accuracy 0.828528
+
+Evaluating cont_train: loss 0.249344 accuracy 0.894058
+Evaluating rand_train: loss 0.427072 accuracy 0.795959
+Evaluating cont_valid: loss 0.503531 accuracy 0.761955
+Evaluating rand_valid: loss 0.605998 accuracy 0.720703
+
+time spent in 20 epoch 0:01:03.487536
+['cont_train', 'rand_train'] training epoch 1960 loss 0.367299 accuracy 0.826957
+
+Evaluating cont_train: loss 0.249152 accuracy 0.893348
+Evaluating rand_train: loss 0.427335 accuracy 0.796631
+Evaluating cont_valid: loss 0.502293 accuracy 0.762074
+Evaluating rand_valid: loss 0.607027 accuracy 0.720764
+
+time spent in 20 epoch 0:01:01.256653
+['cont_train', 'rand_train'] training epoch 1980 loss 0.366414 accuracy 0.829172
+
+Evaluating cont_train: loss 0.248042 accuracy 0.895241
+Evaluating rand_train: loss 0.426188 accuracy 0.794739
+Evaluating cont_valid: loss 0.503941 accuracy 0.759825
+Evaluating rand_valid: loss 0.606254 accuracy 0.720459
+
+learning rate: 0.003200
+
+time spent in 20 epoch 0:00:57.156716
+['cont_train', 'rand_train'] training epoch 2000 loss 0.363931 accuracy 0.830058
+
+Evaluating cont_train: loss 0.247025 accuracy 0.895478
+Evaluating rand_train: loss 0.424174 accuracy 0.797363
+Evaluating cont_valid: loss 0.501280 accuracy 0.764678
+Evaluating rand_valid: loss 0.605219 accuracy 0.722412
+
+time spent in 20 epoch 0:00:43.942678
+['cont_train', 'rand_train'] training epoch 2020 loss 0.363262 accuracy 0.830662
+
+Evaluating cont_train: loss 0.246577 accuracy 0.895005
+Evaluating rand_train: loss 0.423771 accuracy 0.798462
+Evaluating cont_valid: loss 0.500770 accuracy 0.765033
+Evaluating rand_valid: loss 0.605678 accuracy 0.722778
+
+time spent in 20 epoch 0:00:41.762467
+['cont_train', 'rand_train'] training epoch 2040 loss 0.363018 accuracy 0.830904
+
+Evaluating cont_train: loss 0.246469 accuracy 0.895241
+Evaluating rand_train: loss 0.423613 accuracy 0.798401
+Evaluating cont_valid: loss 0.500552 accuracy 0.765152
+Evaluating rand_valid: loss 0.605461 accuracy 0.723022
+
+time spent in 20 epoch 0:00:41.935104
+['cont_train', 'rand_train'] training epoch 2060 loss 0.362772 accuracy 0.831427
+
+Evaluating cont_train: loss 0.246334 accuracy 0.895123
+Evaluating rand_train: loss 0.423514 accuracy 0.798340
+Evaluating cont_valid: loss 0.500886 accuracy 0.764796
+Evaluating rand_valid: loss 0.605486 accuracy 0.723083
+
+time spent in 20 epoch 0:00:42.221919
+['cont_train', 'rand_train'] training epoch 2080 loss 0.362488 accuracy 0.831387
+
+Evaluating cont_train: loss 0.246244 accuracy 0.895715
+Evaluating rand_train: loss 0.423319 accuracy 0.798218
+Evaluating cont_valid: loss 0.500524 accuracy 0.765388
+Evaluating rand_valid: loss 0.605568 accuracy 0.723328
+
+time spent in 20 epoch 0:00:41.745155
+['cont_train', 'rand_train'] training epoch 2100 loss 0.362384 accuracy 0.831186
+
+Evaluating cont_train: loss 0.246046 accuracy 0.895715
+Evaluating rand_train: loss 0.423238 accuracy 0.798462
+Evaluating cont_valid: loss 0.500458 accuracy 0.765388
+Evaluating rand_valid: loss 0.605495 accuracy 0.723511
+
+time spent in 20 epoch 0:00:41.998045
+['cont_train', 'rand_train'] training epoch 2120 loss 0.362114 accuracy 0.831790
+
+Evaluating cont_train: loss 0.245936 accuracy 0.895360
+Evaluating rand_train: loss 0.423110 accuracy 0.798584
+Evaluating cont_valid: loss 0.500546 accuracy 0.765388
+Evaluating rand_valid: loss 0.605481 accuracy 0.723450
+
+time spent in 20 epoch 0:00:42.118387
+['cont_train', 'rand_train'] training epoch 2140 loss 0.362063 accuracy 0.831749
+
+Evaluating cont_train: loss 0.245860 accuracy 0.895715
+Evaluating rand_train: loss 0.423020 accuracy 0.798706
+Evaluating cont_valid: loss 0.500400 accuracy 0.765507
+Evaluating rand_valid: loss 0.605590 accuracy 0.724121
+
+time spent in 20 epoch 0:00:41.780419
+['cont_train', 'rand_train'] training epoch 2160 loss 0.362105 accuracy 0.831991
+
+Evaluating cont_train: loss 0.245713 accuracy 0.895952
+Evaluating rand_train: loss 0.422816 accuracy 0.798950
+Evaluating cont_valid: loss 0.500244 accuracy 0.765862
+Evaluating rand_valid: loss 0.605489 accuracy 0.724060
+
+time spent in 20 epoch 0:00:41.248828
+['cont_train', 'rand_train'] training epoch 2180 loss 0.362033 accuracy 0.832192
+
+Evaluating cont_train: loss 0.245516 accuracy 0.896662
+Evaluating rand_train: loss 0.422723 accuracy 0.798218
+Evaluating cont_valid: loss 0.500357 accuracy 0.765507
+Evaluating rand_valid: loss 0.605521 accuracy 0.724121
+
+time spent in 20 epoch 0:00:41.552813
+['cont_train', 'rand_train'] training epoch 2200 loss 0.361502 accuracy 0.832514
+
+Evaluating cont_train: loss 0.245474 accuracy 0.896662
+Evaluating rand_train: loss 0.422599 accuracy 0.798340
+Evaluating cont_valid: loss 0.499978 accuracy 0.766217
+Evaluating rand_valid: loss 0.605514 accuracy 0.724915
+
+time spent in 20 epoch 0:00:41.845377
+['cont_train', 'rand_train'] training epoch 2220 loss 0.361498 accuracy 0.831830
+
+Evaluating cont_train: loss 0.245241 accuracy 0.896780
+Evaluating rand_train: loss 0.422442 accuracy 0.798218
+Evaluating cont_valid: loss 0.500155 accuracy 0.765743
+Evaluating rand_valid: loss 0.605580 accuracy 0.724670
+
+time spent in 20 epoch 0:00:43.000550
+['cont_train', 'rand_train'] training epoch 2240 loss 0.361909 accuracy 0.831306
+
+Evaluating cont_train: loss 0.245125 accuracy 0.896899
+Evaluating rand_train: loss 0.422375 accuracy 0.798279
+Evaluating cont_valid: loss 0.500038 accuracy 0.765270
+Evaluating rand_valid: loss 0.605382 accuracy 0.724609
+
+time spent in 20 epoch 0:00:44.828809
+['cont_train', 'rand_train'] training epoch 2260 loss 0.361357 accuracy 0.832031
+
+Evaluating cont_train: loss 0.245184 accuracy 0.896307
+Evaluating rand_train: loss 0.422152 accuracy 0.798584
+Evaluating cont_valid: loss 0.500025 accuracy 0.766098
+Evaluating rand_valid: loss 0.605600 accuracy 0.724976
+
+time spent in 20 epoch 0:00:42.010624
+['cont_train', 'rand_train'] training epoch 2280 loss 0.361032 accuracy 0.832031
+
+Evaluating cont_train: loss 0.244904 accuracy 0.896544
+Evaluating rand_train: loss 0.422121 accuracy 0.797913
+Evaluating cont_valid: loss 0.500210 accuracy 0.766335
+Evaluating rand_valid: loss 0.605406 accuracy 0.725220
+
+time spent in 20 epoch 0:00:43.353463
+['cont_train', 'rand_train'] training epoch 2300 loss 0.360733 accuracy 0.832474
+
+Evaluating cont_train: loss 0.244920 accuracy 0.897135
+Evaluating rand_train: loss 0.421982 accuracy 0.798401
+Evaluating cont_valid: loss 0.499626 accuracy 0.766690
+Evaluating rand_valid: loss 0.605483 accuracy 0.724854
+
+time spent in 20 epoch 0:00:43.625049
+['cont_train', 'rand_train'] training epoch 2320 loss 0.360894 accuracy 0.832394
+
+Evaluating cont_train: loss 0.244676 accuracy 0.896899
+Evaluating rand_train: loss 0.421756 accuracy 0.798889
+Evaluating cont_valid: loss 0.499486 accuracy 0.767164
+Evaluating rand_valid: loss 0.605241 accuracy 0.725098
+
+time spent in 20 epoch 0:00:42.309438
+['cont_train', 'rand_train'] training epoch 2340 loss 0.360884 accuracy 0.832072
+
+Evaluating cont_train: loss 0.244556 accuracy 0.897254
+Evaluating rand_train: loss 0.421721 accuracy 0.798706
+Evaluating cont_valid: loss 0.499727 accuracy 0.766690
+Evaluating rand_valid: loss 0.605536 accuracy 0.725159
+
+time spent in 20 epoch 0:00:42.352447
+['cont_train', 'rand_train'] training epoch 2360 loss 0.360644 accuracy 0.832837
+
+Evaluating cont_train: loss 0.244372 accuracy 0.897017
+Evaluating rand_train: loss 0.421468 accuracy 0.798950
+Evaluating cont_valid: loss 0.499584 accuracy 0.767045
+Evaluating rand_valid: loss 0.605532 accuracy 0.724915
+
+time spent in 20 epoch 0:00:42.550912
+['cont_train', 'rand_train'] training epoch 2380 loss 0.360482 accuracy 0.832152
+
+Evaluating cont_train: loss 0.244231 accuracy 0.896307
+Evaluating rand_train: loss 0.421451 accuracy 0.799255
+Evaluating cont_valid: loss 0.499922 accuracy 0.766809
+Evaluating rand_valid: loss 0.605407 accuracy 0.724670
+
+time spent in 20 epoch 0:00:42.525407
+['cont_train', 'rand_train'] training epoch 2400 loss 0.360379 accuracy 0.832595
+
+Evaluating cont_train: loss 0.244173 accuracy 0.896662
+Evaluating rand_train: loss 0.421318 accuracy 0.799194
+Evaluating cont_valid: loss 0.499594 accuracy 0.766809
+Evaluating rand_valid: loss 0.605298 accuracy 0.725769
+
+time spent in 20 epoch 0:00:46.708436
+['cont_train', 'rand_train'] training epoch 2420 loss 0.360553 accuracy 0.832273
+
+Evaluating cont_train: loss 0.244140 accuracy 0.896544
+Evaluating rand_train: loss 0.421146 accuracy 0.799133
+Evaluating cont_valid: loss 0.499689 accuracy 0.766927
+Evaluating rand_valid: loss 0.605297 accuracy 0.725464
+
+time spent in 20 epoch 0:00:42.689851
+['cont_train', 'rand_train'] training epoch 2440 loss 0.360219 accuracy 0.833199
+
+Evaluating cont_train: loss 0.243977 accuracy 0.896544
+Evaluating rand_train: loss 0.421057 accuracy 0.799622
+Evaluating cont_valid: loss 0.499513 accuracy 0.766809
+Evaluating rand_valid: loss 0.604931 accuracy 0.725586
+
+time spent in 20 epoch 0:00:41.796754
+['cont_train', 'rand_train'] training epoch 2460 loss 0.359632 accuracy 0.832957
+
+Evaluating cont_train: loss 0.243761 accuracy 0.897609
+Evaluating rand_train: loss 0.420728 accuracy 0.799744
+Evaluating cont_valid: loss 0.499412 accuracy 0.766690
+Evaluating rand_valid: loss 0.605077 accuracy 0.726135
+
+time spent in 20 epoch 0:00:36.636812
+['cont_train', 'rand_train'] training epoch 2480 loss 0.359846 accuracy 0.833400
+
+Evaluating cont_train: loss 0.243552 accuracy 0.897372
+Evaluating rand_train: loss 0.420681 accuracy 0.799561
+Evaluating cont_valid: loss 0.499294 accuracy 0.766809
+Evaluating rand_valid: loss 0.605049 accuracy 0.726624
+
+learning rate: 0.000640
+
+time spent in 20 epoch 0:00:35.001085
+['cont_train', 'rand_train'] training epoch 2500 loss 0.359217 accuracy 0.833562
+
+Evaluating cont_train: loss 0.243465 accuracy 0.897135
+Evaluating rand_train: loss 0.420338 accuracy 0.799805
+Evaluating cont_valid: loss 0.499592 accuracy 0.766690
+Evaluating rand_valid: loss 0.605002 accuracy 0.726624
+
+time spent in 20 epoch 0:00:33.939140
+['cont_train', 'rand_train'] training epoch 2520 loss 0.358741 accuracy 0.833723
+
+Evaluating cont_train: loss 0.243415 accuracy 0.897372
+Evaluating rand_train: loss 0.420270 accuracy 0.799561
+Evaluating cont_valid: loss 0.499524 accuracy 0.765980
+Evaluating rand_valid: loss 0.605010 accuracy 0.726196
+
+time spent in 20 epoch 0:00:27.507089
+['cont_train', 'rand_train'] training epoch 2540 loss 0.358782 accuracy 0.833924
+
+Evaluating cont_train: loss 0.243396 accuracy 0.897372
+Evaluating rand_train: loss 0.420231 accuracy 0.799805
+Evaluating cont_valid: loss 0.499534 accuracy 0.765980
+Evaluating rand_valid: loss 0.605003 accuracy 0.726440
+
+time spent in 20 epoch 0:00:25.262960
+['cont_train', 'rand_train'] training epoch 2560 loss 0.358901 accuracy 0.833843
+
+Evaluating cont_train: loss 0.243367 accuracy 0.897372
+Evaluating rand_train: loss 0.420195 accuracy 0.799744
+Evaluating cont_valid: loss 0.499528 accuracy 0.765862
+Evaluating rand_valid: loss 0.604989 accuracy 0.726562
+
