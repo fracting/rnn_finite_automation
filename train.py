@@ -127,7 +127,9 @@ def train(data_name_list, total_epoch):
             validation("rand_train")
             validation("cont_valid")
             validation("rand_valid")
+            print("saving checkpoint")
             print("")
+            torch.save(model, "10div7.balance.pt")
             sys.stdout.flush()
             t_last_print = datetime.now()
 
