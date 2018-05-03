@@ -29,8 +29,9 @@ dataset_path = "10div7.multiclass.txt"
 dataset, vocab_size, category_size = load_dataset("dataset/"+dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
 EMBEDDING_DIM = 80
 
-load_model = False
+load_model = True
 model_path = "checkpoint/10div7.multiclass.60em.20hidden.train.pt"
+hidden_csv_path = "hidden.csv"
 if load_model:
     print("model_path: " + model_path)
     model = torch.load(model_path)
@@ -55,6 +56,7 @@ def validation(data_name):
 
         validation_loss = 0
         validation_accuracy = 0
+        hcn_list = []
         for i in range(0, round_to_batch, BATCH_SIZE):
             model.zero_grad()
             model.hidden = model.init_hidden()
@@ -72,6 +74,22 @@ def validation(data_name):
             validation_loss = validation_loss + batch_loss.data
             validation_accuracy = validation_accuracy + batch_accuracy
 
+            hn,cn = model.hidden
+            hn = hn.tolist()[0]
+            cn = cn.tolist()[0]
+            hcn = list(zip(hn, cn))
+            hcn_list = hcn_list + hcn
+
+        if load_model:
+            print("print hidden values to csv %s" % hidden_csv_path)
+            hidden_csv = open(hidden_csv_path, "w+")
+            hidden_csv.write(" " + ", v" * len(hn[0]) * 2 + "\n")
+            for h,c in hcn_list:
+                buf = "id" + ", " + str(h)[1:-1] + ", " + str(c)[1: -1] + "\n"
+                hidden_csv.write(buf)
+
+            hidden_csv.close()
+            exit()
         average_loss = validation_loss / batch_count
         average_accuracy = validation_accuracy / batch_count
         print("Evaluating %s: loss %f accuracy %f" % (data_name, average_loss, average_accuracy))
