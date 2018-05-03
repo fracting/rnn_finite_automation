@@ -25,11 +25,17 @@ cont_train_size = 8571
 rand_train_size = 16384
 cont_valid_size = 8571
 rand_valid_size = 16384
-dataset_path = "10div7.balance.txt"
+dataset_path = "10div7.multiclass.txt"
 dataset, vocab_size, category_size = load_dataset("dataset/"+dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
-EMBEDDING_DIM = vocab_size * 2
+EMBEDDING_DIM = 80
 
-model = DFA(RNN_TYPE, EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
+load_model = False
+model_path = "checkpoint/10div7.multiclass.60em.20hidden.train.pt"
+if load_model:
+    print("model_path: " + model_path)
+    model = torch.load(model_path)
+else:
+    model = DFA(RNN_TYPE, EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
 learning_rate = 0.001
 
 loss_function = nn.NLLLoss()
@@ -128,7 +134,7 @@ def train(data_name_list, total_epoch):
             validation("rand_valid")
             print("saving checkpoint")
             print("")
-            torch.save(model, "10div7.balance.pt")
+            torch.save(model, dataset_path + ".pt")
             sys.stdout.flush()
             t_last_print = datetime.now()
 
