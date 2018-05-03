@@ -8,8 +8,8 @@ import sys
 from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
 
-RNN_TYPE = "LSTM"
-HIDDEN_DIM = 20
+RNN_TYPE = "RNN"
+HIDDEN_DIM = 40
 NUM_LAYERS = 1
 BATCH_SIZE = 128
 DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single layer network
@@ -29,8 +29,8 @@ dataset_path = "10div7.multiclass.txt"
 dataset, vocab_size, category_size = load_dataset("dataset/"+dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
 EMBEDDING_DIM = 80
 
-load_model = True
-model_path = "checkpoint/10div7.multiclass.60em.20hidden.train.pt"
+load_model = False
+model_path = "checkpoint/10div7.multiclass.80em.20hidden.train.rnn.allhidden.pt"
 hidden_csv_path = "hidden.csv"
 if load_model:
     print("model_path: " + model_path)
@@ -56,7 +56,7 @@ def validation(data_name):
 
         validation_loss = 0
         validation_accuracy = 0
-        hcn_list = []
+        hidden_dump = ""
         for i in range(0, round_to_batch, BATCH_SIZE):
             model.zero_grad()
             model.hidden = model.init_hidden()
@@ -68,28 +68,39 @@ def validation(data_name):
             seqs_in = seqs_to_tensor(seqs, char_to_ix)
             targets = categories_to_tensor(categories, category_to_ix)
 
-            category_scores = model(seqs_in)
+            category_scores, hiddens = model(seqs_in)
             batch_loss = loss_function(category_scores, targets)
             batch_accuracy = calc_accuracy(category_scores, targets)
             validation_loss = validation_loss + batch_loss.data
             validation_accuracy = validation_accuracy + batch_accuracy
 
-            hn,cn = model.hidden
-            hn = hn.tolist()[0]
-            cn = cn.tolist()[0]
-            hcn = list(zip(hn, cn))
-            hcn_list = hcn_list + hcn
+            if load_model:
+                if model.rnn_type == "LSTM":
+                    cols = len(hiddens[0][0][0]) * 2
+                    for (hs, cs) in hiddens:
+                        hs = hs.tolist()
+                        cs = cs.tolist()
+                        for (h, c) in list(zip(hs, cs)):
+                            line = "id" + ", " + str(h)[1:-1] + ", " + str(c)[1: -1] + "\n"
+                            hidden_dump = hidden_dump + line
+                else:
+                    cols = len(hiddens[0][0])
+                    for hs in hiddens:
+                        hs = hs.tolist()
+                        for h in hs:
+                            line = "id" + ", " + str(h)[1:-1]
+                            hidden_dump = hidden_dump + line
+
+
 
         if load_model:
             print("print hidden values to csv %s" % hidden_csv_path)
             hidden_csv = open(hidden_csv_path, "w+")
-            hidden_csv.write(" " + ", v" * len(hn[0]) * 2 + "\n")
-            for h,c in hcn_list:
-                buf = "id" + ", " + str(h)[1:-1] + ", " + str(c)[1: -1] + "\n"
-                hidden_csv.write(buf)
-
+            hidden_csv.write(" " + ", v" * cols + "\n")
+            hidden_csv.write(hidden_dump)
             hidden_csv.close()
             exit()
+
         average_loss = validation_loss / batch_count
         average_accuracy = validation_accuracy / batch_count
         print("Evaluating %s: loss %f accuracy %f" % (data_name, average_loss, average_accuracy))
@@ -128,7 +139,7 @@ def train(data_name_list, total_epoch):
             seqs_in = seqs_to_tensor(seqs, char_to_ix)
             targets = categories_to_tensor(categories, category_to_ix)
 
-            category_scores = model(seqs_in)
+            category_scores, hiddens = model(seqs_in)
 
             batch_loss = loss_function(category_scores, targets)
             batch_accuracy = calc_accuracy(category_scores, targets)
@@ -158,10 +169,10 @@ def train(data_name_list, total_epoch):
 
 t_begin = datetime.now()
 t_print = None
-validation("cont_train")
 validation("rand_train")
-validation("cont_valid")
+validation("cont_train")
 validation("rand_valid")
+validation("cont_valid")
 print("")
 train(["cont_train","rand_train"], total_epoch1)
 t_end = datetime.now()

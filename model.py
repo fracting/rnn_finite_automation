@@ -25,21 +25,21 @@ class DFA(nn.Module):
 
         self.embeddings = nn.Embedding(vocab_size, embedding_dim)
         if rnn_type == "RNN":
-            rnn = nn.RNN
+            rnnCell = nn.RNNCell
         elif rnn_type == "GRU":
-            rnn = nn.GRU
+            rnnCell = nn.GRUCell
         elif rnn_type == "LSTM":
-            rnn = nn.LSTM
+            rnnCell = nn.LSTMCell
         else:
             raise NotImplementedError("rnn_type not recognized")
-        self.rnn = rnn(embedding_dim, hidden_dim, num_layers, dropout=dropout)
+        self.rnnCell = rnnCell(embedding_dim, hidden_dim)
         self.hidden2category = nn.Linear(hidden_dim, category_size)
 
         self.hidden = self.init_hidden()
 
     def init_hidden(self):
-        h0 = torch.zeros(self.num_layers, self.batch_size, self.hidden_dim)
-        c0 = torch.zeros(self.num_layers, self.batch_size, self.hidden_dim)
+        h0 = torch.zeros(self.batch_size, self.hidden_dim)
+        c0 = torch.zeros(self.batch_size, self.hidden_dim)
         if self.rnn_type == "RNN":
             hidden = h0
         elif self.rnn_type == "GRU":
@@ -54,7 +54,22 @@ class DFA(nn.Module):
     def forward(self, sequences):
         embeds = self.embeddings(sequences)
         # TODO - use pack_padded_sequence()
-        rnn_out, self.hidden = self.rnn(embeds, self.hidden)
-        category_space = self.hidden2category(rnn_out[-1])
+        seq_len = len(embeds)
+        hiddens = []
+        for i in range(seq_len):
+            elem = embeds[i]
+            self.hidden = self.rnnCell(elem, self.hidden)
+            hiddens.append(self.hidden)
+
+        if self.rnn_type == "RNN":
+            hn = self.hidden
+        elif self.rnn_type == "GRU":
+            hn = self.hidden
+        elif self.rnn_type == "LSTM":
+            hn, _ = self.hidden
+        else:
+            raise NotImplementedError("rnn_type not recognized")
+
+        category_space = self.hidden2category(hn)
         category_scores = F.log_softmax(category_space, dim=1)
-        return category_scores
+        return category_scores, hiddens
