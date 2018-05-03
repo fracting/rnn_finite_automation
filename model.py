@@ -25,14 +25,13 @@ class DFA(nn.Module):
 
         self.embeddings = nn.Embedding(vocab_size, embedding_dim)
         if rnn_type == "RNN":
-            rnnCell = nn.RNNCell
+            self.rnnCell = nn.RNNCell(embedding_dim, hidden_dim, nonlinearity='relu')
         elif rnn_type == "GRU":
-            rnnCell = nn.GRUCell
+            self.rnnCell = nn.GRUCell(embedding_dim, hidden_dim)
         elif rnn_type == "LSTM":
-            rnnCell = nn.LSTMCell
+            self.rnnCell = nn.LSTMCell(embedding_dim, hidden_dim)
         else:
             raise NotImplementedError("rnn_type not recognized")
-        self.rnnCell = rnnCell(embedding_dim, hidden_dim)
         self.hidden2category = nn.Linear(hidden_dim, category_size)
 
         self.hidden = self.init_hidden()
