@@ -29,7 +29,7 @@ dataset_path = "10div7.multiclass.txt"
 dataset, vocab_size, category_size = load_dataset("dataset/"+dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
 EMBEDDING_DIM = 80
 
-load_model = False
+load_model = True
 model_path = "checkpoint/10div7.multiclass.80em.20hidden.train.rnn.allhidden.pt"
 hidden_csv_path = "hidden.csv"
 if load_model:
@@ -88,7 +88,7 @@ def validation(data_name):
                     for hs in hiddens:
                         hs = hs.tolist()
                         for h in hs:
-                            line = "id" + ", " + str(h)[1:-1]
+                            line = "id" + ", " + str(h)[1:-1] + "\n"
                             hidden_dump = hidden_dump + line
 
 
