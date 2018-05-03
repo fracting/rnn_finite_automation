@@ -52,8 +52,7 @@ def load_dataset(path, cont_train_size, rand_train_size, cont_valid_size, rand_v
     dataset['cont_valid'] = raw_dataset[-cont_valid_size:]
 
     random_part = raw_dataset[cont_train_size:-cont_valid_size]
-    random_indices = torch.randperm(len(random_part))
-    random_indices = [entry.item() for entry in random_indices]
+    random_indices = torch.randperm(len(random_part)).tolist()
     random_part = [random_part[index] for index in random_indices]
 
     dataset['rand_train'] = random_part[0:rand_train_size]

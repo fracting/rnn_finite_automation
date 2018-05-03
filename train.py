@@ -87,8 +87,7 @@ def train(data_name_list, total_epoch):
         training_size = len(training_set)
         batch_count = training_size // BATCH_SIZE
         round_to_batch = batch_count * BATCH_SIZE
-        permutation = torch.randperm(training_size)[0:round_to_batch]
-        permutation = [entry.item() for entry in permutation]
+        permutation = torch.randperm(training_size)[0:round_to_batch].tolist()
 
         epoch_loss = 0
         epoch_accuracy = 0
