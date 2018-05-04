@@ -9,7 +9,7 @@ from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
 
 RNN_TYPE = "RNN"
-HIDDEN_DIM = 40
+HIDDEN_DIM = 80
 NUM_LAYERS = 1
 BATCH_SIZE = 128
 DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single layer network
@@ -25,13 +25,14 @@ cont_train_size = 8571
 rand_train_size = 16384
 cont_valid_size = 8571
 rand_valid_size = 16384
-dataset_path = "10div7.multiclass.txt"
+dataset_path = "10div7.imbalance.txt"
 dataset, vocab_size, category_size = load_dataset("dataset/"+dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
 EMBEDDING_DIM = 80
 
 load_model = True
-model_path = "checkpoint/10div7.multiclass.80em.20hidden.train.rnn.allhidden.pt"
-hidden_csv_path = "hidden.csv"
+model_name = "10div7.imbalance.80em.80hidden.train.rnn.allhidden"
+model_path = "checkpoint/" + model_name + ".pt"
+hidden_csv_path = model_name + ".csv"
 if load_model:
     print("model_path: " + model_path)
     model = torch.load(model_path)
