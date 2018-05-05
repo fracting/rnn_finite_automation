@@ -38,3 +38,7 @@ create_data(10000, 100000, 10, 7, "multiclass")
 create_data(10000, 100000, 10, 11, "imbalance")
 create_data(10000, 100000, 10, 11, "balance")
 create_data(10000, 100000, 10, 11, "multiclass")
+
+create_data(10000, 100000, 10, 5, "multiclass")
+create_data(10000, 100000, 10, 8, "multiclass")
+create_data(10000, 100000, 10, 16, "multiclass")
