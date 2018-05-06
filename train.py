@@ -59,11 +59,18 @@ def validation(data_name):
         validation_loss = 0
         validation_accuracy = 0
         hidden_dump = ""
+        validation_set.sort(key = lambda x: len(x[0]))
+        skipped_batch = 0
         for i in range(0, round_to_batch, BATCH_SIZE):
             model.zero_grad()
             model.hidden = model.init_hidden()
 
             batch_data = validation_set[i:i+BATCH_SIZE]
+            if len(batch_data[0][0]) != len(batch_data[-1][0]):
+                # give up batch with inconsistent seq len
+                skipped_batch = skipped_batch + 1
+                continue
+
             seqs, categories = list(zip(*batch_data))
             seqs = list(seqs)
             categories = list(categories)
@@ -93,8 +100,6 @@ def validation(data_name):
                             line = "id" + ", " + str(h)[1:-1] + "\n"
                             hidden_dump = hidden_dump + line
 
-
-
         if load_model:
             print("print hidden values to csv %s" % hidden_csv_path)
             hidden_csv = open(hidden_csv_path, "w+")
@@ -103,8 +108,8 @@ def validation(data_name):
             hidden_csv.close()
             exit()
 
-        average_loss = validation_loss / batch_count
-        average_accuracy = validation_accuracy / batch_count
+        average_loss = validation_loss / (batch_count - skipped_batch)
+        average_accuracy = validation_accuracy / (batch_count - skipped_batch)
         print("Evaluating %s: loss %f accuracy %f" % (data_name, average_loss, average_accuracy))
         sys.stdout.flush()
 
@@ -120,24 +125,25 @@ def train(data_name_list, total_epoch):
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     print(optimizer)
 
-    training_set.sort(key = lambda x: len(x))
     for epoch in range(total_epoch):
         training_size = len(training_set)
         batch_count = training_size // BATCH_SIZE
         round_to_batch = batch_count * BATCH_SIZE
         permutation = torch.randperm(training_size)[0:round_to_batch].tolist()
         training_set = [training_set[index] for index in permutation]
-        training_set.sort(key = lambda x: len(x))
+        training_set.sort(key = lambda x: len(x[0]))
 
         epoch_loss = 0
         epoch_accuracy = 0
+        skipped_batch = 0
         for i in range(0, round_to_batch, BATCH_SIZE):
             model.zero_grad()
             model.hidden = model.init_hidden()
 
             batch_data = training_set[i:i+BATCH_SIZE]
-            if len(batch_data[0]) != len(batch_data[-1]):
+            if len(batch_data[0][0]) != len(batch_data[-1][0]):
                 # give up batch with inconsistent seq len
+                skipped_batch = skipped_batch + 1
                 continue
 
             seqs, categories = list(zip(*batch_data))
@@ -155,8 +161,8 @@ def train(data_name_list, total_epoch):
             epoch_accuracy = epoch_accuracy + batch_accuracy
             batch_loss.backward()
             optimizer.step()
-        average_loss = epoch_loss / batch_count
-        average_accuracy = epoch_accuracy / batch_count
+        average_loss = epoch_loss / (batch_count - skipped_batch)
+        average_accuracy = epoch_accuracy / (batch_count - skipped_batch)
 
         if epoch % print_per_epoch == 0:
             t_print = datetime.now()
