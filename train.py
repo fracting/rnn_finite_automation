@@ -9,7 +9,7 @@ from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
 
 RNN_TYPE = "LSTM"
-HIDDEN_DIM = 6
+HIDDEN_DIM = 40
 NUM_LAYERS = 1
 BATCH_SIZE = 128
 DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single layer network
