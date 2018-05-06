@@ -30,7 +30,7 @@ dataset_path = "dataset/" + dataset_name + ".txt"
 dataset, vocab_size, category_size = load_dataset(dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
 EMBEDDING_DIM = 80
 
-load_model = True
+load_model = False
 model_name = dataset_name
 model_path = "checkpoint/" + model_name + ".pt"
 hidden_csv_path = model_name + ".csv"
