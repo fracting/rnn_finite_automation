@@ -120,11 +120,14 @@ def train(data_name_list, total_epoch):
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     print(optimizer)
 
+    training_set.sort(key = lambda x: len(x))
     for epoch in range(total_epoch):
         training_size = len(training_set)
         batch_count = training_size // BATCH_SIZE
         round_to_batch = batch_count * BATCH_SIZE
         permutation = torch.randperm(training_size)[0:round_to_batch].tolist()
+        training_set = [training_set[index] for index in permutation]
+        training_set.sort(key = lambda x: len(x))
 
         epoch_loss = 0
         epoch_accuracy = 0
@@ -132,8 +135,10 @@ def train(data_name_list, total_epoch):
             model.zero_grad()
             model.hidden = model.init_hidden()
 
-            indices = list(permutation[i:i+BATCH_SIZE])
-            batch_data = [training_set[index] for index in indices]
+            batch_data = training_set[i:i+BATCH_SIZE]
+            if len(batch_data[0]) != len(batch_data[-1]):
+                # give up batch with inconsistent seq len
+                continue
 
             seqs, categories = list(zip(*batch_data))
             seqs = list(seqs)
