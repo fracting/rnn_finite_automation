@@ -50,7 +50,7 @@ def calc_accuracy(score_tensors, target):
     accuracy = correct_prediction.sum().item() / len(correct_prediction)
     return accuracy
 
-def validation(data_name):
+def validation(data_name, dump_hidden):
     with torch.no_grad():
         validation_set = dataset[data_name]
         validation_size = len(validation_set)
@@ -84,7 +84,7 @@ def validation(data_name):
             validation_loss = validation_loss + batch_loss.data
             validation_accuracy = validation_accuracy + batch_accuracy
 
-            if load_model:
+            if dump_hidden:
                 if model.rnn_type == "LSTM":
                     cols = len(hiddens[0][0][0]) * 2
                     for (hs, cs) in hiddens:
@@ -101,13 +101,12 @@ def validation(data_name):
                             line = "id" + ", " + str(h)[1:-1] + "\n"
                             hidden_dump = hidden_dump + line
 
-        if load_model:
-            print("print hidden values to csv %s" % hidden_csv_path)
+        if dump_hidden:
+            print("write hidden values to csv %s" % hidden_csv_path)
             hidden_csv = open(hidden_csv_path, "w+")
             hidden_csv.write(" " + ", v" * cols + "\n")
             hidden_csv.write(hidden_dump)
             hidden_csv.close()
-            exit()
 
         average_loss = validation_loss / (batch_count - skipped_batch)
         average_accuracy = validation_accuracy / (batch_count - skipped_batch)
@@ -171,10 +170,10 @@ def train(data_name_list, total_epoch):
                 t_diff_per_print = t_print - t_last_print
                 print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
             print("%s training epoch %d loss %f accuracy %f\n" % (str(data_name_list), epoch, average_loss, average_accuracy))
-            validation("cont_train")
-            validation("rand_train")
-            validation("cont_valid")
-            validation("rand_valid")
+            validation("rand_train", True)
+            validation("cont_train", False)
+            validation("rand_valid", False)
+            validation("cont_valid", False)
             print("saving checkpoint")
             print("")
             torch.save(model, write_model_path)
@@ -183,10 +182,10 @@ def train(data_name_list, total_epoch):
 
 t_begin = datetime.now()
 t_print = None
-validation("rand_train")
-validation("cont_train")
-validation("rand_valid")
-validation("cont_valid")
+validation("rand_train", True)
+validation("cont_train", False)
+validation("rand_valid", False)
+validation("cont_valid", False)
 print("")
 train(["cont_train","rand_train"], total_epoch1)
 t_end = datetime.now()
