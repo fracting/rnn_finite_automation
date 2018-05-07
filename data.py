@@ -19,7 +19,6 @@ def load_raw_data(path):
     for line in file.split("\n"):
         (x,y) = line.split(",")
         xs = list(x)
-        xs.reverse() # haha reverse
         raw_dataset.append((xs, y))
     f.close()
     return raw_dataset
