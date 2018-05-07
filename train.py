@@ -14,21 +14,23 @@ NUM_LAYERS = 1
 BATCH_SIZE = 128
 DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single layer network
 
-print_per_epoch = 20
-print_per_batch = 100
-total_epoch1 = 3000
+print_per_epoch = 1
+update_per_counter = 10
+total_epoch1 = 500
 print("total_epoch1 %d" % total_epoch1)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-cont_train_size = 8571
-rand_train_size = 16384
-cont_valid_size = 8571
-rand_valid_size = 16384
+cont_train_size = 0
+rand_train_size = 0
+cont_valid_size = 100000
+rand_valid_size = 0
 dataset_name = "10div7.multiclass"
 dataset_path = "dataset/" + dataset_name + ".txt"
 dataset, vocab_size, category_size = load_dataset(dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
 EMBEDDING_DIM = 80
+
+dataset["dyna_train"] = []
 
 load_model = False
 model_name = dataset_name
@@ -50,7 +52,7 @@ def calc_accuracy(score_tensors, target):
     accuracy = correct_prediction.sum().item() / len(correct_prediction)
     return accuracy
 
-def validation(data_name, dump_hidden):
+def validation(data_name, dump_hidden, counter):
     with torch.no_grad():
         validation_set = dataset[data_name]
         validation_size = len(validation_set)
@@ -61,7 +63,9 @@ def validation(data_name, dump_hidden):
         validation_accuracy = 0
         hidden_dump = ""
         validation_set.sort(key = lambda x: len(x[0]))
+        validation_set = validation_set[:round_to_batch]
         skipped_batch = 0
+        training_cache = [([], 0)] * round_to_batch
         for i in range(0, round_to_batch, BATCH_SIZE):
             model.zero_grad()
             model.hidden = model.init_hidden()
@@ -80,6 +84,7 @@ def validation(data_name, dump_hidden):
 
             category_scores, hiddens = model(seqs_in)
             batch_loss = loss_function(category_scores, targets)
+            training_cache[i:i+BATCH_SIZE] = list(zip(validation_set[i:i+BATCH_SIZE], batch_loss.tolist()))
             reduced_batch_loss = batch_loss.sum() / BATCH_SIZE
             validation_loss = validation_loss + float(reduced_batch_loss)
 
@@ -113,21 +118,34 @@ def validation(data_name, dump_hidden):
         average_loss = validation_loss / (batch_count - skipped_batch)
         average_accuracy = validation_accuracy / (batch_count - skipped_batch)
         print("Evaluating %s: loss %f accuracy %f" % (data_name, average_loss, average_accuracy))
+        training_cache.sort(reverse = True, key = lambda x: x[1])
+        print(training_cache[:3])
+        if counter % update_per_counter == 0:
+            print("update training set")
+            dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[:1024]))[0])
         sys.stdout.flush()
 
     return average_loss
 
 def train(data_name_list, total_epoch):
 
-    training_set = []
-    for data_name in data_name_list:
-        training_set = training_set + dataset[data_name]
-    print("train %s size %d for %d epoch\n" % (str(data_name_list), len(training_set), total_epoch))
+#    training_set = []
+#    for data_name in data_name_list:
+#        training_set = training_set + dataset[data_name]
+#    print("train %s size %d for %d epoch\n" % (str(data_name_list), len(training_set), total_epoch))
 
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     print(optimizer)
 
     for epoch in range(total_epoch):
+
+        #####
+        training_set = []
+        for data_name in data_name_list:
+            training_set = training_set + dataset[data_name]
+        print("train %s size %d for %d epoch\n" % (str(data_name_list), len(training_set), total_epoch))
+        #####
+
         training_size = len(training_set)
         batch_count = training_size // BATCH_SIZE
         round_to_batch = batch_count * BATCH_SIZE
@@ -174,10 +192,10 @@ def train(data_name_list, total_epoch):
                 t_diff_per_print = t_print - t_last_print
                 print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
             print("%s training epoch %d loss %f accuracy %f\n" % (str(data_name_list), epoch, average_loss, average_accuracy))
-            validation("rand_train", True)
-            validation("cont_train", False)
-            validation("rand_valid", False)
-            validation("cont_valid", False)
+            #validation("rand_train", True)
+            #validation("cont_train", False)
+            #validation("rand_valid", False)
+            validation("cont_valid", False, epoch)
             print("saving checkpoint")
             print("")
             torch.save(model, write_model_path)
@@ -186,12 +204,12 @@ def train(data_name_list, total_epoch):
 
 t_begin = datetime.now()
 t_print = None
-validation("rand_train", True)
-validation("cont_train", False)
-validation("rand_valid", False)
-validation("cont_valid", False)
+#validation("rand_train", True)
+#validation("cont_train", False)
+#validation("rand_valid", False)
+validation("cont_valid", False, 0)
 print("")
-train(["cont_train","rand_train"], total_epoch1)
+train(["dyna_train"], total_epoch1)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
