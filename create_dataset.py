@@ -1,4 +1,7 @@
+import random
 from random import randint
+
+random.seed(0)
 
 def classify(num, divider, class_type):
     if class_type == "imbalance":
@@ -37,4 +40,5 @@ def create_data(start, mid, count, max, base, divider, class_type):
     file.write(output)
     file.close
 
+create_data(0, 100000, 200000, 1000000000, 10, 7, "multiclass")
 create_data(0, 100000, 200000, 1000000000, 10, 16, "multiclass")
