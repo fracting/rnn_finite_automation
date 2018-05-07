@@ -32,11 +32,12 @@ EMBEDDING_DIM = 80
 
 load_model = False
 model_name = dataset_name
-model_path = "checkpoint/" + model_name + ".pt"
+write_model_path = "checkpoint/" + model_name + ".pt"
+read_model_path = write_model_path
 hidden_csv_path = model_name + ".csv"
 if load_model:
-    print("model_path: " + model_path)
-    model = torch.load(model_path)
+    print("read_model_path: " + read_model_path)
+    model = torch.load(read_model_path)
 else:
     model = DFA(RNN_TYPE, EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
 learning_rate = 0.001
@@ -176,7 +177,7 @@ def train(data_name_list, total_epoch):
             validation("rand_valid")
             print("saving checkpoint")
             print("")
-            torch.save(model, dataset_name + ".pt")
+            torch.save(model, write_model_path)
             sys.stdout.flush()
             t_last_print = datetime.now()
 
