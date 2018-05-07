@@ -42,7 +42,7 @@ else:
     model = DFA(RNN_TYPE, EMBEDDING_DIM, HIDDEN_DIM, len(char_to_ix), category_size, NUM_LAYERS, BATCH_SIZE, DROPOUT)
 learning_rate = 0.001
 
-loss_function = nn.NLLLoss()
+loss_function = nn.NLLLoss(reduce = False)
 
 def calc_accuracy(score_tensors, target):
     _, index_tensors = score_tensors.max(dim=1)
@@ -80,8 +80,10 @@ def validation(data_name, dump_hidden):
 
             category_scores, hiddens = model(seqs_in)
             batch_loss = loss_function(category_scores, targets)
+            reduced_batch_loss = batch_loss.sum() / BATCH_SIZE
+            validation_loss = validation_loss + float(reduced_batch_loss)
+
             batch_accuracy = calc_accuracy(category_scores, targets)
-            validation_loss = validation_loss + batch_loss.data
             validation_accuracy = validation_accuracy + batch_accuracy
 
             if dump_hidden:
@@ -155,12 +157,14 @@ def train(data_name_list, total_epoch):
             category_scores, hiddens = model(seqs_in)
 
             batch_loss = loss_function(category_scores, targets)
-            batch_accuracy = calc_accuracy(category_scores, targets)
-
-            epoch_loss = epoch_loss + batch_loss.data
-            epoch_accuracy = epoch_accuracy + batch_accuracy
-            batch_loss.backward()
+            reduced_batch_loss = batch_loss.sum() / BATCH_SIZE
+            epoch_loss = epoch_loss + float(reduced_batch_loss)
+            reduced_batch_loss.backward()
             optimizer.step()
+
+            batch_accuracy = calc_accuracy(category_scores, targets)
+            epoch_accuracy = epoch_accuracy + batch_accuracy
+
         average_loss = epoch_loss / (batch_count - skipped_batch)
         average_accuracy = epoch_accuracy / (batch_count - skipped_batch)
 
