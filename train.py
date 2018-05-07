@@ -65,7 +65,7 @@ def validation(data_name, dump_hidden, counter, training_accuracy):
         validation_set.sort(key = lambda x: len(x[0]))
         validation_set = validation_set[:round_to_batch]
         skipped_batch = 0
-        training_cache = [([], 0)] * round_to_batch
+        training_cache = [([], 100, 0)] * round_to_batch
         for i in range(0, round_to_batch, BATCH_SIZE):
             model.zero_grad()
             model.hidden = model.init_hidden()
@@ -84,7 +84,10 @@ def validation(data_name, dump_hidden, counter, training_accuracy):
 
             category_scores, hiddens = model(seqs_in)
             batch_loss = loss_function(category_scores, targets)
-            training_cache[i:i+BATCH_SIZE] = list(zip(validation_set[i:i+BATCH_SIZE], batch_loss.tolist()))
+            category = torch.exp(category_scores)
+            perplexity = torch.exp(-torch.sum(category * torch.log(category), dim=1)).tolist()
+            #training_cache[i:i+BATCH_SIZE] = list(zip(validation_set[i:i+BATCH_SIZE], batch_loss.tolist()))
+            training_cache[i:i+BATCH_SIZE] = list(zip(validation_set[i:i+BATCH_SIZE], perplexity, batch_loss.tolist()))
             reduced_batch_loss = batch_loss.sum() / BATCH_SIZE
             validation_loss = validation_loss + float(reduced_batch_loss)
 
@@ -118,7 +121,7 @@ def validation(data_name, dump_hidden, counter, training_accuracy):
         average_loss = validation_loss / (batch_count - skipped_batch)
         average_accuracy = validation_accuracy / (batch_count - skipped_batch)
         print("Evaluating %s: loss %f accuracy %f" % (data_name, average_loss, average_accuracy))
-        training_cache.sort(reverse = True, key = lambda x: x[1])
+        training_cache.sort(reverse = False, key = lambda x: x[1])
         print(training_cache[:3])
         #if counter % update_per_counter == 0:
         if training_accuracy > 0.99:
