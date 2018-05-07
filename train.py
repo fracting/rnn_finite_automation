@@ -121,9 +121,9 @@ def validation(data_name, dump_hidden, counter, training_accuracy):
         training_cache.sort(reverse = True, key = lambda x: x[1])
         print(training_cache[:3])
         #if counter % update_per_counter == 0:
-        if training_accuracy > 0.98:
+        if training_accuracy > 0.95:
             print("update training set")
-            dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[:1024]))[0])
+            dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[:512]))[0])
         sys.stdout.flush()
 
     return average_loss
