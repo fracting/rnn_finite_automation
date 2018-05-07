@@ -15,6 +15,8 @@ def classify(num, divider, class_type):
             res = num % divider % 2
     elif class_type == "multiclass":
         res = num % divider
+    elif class_type == "substring":
+        res = int(str(divider) in str(num))
     else:
         raise NotImplementedError("unknown class_type")
 
@@ -42,3 +44,4 @@ def create_data(start, mid, count, max, base, divider, class_type):
 
 create_data(0, 100000, 200000, 1000000000, 10, 7, "multiclass")
 create_data(0, 100000, 200000, 1000000000, 10, 16, "multiclass")
+create_data(0, 100000, 200000, 1000000000, 10, 123, "substring")
