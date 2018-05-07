@@ -22,10 +22,10 @@ print("total_epoch1 %d" % total_epoch1)
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
 cont_train_size = 8192
-rand_train_size = 4096
+rand_train_size = 16384
 cont_valid_size = 100000
-rand_valid_size = 0
-dataset_name = "10div7.imbalance"
+rand_valid_size = 16384
+dataset_name = "10div7.balance"
 dataset_path = "dataset/" + dataset_name + ".txt"
 dataset, vocab_size, category_size = load_dataset(dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
 EMBEDDING_DIM = 80
@@ -121,9 +121,9 @@ def validation(data_name, dump_hidden, counter, training_accuracy):
         training_cache.sort(reverse = True, key = lambda x: x[1])
         print(training_cache[:3])
         #if counter % update_per_counter == 0:
-        if training_accuracy > 0.90:
+        if training_accuracy > 0.99:
             print("update training set")
-            dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[:256]))[0])
+            dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[:512]))[0])
         sys.stdout.flush()
 
     return average_loss
@@ -197,6 +197,7 @@ def train(data_name_list, total_epoch):
             #validation("cont_train", False)
             #validation("rand_valid", False)
             validation("cont_valid", False, epoch, average_accuracy)
+            validation("rand_valid", False, epoch, average_accuracy)
             print("saving checkpoint")
             print("")
             torch.save(model, write_model_path)
@@ -210,7 +211,8 @@ t_print = None
 #validation("rand_valid", False)
 validation("cont_valid", False, 0, 0)
 print("")
-train(["cont_train","dyna_train"], total_epoch1)
+#train(["cont_train","dyna_train"], total_epoch1)
+train(["cont_train","rand_train", "dyna_train"], total_epoch1)
 #train(["cont_train","rand_train"], total_epoch1)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
