@@ -43,5 +43,6 @@ def create_data(start, mid, count, max, base, divider, class_type):
     file.close
 
 create_data(0, 100000, 200000, 1000000000, 10, 7, "multiclass")
+create_data(0, 100000, 200000, 1000000000, 10, 7, "imbalance")
 create_data(0, 100000, 200000, 1000000000, 10, 16, "multiclass")
 create_data(0, 100000, 200000, 1000000000, 10, 123, "substring")
