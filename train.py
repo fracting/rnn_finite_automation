@@ -21,7 +21,7 @@ print("total_epoch1 %d" % total_epoch1)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-cont_train_size = 0
+cont_train_size = 4096
 rand_train_size = 0
 cont_valid_size = 100000
 rand_valid_size = 0
@@ -52,7 +52,7 @@ def calc_accuracy(score_tensors, target):
     accuracy = correct_prediction.sum().item() / len(correct_prediction)
     return accuracy
 
-def validation(data_name, dump_hidden, counter):
+def validation(data_name, dump_hidden, counter, training_accuracy):
     with torch.no_grad():
         validation_set = dataset[data_name]
         validation_size = len(validation_set)
@@ -120,7 +120,8 @@ def validation(data_name, dump_hidden, counter):
         print("Evaluating %s: loss %f accuracy %f" % (data_name, average_loss, average_accuracy))
         training_cache.sort(reverse = True, key = lambda x: x[1])
         print(training_cache[:3])
-        if counter % update_per_counter == 0:
+        #if counter % update_per_counter == 0:
+        if training_accuracy > 0.99:
             print("update training set")
             dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[:1024]))[0])
         sys.stdout.flush()
@@ -195,7 +196,7 @@ def train(data_name_list, total_epoch):
             #validation("rand_train", True)
             #validation("cont_train", False)
             #validation("rand_valid", False)
-            validation("cont_valid", False, epoch)
+            validation("cont_valid", False, epoch, average_accuracy)
             print("saving checkpoint")
             print("")
             torch.save(model, write_model_path)
@@ -207,9 +208,9 @@ t_print = None
 #validation("rand_train", True)
 #validation("cont_train", False)
 #validation("rand_valid", False)
-validation("cont_valid", False, 0)
+validation("cont_valid", False, 0, 0)
 print("")
-train(["dyna_train"], total_epoch1)
+train(["cont_train","dyna_train"], total_epoch1)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
