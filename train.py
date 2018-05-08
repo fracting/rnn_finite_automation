@@ -123,14 +123,12 @@ def validation(data_name, dump_hidden, update_dataset):
         average_loss = validation_loss / (batch_count - skipped_batch)
         average_accuracy = validation_accuracy / (batch_count - skipped_batch)
         print("Evaluating %s: loss %f accuracy %f" % (data_name, average_loss, average_accuracy))
-        #training_cache.sort(reverse = False, key = lambda x: x[1])
-        random.shuffle(training_cache)
+        training_cache.sort(reverse = False, key = lambda x: x[3])
         print(*training_cache[-3:], sep="\n")
         #if counter % update_per_counter == 0:
         if update_dataset:
             print("update training set")
-            dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[1024:1024+64]))[0])
-            dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[-512:]))[0])
+            dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[-512-64:]))[0])
         sys.stdout.flush()
 
     return average_loss
