@@ -8,6 +8,7 @@ import random
 
 from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
+from util import semantics_loss_fn
 
 RNN_TYPE = "RNN"
 HIDDEN_DIM = 80
@@ -87,9 +88,9 @@ def validation(data_name, dump_hidden, update_dataset):
             batch_loss = loss_function(category_scores, targets)
             category = torch.exp(category_scores)
             perplexity = torch.exp(-torch.sum(category * torch.log(category), dim=1)).tolist()
-            semantics_loss_2d = -torch.log(torch.sum(category*category, dim=1))
+            semantics_loss = semantics_loss_fn(category, dim=1)
             ##training_cache[i:i+BATCH_SIZE] = list(zip(validation_set[i:i+BATCH_SIZE], batch_loss.tolist()))
-            training_cache = training_cache + list(zip(validation_set[i:i+BATCH_SIZE], semantics_loss_2d.tolist(), perplexity, batch_loss.tolist()))
+            training_cache = training_cache + list(zip(validation_set[i:i+BATCH_SIZE], semantics_loss.tolist(), perplexity, batch_loss.tolist()))
             reduced_batch_loss = batch_loss.sum() / BATCH_SIZE
             validation_loss = validation_loss + float(reduced_batch_loss)
 
