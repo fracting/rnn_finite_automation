@@ -22,6 +22,7 @@ class DFA(nn.Module):
         self.num_layers = num_layers
         self.batch_size = batch_size
         self.hidden_dim = hidden_dim
+        self.embedding_dim = embedding_dim
 
         self.embeddings = nn.Embedding(vocab_size, embedding_dim)
         if rnn_type == "RNN":
@@ -51,13 +52,10 @@ class DFA(nn.Module):
         return hidden
 
     def forward(self, sequences):
-        embeds = self.embeddings(sequences)
         # TODO - use pack_padded_sequence()
-        seq_len = len(embeds)
         hiddens = []
-        for i in range(seq_len):
-            elem = embeds[i]
-            self.hidden = self.rnnCell(elem, self.hidden)
+        for batch_elems_onehot in sequences:
+            self.hidden = self.rnnCell(batch_elems_onehot, self.hidden)
             hiddens.append(self.hidden)
 
         if self.rnn_type == "RNN":

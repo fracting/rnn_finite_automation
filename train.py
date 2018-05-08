@@ -19,7 +19,7 @@ DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single l
 
 print_per_epoch = 1
 update_per_counter = 10
-total_epoch1 = 500
+total_epoch1 = 200
 print("total_epoch1 %d" % total_epoch1)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
@@ -31,7 +31,7 @@ rand_valid_size = 512
 dataset_name = "10div7.balance"
 dataset_path = "dataset/" + dataset_name + ".txt"
 dataset, vocab_size, category_size = load_dataset(dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
-EMBEDDING_DIM = 80
+EMBEDDING_DIM = vocab_size
 
 dataset["dyna_train"] = []
 
@@ -82,7 +82,7 @@ def validation(data_name, dump_hidden, update_dataset):
             seqs, categories = list(zip(*batch_data))
             seqs = list(seqs)
             categories = list(categories)
-            seqs_in = seqs_to_tensor(seqs, char_to_ix)
+            seqs_in = seqs_to_tensor(seqs, char_to_ix, EMBEDDING_DIM)
             targets = categories_to_tensor(categories, category_to_ix)
 
             category_scores, hiddens = model(seqs_in)
@@ -94,14 +94,18 @@ def validation(data_name, dump_hidden, update_dataset):
                 #training_cache = training_cache + list(zip(validation_set[i:i+BATCH_SIZE], semantics_loss.tolist(), perplexity, batch_loss.tolist()))
                 new_seqs_in = copy.deepcopy(seqs_in)
                 new_seqs_in.requires_grad = True
-                # TODO input_optimizer = 
-                # TODO input_optimizer.zero_grad()
-                new_category_scores, _ = model(new_seqs_in)
-                new_category = torch.exp(new_category_scores)
-                out_semantics_loss = semantics_loss_fn(new_category, dim=1)
-                print("out_semantics_loss", out_semantics_loss)
-                # TODO out_semantics_loss.backward()
-                # TODO input_optimizer.step()
+                input_optimizer = optim.Adam([new_seqs_in], lr=learning_rate)
+                for i in range(5):
+                    input_optimizer.zero_grad()
+                    print("new_seqs_in", new_seqs_in)
+                    new_category_scores, _ = model(new_seqs_in)
+                    new_category = torch.exp(new_category_scores)
+                    out_semantics_loss = semantics_loss_fn(new_category, dim=1)
+                    print("out_semantics_loss", out_semantics_loss)
+                    negative_out_semantics_loss = - out_semantics_loss
+                    print("negative_out_semantics_loss", negative_out_semantics_loss)
+                    #negative_out_semantics_loss.backward()
+                    #input_optimizer.step()
                 # TODO validate on dyna_train, self growing
                 #haha
 
@@ -191,7 +195,7 @@ def train(data_name_list, total_epoch):
             seqs, categories = list(zip(*batch_data))
             seqs = list(seqs)
             categories = list(categories)
-            seqs_in = seqs_to_tensor(seqs, char_to_ix)
+            seqs_in = seqs_to_tensor(seqs, char_to_ix, EMBEDDING_DIM)
             targets = categories_to_tensor(categories, category_to_ix)
 
             category_scores, hiddens = model(seqs_in)

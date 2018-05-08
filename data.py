@@ -1,11 +1,20 @@
 import torch
 
-def seqs_to_tensor(seqs, to_ix):
+def onehot(x, embedding_dim):
+    x_onehot = torch.zeros([d for d in x.shape] + [embedding_dim])
+    x = x.view([d for d in x.shape] + [1])
+    x_onehot.scatter_(1, x, 1)
+    return x_onehot
+
+def seqs_to_tensor(seqs, to_ix, embedding_dim):
     # TODO: padding
     idxs = [[to_ix[w] for w in seq] for seq in seqs]
     # transpose to shape(len, batch_size)
     idxs_tensor = torch.tensor(idxs, dtype=torch.long).transpose(0,1)
-    return idxs_tensor
+    onehots = []
+    for batch_elems in idxs_tensor:
+        onehots.append(onehot(batch_elems, embedding_dim))
+    return torch.stack(onehots)
 
 def categories_to_tensor(categories, to_ix):
     idxs = [to_ix[w] for w in categories]
