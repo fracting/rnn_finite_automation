@@ -5,6 +5,7 @@ import numpy as np
 from datetime import datetime
 import sys
 import random
+import copy
 
 from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
@@ -23,10 +24,10 @@ print("total_epoch1 %d" % total_epoch1)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-cont_train_size = 8192
-rand_train_size = 16384
-cont_valid_size = 100000
-rand_valid_size = 16384
+cont_train_size = 512
+rand_train_size = 512
+cont_valid_size = 512
+rand_valid_size = 512
 dataset_name = "10div7.balance"
 dataset_path = "dataset/" + dataset_name + ".txt"
 dataset, vocab_size, category_size = load_dataset(dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
@@ -89,8 +90,21 @@ def validation(data_name, dump_hidden, update_dataset):
             category = torch.exp(category_scores)
             perplexity = torch.exp(-torch.sum(category * torch.log(category), dim=1)).tolist()
             semantics_loss = semantics_loss_fn(category, dim=1)
-            ##training_cache[i:i+BATCH_SIZE] = list(zip(validation_set[i:i+BATCH_SIZE], batch_loss.tolist()))
-            training_cache = training_cache + list(zip(validation_set[i:i+BATCH_SIZE], semantics_loss.tolist(), perplexity, batch_loss.tolist()))
+            if update_dataset:
+                #training_cache = training_cache + list(zip(validation_set[i:i+BATCH_SIZE], semantics_loss.tolist(), perplexity, batch_loss.tolist()))
+                new_seqs_in = copy.deepcopy(seqs_in)
+                new_seqs_in.requires_grad = True
+                # TODO input_optimizer = 
+                # TODO input_optimizer.zero_grad()
+                new_category_scores, _ = model(new_seqs_in)
+                new_category = torch.exp(new_category_scores)
+                out_semantics_loss = semantics_loss_fn(new_category, dim=1)
+                print("out_semantics_loss", out_semantics_loss)
+                # TODO out_semantics_loss.backward()
+                # TODO input_optimizer.step()
+                # TODO validate on dyna_train, self growing
+                #haha
+
             reduced_batch_loss = batch_loss.sum() / BATCH_SIZE
             validation_loss = validation_loss + float(reduced_batch_loss)
 
@@ -128,8 +142,9 @@ def validation(data_name, dump_hidden, update_dataset):
         print(*training_cache[-3:], sep="\n")
         #if counter % update_per_counter == 0:
         if update_dataset:
-            print("update training set")
-            dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[-512-64:]))[0])
+            None
+            #print("update training set")
+            #dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[-512-64:]))[0])
         sys.stdout.flush()
 
     return average_loss
@@ -218,7 +233,7 @@ t_print = None
 validation("cont_valid", False, True)
 print("")
 #train(["cont_train","dyna_train"], total_epoch1)
-train(["cont_train","rand_train", "dyna_train"], total_epoch1)
+train(["rand_train", "dyna_train"], total_epoch1)
 #train(["cont_train","rand_train"], total_epoch1)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
