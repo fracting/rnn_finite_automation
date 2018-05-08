@@ -4,6 +4,7 @@ import torch.optim as optim
 import numpy as np
 from datetime import datetime
 import sys
+import random
 
 from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
@@ -122,8 +123,8 @@ def validation(data_name, dump_hidden, update_dataset):
         average_loss = validation_loss / (batch_count - skipped_batch)
         average_accuracy = validation_accuracy / (batch_count - skipped_batch)
         print("Evaluating %s: loss %f accuracy %f" % (data_name, average_loss, average_accuracy))
-        training_cache.sort(reverse = False, key = lambda x: x[1])
-        #print(*training_cache[1024:1024+3], sep="\n")
+        #training_cache.sort(reverse = False, key = lambda x: x[1])
+        random.shuffle(training_cache)
         print(*training_cache[-3:], sep="\n")
         #if counter % update_per_counter == 0:
         if update_dataset:
