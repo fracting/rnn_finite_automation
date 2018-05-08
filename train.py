@@ -122,7 +122,7 @@ def validation(data_name, dump_hidden, update_dataset):
         average_loss = validation_loss / (batch_count - skipped_batch)
         average_accuracy = validation_accuracy / (batch_count - skipped_batch)
         print("Evaluating %s: loss %f accuracy %f" % (data_name, average_loss, average_accuracy))
-        training_cache.sort(reverse = False, key = lambda x: x[2])
+        training_cache.sort(reverse = False, key = lambda x: x[1])
         #print(*training_cache[1024:1024+3], sep="\n")
         print(*training_cache[-3:], sep="\n")
         #if counter % update_per_counter == 0:
