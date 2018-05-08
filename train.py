@@ -52,7 +52,7 @@ def calc_accuracy(score_tensors, target):
     accuracy = correct_prediction.sum().item() / len(correct_prediction)
     return accuracy
 
-def validation(data_name, dump_hidden, counter, training_accuracy):
+def validation(data_name, dump_hidden, update_dataset):
     with torch.no_grad():
         validation_set = dataset[data_name]
         validation_size = len(validation_set)
@@ -65,7 +65,7 @@ def validation(data_name, dump_hidden, counter, training_accuracy):
         validation_set.sort(key = lambda x: len(x[0]))
         validation_set = validation_set[:round_to_batch]
         skipped_batch = 0
-        training_cache = [([], 100, 0)] * round_to_batch
+        training_cache = []
         for i in range(0, round_to_batch, BATCH_SIZE):
             model.zero_grad()
             model.hidden = model.init_hidden()
@@ -86,8 +86,9 @@ def validation(data_name, dump_hidden, counter, training_accuracy):
             batch_loss = loss_function(category_scores, targets)
             category = torch.exp(category_scores)
             perplexity = torch.exp(-torch.sum(category * torch.log(category), dim=1)).tolist()
-            #training_cache[i:i+BATCH_SIZE] = list(zip(validation_set[i:i+BATCH_SIZE], batch_loss.tolist()))
-            training_cache[i:i+BATCH_SIZE] = list(zip(validation_set[i:i+BATCH_SIZE], perplexity, batch_loss.tolist()))
+            semantics_loss_2d = -torch.log(torch.sum(category*category, dim=1))
+            ##training_cache[i:i+BATCH_SIZE] = list(zip(validation_set[i:i+BATCH_SIZE], batch_loss.tolist()))
+            training_cache = training_cache + list(zip(validation_set[i:i+BATCH_SIZE], semantics_loss_2d.tolist(), perplexity, batch_loss.tolist()))
             reduced_batch_loss = batch_loss.sum() / BATCH_SIZE
             validation_loss = validation_loss + float(reduced_batch_loss)
 
@@ -122,11 +123,13 @@ def validation(data_name, dump_hidden, counter, training_accuracy):
         average_accuracy = validation_accuracy / (batch_count - skipped_batch)
         print("Evaluating %s: loss %f accuracy %f" % (data_name, average_loss, average_accuracy))
         training_cache.sort(reverse = False, key = lambda x: x[1])
-        print(training_cache[:3])
+        #print(*training_cache[1024:1024+3], sep="\n")
+        print(*training_cache[-3:], sep="\n")
         #if counter % update_per_counter == 0:
-        if training_accuracy > 0.99:
+        if update_dataset:
             print("update training set")
-            dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[:512]))[0])
+            dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[1024:1024+64]))[0])
+            dataset["dyna_train"] = dataset["dyna_train"] + list(list(zip(*training_cache[-512:]))[0])
         sys.stdout.flush()
 
     return average_loss
@@ -199,8 +202,8 @@ def train(data_name_list, total_epoch):
             #validation("rand_train", True)
             #validation("cont_train", False)
             #validation("rand_valid", False)
-            validation("cont_valid", False, epoch, average_accuracy)
-            validation("rand_valid", False, epoch, average_accuracy)
+            validation("cont_valid", False, average_accuracy > 0.99)
+            validation("rand_valid", False, False)
             print("saving checkpoint")
             print("")
             torch.save(model, write_model_path)
@@ -212,7 +215,7 @@ t_print = None
 #validation("rand_train", True)
 #validation("cont_train", False)
 #validation("rand_valid", False)
-validation("cont_valid", False, 0, 0)
+validation("cont_valid", False, True)
 print("")
 #train(["cont_train","dyna_train"], total_epoch1)
 train(["cont_train","rand_train", "dyna_train"], total_epoch1)
