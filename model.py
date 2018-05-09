@@ -35,8 +35,6 @@ class DFA(nn.Module):
             raise NotImplementedError("rnn_type not recognized")
         self.hidden2category = nn.Linear(hidden_dim, category_size)
 
-        self.hidden = self.init_hidden()
-
     def init_hidden(self):
         h0 = torch.zeros(self.batch_size, self.hidden_dim)
         c0 = torch.zeros(self.batch_size, self.hidden_dim)
@@ -54,16 +52,17 @@ class DFA(nn.Module):
     def forward(self, sequences):
         # TODO - use pack_padded_sequence()
         hiddens = []
+        hidden = self.init_hidden()
         for batch_elems_onehot in sequences:
-            self.hidden = self.rnnCell(batch_elems_onehot, self.hidden)
-            hiddens.append(self.hidden)
+            hidden = self.rnnCell(batch_elems_onehot, hidden)
+            hiddens.append(hidden)
 
         if self.rnn_type == "RNN":
-            hn = self.hidden
+            hn = hidden
         elif self.rnn_type == "GRU":
-            hn = self.hidden
+            hn = hidden
         elif self.rnn_type == "LSTM":
-            hn, _ = self.hidden
+            hn, _ = hidden
         else:
             raise NotImplementedError("rnn_type not recognized")
 
