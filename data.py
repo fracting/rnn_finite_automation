@@ -1,20 +1,25 @@
 import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
 
-def onehot(x, embedding_dim):
-    x_onehot = torch.zeros([d for d in x.shape] + [embedding_dim])
+def onehot(x, vocab_size):
+    x_onehot = torch.zeros([d for d in x.shape] + [vocab_size])
     x = x.view([d for d in x.shape] + [1])
     x_onehot.scatter_(1, x, 1)
     return x_onehot
 
-def seqs_to_tensor(seqs, to_ix, embedding_dim):
+def seqs_to_tensor(seqs, to_ix, vocab_size, embedding_dim, embedding_model):
     # TODO: padding
     idxs = [[to_ix[w] for w in seq] for seq in seqs]
     # transpose to shape(len, batch_size)
     idxs_tensor = torch.tensor(idxs, dtype=torch.long).transpose(0,1)
-    onehots = []
+    embeddings_seq = []
     for batch_elems in idxs_tensor:
-        onehots.append(onehot(batch_elems, embedding_dim))
-    return torch.stack(onehots)
+        batch_elems_onehot = onehot(batch_elems, vocab_size)
+        _, embeddings = embedding_model(batch_elems_onehot)
+        embeddings_seq.append(embeddings)
+    return torch.stack(embeddings_seq)
 
 def categories_to_tensor(categories, to_ix):
     idxs = [to_ix[w] for w in categories]
@@ -77,7 +82,47 @@ def load_dataset(path, cont_train_size, rand_train_size, cont_valid_size, rand_v
     seqs = list(seqs)
     vocabs = [vocab for seq in seqs for vocab in seq]
     vocab_size = len(set(vocabs))
+
     return dataset, vocab_size, category_size
 
 char_to_ix = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9}
 category_to_ix = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9, "10": 10, "11": 11, "12": 12, "13": 13, "14": 14, "15": 15}
+
+class embed(nn.Module):
+
+    def __init__(self, vocab_size, embedding_dim, batch_size):
+
+        super(embed, self).__init__()
+        self.vocab_size = vocab_size
+        self.embedding_dim = embedding_dim
+        self.batch_size = batch_size
+        self.input2embedding = nn.Linear(vocab_size, embedding_dim)
+        self.embedding2output = nn.Linear(embedding_dim, vocab_size)
+
+    def forward(self, input):
+
+        embedding = self.input2embedding(input)
+        embedding = F.relu(embedding)
+        output = self.embedding2output(embedding)
+        output = F.log_softmax(output, dim=1)
+    
+        return output, embedding
+
+def train_embedding(vocab_size, embedding_dim, batch_size):
+    input = torch.randint(0, batch_size, (batch_size,)).long()
+    input = input % vocab_size
+    input_onehot = onehot(input, vocab_size)
+
+    embedding_model = embed(vocab_size, embedding_dim, batch_size)
+    loss_function = nn.NLLLoss()
+    learning_rate = 0.1
+
+    for epoch in range(0, 5):
+        optimizer = optim.Adam(embedding_model.parameters(), lr=learning_rate)
+        embedding_model.zero_grad()
+        output, embedding = embedding_model(input_onehot)
+        loss = loss_function(output, input)
+        loss.backward()
+        optimizer.step()
+
+    return embedding_model

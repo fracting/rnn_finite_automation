@@ -8,30 +8,36 @@ import random
 import copy
 
 from model import DFA
-from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset
+from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset, train_embedding
 from util import semantics_loss_fn
 
 RNN_TYPE = "RNN"
 HIDDEN_DIM = 80
 NUM_LAYERS = 1
 BATCH_SIZE = 128
+EMBEDDING_DIM = 80
 DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single layer network
 
-print_per_epoch = 1
+print_per_epoch = 10
 update_per_counter = 10
-total_epoch1 = 200
+total_epoch1 = 2000
 print("total_epoch1 %d" % total_epoch1)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-cont_train_size = 512
-rand_train_size = 512
-cont_valid_size = 512
-rand_valid_size = 512
+cont_train_size = 8192
+rand_train_size = 16384
+cont_valid_size = 8192
+rand_valid_size = 16384
 dataset_name = "10div7.balance"
 dataset_path = "dataset/" + dataset_name + ".txt"
 dataset, vocab_size, category_size = load_dataset(dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
-EMBEDDING_DIM = vocab_size
+print("prepare embedding")
+
+
+embedding_model = train_embedding(vocab_size, EMBEDDING_DIM, BATCH_SIZE)
+
+
 
 dataset["dyna_train"] = []
 
@@ -82,7 +88,7 @@ def validation(data_name, dump_hidden, update_dataset):
             seqs, categories = list(zip(*batch_data))
             seqs = list(seqs)
             categories = list(categories)
-            seqs_in = seqs_to_tensor(seqs, char_to_ix, EMBEDDING_DIM)
+            seqs_in = seqs_to_tensor(seqs, char_to_ix, vocab_size, EMBEDDING_DIM, embedding_model)
             targets = categories_to_tensor(categories, category_to_ix)
 
             category_scores, hiddens = model(seqs_in)
@@ -97,13 +103,13 @@ def validation(data_name, dump_hidden, update_dataset):
                 input_optimizer = optim.Adam([new_seqs_in], lr=learning_rate)
                 for i in range(5):
                     input_optimizer.zero_grad()
-                    print("new_seqs_in", new_seqs_in)
+                    #print("new_seqs_in", new_seqs_in)
                     new_category_scores, _ = model(new_seqs_in)
                     new_category = torch.exp(new_category_scores)
                     out_semantics_loss = semantics_loss_fn(new_category, dim=1)
-                    print("out_semantics_loss", out_semantics_loss)
+                    #print("out_semantics_loss", out_semantics_loss)
                     negative_out_semantics_loss = - out_semantics_loss
-                    print("negative_out_semantics_loss", negative_out_semantics_loss)
+                    #print("negative_out_semantics_loss", negative_out_semantics_loss)
                     #negative_out_semantics_loss.backward()
                     #input_optimizer.step()
                 # TODO validate on dyna_train, self growing
@@ -195,7 +201,7 @@ def train(data_name_list, total_epoch):
             seqs, categories = list(zip(*batch_data))
             seqs = list(seqs)
             categories = list(categories)
-            seqs_in = seqs_to_tensor(seqs, char_to_ix, EMBEDDING_DIM)
+            seqs_in = seqs_to_tensor(seqs, char_to_ix, vocab_size, EMBEDDING_DIM, embedding_model)
             targets = categories_to_tensor(categories, category_to_ix)
 
             category_scores, hiddens = model(seqs_in)
@@ -231,14 +237,11 @@ def train(data_name_list, total_epoch):
 
 t_begin = datetime.now()
 t_print = None
-#validation("rand_train", True)
-#validation("cont_train", False)
-#validation("rand_valid", False)
-validation("cont_valid", False, True)
+validation("cont_valid", False, False)
 print("")
 #train(["cont_train","dyna_train"], total_epoch1)
-train(["rand_train", "dyna_train"], total_epoch1)
-#train(["cont_train","rand_train"], total_epoch1)
+#train(["rand_train", "dyna_train"], total_epoch1)
+train(["cont_train","rand_train"], total_epoch1)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))

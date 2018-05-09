@@ -35,13 +35,14 @@ def train_embedding(vocab_size, embedding_dim, batch_size):
     input = input % vocab_size
     input_onehot = onehot(input, vocab_size)
 
+    embedding_model = embed(vocab_size, embedding_dim, batch_size)
+
     for epoch in range(0, 5):
         optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-        model.zero_grad()
-        output, embedding = model(input_onehot)
+        embedding_model.zero_grad()
+        output, embedding = embedding_model(input_onehot)
         loss = loss_function(output, input)
         loss.backward()
         optimizer.step()
 
-model = embed(vocab_size, embedding_dim, batch_size)
-train_embedding(vocab_size, embedding_dim, batch_size)
+    return embedding_model
