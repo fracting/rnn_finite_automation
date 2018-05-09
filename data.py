@@ -14,12 +14,14 @@ def seqs_to_tensor(seqs, to_ix, vocab_size, embedding_dim, embedding_model):
     idxs = [[to_ix[w] for w in seq] for seq in seqs]
     # transpose to shape(len, batch_size)
     idxs_tensor = torch.tensor(idxs, dtype=torch.long).transpose(0,1)
-    embeddings_seq = []
-    for batch_elems in idxs_tensor:
-        batch_elems_onehot = onehot(batch_elems, vocab_size)
-        _, embeddings = embedding_model(batch_elems_onehot)
-        embeddings_seq.append(embeddings)
-    return torch.stack(embeddings_seq)
+    embedding_seqs = []
+    onehot_seqs = []
+    for elems in idxs_tensor:
+        onehot_elems = onehot(elems, vocab_size)
+        _, embedding_elems = embedding_model(onehot_elems)
+        embedding_seqs.append(embedding_elems)
+        onehot_seqs.append(onehot_elems)
+    return torch.stack(onehot_seqs), torch.stack(embedding_seqs)
 
 def categories_to_tensor(categories, to_ix):
     idxs = [to_ix[w] for w in categories]
@@ -109,10 +111,6 @@ class embed(nn.Module):
         return output, embedding
 
 def train_embedding(vocab_size, embedding_dim, batch_size):
-    input = torch.randint(0, batch_size, (batch_size,)).long()
-    input = input % vocab_size
-    input_onehot = onehot(input, vocab_size)
-
     embedding_model = embed(vocab_size, embedding_dim, batch_size)
     loss_function = nn.NLLLoss()
     learning_rate = 0.05
@@ -120,6 +118,11 @@ def train_embedding(vocab_size, embedding_dim, batch_size):
     for epoch in range(0, 100):
         optimizer = optim.Adam(embedding_model.parameters(), lr=learning_rate)
         embedding_model.zero_grad()
+
+        input = torch.randint(0, batch_size * vocab_size, (batch_size,)).long()
+        input = input % vocab_size
+        input_onehot = onehot(input, vocab_size)
+
         output, embedding = embedding_model(input_onehot)
         loss = loss_function(output, input)
         loss.backward()
