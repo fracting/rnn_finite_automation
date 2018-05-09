@@ -15,7 +15,7 @@ RNN_TYPE = "RNN"
 HIDDEN_DIM = 80
 NUM_LAYERS = 1
 BATCH_SIZE = 128
-EMBEDDING_DIM = 80
+EMBEDDING_DIM = 20
 DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single layer network
 
 print_per_epoch = 10

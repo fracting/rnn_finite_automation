@@ -102,7 +102,7 @@ class embed(nn.Module):
     def forward(self, input):
 
         embedding = self.input2embedding(input)
-        embedding = F.relu(embedding)
+        embedding = F.tanh(embedding)
         output = self.embedding2output(embedding)
         output = F.log_softmax(output, dim=1)
     
@@ -115,14 +115,16 @@ def train_embedding(vocab_size, embedding_dim, batch_size):
 
     embedding_model = embed(vocab_size, embedding_dim, batch_size)
     loss_function = nn.NLLLoss()
-    learning_rate = 0.1
+    learning_rate = 0.05
 
-    for epoch in range(0, 5):
+    for epoch in range(0, 100):
         optimizer = optim.Adam(embedding_model.parameters(), lr=learning_rate)
         embedding_model.zero_grad()
         output, embedding = embedding_model(input_onehot)
         loss = loss_function(output, input)
         loss.backward()
         optimizer.step()
+
+    print("final embedding loss: ", loss)
 
     return embedding_model
