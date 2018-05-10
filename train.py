@@ -22,16 +22,16 @@ DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single l
 
 print_per_epoch = 10
 update_per_counter = 10
-total_epoch1 = 2000
+total_epoch1 = 3000
 print("total_epoch1 %d" % total_epoch1)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-cont_train_size = 512
-rand_train_size = 512
-cont_valid_size = 512
-rand_valid_size = 512
-class_type = "balance"
+cont_train_size = 256
+rand_train_size = 0
+cont_valid_size = 2048
+rand_valid_size = 2048
+class_type = "multiclass"
 divider = 7
 dataset_name = "10div" + str(divider) + "." + class_type
 dataset_path = "dataset/" + dataset_name + ".txt"
@@ -66,7 +66,7 @@ def generate_new_input(old_input, targets):
     onehot_seqs = copy.deepcopy(old_input)
     onehot_seqs.requires_grad_()
 
-    for i in range(15):
+    for i in range(10):
         input_optimizer = optim.Adam([onehot_seqs], lr=learning_rate * 100)
         input_optimizer.zero_grad()
 
@@ -81,30 +81,25 @@ def generate_new_input(old_input, targets):
         batch_loss = loss_function(category_scores, targets)
         reduced_batch_loss = batch_loss.sum() / BATCH_SIZE
         negative_reduced_batch_loss = - reduced_batch_loss
-        print("negative_reduced_batch_loss:\n", negative_reduced_batch_loss)
 
         in_semantics_loss = torch.sum(semantics_loss_fn(onehot_seqs, dim=2))
         combined_loss = negative_reduced_batch_loss + in_semantics_loss / 1000
-        print("combined_loss:\n", combined_loss)
         combined_loss.backward()
         input_optimizer.step()
         # Hack: using .data to  workaround ValueError("can't optimize a non-leaf Tensor")
         onehot_seqs = torch.clamp(onehot_seqs, 1e-7, 1 - 1e-7).data.requires_grad_()
 
+    print("negative_reduced_batch_loss:\n", negative_reduced_batch_loss)
+    print("combined_loss:\n", combined_loss)
     onehot_seqs_argmax = torch.argmax(onehot_seqs, dim=2)
     seq_batches = onehot_seqs_argmax.transpose(0,1).tolist()
     seq_batches_list = [[str(x) for x in seq] for seq in seq_batches]
     seq_batches_int = [int("".join(seq)) for seq in seq_batches_list]
     new_targets = [str(classify(input, divider, class_type)) for input in seq_batches_int]
-    print("argmax onehot_seqs\n", torch.argmax(onehot_seqs, dim=2))
     print("seq_batches_int[:5]", *seq_batches_int[:5], sep="\n")
     new_dataset = list(zip(seq_batches_list, new_targets))
     print("new_dataset[:5]", *new_dataset[:5], sep="\n")
-    dataset["dyna_train"] = dataset["dyna_train"] + new_dataset
-
-    # TODO train on dyna_train, self growing
-    haha
-
+    return new_dataset
 
 def validation(data_name, dump_hidden, update_dataset):
     with torch.no_grad():
@@ -195,13 +190,13 @@ def train(data_name_list, total_epoch):
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     print(optimizer)
 
+    last_average_accuracy = 0
     for epoch in range(total_epoch):
 
         #####
         training_set = []
         for data_name in data_name_list:
             training_set = training_set + dataset[data_name]
-        print("train %s size %d for %d epoch\n" % (str(data_name_list), len(training_set), total_epoch))
         #####
 
         training_size = len(training_set)
@@ -214,6 +209,7 @@ def train(data_name_list, total_epoch):
         epoch_loss = 0
         epoch_accuracy = 0
         skipped_batch = 0
+        dataset["tmp"] = []
         for i in range(0, round_to_batch, BATCH_SIZE):
             model.zero_grad()
 
@@ -239,23 +235,29 @@ def train(data_name_list, total_epoch):
 
             batch_accuracy = calc_accuracy(category_scores, targets)
             epoch_accuracy = epoch_accuracy + batch_accuracy
+            size = len(training_set)
+            if last_average_accuracy > 0.999 and size < 8192:
+                print("batch_accuracy", batch_accuracy, "i", i)
+                dataset["tmp"] = dataset["tmp"] + generate_new_input(onehot_seqs, targets)
 
         average_loss = epoch_loss / (batch_count - skipped_batch)
         average_accuracy = epoch_accuracy / (batch_count - skipped_batch)
+        last_average_accuracy = average_accuracy
 
-        if average_accuracy > 0.95:
-            generate_new_input(onehot_seqs, targets)
+        dataset["dyna_train"] = dataset["dyna_train"] + dataset["tmp"]
+
 
         if epoch % print_per_epoch == 0:
             t_print = datetime.now()
             if epoch > 1:
                 t_diff_per_print = t_print - t_last_print
                 print("time spent in %d epoch %s" % (print_per_epoch, str(t_diff_per_print)))
-            print("%s training epoch %d loss %f accuracy %f\n" % (str(data_name_list), epoch, average_loss, average_accuracy))
+
+            print("training %s, size %d, epoch %d, total %d, loss %f accuracy %f\n" % (str(data_name_list), len(training_set), epoch, total_epoch, average_loss, average_accuracy))
             #validation("rand_train", True)
             #validation("cont_train", False)
             #validation("rand_valid", False)
-            #validation("cont_valid", False, average_accuracy > 0.95)
+            validation("cont_valid", False, average_accuracy > 0.95)
             validation("rand_valid", False, average_accuracy > 0.95) # haha todo change back to 0.95 TODO FIXME HACK WRONG
             print("saving checkpoint")
             print("")
@@ -268,8 +270,9 @@ t_print = None
 validation("cont_valid", False, False)
 print("")
 #train(["cont_train","dyna_train"], total_epoch1)
-#train(["rand_train", "dyna_train"], total_epoch1)
-train(["cont_train"], total_epoch1)
+train(["cont_train", "rand_train", "dyna_train"], total_epoch1)
+#train(["cont_train", "rand_train"], total_epoch1)
+#train(["cont_train"], total_epoch1)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
