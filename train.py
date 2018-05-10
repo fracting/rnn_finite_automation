@@ -83,7 +83,7 @@ def generate_new_input(old_input, targets):
         negative_reduced_batch_loss = - reduced_batch_loss
 
         in_semantics_loss = torch.sum(semantics_loss_fn(onehot_seqs, dim=2))
-        combined_loss = negative_reduced_batch_loss + in_semantics_loss / 1000
+        combined_loss = negative_reduced_batch_loss #+ in_semantics_loss / 1000
         combined_loss.backward()
         input_optimizer.step()
         # Hack: using .data to  workaround ValueError("can't optimize a non-leaf Tensor")
