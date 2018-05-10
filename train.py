@@ -11,11 +11,12 @@ import copy
 from model import DFA
 from data import char_to_ix, category_to_ix, seqs_to_tensor, categories_to_tensor, load_dataset, train_embedding
 from util import semantics_loss_fn
+from create_dataset import classify
 
 RNN_TYPE = "RNN"
 HIDDEN_DIM = 80
 NUM_LAYERS = 1
-BATCH_SIZE = 2
+BATCH_SIZE = 128
 EMBEDDING_DIM = 20
 DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single layer network
 
@@ -26,11 +27,13 @@ print("total_epoch1 %d" % total_epoch1)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-cont_train_size = 100
-rand_train_size = 100
-cont_valid_size = 100
-rand_valid_size = 100
-dataset_name = "10div7.balance"
+cont_train_size = 512
+rand_train_size = 512
+cont_valid_size = 512
+rand_valid_size = 512
+class_type = "balance"
+divider = 7
+dataset_name = "10div" + str(divider) + "." + class_type
 dataset_path = "dataset/" + dataset_name + ".txt"
 dataset, vocab_size, category_size = load_dataset(dataset_path, cont_train_size, rand_train_size, cont_valid_size, rand_valid_size)
 
@@ -60,30 +63,20 @@ def calc_accuracy(score_tensors, target):
     return accuracy
 
 def generate_new_input(old_input, targets):
-    #training_cache = training_cache + list(zip(validation_set[i:i+BATCH_SIZE], semantics_loss.tolist(), perplexity, batch_loss.tolist()))
     onehot_seqs = copy.deepcopy(old_input)
     onehot_seqs.requires_grad_()
 
-    for i in range(100):
-        print("i: ", i)
-        print("\n\n")
-        print("onehot_seqs\n", onehot_seqs)
-        print("argmax onehot_seqs\n", torch.argmax(onehot_seqs, dim=2))
-        input_optimizer = optim.Adam([onehot_seqs], lr=learning_rate * 50)
+    for i in range(15):
+        input_optimizer = optim.Adam([onehot_seqs], lr=learning_rate * 100)
         input_optimizer.zero_grad()
 
         embedding_seqs = []
         for onehot_elems in onehot_seqs:
-            print("onehot_elems\n", onehot_elems)
-            print("onehot_elems.shape\n", onehot_elems.shape)
             out, embedding_elems = embedding_model(onehot_elems)
-            print("exp(out) is: \n", torch.exp(out))
             embedding_seqs.append(embedding_elems)
-        print("embedding_seqs\n", embedding_seqs)
         embedding_seqs = torch.stack(embedding_seqs)
         category_scores, _ = model.forward(embedding_seqs)
         category = torch.exp(category_scores)
-        print("category\n", category)
 
         batch_loss = loss_function(category_scores, targets)
         reduced_batch_loss = batch_loss.sum() / BATCH_SIZE
@@ -91,15 +84,25 @@ def generate_new_input(old_input, targets):
         print("negative_reduced_batch_loss:\n", negative_reduced_batch_loss)
 
         in_semantics_loss = torch.sum(semantics_loss_fn(onehot_seqs, dim=2))
-        print("in_semantics_loss", in_semantics_loss)
         combined_loss = negative_reduced_batch_loss + in_semantics_loss / 1000
-        print("combined_loss: ", combined_loss)
+        print("combined_loss:\n", combined_loss)
         combined_loss.backward()
         input_optimizer.step()
-
         # Hack: using .data to  workaround ValueError("can't optimize a non-leaf Tensor")
         onehot_seqs = torch.clamp(onehot_seqs, 1e-7, 1 - 1e-7).data.requires_grad_()
-    # TODO validate on dyna_train, self growing
+
+    onehot_seqs_argmax = torch.argmax(onehot_seqs, dim=2)
+    seq_batches = onehot_seqs_argmax.transpose(0,1).tolist()
+    seq_batches_list = [[str(x) for x in seq] for seq in seq_batches]
+    seq_batches_int = [int("".join(seq)) for seq in seq_batches_list]
+    new_targets = [str(classify(input, divider, class_type)) for input in seq_batches_int]
+    print("argmax onehot_seqs\n", torch.argmax(onehot_seqs, dim=2))
+    print("seq_batches_int[:5]", *seq_batches_int[:5], sep="\n")
+    new_dataset = list(zip(seq_batches_list, new_targets))
+    print("new_dataset[:5]", *new_dataset[:5], sep="\n")
+    dataset["dyna_train"] = dataset["dyna_train"] + new_dataset
+
+    # TODO train on dyna_train, self growing
     haha
 
 
@@ -266,7 +269,7 @@ validation("cont_valid", False, False)
 print("")
 #train(["cont_train","dyna_train"], total_epoch1)
 #train(["rand_train", "dyna_train"], total_epoch1)
-train(["cont_train","rand_train"], total_epoch1)
+train(["cont_train"], total_epoch1)
 t_end = datetime.now()
 tdiff_begin_end = t_end - t_begin
 print("time spent total: %s" % str(tdiff_begin_end))
