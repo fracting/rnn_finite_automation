@@ -27,12 +27,13 @@ print("total_epoch1 %d" % total_epoch1)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-cont_train_size = 0
+cont_train_size = 256
 #rand_train_size = BATCH_SIZE
-rand_train_size = 20000 # super large
+#rand_train_size = 20000 # super large
+rand_train_size = 1 # super small
 cont_valid_size = 4096
 rand_valid_size = 4096
-generate_input_iters = BATCH_SIZE
+generate_input_iters = 16
 class_type = "imbalance"
 divider = 7
 dataset_name = "10div" + str(divider) + "." + class_type
@@ -71,7 +72,7 @@ def generate_new_input(old_input, targets):
     all_seq_batches = []
     all_seq_batches_int = []
     for i in range(generate_input_iters):
-        input_optimizer = optim.Adam([onehot_seqs], lr=learning_rate * 100)
+        input_optimizer = optim.Adam([onehot_seqs], lr=learning_rate * 50)
         input_optimizer.zero_grad()
 
         embedding_seqs = []
@@ -240,10 +241,11 @@ def train(data_name_list, total_epoch):
 
             batch_accuracy = calc_accuracy(category_scores, targets)
             epoch_accuracy = epoch_accuracy + batch_accuracy
-            size = len(training_set)
-            if last_average_accuracy > 0.95 and size < 16382:
+            size = len(dataset["dyna_train"])
+            if last_average_accuracy > 0.95 and size < 16382 and i < len(dataset["rand_train"]) / BATCH_SIZE + 1:
                 print("batch_accuracy", batch_accuracy, "i", i)
                 dataset["tmp"] = dataset["tmp"] + generate_new_input(onehot_seqs, targets)
+               
 
         average_loss = epoch_loss / (batch_count - skipped_batch)
         average_accuracy = epoch_accuracy / (batch_count - skipped_batch)
@@ -251,7 +253,7 @@ def train(data_name_list, total_epoch):
 
         dataset_uniq = set(dataset["dyna_train"] + dataset["tmp"])
         dataset_uniq_list = list(dataset_uniq)
-        dataset["dyna_train"] = dataset_uniq_list
+        dataset["dyna_train"] = dataset_uniq_list[:20000]
 
 
         if epoch % print_per_epoch == 0:
@@ -278,8 +280,8 @@ validation("cont_valid", False, False)
 print("")
 #train(["cont_train","dyna_train"], total_epoch1)
 dataset["rand_train128"] = dataset["rand_train"] * 128
-#train(["rand_train128", "dyna_train"], total_epoch1)
-train(["rand_train"], total_epoch1)
+train(["cont_train", "dyna_train"], total_epoch1)
+#train(["rand_train"], total_epoch1)
 #train(["cont_train", "rand_train"], total_epoch1)
 #train(["cont_train"], total_epoch1)
 t_end = datetime.now()
