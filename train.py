@@ -27,11 +27,11 @@ print("total_epoch1 %d" % total_epoch1)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-cont_train_size = 256
+cont_train_size = 512
 rand_train_size = 0
-cont_valid_size = 2048
-rand_valid_size = 2048
-class_type = "multiclass"
+cont_valid_size = 4096
+rand_valid_size = 4096
+class_type = "imbalance"
 divider = 7
 dataset_name = "10div" + str(divider) + "." + class_type
 dataset_path = "dataset/" + dataset_name + ".txt"
@@ -93,11 +93,11 @@ def generate_new_input(old_input, targets):
     print("combined_loss:\n", combined_loss)
     onehot_seqs_argmax = torch.argmax(onehot_seqs, dim=2)
     seq_batches = onehot_seqs_argmax.transpose(0,1).tolist()
-    seq_batches_list = [[str(x) for x in seq] for seq in seq_batches]
-    seq_batches_int = [int("".join(seq)) for seq in seq_batches_list]
+    seq_batches_tuple = [tuple(str(x) for x in seq) for seq in seq_batches]
+    seq_batches_int = [int("".join(seq)) for seq in seq_batches_tuple]
     new_targets = [str(classify(input, divider, class_type)) for input in seq_batches_int]
     print("seq_batches_int[:5]", *seq_batches_int[:5], sep="\n")
-    new_dataset = list(zip(seq_batches_list, new_targets))
+    new_dataset = list(zip(seq_batches_tuple, new_targets))
     print("new_dataset[:5]", *new_dataset[:5], sep="\n")
     return new_dataset
 
@@ -236,7 +236,7 @@ def train(data_name_list, total_epoch):
             batch_accuracy = calc_accuracy(category_scores, targets)
             epoch_accuracy = epoch_accuracy + batch_accuracy
             size = len(training_set)
-            if last_average_accuracy > 0.999 and size < 8192:
+            if last_average_accuracy > 0.99999 and size < 32768:
                 print("batch_accuracy", batch_accuracy, "i", i)
                 dataset["tmp"] = dataset["tmp"] + generate_new_input(onehot_seqs, targets)
 
@@ -244,7 +244,9 @@ def train(data_name_list, total_epoch):
         average_accuracy = epoch_accuracy / (batch_count - skipped_batch)
         last_average_accuracy = average_accuracy
 
-        dataset["dyna_train"] = dataset["dyna_train"] + dataset["tmp"]
+        dataset_uniq = set(dataset["dyna_train"] + dataset["tmp"])
+        dataset_uniq_list = list(dataset_uniq)
+        dataset["dyna_train"] = dataset_uniq_list
 
 
         if epoch % print_per_epoch == 0:
