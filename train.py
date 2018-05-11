@@ -16,7 +16,7 @@ from create_dataset import classify
 RNN_TYPE = "RNN"
 HIDDEN_DIM = 80
 NUM_LAYERS = 1
-BATCH_SIZE = 16
+BATCH_SIZE = 128
 EMBEDDING_DIM = 20
 DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single layer network
 
@@ -276,8 +276,8 @@ t_print = None
 validation("cont_valid", False, False)
 print("")
 #train(["cont_train","dyna_train"], total_epoch1)
-dataset["rand_train16"] = dataset["rand_train"] * 16
-train(["rand_train16", "dyna_train"], total_epoch1)
+dataset["rand_train128"] = dataset["rand_train"] * 128
+train(["rand_train128", "dyna_train"], total_epoch1)
 #train(["cont_train", "rand_train"], total_epoch1)
 #train(["cont_train"], total_epoch1)
 t_end = datetime.now()
