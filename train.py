@@ -69,7 +69,7 @@ def generate_new_input(old_input, targets):
 
     all_seq_batches = []
     all_seq_batches_int = []
-    for i in range(10):
+    for i in range(40):
         input_optimizer = optim.Adam([onehot_seqs], lr=learning_rate * 100)
         input_optimizer.zero_grad()
 
