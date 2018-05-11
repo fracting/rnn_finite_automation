@@ -16,7 +16,7 @@ from create_dataset import classify
 RNN_TYPE = "RNN"
 HIDDEN_DIM = 80
 NUM_LAYERS = 1
-BATCH_SIZE = 32
+BATCH_SIZE = 16
 EMBEDDING_DIM = 20
 DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single layer network
 
@@ -239,7 +239,7 @@ def train(data_name_list, total_epoch):
             batch_accuracy = calc_accuracy(category_scores, targets)
             epoch_accuracy = epoch_accuracy + batch_accuracy
             size = len(training_set)
-            if last_average_accuracy > 0.99999 and size < 32768:
+            if last_average_accuracy > 0.99 and size < 32768:
                 print("batch_accuracy", batch_accuracy, "i", i)
                 dataset["tmp"] = dataset["tmp"] + generate_new_input(onehot_seqs, targets)
 
