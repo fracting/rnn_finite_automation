@@ -31,7 +31,7 @@ cont_train_size = 128
 rand_train_size = 0
 cont_valid_size = 4096
 rand_valid_size = 4096
-class_type = "multiclass"
+class_type = "balance"
 divider = 7
 dataset_name = "10div" + str(divider) + "." + class_type
 dataset_path = "dataset/" + dataset_name + ".txt"
@@ -98,6 +98,8 @@ def generate_new_input(old_input, targets):
     new_targets = [str(classify(input, divider, class_type)) for input in seq_batches_int]
     print("seq_batches_int[:5]", *seq_batches_int[:5], sep="\n")
     new_dataset = list(zip(seq_batches_tuple, new_targets))
+    # filter out "Other" type
+    new_dataset = [line for line in new_dataset if line[1] != "Other"]
     print("new_dataset[:5]", *new_dataset[:5], sep="\n")
     return new_dataset
 
