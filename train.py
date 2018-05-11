@@ -27,7 +27,7 @@ print("total_epoch1 %d" % total_epoch1)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-cont_train_size = 512
+cont_train_size = 256
 rand_train_size = 0
 cont_valid_size = 4096
 rand_valid_size = 4096
@@ -272,7 +272,7 @@ t_print = None
 validation("cont_valid", False, False)
 print("")
 #train(["cont_train","dyna_train"], total_epoch1)
-train(["cont_train", "rand_train", "dyna_train"], total_epoch1)
+train(["cont_train", "dyna_train"], total_epoch1)
 #train(["cont_train", "rand_train"], total_epoch1)
 #train(["cont_train"], total_epoch1)
 t_end = datetime.now()
