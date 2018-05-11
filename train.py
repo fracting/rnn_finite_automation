@@ -16,7 +16,7 @@ from create_dataset import classify
 RNN_TYPE = "RNN"
 HIDDEN_DIM = 80
 NUM_LAYERS = 1
-BATCH_SIZE = 64
+BATCH_SIZE = 32
 EMBEDDING_DIM = 20
 DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single layer network
 
@@ -66,6 +66,8 @@ def generate_new_input(old_input, targets):
     onehot_seqs = copy.deepcopy(old_input)
     onehot_seqs.requires_grad_()
 
+    all_seq_batches = []
+    all_seq_batches_int = []
     for i in range(10):
         input_optimizer = optim.Adam([onehot_seqs], lr=learning_rate * 100)
         input_optimizer.zero_grad()
@@ -88,19 +90,18 @@ def generate_new_input(old_input, targets):
         input_optimizer.step()
         # Hack: using .data to  workaround ValueError("can't optimize a non-leaf Tensor")
         onehot_seqs = torch.clamp(onehot_seqs, 1e-7, 1 - 1e-7).data.requires_grad_()
+        onehot_seqs_argmax = torch.argmax(onehot_seqs, dim=2)
+        seq_batches = onehot_seqs_argmax.transpose(0,1).tolist()
+        seq_batches_tuple = [tuple(str(x) for x in seq) for seq in seq_batches]
+        print("seq_batches_tuple[:5]", *seq_batches_tuple[:5], sep="\n")
+        all_seq_batches = list(set(all_seq_batches + seq_batches_tuple))
 
-    print("negative_reduced_batch_loss:\n", negative_reduced_batch_loss)
     print("combined_loss:\n", combined_loss)
-    onehot_seqs_argmax = torch.argmax(onehot_seqs, dim=2)
-    seq_batches = onehot_seqs_argmax.transpose(0,1).tolist()
-    seq_batches_tuple = [tuple(str(x) for x in seq) for seq in seq_batches]
-    seq_batches_int = [int("".join(seq)) for seq in seq_batches_tuple]
-    new_targets = [str(classify(input, divider, class_type)) for input in seq_batches_int]
-    print("seq_batches_int[:5]", *seq_batches_int[:5], sep="\n")
-    new_dataset = list(zip(seq_batches_tuple, new_targets))
+    all_seq_batches_int = [int("".join(seq)) for seq in all_seq_batches]
+    new_targets = [str(classify(input, divider, class_type)) for input in all_seq_batches_int]
+    new_dataset = list(zip(all_seq_batches, new_targets))
     # filter out "Other" type
     new_dataset = [line for line in new_dataset if line[1] != "Other"]
-    print("new_dataset[:5]", *new_dataset[:5], sep="\n")
     return new_dataset
 
 def validation(data_name, dump_hidden, update_dataset):
