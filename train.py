@@ -16,7 +16,7 @@ from create_dataset import classify
 RNN_TYPE = "RNN"
 HIDDEN_DIM = 80
 NUM_LAYERS = 1
-BATCH_SIZE = 128
+BATCH_SIZE = 64
 EMBEDDING_DIM = 20
 DROPOUT = 0.0 # dropout does not apply on output layer, so no effect to single layer network
 
@@ -27,7 +27,7 @@ print("total_epoch1 %d" % total_epoch1)
 
 torch.manual_seed(4) # TODO - disable manual seed in production version
 
-cont_train_size = 128
+cont_train_size = BATCH_SIZE
 rand_train_size = 0
 cont_valid_size = 4096
 rand_valid_size = 4096
