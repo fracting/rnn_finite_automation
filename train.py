@@ -242,7 +242,7 @@ def train(data_name_list, total_epoch):
             batch_accuracy = calc_accuracy(category_scores, targets)
             epoch_accuracy = epoch_accuracy + batch_accuracy
             size = len(dataset["dyna_train"])
-            if last_average_accuracy > 0.95 and size < 16382 and i < len(dataset["rand_train"]) / BATCH_SIZE + 1:
+            if last_average_accuracy > 0.95 and size < 16382:
                 print("batch_accuracy", batch_accuracy, "i", i)
                 dataset["tmp"] = dataset["tmp"] + generate_new_input(onehot_seqs, targets)
                
