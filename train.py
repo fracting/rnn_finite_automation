@@ -29,7 +29,7 @@ torch.manual_seed(4) # TODO - disable manual seed in production version
 
 cont_train_size = 0
 #rand_train_size = BATCH_SIZE
-rand_train_size = 56192 # super large
+rand_train_size = 20000 # super large
 cont_valid_size = 4096
 rand_valid_size = 4096
 generate_input_iters = BATCH_SIZE
