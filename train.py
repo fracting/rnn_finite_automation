@@ -32,6 +32,7 @@ cont_train_size = 0
 rand_train_size = 1
 cont_valid_size = 4096
 rand_valid_size = 4096
+generate_input_iters = BATCH_SIZE
 class_type = "imbalance"
 divider = 7
 dataset_name = "10div" + str(divider) + "." + class_type
@@ -69,7 +70,7 @@ def generate_new_input(old_input, targets):
 
     all_seq_batches = []
     all_seq_batches_int = []
-    for i in range(40):
+    for i in range(generate_input_iters):
         input_optimizer = optim.Adam([onehot_seqs], lr=learning_rate * 100)
         input_optimizer.zero_grad()
 
@@ -240,7 +241,7 @@ def train(data_name_list, total_epoch):
             batch_accuracy = calc_accuracy(category_scores, targets)
             epoch_accuracy = epoch_accuracy + batch_accuracy
             size = len(training_set)
-            if last_average_accuracy > 0.95 and size < 32768:
+            if last_average_accuracy > 0.95 and size < 16382:
                 print("batch_accuracy", batch_accuracy, "i", i)
                 dataset["tmp"] = dataset["tmp"] + generate_new_input(onehot_seqs, targets)
 
