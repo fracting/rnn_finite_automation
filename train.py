@@ -29,8 +29,8 @@ torch.manual_seed(4) # TODO - disable manual seed in production version
 
 cont_train_size = 256
 #rand_train_size = BATCH_SIZE
-#rand_train_size = 20000 # super large
-rand_train_size = 1 # super small
+rand_train_size = 20000
+#rand_train_size = 1 # super small
 cont_valid_size = 4096
 rand_valid_size = 4096
 generate_input_iters = 16
@@ -242,7 +242,7 @@ def train(data_name_list, total_epoch):
             batch_accuracy = calc_accuracy(category_scores, targets)
             epoch_accuracy = epoch_accuracy + batch_accuracy
             size = len(dataset["dyna_train"])
-            if last_average_accuracy > 0.95 and size < 16382:
+            if last_average_accuracy > 0.95 and size < 16382 and False: # haha hack
                 print("batch_accuracy", batch_accuracy, "i", i)
                 dataset["tmp"] = dataset["tmp"] + generate_new_input(onehot_seqs, targets)
                
@@ -280,7 +280,8 @@ validation("cont_valid", False, False)
 print("")
 #train(["cont_train","dyna_train"], total_epoch1)
 dataset["rand_train128"] = dataset["rand_train"] * 128
-train(["cont_train", "dyna_train"], total_epoch1)
+#train(["cont_train", "dyna_train"], total_epoch1)
+train(["cont_train", "rand_train"], total_epoch1)
 #train(["rand_train"], total_epoch1)
 #train(["cont_train", "rand_train"], total_epoch1)
 #train(["cont_train"], total_epoch1)
